@@ -1,4 +1,4 @@
-import {models, hardware, defaults} from './catalog.js';
+import {models, hardware, defaults} from './catalog.js?v=2';
 export function normalize(raw) {
   const s={...defaults};
   for(const key of Object.keys(defaults)) {

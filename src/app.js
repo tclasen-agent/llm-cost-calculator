@@ -1,5 +1,5 @@
-import {models,hardware,defaults,benchmarkSource} from './catalog.js';
-import {calculate,normalize} from './engine.js';
+import {models,hardware,defaults,benchmarkSource} from './catalog.js?v=2';
+import {calculate,normalize} from './engine.js?v=2';
 const $=id=>document.getElementById(id);
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 const num=(n,d=0)=>Number.isFinite(n)?n.toLocaleString('en-US',{maximumFractionDigits:d}):'—';
