@@ -21,4 +21,22 @@ export const hardware = [
   {id:'a100',name:'Dual A100 80 GB',variant:'2 × 80 GB PCIe server',memory:160,reserve:10,price:24000,idle:170,load:950,decode:180,prefill:4500,source:gpu,note:'Used-market planning budget including host. Server cooling, power and interconnect must be checked.'},
   {id:'h100',name:'Dual H100 80 GB',variant:'2 × 80 GB PCIe server',memory:160,reserve:10,price:60000,idle:200,load:1100,decode:300,prefill:8500,source:'https://www.nvidia.com/en-us/data-center/h100/',note:'PCIe 80 GB configuration, not SXM. Synthetic throughput; home installation may require infrastructure.'}
 ];
-export const defaults = {model:'qwen80',hardware:'m5-256',users:5,agents:2,activity:50,batch:0,requests:50,days:22,hours:8,input:8000,output:2000,context:16384,bits:4,kv:0.08,headroom:15,efficiency:70,batchExponent:0.6,speed:100,decodeOverride:0,prefillOverride:0,price:8000,memory:256,reserve:24,idle:30,load:250,electricity:0.18,cooling:1.1,maintenance:20,setup:0,months:36,resale:0,apiInput:1,apiCached:0.1,cache:20,apiOutput:5,rentalHardware:'h100',rental:2,rentalHours:176,rentalExtra:50,rentalSetup:0,rentalMemory:160,rentalReserve:10,rentalEfficiency:70,rentalSpeed:100,rentalDecodeOverride:0,rentalPrefillOverride:0,rentalBatchExponent:0.6};
+export const defaults = {workload:'custom',model:'qwen80',hardware:'m5-256',users:5,agents:2,activity:50,batch:0,requests:50,days:22,hours:8,input:8000,output:2000,context:16384,bits:4,kv:0.08,headroom:15,efficiency:70,batchExponent:0.6,speed:100,decodeOverride:0,prefillOverride:0,price:8000,memory:256,reserve:24,idle:30,load:250,electricity:0.18,cooling:1.1,maintenance:20,setup:0,months:36,resale:0,apiInput:1,apiCached:0.1,cache:20,apiOutput:5,rentalHardware:'h100',rental:2,rentalHours:176,rentalExtra:50,rentalSetup:0,rentalMemory:160,rentalReserve:10,rentalEfficiency:70,rentalSpeed:100,rentalDecodeOverride:0,rentalPrefillOverride:0,rentalBatchExponent:0.6};
+
+// Illustrative business usage assumptions; calibrate against actual request logs.
+// requests is calls per agent per workday, not complete user tasks.
+export const workloads = [
+ {id:'chat',name:'Simple Chat',agents:1,activity:10,requests:20,input:1200,output:350,context:4096,note:'20 short exchanges per person per day; one assistant.'},
+ {id:'research',name:'Research',agents:2,activity:25,requests:30,input:6000,output:1500,context:16384,note:'About 10 research tasks per person per day, each with 6 model calls across 2 agents.'},
+ {id:'bizdev',name:'Business Development',agents:1,activity:20,requests:30,input:4000,output:1000,context:8192,note:'About 10 prospect research or outreach tasks per person per day, 3 model calls each.'},
+ {id:'swe',name:'Software Engineering',agents:2,activity:40,requests:75,input:12000,output:2500,context:32768,note:'About 15 coding tasks per person per day, 10 calls each across 2 parallel agents.'},
+ {id:'support',name:'Customer Support',agents:1,activity:35,requests:50,input:2500,output:600,context:8192,note:'About 25 assisted cases per person per day, 2 calls each.'},
+ {id:'writing',name:'Writing & Content',agents:1,activity:20,requests:20,input:3500,output:1800,context:8192,note:'About 5 drafting tasks per person per day, 4 generation or revision calls each.'},
+ {id:'security',name:'Security Analysis',agents:2,activity:35,requests:60,input:16000,output:2000,context:32768,note:'About 12 code or log analysis tasks per person per day, 10 calls each across 2 agents.'}
+];
+export function applyWorkload(state,id) {
+ const preset=workloads.find(w=>w.id===id);
+ if(!preset)return {...state,workload:'custom'};
+ const {agents,activity,requests,input,output,context}=preset;
+ return {...state,workload:id,agents,activity,requests,input,output,context,batch:0,days:21.67,hours:8,rentalHours:173.36};
+}

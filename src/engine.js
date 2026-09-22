@@ -1,6 +1,7 @@
-import {models, hardware, defaults} from './catalog.js?v=2';
+import {models, hardware, defaults, workloads} from './catalog.js?v=3';
 export function normalize(raw) {
   const s={...defaults};
+  s.workload=workloads.some(w=>w.id===raw.workload)?raw.workload:'custom';
   for(const key of Object.keys(defaults)) {
     if(typeof defaults[key]==='number') { const n=Number(raw[key] ?? defaults[key]); s[key]=Number.isFinite(n)?Math.max(0,n):defaults[key]; }
   }

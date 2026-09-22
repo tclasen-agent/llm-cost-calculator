@@ -61,3 +61,8 @@ Memory fit does not guarantee runtime/quantization support. Multi-GPU configurat
 - `.github/workflows/ci.yml`: tests and static build on push / pull request.
 
 To calibrate, benchmark the exact model at batch 1, input length and quantization; enter prefill/decode rates under Performance & memory assumptions, then adjust batch scaling from measured runs. Set exponent 0 for no batching gain. Set speed to 50% and 150% to test uncertainty. Prices should include the host, GPUs, RAM, storage, PSU, cooling and any electrical work.
+
+
+## Usage templates
+
+Choose Simple Chat, Research, Business Development, Software Engineering, Customer Support, Writing & Content, or Security Analysis, then enter the number of users. Templates set per-agent daily calls, input/output tokens, active concurrency, context, and parallel agents. They use an illustrative 9–5 Monday–Friday schedule: 8 hours/day × 21.67 weekdays/month (260 weekdays/year divided by 12, rounded), without holiday or leave adjustments. Applying a template also sets rental provisioned hours to 173.36/month. Each preset explains its assumed tasks and calls. These are editable planning examples, not empirically established business averages. Expand Advanced workload settings to customize them; editing those assumptions switches to Custom workload. Users can change without leaving the preset. Monthly calls = users × agents × calls/agent/day × workdays; peak batch = ceil(users × agents × active percentage), minimum 1. Model, hardware and API prices are independent of the usage template.
