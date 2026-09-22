@@ -13,6 +13,10 @@ Published catalog prices/specifications and actual rental/API rates retain dated
 - API catalog: [OpenRouter's public model and endpoint APIs](https://openrouter.ai/api/v1/models). Each model has a specific provider tag, precision, context/output limits and a consistent input/output price pair from one endpoint. Promotional endpoints and tiered prices were excluded from this snapshot. The raw selected endpoint records are in `src/api-snapshot.json`. No cached-input discount is assumed. Published cached prices are recorded for provenance but not used. Credit purchase, platform, tax and other fees need documented monthly inputs. Routing to different providers changes the comparison; users must validate availability, rate limits and quality.
 - Model cards remain linked for original evaluation results and deployment instructions. Task suggestions are editorial starting points, not a universal model ranking. API precision may differ from local precision. No quality parity is implied.
 
+## Decision panels
+
+Buy, rent and API panels show comparable monthly operating costs, upfront cash and the same automatic horizon total. Visible breakdowns reconcile with the calculator, including electricity, cooling, support, reserved compute, token charges and overflow fees. Hardware panels show estimated capacity and the fraction served through API; the buy panel shows separate sustained payback against renting and API. Price sources and assumptions remain labeled.
+
 ## Workflow
 
 1. Select task and people/teams. Task templates fill calls, input/output tokens and concurrency. Assisted tasks use 9–5 weekdays; factory teams use 24/7 and an aggressive 2,880 calls/team/day default. These are assumptions, not observed industry averages.
