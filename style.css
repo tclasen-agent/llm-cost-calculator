@@ -67,3 +67,11 @@ header{flex-wrap:wrap}#share-status{font-size:12px;max-width:230px}fieldset deta
 .lv-refresh-alert{background:#fff2dc;border-left:4px solid #a46d28;border-radius:6px;padding:12px 16px;margin:14px 0;font-size:13px;line-height:1.6}.lv-refresh-alert strong,.lv-refresh-alert span{display:block}
 
 .lv-trend-strip{font-size:12px;line-height:1.7;color:#674818;background:#fff9ee;padding:10px 12px;border-radius:6px}
+
+.lv-refresh-definitions{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:12px 0 6px}.lv-refresh-definitions p{margin:0;font-size:13px;line-height:1.5;color:#526357}.lv-refresh-definitions strong{display:block;color:#263c31;margin-bottom:4px}@media(max-width:650px){.lv-refresh-definitions{grid-template-columns:1fr;gap:12px}}
+
+/* Keep the decision chart beside a persistent, independently scrolling configuration pane. */
+main{max-width:1680px;padding:24px 3% 0}.workspace{grid-template-columns:310px minmax(0,1fr);gap:24px}.decision-overview{margin:0}.supporting-heading{margin:4px 0 0}.lv-heading{flex-wrap:wrap;gap:8px}.lv-heading h1{font-size:clamp(23px,2.2vw,32px)}.lv-config-link{display:none}.lv-inspector{grid-template-columns:auto minmax(100px,1fr)}#lv-probe{grid-column:1/-1;justify-content:space-between}.lv-scorecards{gap:10px}.lv-scorecards dl>div{display:block}.lv-scorecards dd{text-align:left}.lv-scorecards article{padding:12px}
+@media(min-width:1001px){#configuration{position:sticky;top:16px;max-height:calc(100dvh - 32px);overflow:auto;scrollbar-gutter:stable}.panel-heading{position:sticky;top:0;background:white;z-index:2}.lv-refresh-definitions{grid-template-columns:1fr 1fr}}
+@media(max-width:1000px){.workspace{grid-template-columns:260px minmax(0,1fr);gap:16px}.decision-overview{padding:16px}.lv-scorecards,.lv-key-points,.lv-refresh-definitions{grid-template-columns:1fr}.lv-plot-heading{display:block}#configuration{position:sticky;top:12px;max-height:calc(100dvh - 24px);overflow:auto}}
+@media(max-width:820px){main{padding:18px 4% 0}.workspace{grid-template-columns:minmax(0,1fr)}#configuration{position:static;max-height:none;overflow:visible}.lv-config-link{display:inline-block}.lv-scorecards dl>div{display:flex}.lv-scorecards dd{text-align:right}}

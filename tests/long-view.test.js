@@ -16,7 +16,7 @@ test('unavailable paths are excluded from cheapest ranking and flagged',()=>{
 });
 test('timeline inspector includes upfront cost at month zero',()=>{
  const r=calculate(planning(defaults));assert.ok(probeHTML(r,0).includes('$3,780.00'));assert.ok(probeHTML(r,0).includes('$0.00'));
- const svg=longViewSVG(r,350,0);assert.ok(svg.includes('Refresh'));assert.ok(svg.includes('Cumulative cost of buying'));assert.ok(!svg.includes('NaN'));
+ const svg=longViewSVG(r,350,0);assert.ok(svg.includes('Model refresh'));assert.ok(svg.includes('Cumulative cost of buying'));assert.ok(!svg.includes('NaN'));
 });
 test('overview exposes normalized costs and planning exclusions',()=>{
  const r=calculate(planning(defaults)),html=longViewHTML(r);
