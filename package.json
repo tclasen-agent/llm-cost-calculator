@@ -1,0 +1,9 @@
+{
+  "name": "llm-cost-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Transparent local-vs-cloud LLM capacity and cost planning",
+  "scripts": { "start": "node server.mjs", "test": "node --test", "build": "node build.mjs" },
+  "engines": { "node": ">=22" }
+}
