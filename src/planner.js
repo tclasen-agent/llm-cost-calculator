@@ -1,5 +1,5 @@
-import {models,hardware} from './catalog.js?v=9';
-import {calculate,normalize,combinedPayback} from './engine.js?v=9';
+import {models,hardware} from './catalog.js?v=11';
+import {calculate,normalize,combinedPayback} from './engine.js?v=11';
 export const taskModels={chat:['oss120','qwen30'],research:['minimax','kimi3','kimi25','oss120'],bizdev:['oss120','minimax','kimi3'],swe:['qwen80','minimax','kimi3','kimi25','qwen30'],support:['oss120','qwen30'],writing:['oss120','minimax','kimi3'],security:['qwen80','kimi3','minimax','kimi25'],custom:['qwen80','oss120']};
 export const evidence={qwen80:'SWE-bench Verified 70.6 (vendor model card).',minimax:'SWE-bench Verified 80.2; BrowseComp 76.3 with context management (vendor report).',kimi25:'SWE-Bench Verified 76.8 (vendor harness).',kimi3:'Terminal-Bench 2.1 88.3; BrowseComp 91.2 with compaction (vendor, max effort).',oss120:'Reasoning and tool-use candidate; no directly comparable task score recorded here.',qwen30:'Efficient coding candidate; no directly comparable task score recorded here.',deepseek:'Large reasoning candidate; no directly comparable task score recorded here.'};
 // Extend task shortlists without changing existing default recommendations.
@@ -22,8 +22,8 @@ export function optimize(raw,{model=true,hardware:chooseHardware=true}={}){
 export function autoHorizon(raw){
  const r=calculate(raw),payback=combinedPayback(r.payback,r.paybackVsRental);
  // A longer projection is not credible enough to imply a useful equipment lifetime.
- const months=payback===null?60:Math.min(120,Math.max(12,Math.ceil(payback*1.25/6)*6));
- return {months,payback,note:payback===null?'No sustained payback against both alternatives. Showing a 5-year planning window.':payback>120?'Payback exceeds 10 years; the chart stops at 10 years because equipment life and prices are uncertain.':`View extends beyond the estimated ${payback.toFixed(1)}-month payback against both alternatives. Payback excludes resale.`};
+ const months=r.changingPrices&&r.paybackReversal?120:payback===null?60:Math.min(120,Math.max(12,Math.ceil(payback*1.25/6)*6));
+ return {months,payback,note:r.changingPrices&&r.paybackReversal?'Showing 10 years because an initial purchase advantage reverses as service prices fall. Payback must hold through month 120; resale is excluded.':payback===null?(r.changingPrices?'No payback that holds against both alternatives through the 10-year projection. Showing a 5-year view.':'No sustained payback against both alternatives. Showing a 5-year planning window.'):payback>120?'Payback exceeds 10 years; the chart stops at 10 years because equipment life and prices are uncertain.':`View extends beyond the estimated ${payback.toFixed(1)}-month payback against both alternatives. Payback excludes resale.`};
 }
 
 // Lifecycle review is a risk overlay. It does not forecast undisclosed model specs or prices.
@@ -36,7 +36,8 @@ export function lifecycleRisk(r){
  const nextFits=nextRequired<=r.available;
  const weightHeadroom=r.weight>0?Math.max(0,(r.available-r.cache)/r.weight):0;
  const reviewAt=Math.min(r.s.modelRefresh,r.s.hardwareRefresh);
- const unrecoveredVsApi=Math.max(0,r.capital-(r.cloud-r.recurring)*reviewAt);
- const unrecoveredVsRent=Math.max(0,r.capital-r.s.rentalSetup-(r.rentalMonthly-r.recurring)*reviewAt);
+ const row=r.changingPrices?r.cashflows[Math.ceil(reviewAt)]:null;
+ const unrecoveredVsApi=Math.max(0,row?row.buy-row.api:r.capital-(r.cloud-r.recurring)*reviewAt);
+ const unrecoveredVsRent=Math.max(0,row?row.buy-row.rent:r.capital-r.s.rentalSetup-(r.rentalMonthly-r.recurring)*reviewAt);
  return {applicable,payback,modelRisk,hardwareRisk,warning:modelRisk||hardwareRisk,nextRequired,nextFits,weightHeadroom,reviewAt,unrecoveredVsApi,unrecoveredVsRent};
 }

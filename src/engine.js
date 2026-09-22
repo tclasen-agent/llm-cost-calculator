@@ -1,4 +1,5 @@
-import {models, hardware, defaults, workloads} from './catalog.js?v=9';
+import {applyPriceOutlook} from './pricing.js?v=11';
+import {models, hardware, defaults, workloads} from './catalog.js?v=11';
 export function normalize(raw) {
   const s={...defaults};
   s.workload=workloads.some(w=>w.id===raw.workload)?raw.workload:'custom';
@@ -22,6 +23,9 @@ export function normalize(raw) {
   }
   for(const k of ['modelRefresh','hardwareRefresh'])s[k]=Math.max(1,Math.min(120,s[k]));
   s.nextModelGrowth=Math.max(1,Math.min(10,s.nextModelGrowth));
+  s.pricingOutlook=[0,1,2,3].includes(s.pricingOutlook)?s.pricingOutlook:3;
+  for(const k of ['purchaseDiscount','rentalDecline','apiDecline'])s[k]=Math.min(99,s[k]);
+  s.priceFloor=Math.min(100,s.priceFloor);
   return s;
 }
 export function calculate(raw) {
@@ -50,10 +54,11 @@ export function calculate(raw) {
   const cloud=requests*unitCloud;
   const overflow=(requests-localRequests)*unitCloud;
   const recurring=powerCost+s.maintenance+overflow;
-  const capital=s.price+s.setup;
+  const effectivePrice=s.price*(1-s.purchaseDiscount/100);
+  const capital=effectivePrice+s.setup;
   const savings=cloud-recurring;
   const payback=savings>0?capital/savings:null;
-  const resale=s.price*s.resale/100;
+  const resale=effectivePrice*s.resale/100;
   const localTco=capital+recurring*s.months-resale;
   const cloudTco=cloud*s.months;
   // The rental is an independently sized machine serving the SAME model and token mix.
@@ -81,7 +86,7 @@ export function calculate(raw) {
   const margin=unitCloud-incrementalEnergy;
   const threshold=margin>0?fixedMonthly/margin:null;
   const thresholdFeasible=threshold!==null&&fits&&contextOk&&threshold<=capacity;
-  return {s,m,h,concurrency,batch,requests,weight,cache,required,available,fits,contextOk,decode,prefill,capacity,localRequests,localFraction,activeHours,energyKwh,powerCost,cloud,overflow,recurring,capital,payback,localTco,cloudTco,rentalMonthly,rentalTco,rentalHardware,rentalAvailable,rentalFits,rentalDecode,rentalPrefill,rentalCapacity,rentalRequests,rentalFraction,rentalOverflow,rentalCompute,rentalServingHours,paybackVsRental,threshold,thresholdFeasible,perStream:decode/batch,ttft:prefill>0?s.input*batch/prefill:Infinity,latency:secondsPerRequest*batch};
+  return applyPriceOutlook({effectivePrice,resaleValue:resale,s,m,h,concurrency,batch,requests,weight,cache,required,available,fits,contextOk,decode,prefill,capacity,localRequests,localFraction,activeHours,energyKwh,powerCost,cloud,overflow,recurring,capital,payback,localTco,cloudTco,rentalMonthly,rentalTco,rentalHardware,rentalAvailable,rentalFits,rentalDecode,rentalPrefill,rentalCapacity,rentalRequests,rentalFraction,rentalOverflow,rentalCompute,rentalServingHours,paybackVsRental,threshold,thresholdFeasible,perStream:decode/batch,ttft:prefill>0?s.input*batch/prefill:Infinity,latency:secondsPerRequest*batch});
 }
 
 // Owning must recover its cost against both alternatives before the chart marks payback.
