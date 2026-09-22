@@ -68,3 +68,7 @@ Prefill and decode speeds are separately editable per configured system at selec
 ## Frontier additions (2026-09-22)
 
 Added DeepSeek V4.1 Flash, GLM-5.3, GLM-5.3 Flash, Qwen3.8 2.4T A95B, Qwen3.8 27B and MiniMax M2.7. Vendor model cards provide evaluation evidence; provider-specific nonpromotional endpoint prices are captured in api-snapshot.json. Task shortlists are editorial, with office work/instruction-following used as explicit proxies for business, support and writing. Vendor benchmark settings differ; no universal cross-model ranking is claimed. Memory planning allowances remain assumptions. The largest Qwen may exceed every catalog rental's usable-memory budget; it is flagged rather than assigned a fictional rental.
+
+## Long View decision overview
+
+The top of the page is a standalone decision overview: cumulative cash curves with a zero-dollar baseline, readable month/USD axes, line patterns and direct endpoint labels, an accessible month inspector, and synchronized upfront/operating/amortized/total cost summaries. The headline ranks available paths at the displayed automatic horizon, with savings against the next available option. Joint purchase payback is marked only if sustained against both alternatives. Shading beyond assumed hardware life flags that replacements are not included. Unavailable configurations and assumptions are visible in this same overview. Supporting configuration and detailed evidence follow below.

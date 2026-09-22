@@ -1,10 +1,11 @@
-import {taskModels,taskRationale,modelSuggestion} from './task-models.js?v=16';
-import {renderComparison} from './comparison.js?v=16';
-import {planning,assumptionNotes} from './planning.js?v=16';
-import {models,hardware,rentals,workloads,defaults,reviewed} from './catalog.js?v=16';
-import {calculate,normalize,optimize,suggestRental,clearMeasurements} from './engine.js?v=16';
-import {encodeState,decodeState} from './sharing.js?v=16';
-import {tariffSource,countySource,ridersCents} from './energy.js?v=16';
+import {longViewHTML,longViewSVG,probeHTML} from './long-view.js?v=17';
+import {taskModels,taskRationale,modelSuggestion} from './task-models.js?v=17';
+import {renderComparison} from './comparison.js?v=17';
+import {planning,assumptionNotes} from './planning.js?v=17';
+import {models,hardware,rentals,workloads,defaults,reviewed} from './catalog.js?v=17';
+import {calculate,normalize,optimize,suggestRental,clearMeasurements} from './engine.js?v=17';
+import {encodeState,decodeState} from './sharing.js?v=17';
+import {tariffSource,countySource,ridersCents} from './energy.js?v=17';
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const n=(x,d=1)=>typeof x==='number'&&Number.isFinite(x)?x.toLocaleString('en-US',{maximumFractionDigits:d}):'Not verified';
 const money=x=>typeof x==='number'&&Number.isFinite(x)?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(x):'Not verified';
@@ -38,25 +39,21 @@ function render(){
  $('comparison').innerHTML=`<h2>Same workload, actual offerings</h2><div class="table-wrap"><table><thead><tr><th>Cost or evidence</th><th>Buy</th><th>Rent</th><th>API</th></tr></thead><tbody>${row('Configuration',esc(r.h.name),esc(r.r.name),esc(r.m.provider))}${row('Runtime / precision',esc(state.localRuntime)||'Not verified',esc(state.rentalRuntime)||'Not verified',esc(r.m.quantization))}${row('Month-one total',money(first.buyMonthly),money(first.rentMonthly),money(first.apiMonthly))}${row(`${r.months}-month total`,money(last.buy),money(last.rent),money(last.api))}${row('Reserved compute / month','—',money(first.compute),'—')}${row('Capacity (calls/month)',n(first.localCapacity,0),n(first.rentalCapacity,0),'Rate limits not verified')}${row('Required systems / instances',n(r.localUnits,0),n(r.rentalUnits,0),'No hardware')}${row('IT electricity',money(r.power?.it),'Provider electricity included','Included')}${row('Extra cooling',money(r.power?.cooling),'Provider cooling included','Included')}${row('Cash payback vs API',r.paybackApi===null?'Not established':n(r.paybackApi)+' months','—','—')}${row('Cash payback vs rental',r.paybackRent===null?'Not established':n(r.paybackRent)+' months','—','—')}</tbody></table></div><p class="caption">Buy and rent serve the full workload with replicated capacity; neither includes API calls. API capacity, quantization quality and service-level requirements still need a pilot. No residual value, hardware replacements, demand growth or speculative future prices are included.</p>`;
  $('capacity').innerHTML=`<h2>Capacity evidence</h2><p>Purchase: ${r.localReady?'Entered estimate fits the memory budget; validate with a benchmark.':'Not verified.'} Rental: ${r.rentalReady?'Entered estimate fits the memory budget; validate with a benchmark.':'Not verified.'}</p><p>Memory is checked against measured peak use and usable memory for each runtime. A sum of card or node memory does not establish sharding support. Benchmark evidence must include the exact model, precision, context, concurrency and deployment recipe.</p>`;
  $('hardware-table').innerHTML=hardware.map(h=>`<tr><td><button type="button" data-hardware="${h.id}">${esc(h.name)}</button></td><td>${h.memory} GB ${esc(h.kind)}</td><td>${money(h.price??planning({...defaults,hardware:h.id,autoHardware:0}).quote)}${h.price===null?' (assumed)':' (published)'}</td><td>${link(h.source,'Specs')}${h.priceSource?' · '+link(h.priceSource,'Price'):''}</td><td>Planning proxy; benchmark before buying</td></tr>`).join('');
- $('horizon').textContent=`${r.months} months · automatic`;
  draw(r);
  $('lifecycle-content').innerHTML=`<p>Model review: ${n(state.modelRefresh)} months. Hardware review: ${n(state.hardwareRefresh)} months.</p><p>${esc(state.lifecycleSource)}</p><p>This is your review policy, not an industry obsolescence forecast. No future model size or replacement cost is invented.</p>`;
  const isDefault=encodeState(state)===encodeState(planning(defaults));
  history.replaceState(null,'',location.pathname+(isDefault?'':'?'+encodeState(state)));
  try{localStorage.setItem('inference-ledger-v2',JSON.stringify(state));}catch{}
 }
+let chartResult;
 function draw(r){
- const valid=[['buy','#206451'],['rent','#687281'],['api','#7960a4']].filter(([key])=>r.last[key]!==null);
- if(!valid.length){$('chart').innerHTML='<p class="empty-chart">Add documented workload and cost inputs to see the long view.<br>Unknown values are never plotted as zero.</p>';$('payback-note').textContent='Payback cannot be calculated from price alone.';return;}
- const W=760,H=280,p=45,max=Math.max(1,...valid.map(([k])=>Math.max(...r.rows.slice(0,r.months+1).map(row=>row[k]))));
- const x=m=>p+m/r.months*(W-2*p),y=v=>H-p-v/max*(H-2*p);
- let svg=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Cumulative cost projections based on sourced rates and editable assumptions">`;
- for(let j=0;j<=4;j++){const v=max*j/4;svg+=`<line x1="${p}" x2="${W-p}" y1="${y(v)}" y2="${y(v)}" stroke="#ddd"/><text x="${p-5}" y="${y(v)-5}" font-size="10">${money(v)}</text>`;}
- for(const [k,color] of valid){svg+=`<path d="${r.rows.slice(0,r.months+1).map((row,i)=>`${i?'L':'M'}${x(i)},${y(row[k])}`).join(' ')}" fill="none" stroke="${color}" stroke-width="3"/>`;}
- if(r.payback!==null&&r.payback<=r.months)svg+=`<line x1="${x(r.payback)}" x2="${x(r.payback)}" y1="25" y2="${H-p}" stroke="#206451" stroke-dasharray="5 5"/><text x="${Math.min(W-150,x(r.payback)+5)}" y="20" font-size="12">Payback ${n(r.payback)} mo</text>`;
- svg+=`<text x="${p}" y="${H-12}" font-size="12">Today</text><text x="${W-100}" y="${H-12}" font-size="12">Month ${r.months}</text></svg>`;
- $('chart').innerHTML=svg;$('payback-note').textContent=r.ready?(r.payback===null?'No sustained payback against both alternatives through month 120. Showing a five-year view.':'The line marks the later payback against API or renting. The view extends beyond it, capped at ten years.'):'Unavailable paths are omitted. Choose compatible hardware or revise the flagged advanced inputs.';
+ chartResult=r;
+ $('chart').innerHTML=longViewHTML(r);
+ $('lv-svg').innerHTML=longViewSVG(r,$('lv-svg').clientWidth);
+ $('lv-month').addEventListener('input',e=>{const month=Number(e.target.value);$('lv-month-value').textContent=month;$('lv-probe').innerHTML=probeHTML(r,month);$('lv-svg').innerHTML=longViewSVG(r,$('lv-svg').clientWidth,month);});
 }
+let chartResize;
+addEventListener('resize',()=>{clearTimeout(chartResize);chartResize=setTimeout(()=>{if(chartResult&&$('lv-svg'))$('lv-svg').innerHTML=longViewSVG(chartResult,$('lv-svg').clientWidth,Number($('lv-month').value));},100);});
 
 $('controls').addEventListener('submit',e=>e.preventDefault());
 $('controls').addEventListener('change',e=>{
