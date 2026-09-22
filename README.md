@@ -71,3 +71,13 @@ The Long View payback marker uses the later of purchase-vs-API and purchase-vs-r
 
 ## Business decision view
 The primary screen asks for task type, users and planning horizon. Pricing, system selection and technical settings are collapsed but remain editable. The lowest-cost eligible scenario is highlighted for the selected horizon; hardware configurations that cannot hold the model are excluded from that recommendation, and invalid context or zero demand suppresses it. Partial-capacity hardware is labeled as a combination with pay-per-use service, including all overflow costs. This is a comparison of entered assumptions, not a supplier recommendation or quality guarantee. Detailed cost, capacity, other systems and sources remain available below the cost chart. Existing saved inputs are preserved.
+
+
+## Guided planning and sharing
+The workflow is task and team size → task model shortlist → system or cluster. Automatic models follow a curated priority list, selecting the first with full estimated catalog capacity; this is not a benchmark ranking. Hardware optimization minimizes purchase budget among systems that fit and cover demand, falling back to best coverage. Manual choices remain pinned. Matching buy/rent hardware is the default, sharing memory and throughput assumptions; rental billing hours remain explicit. Rates are example whole-configuration budgets, not verified listings.
+
+The comparison window is automatic: 25% beyond the later sustained cash payback against both alternatives, rounded up to six months (minimum 12, maximum 120). No joint payback uses a clearly labeled 60-month view. Payback excludes resale.
+
+Mac EXO/Thunderbolt RDMA and two/four-node Spark scenarios include aggregated memory, per-node reserves, whole-cluster cost/power and deliberately sublinear assumed speed. Runtime compatibility is unverified, especially Kimi K3 on EXO. Memory fit alone is insufficient. Kimi K2.5 and K3 specifications and model-card scores link to primary sources. Only text inference is estimated; include reasoning tokens in output budgets where applicable.
+
+The URL contains all normalized form values and automatic/manual modes, overriding local saved preferences when opened. Copy configuration link shares these assumptions; it does not send a message. Comparison months are recomputed. URLs contain custom quotes as well as usage numbers, so share them with intended recipients.

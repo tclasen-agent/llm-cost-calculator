@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {calculate,normalize,combinedPayback} from '../src/engine.js';
 import {defaults,hardware,models} from '../src/catalog.js';
-const calc=x=>calculate({...defaults,...x});
+const calc=x=>calculate({...defaults,matchHardware:0,...x});
 test('volume and auto concurrency are separate',()=>{const r=calc({users:10,agents:2,activity:25,requests:100,days:20});assert.equal(r.requests,40000);assert.equal(r.batch,5);assert.equal(calc({activity:0}).requests,calc({activity:100}).requests);});
 test('all experts count toward memory and batching multiplies cache',()=>{const a=calc({batch:1}),b=calc({batch:4});assert.equal(a.weight,46);assert.equal(b.cache,a.cache*4);assert.equal(b.weight,a.weight);});
 test('precision changes weight requirements',()=>assert.equal(calc({bits:8}).weight,calc({bits:4}).weight*2));
