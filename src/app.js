@@ -1,7 +1,7 @@
-import {encodeState,decodeState} from './sharing.js?v=6';
-import {optimize,candidates,hardwareState,autoHorizon,taskModels,evidence} from './planner.js?v=6';
-import {models,hardware,defaults,benchmarkSource,workloads,applyWorkload} from './catalog.js?v=6';
-import {calculate,normalize,combinedPayback} from './engine.js?v=6';
+import {encodeState,decodeState} from './sharing.js?v=8';
+import {optimize,candidates,hardwareState,autoHorizon,taskModels,evidence} from './planner.js?v=8';
+import {models,hardware,defaults,benchmarkSource,workloads,applyWorkload} from './catalog.js?v=8';
+import {calculate,normalize,combinedPayback} from './engine.js?v=8';
 const $=id=>document.getElementById(id);
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 const num=(n,d=0)=>Number.isFinite(n)?n.toLocaleString('en-US',{maximumFractionDigits:d}):'—';

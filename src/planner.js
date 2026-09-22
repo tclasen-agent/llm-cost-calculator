@@ -1,7 +1,16 @@
-import {models,hardware} from './catalog.js?v=6';
-import {calculate,normalize,combinedPayback} from './engine.js?v=6';
+import {models,hardware} from './catalog.js?v=8';
+import {calculate,normalize,combinedPayback} from './engine.js?v=8';
 export const taskModels={chat:['oss120','qwen30'],research:['minimax','kimi3','kimi25','oss120'],bizdev:['oss120','minimax','kimi3'],swe:['qwen80','minimax','kimi3','kimi25','qwen30'],support:['oss120','qwen30'],writing:['oss120','minimax','kimi3'],security:['qwen80','kimi3','minimax','kimi25'],custom:['qwen80','oss120']};
 export const evidence={qwen80:'SWE-bench Verified 70.6 (vendor model card).',minimax:'SWE-bench Verified 80.2; BrowseComp 76.3 with context management (vendor report).',kimi25:'SWE-Bench Verified 76.8 (vendor harness).',kimi3:'Terminal-Bench 2.1 88.3; BrowseComp 91.2 with compaction (vendor, max effort).',oss120:'Reasoning and tool-use candidate; no directly comparable task score recorded here.',qwen30:'Efficient coding candidate; no directly comparable task score recorded here.',deepseek:'Large reasoning candidate; no directly comparable task score recorded here.'};
+// Extend task shortlists without changing existing default recommendations.
+for(const task of ['chat','support','writing','bizdev','custom'])taskModels[task].push('nemotron-lightning','nemotron-nano','nemotron-super');
+for(const task of ['research','swe','security'])taskModels[task].push('nemotron-super','nemotron-ultra','nemotron-lightning','nemotron-nano');
+Object.assign(evidence,{
+ 'nemotron-nano':'LiveCodeBench v6: 68.3 (NVIDIA BF16 model card); efficient reasoning and coding candidate.',
+ 'nemotron-lightning':'SWE-bench Verified: 51.56; PinchBench: 85.37 (NVIDIA BF16 model card).',
+ 'nemotron-super':'SWE-bench Verified: 60.47 with OpenHands (NVIDIA BF16 model-card evaluation).',
+ 'nemotron-ultra':'SWE-bench Verified: 71.9 (NVIDIA BF16 model-card evaluation); large agentic reasoning candidate.'
+});
 export function hardwareState(state,h){return normalize({...state,hardware:h.id,price:h.price,memory:h.memory,reserve:h.reserve,idle:h.idle,load:h.load,decodeOverride:0,prefillOverride:0,rental:state.matchHardware?h.rental:state.rental});}
 export function candidates(state){return hardware.map(h=>({h,r:calculate(hardwareState(state,h))})).filter(({r})=>r.fits&&r.contextOk).sort((a,b)=>{const fullA=a.r.localFraction>=.999,fullB=b.r.localFraction>=.999;return Number(fullB)-Number(fullA)||(fullA?a.h.price-b.h.price:b.r.localFraction-a.r.localFraction)||a.h.price-b.h.price;});}
 export function optimize(raw,{model=true,hardware:chooseHardware=true}={}){

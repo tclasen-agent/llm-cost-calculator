@@ -1,4 +1,4 @@
-import {models, hardware, defaults, workloads} from './catalog.js?v=6';
+import {models, hardware, defaults, workloads} from './catalog.js?v=8';
 export function normalize(raw) {
   const s={...defaults};
   s.workload=workloads.some(w=>w.id===raw.workload)?raw.workload:'custom';
