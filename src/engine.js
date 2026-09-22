@@ -76,3 +76,9 @@ export function calculate(raw) {
   const thresholdFeasible=threshold!==null&&fits&&contextOk&&threshold<=capacity;
   return {s,m,h,concurrency,batch,requests,weight,cache,required,available,fits,contextOk,decode,prefill,capacity,localRequests,localFraction,activeHours,energyKwh,powerCost,cloud,overflow,recurring,capital,payback,localTco,cloudTco,rentalMonthly,rentalTco,rentalHardware,rentalAvailable,rentalFits,rentalDecode,rentalPrefill,rentalCapacity,rentalRequests,rentalFraction,rentalOverflow,rentalCompute,rentalServingHours,paybackVsRental,threshold,thresholdFeasible,perStream:decode/batch,ttft:prefill>0?s.input*batch/prefill:Infinity,latency:secondsPerRequest*batch};
 }
+
+// Owning must recover its cost against both alternatives before the chart marks payback.
+export function combinedPayback(apiPayback, rentalPayback) {
+  return [apiPayback, rentalPayback].every(n => typeof n === 'number' && Number.isFinite(n) && n >= 0)
+    ? Math.max(apiPayback, rentalPayback) : null;
+}

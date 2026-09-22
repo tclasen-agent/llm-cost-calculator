@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {calculate,normalize} from '../src/engine.js';
+import {calculate,normalize,combinedPayback} from '../src/engine.js';
 import {defaults,hardware,models} from '../src/catalog.js';
 const calc=x=>calculate({...defaults,...x});
 test('volume and auto concurrency are separate',()=>{const r=calc({users:10,agents:2,activity:25,requests:100,days:20});assert.equal(r.requests,40000);assert.equal(r.batch,5);assert.equal(calc({activity:0}).requests,calc({activity:100}).requests);});
@@ -30,3 +30,6 @@ test('matching hardware assumptions yield equal serving capacity',()=>{const r=c
 
 test('usage presets derive monthly workload from users and business days',async()=>{const {applyWorkload}=await import('../src/catalog.js');const s=applyWorkload({...defaults,users:10},'swe');const r=calculate(s);assert.equal(r.requests,10*2*75*21.67);assert.equal(r.batch,8);assert.equal(r.s.hours,8);assert.equal(r.s.rentalHours,173.36);assert.equal(r.s.workload,'swe');});
 test('all usage templates fit their context and preserve hardware economics',async()=>{const {applyWorkload,workloads}=await import('../src/catalog.js');for(const w of workloads){const s=applyWorkload({...defaults,users:7,price:1234},w.id);assert.equal(s.users,7);assert.equal(s.price,1234);assert.ok(s.input+s.output<=s.context);assert.ok(calculate(s).contextOk);}});
+
+test('Long View uses the later break-even in either ordering',()=>{assert.equal(combinedPayback(12,24),24);assert.equal(combinedPayback(30,10),30);assert.equal(combinedPayback(0,0),0);});
+test('Long View does not claim payback against both when one never breaks even',()=>{assert.equal(combinedPayback(null,20),null);assert.equal(combinedPayback(20,null),null);assert.equal(combinedPayback(null,null),null);});

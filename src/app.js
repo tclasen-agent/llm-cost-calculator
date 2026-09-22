@@ -1,5 +1,5 @@
 import {models,hardware,defaults,benchmarkSource,workloads,applyWorkload} from './catalog.js?v=3';
-import {calculate,normalize} from './engine.js?v=3';
+import {calculate,normalize,combinedPayback} from './engine.js?v=4';
 const $=id=>document.getElementById(id);
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);
 const num=(n,d=0)=>Number.isFinite(n)?n.toLocaleString('en-US',{maximumFractionDigits:d}):'—';
@@ -19,7 +19,9 @@ let svg=`<svg viewBox="0 0 ${w} ${h}" role="img" aria-labelledby="chart-title ch
 for(let i=0;i<=4;i++){const v=max*i/4;svg+=`<line x1="${left}" y1="${y(v)}" x2="${w-right}" y2="${y(v)}" stroke="#e8ecdf" stroke-dasharray="3 4"/><text x="${left-12}" y="${y(v)+4}" text-anchor="end" fill="#8b957f" font-size="10">${money(v)}</text>`;}
 for(const t of [...new Set([0,Math.round(n/4),Math.round(n/2),Math.round(n*3/4),n])])svg+=`<text x="${x(t)}" y="${h-10}" text-anchor="middle" fill="#8b957f" font-size="10">${t===0?'Today':`Month ${t}`}</text>`;
 for(const line of lines){const points=Array.from({length:n+1},(_,t)=>`${x(t)},${y(line.f(t))}`).join(' ');svg+=`<polyline points="${points}" fill="none" stroke="${line.color}" stroke-width="2.5" ${line.color==='#aab1a3'?'stroke-dasharray="5 5"':''}/><circle cx="${x(n)}" cy="${y(line.f(n))}" r="4" fill="${line.color}"/>`;}
-if(r.payback!==null&&r.payback>0&&r.payback<=n){svg+=`<line x1="${x(r.payback)}" y1="${top}" x2="${x(r.payback)}" y2="${h-bottom}" stroke="#5c8050" stroke-dasharray="3 4"/><text x="${Math.min(x(r.payback)+7,w-120)}" y="15" fill="#547144" font-size="10">Payback · ${num(r.payback,1)} months</text>`;}
+const laterPayback=combinedPayback(r.payback,r.paybackVsRental);
+if(laterPayback!==null&&laterPayback<=n){svg+=`<line data-payback-month="${laterPayback}" x1="${x(laterPayback)}" y1="${top}" x2="${x(laterPayback)}" y2="${h-bottom}" stroke="#5c8050" stroke-dasharray="3 4"/><text x="${Math.min(x(laterPayback)+7,w-200)}" y="15" fill="#547144" font-size="10">Payback vs both · ${num(laterPayback,1)} months</text>`;}
+$('payback-note').textContent=laterPayback===null?'No sustained cash payback against both alternatives with these assumptions.':laterPayback>n?`Payback against both alternatives occurs at ${num(laterPayback,1)} months, beyond this ${n}-month view.`:`The marker shows the later break-even: ${num(laterPayback,1)} months, against ${r.payback>=r.paybackVsRental?'the model API':'rented hardware'}. Owning has paid back against both alternatives at this point. Cash payback excludes resale.`;
 $('chart').innerHTML=svg+'</svg>'; $('horizon').textContent=`${n} months`;
 }
 function render(){const r=calculate(state); $('workload-estimate').textContent=`Estimated ${num(r.requests)} calls/month · ${num(r.batch)} concurrent sequences · ${num(r.requests*state.input/1e6,1)}M input / ${num(r.requests*state.output/1e6,1)}M output tokens/month.`;
