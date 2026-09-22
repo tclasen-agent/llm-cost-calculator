@@ -17,3 +17,20 @@ test('lifecycle flags both refresh windows and memory pressure independently',as
 test('lifecycle boundary is strictly after the review window',async()=>{const {lifecycleRisk}=await import('../src/planner.js');const r=calculate({...defaults,modelRefresh:3,hardwareRefresh:12});assert.equal(lifecycleRisk({...r,payback:3,paybackVsRental:2}).warning,false);const medium=lifecycleRisk({...r,payback:6,paybackVsRental:4});assert.equal(medium.modelRisk,true);assert.equal(medium.hardwareRisk,false);assert.equal(lifecycleRisk({...r,payback:null}).warning,true);assert.equal(lifecycleRisk({...r,requests:0}).warning,false);assert.equal(lifecycleRisk({...r,fits:false}).warning,false);});
 test('lifecycle defaults, overrides and memory stress survive shared URLs',()=>{const s=normalize({...defaults,modelRefresh:6,hardwareRefresh:24,nextModelGrowth:1.5});const copy=decodeState(encodeState(s));assert.equal(copy.modelRefresh,6);assert.equal(copy.hardwareRefresh,24);assert.equal(copy.nextModelGrowth,1.5);const bounded=normalize({...s,modelRefresh:0,hardwareRefresh:Infinity,nextModelGrowth:0});assert.equal(bounded.modelRefresh,1);assert.equal(bounded.hardwareRefresh,defaults.hardwareRefresh);assert.equal(bounded.nextModelGrowth,1);});
 test('cash remaining at first lifecycle review excludes resale',async()=>{const {lifecycleRisk}=await import('../src/planner.js');const r=calculate(defaults);const risk=lifecycleRisk({...r,capital:1000,cloud:150,recurring:50,rentalMonthly:250,s:{...r.s,modelRefresh:3,hardwareRefresh:12,rentalSetup:100,resale:90}});assert.equal(risk.unrecoveredVsApi,700);assert.equal(risk.unrecoveredVsRent,300);});
+
+test('factory targets continuous high-volume autonomous teams and preserves capacity limits',()=>{const s=applyWorkload({...defaults,users:1},'swe-factory');const r=calculate(s);assert.equal(s.scaleMode,1);assert.equal(s.days,30);assert.equal(s.hours,24);assert.equal(s.rentalHours,720);assert.equal(s.efficiency,95);assert.equal(s.rentalEfficiency,95);assert.equal(r.batch,4);assert.equal(r.requests,172800);assert.equal(r.requests*(s.input+s.output),5529600000);assert.ok(r.contextOk);assert.ok(r.localRequests<=r.capacity);assert.ok(r.overflow>0);assert.equal(r.capacity,r.rentalCapacity);});
+test('switching from factory restores AI-assisted business schedule and concurrency',()=>{const s=applyWorkload(applyWorkload({...defaults,users:3},'swe-factory'),'swe');assert.equal(s.scaleMode,0);assert.equal(s.days,21.67);assert.equal(s.hours,8);assert.equal(s.rentalHours,173.36);assert.equal(s.activity,40);assert.equal(s.efficiency,70);assert.equal(s.users,3);});
+test('factory and custom autonomous scale survive shared URLs',()=>{const s=optimize(applyWorkload({...defaults,users:2},'swe-factory'));const linked=decodeState(encodeState(s));assert.equal(linked.workload,'swe-factory');assert.equal(linked.scaleMode,1);assert.equal(linked.rentalHours,720);assert.equal(linked.users,2);assert.equal(normalize({...linked,workload:'custom'}).scaleMode,1);assert.ok(calculate(linked).fits);});
+test('complete system presets preserve GPU memory limits and matched rental capacity',()=>{
+ for(const h of hardware){
+  assert.ok(h.package && h.price>0 && h.rental>0,h.id);
+  const s=hardwareState({...defaults,matchHardware:1,rentalHours:defaults.days*defaults.hours},h);
+  const r=calculate(s);
+  assert.equal(r.capacity,r.rentalCapacity,h.id);
+ }
+ for(const [id,available] of [['strix-framework-64',48],['strix-framework-128',96],['strix-hp-128',96],['5080-pc',14],['5090-single',29]]){
+  const h=hardware.find(h=>h.id===id);
+  assert.equal(calculate(hardwareState(defaults,h)).available,available);
+  assert.equal(decodeState(encodeState(hardwareState(defaults,h))).hardware,id);
+ }
+});

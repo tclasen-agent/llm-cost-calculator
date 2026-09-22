@@ -1,7 +1,8 @@
-import {models,hardware} from './catalog.js?v=11';
-import {calculate,normalize,combinedPayback} from './engine.js?v=11';
+import {models,hardware} from './catalog.js?v=12';
+import {calculate,normalize,combinedPayback} from './engine.js?v=12';
 export const taskModels={chat:['oss120','qwen30'],research:['minimax','kimi3','kimi25','oss120'],bizdev:['oss120','minimax','kimi3'],swe:['qwen80','minimax','kimi3','kimi25','qwen30'],support:['oss120','qwen30'],writing:['oss120','minimax','kimi3'],security:['qwen80','kimi3','minimax','kimi25'],custom:['qwen80','oss120']};
 export const evidence={qwen80:'SWE-bench Verified 70.6 (vendor model card).',minimax:'SWE-bench Verified 80.2; BrowseComp 76.3 with context management (vendor report).',kimi25:'SWE-Bench Verified 76.8 (vendor harness).',kimi3:'Terminal-Bench 2.1 88.3; BrowseComp 91.2 with compaction (vendor, max effort).',oss120:'Reasoning and tool-use candidate; no directly comparable task score recorded here.',qwen30:'Efficient coding candidate; no directly comparable task score recorded here.',deepseek:'Large reasoning candidate; no directly comparable task score recorded here.'};
+taskModels['swe-factory']=['minimax','kimi3','kimi25','qwen80','nemotron-ultra','nemotron-super','nemotron-lightning'];
 // Extend task shortlists without changing existing default recommendations.
 for(const task of ['chat','support','writing','bizdev','custom'])taskModels[task].push('nemotron-lightning','nemotron-nano','nemotron-super');
 for(const task of ['research','swe','security'])taskModels[task].push('nemotron-super','nemotron-ultra','nemotron-lightning','nemotron-nano');
