@@ -4,17 +4,17 @@ import {comparisonData,renderComparison} from '../src/comparison.js';
 import {calculate} from '../src/engine.js';
 import {planning} from '../src/planning.js';
 import {defaults} from '../src/catalog.js';
-test('visible cost breakdown reconciles to engine totals for all paths and overflow',()=>{
+test('visible cost breakdown reconciles to engine totals for all viable dedicated paths',()=>{
  for(const raw of [defaults,{...defaults,workload:'swe-factory',users:20,apiExtras:40,overrides:'apiExtras'},{...defaults,model:'kimi3',hardware:'hp-2000',autoHardware:0}]){
  const r=calculate(planning(raw)),cards=comparisonData(r);
- for(const c of cards){assert.ok(Math.abs(c.costs.reduce((n,[,v])=>n+v,0)-c.monthly)<1e-7);assert.equal(c.total,r.last[c.key]);assert.equal(c.upfront,r.rows[0][c.key]);}
+ for(const c of cards){if(c.monthly===null){assert.equal(c.total,null);continue;}assert.ok(Math.abs(c.costs.reduce((n,[,v])=>n+v,0)-c.monthly)<1e-7);assert.equal(c.total,r.last[c.key]);assert.equal(c.upfront,r.rows[0][c.key]);}
  }
 });
-test('coverage follows actual served demand and preserves non-fitting overflow',()=>{
- const r=calculate(planning({...defaults,model:'kimi3',hardware:'hp-2000',autoHardware:0}));const [buy]=comparisonData(r);assert.equal(buy.coverage,0);assert.equal(buy.capacity,0);assert.equal(r.first.localOverflow,r.first.apiUsage);
+test('coverage follows actual served demand and flags incompatible hardware without fallback',()=>{
+ const r=calculate(planning({...defaults,model:'kimi3',hardware:'hp-2000',autoHardware:0}));const [buy]=comparisonData(r);assert.equal(buy.coverage,null);assert.equal(buy.capacity,null);assert.equal(buy.monthly,null);assert.equal(r.first.localOverflow,0);
 });
 test('decision details remain visible without expanding technical breakdown',()=>{
  const html=renderComparison(calculate(planning(defaults)));
- for(const label of ['Upfront payment','month total','IT electricity','Cooling electricity','Reserved cloud compute','Input tokens','Output tokens','Work sent to API','Versus API','Versus renting','Rental price source','API price source'])assert.ok(html.includes(label));
+ for(const label of ['Upfront cost','month total','IT electricity','Cooling electricity','Reserved cloud compute','Input tokens','Output tokens','Systems / instances needed','Versus API','Versus renting','Rental price source','API price source'])assert.ok(html.includes(label));
  assert.equal((html.match(/aria-label=/g)||[]).length,3);
 });

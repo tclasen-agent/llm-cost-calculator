@@ -15,13 +15,13 @@ Published catalog prices/specifications and actual rental/API rates retain dated
 
 ## Decision panels
 
-Buy, rent and API panels show comparable monthly operating costs, upfront cash and the same automatic horizon total. Visible breakdowns reconcile with the calculator, including electricity, cooling, support, reserved compute, token charges and overflow fees. Hardware panels show estimated capacity and the fraction served through API; the buy panel shows separate sustained payback against renting and API. Price sources and assumptions remain labeled.
+Buy, rent and API panels show comparable monthly operating costs, upfront cash and the same automatic horizon total. Visible breakdowns reconcile with the calculator, including electricity, cooling, support, reserved compute and token charges. Hardware panels show full-demand capacity and the number of systems required; the buy panel shows separate sustained payback against renting and API. Price sources and assumptions remain labeled.
 
 ## Workflow
 
 1. Select task and people/teams. Task templates fill calls, input/output tokens and concurrency. Assisted tasks use 9–5 weekdays; factory teams use 24/7 and an aggressive 2,880 calls/team/day default. These are assumptions, not observed industry averages.
 2. Choose a model or accept the task suggestion.
-3. Accept the least-cost memory-fit purchase allowance and an actual memory-fit rental, or select other systems. Small systems that are estimated not to fit route all work to API, rather than showing missing values. Memory fit is not a runtime compatibility guarantee.
+3. Accept the least-cost memory-fit purchase allowance and an actual memory-fit rental, or select other systems. Systems estimated not to fit are explicitly unavailable; adding replicas does not pool memory. Memory fit is not a runtime compatibility guarantee.
 
 Purchase prices without published totals receive editable whole-system allowances. Default throughput is a coarse proxy (unified memory 30 output-equivalent tokens/s, workstation/rental GPU 100, square-root node and concurrency scaling capped at 4× concurrency benefit; input tokens weighted at one tenth of output). Memory estimates assume 4-bit deployment and explicit headroom. These are deliberately transparent assumptions, not vendor measurements.
 
@@ -56,3 +56,15 @@ npm start
 ```
 
 No dependencies or API keys are needed at runtime. The site uses a dated static catalog, not a background price feed. Source updates require review and a new deployment. GitHub Actions runs tests, builds `dist/`, and deploys GitHub Pages.
+
+## Exclusive paths, normalized costs and phase performance
+
+Buy and rent scale whole system/instance quantities upward to cover all demand; neither includes API requests. Capacity scaling assumes independent serving replicas and linear replication. Setup/support/storage allowances are per configured unit; all electricity/cooling usage is aggregated before tariff calculation. A memory-incompatible or zero-throughput path is unavailable, not supplemented with API.
+
+All three cards show upfront cash, first-month recurring operations, and amortized all-in monthly cost. The latter divides cumulative spend by a common comparison period: joint break-even when it exists, otherwise assumed hardware useful life (default 36 months, adjustable). Fractional months interpolate cumulative cash flows. Break-even is not a prediction of physical useful life. Amortization periods are capped at the 120-month calculation window.
+
+Prefill and decode speeds are separately editable per configured system at selected concurrency. Request service time = input tokens / prefill tokens-per-second + output tokens / decode tokens-per-second. Requests/hour = 3600 / service time unless overridden by a benchmark. No overlap, queueing, network latency or batching efficiency is additionally modeled. Cards compare hardware phase-speed ratio with task token ratio and show phase-time shares plus fleet token demand. Default speed proxies are not benchmark results.
+
+## Frontier additions (2026-09-22)
+
+Added DeepSeek V4.1 Flash, GLM-5.3, GLM-5.3 Flash, Qwen3.8 2.4T A95B, Qwen3.8 27B and MiniMax M2.7. Vendor model cards provide evaluation evidence; provider-specific nonpromotional endpoint prices are captured in api-snapshot.json. Task shortlists are editorial, with office work/instruction-following used as explicit proxies for business, support and writing. Vendor benchmark settings differ; no universal cross-model ranking is claimed. Memory planning allowances remain assumptions. The largest Qwen may exceed every catalog rental's usable-memory budget; it is flagged rather than assigned a fictional rental.

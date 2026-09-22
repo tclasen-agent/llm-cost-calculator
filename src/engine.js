@@ -1,5 +1,5 @@
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=15';
-import {energyCost} from './energy.js?v=15';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=16';
+import {energyCost} from './energy.js?v=16';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
@@ -60,40 +60,57 @@ export function calculate(raw){
  if(!rentalReady)issues.push('Rental-instance benchmark, runtime/precision, usable memory and peak memory.');
  const costsKnown=['localSetup','rentalSetup','localExtras','rentalExtras','apiExtras'].every(k=>s[k]!==null)&&!!s.costSource;
  if(!costsKnown)issues.push('Installation, support, fees and taxes from your quotes (enter 0 only if confirmed).');
+ const demandRph=s.users*s.calls/(s.workload==='swe-factory'?24:8);
+ const localUnits=localReady&&s.localRph>0?Math.max(1,Math.ceil(demandRph/s.localRph)):null;
+ const rentalUnits=rentalReady&&s.rentalRph>0?Math.max(1,Math.ceil(demandRph/s.rentalRph)):null;
+ if(localUnits===null)issues.push('Purchase configuration cannot serve this model; choose compatible hardware. No API fallback is used.');
+ if(rentalUnits===null)issues.push('Rental configuration cannot serve this model; choose a compatible instance. No API fallback is used.');
+ const energyInputs={...s,itKwh:s.itKwh===null?null:s.itKwh*(localUnits??1),coolingKwh:s.coolingKwh===null?null:s.coolingKwh*(localUnits??1),peakKw:s.peakKw===null?null:s.peakKw+(localUnits===null?0:Math.max(0,localUnits-1)*((s.itKwh??0)/Math.max(1,schedule(s.start,s.workload==='swe-factory').hours)))};
  const firstSchedule=schedule(s.start,s.workload==='swe-factory');
- const power=energyCost(s,firstSchedule.month);
+ const power=energyCost(energyInputs,firstSchedule.month);
  if(!power)issues.push('Measured IT/cooling energy and confirmed Dominion tariff or bill rate.');
  const changed=s.purchaseDiscount>0||s.apiDecline>0||s.rentalDecline>0;
  if(changed&&!s.priceEvidence)issues.push('Evidence for the entered discount or future contractual price changes.');
  const priceValid=!changed||!!s.priceEvidence;
- const capital=priceKnown&&s.localSetup!==null&&priceValid?purchase*(1-s.purchaseDiscount/100)+s.localSetup:null;
+ const capital=priceKnown&&s.localSetup!==null&&priceValid?localUnits===null?null:(purchase*(1-s.purchaseDiscount/100)+s.localSetup)*localUnits:null;
  const apiReady=usage&&context&&priceValid&&s.apiExtras!==null&&!!s.costSource;
- const buyReady=apiReady&&localReady&&capital!==null&&power!==null&&s.localExtras!==null;
- const rentReady=apiReady&&rentalReady&&s.rentalSetup!==null&&s.rentalExtras!==null;
- const ready=buyReady&&rentReady&&costsKnown&&priceValid;
- let buy=buyReady?capital:null,rent=rentReady?s.rentalSetup:null,api=apiReady?0:null;
+ const buyReady=usage&&priceValid&&localReady&&localUnits!==null&&capital!==null&&power!==null&&s.localExtras!==null&&!!s.costSource;
+ const rentReady=usage&&priceValid&&rentalReady&&rentalUnits!==null&&s.rentalSetup!==null&&s.rentalExtras!==null&&!!s.costSource;
+ const ready=buyReady&&rentReady&&apiReady&&costsKnown&&priceValid;
+ let buy=buyReady?capital:null,rent=rentReady?s.rentalSetup*rentalUnits:null,api=apiReady?0:null;
  const rows=[{month:0,buy,rent,api}];
  const unit=(s.input*m.input+s.output*m.output)/1e6;
  for(let i=0;i<120;i++){
   const cal=schedule(s.start,s.workload==='swe-factory',i),requests=usage?s.users*s.calls*cal.days:null;
   const apiFactor=priceValid?(1-s.apiDecline/100)**(i/12):1,rentFactor=priceValid?(1-s.rentalDecline/100)**(i/12):1;
   const apiUsage=usage&&context?requests*unit*apiFactor:null;
-  const localCapacity=localReady?s.localRph*cal.hours:null,rentalCapacity=rentalReady?s.rentalRph*cal.hours:null;
-  const localOverflow=buyReady?Math.max(0,requests-localCapacity)*unit*apiFactor:null;
-  const rentalOverflow=rentReady?Math.max(0,requests-rentalCapacity)*unit*apiFactor:null;
+  const localCapacity=buyReady?s.localRph*cal.hours*localUnits:null,rentalCapacity=rentReady?s.rentalRph*cal.hours*rentalUnits:null;
+  const localOverflow=0;
+  const rentalOverflow=0;
   // Measured energy is a monthly budget for the selected schedule. Never infer wall power from TDP.
-  const energy=energyCost(s,cal.month);
-  const buyMonthly=buyReady?energy.total+s.localExtras+localOverflow+(localOverflow>0?s.apiExtras:0):null;
-  const compute=r.hourly*cal.hours*rentFactor;
-  const rentMonthly=rentReady?compute+s.rentalExtras+rentalOverflow+(rentalOverflow>0?s.apiExtras:0):null;
+  const energy=energyCost(energyInputs,cal.month);
+  const buyMonthly=buyReady?energy.total+s.localExtras*localUnits:null;
+  const compute=r.hourly*cal.hours*rentFactor*(rentalUnits??1);
+  const rentMonthly=rentReady?compute+s.rentalExtras*rentalUnits:null;
   const apiMonthly=apiReady?apiUsage+s.apiExtras:null;
   if(buy!==null)buy+=buyMonthly;if(rent!==null)rent+=rentMonthly;if(api!==null)api+=apiMonthly;
   rows.push({month:i+1,buy,rent,api,buyMonthly,rentMonthly,apiMonthly,compute,apiUsage,localOverflow,rentalOverflow,requests,localCapacity,rentalCapacity,energy,hours:cal.hours});
  }
- const paybackApi=ready?sustainedPayback(rows,'api'):null,paybackRent=ready?sustainedPayback(rows,'rent'):null;
+ const paybackApi=buyReady&&apiReady?sustainedPayback(rows,'api'):null,paybackRent=buyReady&&rentReady?sustainedPayback(rows,'rent'):null;
  const payback=paybackApi!==null&&paybackRent!==null?Math.max(paybackApi,paybackRent):null;
  const months=payback!==null?Math.min(120,Math.max(12,Math.ceil(payback*1.25/6)*6)):60;
  const review=[s.modelRefresh,s.hardwareRefresh].filter(x=>x!==null&&x>0);
  const lifecycle=ready&&review.length>0&&!!s.lifecycleSource&&(payback===null||payback>Math.min(...review));
- return {s,m,h,r,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
+ const amortizationMonths=payback!==null&&payback>0?payback:(s.hardwareRefresh>0?s.hardwareRefresh:36);
+ const period=Math.min(120,amortizationMonths),lo=Math.floor(period),hi=Math.ceil(period);
+ const amortized={};
+ for(const key of ['buy','rent','api']){const a=rows[lo][key],b=rows[hi][key];amortized[key]=a===null||b===null?null:(a+(b-a)*(period-lo))/period;}
+ const phases={};
+ for(const [key,prefix,units] of [['buy','local',localUnits],['rent','rental',rentalUnits]]){
+  const prefill=s[prefix+'Prefill'],decode=s[prefix+'Decode'];
+  const prefillSeconds=prefill>0?s.input/prefill:null,decodeSeconds=decode>0?s.output/decode:null;
+  const total=prefillSeconds!==null&&decodeSeconds!==null?prefillSeconds+decodeSeconds:null;
+  phases[key]={prefill,decode,units,prefillSeconds,decodeSeconds,prefillShare:total>0?prefillSeconds/total:null,decodeShare:total>0?decodeSeconds/total:null,requiredPrefill:demandRph*s.input/3600,requiredDecode:demandRph*s.output/3600,ratio:s.output>0?s.input/s.output:null};
+ }
+ return {phases,amortizationMonths:period,amortizationBasis:payback!==null&&payback>0?'break-even period':'assumed hardware life (no joint break-even)',amortized,s,m,h,r,localUnits,rentalUnits,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
 }

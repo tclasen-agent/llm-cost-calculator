@@ -1,6 +1,6 @@
-import {defaults,hardware,rentals} from './catalog.js?v=15';
-import {gs1Variable} from './energy.js?v=15';
-import {normalize,schedule} from './engine.js?v=15';
+import {defaults,hardware,rentals,models} from './catalog.js?v=16';
+import {gs1Variable} from './energy.js?v=16';
+import {normalize,schedule} from './engine.js?v=16';
 // Deliberately editable planning assumptions, not measurements or vendor benchmarks.
 export const profiles={chat:[30,1500,500,.1],research:[40,12000,2500,.2],bizdev:[35,6000,1500,.15],swe:[75,12000,2500,.4],'swe-factory':[2880,24000,4000,8],support:[100,3000,700,.3],writing:[35,4000,2000,.15],security:[60,16000,3000,.4]};
 const modelGB={'nemotron-lightning':24,kimi3:700,'nemotron-ultra':360,'nemotron-super':90,minimax:160,qwen80:60,kimi25:420,'nemotron-nano':24,deepseek:440,oss120:85,qwen30:24};
@@ -12,7 +12,7 @@ export function planning(raw={}){
  s.users=Math.max(1,s.users||1);
  set('calls',calls);set('input',input);set('output',output);set('concurrency',Math.max(1,Math.ceil(s.users*activity)));
  set('usageSource','Planning assumption: task template; replace with pilot usage.');
- const required=modelGB[s.model]+Math.max(0,s.concurrency-1)*.5;
+ const required=(models.find(m=>m.id===s.model).planningMemoryGB??modelGB[s.model])+Math.max(0,s.concurrency-1)*.5;
  if(s.autoHardware){const candidates=hardware.filter(h=>(h.gpuCeiling??h.memory)*.85>=required);s.hardware=(candidates.sort((a,b)=>(a.price??prices[a.id])-(b.price??prices[b.id]))[0]??hardware.at(-1)).id;}
  const h=hardware.find(h=>h.id===s.hardware);
  if(s.autoRental){s.rental=(rentals.filter(r=>r.memory*.9>=required).sort((a,b)=>a.hourly-b.hourly)[0]??rentals.at(-1)).id;}
@@ -25,9 +25,11 @@ export function planning(raw={}){
  const rentTps=100*Math.sqrt(r.gpus)*Math.min(4,Math.sqrt(s.concurrency));
  set('localAvailable',available);set('rentalAvailable',rv);
  set('localMemory',Math.min(required,available));set('rentalMemory',Math.min(required,rv));
- set('localRph',localFits?localTps*3600/(s.output+s.input/10):0);
- set('rentalRph',rentalFits?rentTps*3600/(s.output+s.input/10):0);
- for(const prefix of ['local','rental']){set(prefix+'Runtime','Planning assumption: 4-bit runtime; validate quality and deployment support');set(prefix+'Evidence','Planning proxy, not a benchmark. A non-fitting model sends all work to API.');}
+ set('localPrefill',localTps*10);set('localDecode',localTps);set('rentalPrefill',rentTps*10);set('rentalDecode',rentTps);
+ const rate=(pre,dec)=>{if((s.input>0&&pre<=0)||(s.output>0&&dec<=0))return 0;const seconds=(s.input>0?s.input/pre:0)+(s.output>0?s.output/dec:0);return seconds>0?3600/seconds:3600;};
+ set('localRph',localFits?rate(s.localPrefill,s.localDecode):0);
+ set('rentalRph',rentalFits?rate(s.rentalPrefill,s.rentalDecode):0);
+ for(const prefix of ['local','rental']){set(prefix+'Runtime','Planning assumption: 4-bit runtime; validate quality and deployment support');set(prefix+'Evidence','Planning proxy, not a benchmark. A non-fitting model makes that hardware path unavailable; no API fallback.');}
  set('quote',h.price??prices[h.id]);set('quoteSource',h.price?`Published catalog price: ${h.priceSource}`:'Planning allowance for the whole system; replace with a vendor quote.');set('buildDetails',h.package+' Planning allowance includes a complete host and cluster networking; obtain an exact configuration.');
  set('localSetup',Math.round(s.quote*.08));set('localExtras',20);set('rentalSetup',0);set('rentalExtras',50);set('apiExtras',0);
  set('costSource','Planning allowances: 8% purchase extras, $20/month local support, $50/month rental extras, $0 API extras. Not quotes.');
@@ -46,6 +48,6 @@ export function assumptionNotes(s){return [
  'Memory fit and processing speeds are rough 4-bit planning proxies. Validate runtime support, quality and performance before purchase.',
  'Unknown equipment prices use whole-system budget allowances. Published catalog prices and actual rental/API rates retain their source links.',
  'Power, cooling, fees and review intervals are planning assumptions. Advanced fields let your team replace them.',
- ...(s.localRph===0?['This purchase configuration is estimated not to fit the model; all requests are costed through the API.']:[]),
- ...(s.rentalRph===0?['This rental configuration is estimated not to fit the model; all requests are costed through the API.']:[])
+ ...(s.localRph===0?['This purchase configuration is estimated not to fit the model; choose compatible hardware to enable the purchase path.']:[]),
+ ...(s.rentalRph===0?['This rental configuration is estimated not to fit the model; choose a compatible instance to enable the rental path.']:[])
  ];}

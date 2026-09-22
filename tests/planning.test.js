@@ -8,12 +8,12 @@ test('every task/model/purchase selection gives a complete planning comparison',
  for(const [workload] of workloads)for(const m of models)for(const h of hardware){
  const s=planning({...defaults,workload,model:m.id,hardware:h.id,autoHardware:0});
  assert.ok(Object.entries(s).every(([k,v])=>k==='overrides'||(v!==null&&v!=='')),`${workload}/${m.id}/${h.id}: empty field`);
- const r=calculate(s);assert.ok(r.ready,`${workload}/${m.id}/${h.id}: ${r.issues}`);
- assert.ok(['buy','rent','api'].every(k=>Number.isFinite(r.last[k])));
+ const r=calculate(s);assert.equal(r.buyReady,s.localRph>0);assert.equal(r.rentReady,s.rentalRph>0);assert.ok(r.apiReady);
+ assert.equal(r.first.localOverflow,0);assert.equal(r.first.rentalOverflow,0);
  }
 });
 test('all actual rental choices produce a complete comparison, including non-fitting choices',()=>{
- for(const r of rentals){const s=planning({...defaults,model:'kimi3',rental:r.id,autoRental:0});assert.equal(calculate(s).ready,true);if(r.memory*.9<700)assert.equal(s.rentalRph,0);}
+ for(const r of rentals){const s=planning({...defaults,model:'kimi3',rental:r.id,autoRental:0});assert.equal(calculate(s).rentReady,s.rentalRph>0);if(r.memory*.9<700)assert.equal(s.rentalRph,0);}
 });
 test('scale changes refresh generated usage, capacity and energy without leaving blanks',()=>{
  const a=planning(defaults),b=planning({...a,users:100,workload:'swe-factory'});
