@@ -20,7 +20,7 @@ Serve `dist/` with any static host. Relative asset paths also work beneath a rep
 - Per-call input/output volume, serving window, context, quantization and memory estimation.
 - Mac Studio M5 Ultra 256/512 GB, DGX Spark, dual RTX 4090/5090, dual RTX 6000 Ada, RTX PRO 6000 Blackwell, dual A100 and dual H100.
 - Qwen3-Coder 30B, Qwen3-Coder-Next, gpt-oss-120b, MiniMax M2.5 and DeepSeek V3.2. These are a curated SWE/reasoning shortlist suitable for evaluating security-code analysis; no cyber benchmark ranking or equal task quality is implied.
-- Cloud API input/output/cache pricing; separate cloud GPU rental budget.
+- Cloud API input/output/cache pricing; capacity-aware cloud hardware rental comparison.
 - Electricity, cooling, maintenance/admin, setup, horizon and terminal resale.
 - Capacity-limited local serving plus priced API overflow, cumulative cost graph, cash payback and capacity-checked volume threshold.
 - Editable performance assumptions, local browser persistence, JSON scenario export and reset.
@@ -46,7 +46,9 @@ Hardware sources: [Apple specs](https://www.apple.com/mac-studio/specs/), [DGX S
 7. Energy kWh = [idle W × 720 + (load − idle W) × active hours] / 1000 × cooling multiplier. Active hours = served requests × service seconds / 3600. Idle draw continues outside the serving window.
 8. Local monthly expense = energy + maintenance + API overflow. Cash payback = (purchase + setup) / (API-only monthly cost − local monthly expense), if the denominator is positive. A result beyond the horizon is labeled. Resale does not affect cash payback.
 9. Local horizon TCO = purchase + setup + monthly expense × months − terminal resale. Resale appears only in the final chart month. Volume threshold amortizes net capital over the horizon and accounts for idle/maintenance and incremental energy. Thresholds beyond local capacity are not presented as achievable.
-10. Rental cost = full-configuration hourly price × billed hours + storage/egress. This is a budget reference only: the app does not establish rented capacity, memory, throughput or equivalence. Use API comparison for the capacity-constrained break-even result.
+10. Rental runs the same model, precision, context, batch and token workload on an independently selected machine. Its own memory, reserve, utilization, throughput overrides and batch scaling determine capacity. Serving hours = min(workload window, provisioned hours), assuming overlapping schedules. All provisioned hours are billed, including idle time. Monthly rental = hourly whole-system rate × provisioned hours + storage/egress/admin + API overflow. Rental TCO adds one-time setup. Rates are editable examples, not current provider quotes; rented hardware availability must be verified.
+11. Buy-vs-rent cash payback = max(0, purchase-path upfront minus rental setup) / (rental recurring minus purchase recurring), only when purchase recurring is lower. This is sustained payback, excludes resale, and may fall outside the horizon. A lower upfront purchase cost with higher monthly costs has no sustained payback in this metric; compare the horizon totals instead.
+12. The top cards, comparison matrix and chart show all three complete-workload costs. Both hardware paths explicitly include same-model API overflow. The hardware table varies the purchased machine while holding the rented configuration and API rates constant. API throughput/rate limits and provider precision parity are not modeled.
 
 Memory fit does not guarantee runtime/quantization support. Multi-GPU configurations require model sharding; VRAM is not magically shared. No CPU offload, redundant failover, financing, tax treatment, hardware replacement or workload growth is modeled. Task success, latency requirements and provider rate limits must be evaluated independently. A model that costs less per token can cost more per successful task.
 
