@@ -84,3 +84,9 @@ The URL contains all normalized form values and automatic/manual modes, overridi
 
 
 Nemotron catalog: Nemotron 3 Nano, Super and Ultra, plus Nemotron 3.5 Lightning. Size estimates use approximately 31.6B / 123.6B / 560.5B total parameters rather than rounded marketing names, per [NVIDIA's family specifications](https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/llm-info/). Each model links its NVIDIA model card and task evidence. BF16 benchmark scores are not claims about generic Q4 quality. Hybrid Mamba state, NVFP4 overhead, MTP and speculative decoding are not modeled precisely; memory fit does not verify runtime compatibility or cloud/API availability.
+
+
+## Lifecycle risk overlay
+Purchase recommendations turn amber if sustained cash payback against both alternatives exceeds either review window. Defaults: models every 3 months, hardware every 12 months. These are editable planning policies, not a universal standard or predicted release date. Recent NVIDIA Nano (December 2025), Super (March 2026), and Ultra (June 2026) releases motivate a quarterly model review; different tiers do not prove a quarterly replacement cycle. NVIDIA's stated annual AI-supercomputer cadence motivates the hardware review, not a Mac/RTX/Spark-specific schedule. Source links are included in the warning.
+
+A separate, explicitly hypothetical 2× model-weight stress test holds cache, context, precision and concurrency fixed. Model memory and inference costs do not necessarily grow with training compute or task quality. The overlay shows memory headroom and unrecovered cash cost at the first review, excluding resale. It does not invent future models or replacement prices, and does not change the fixed-configuration cost curves. All lifecycle inputs persist in share links and reset to defaults.

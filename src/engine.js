@@ -1,4 +1,4 @@
-import {models, hardware, defaults, workloads} from './catalog.js?v=8';
+import {models, hardware, defaults, workloads} from './catalog.js?v=9';
 export function normalize(raw) {
   const s={...defaults};
   s.workload=workloads.some(w=>w.id===raw.workload)?raw.workload:'custom';
@@ -20,6 +20,8 @@ export function normalize(raw) {
     s.rentalHardware=s.hardware;
     for(const [a,b] of [['rentalMemory','memory'],['rentalReserve','reserve'],['rentalEfficiency','efficiency'],['rentalSpeed','speed'],['rentalDecodeOverride','decodeOverride'],['rentalPrefillOverride','prefillOverride'],['rentalBatchExponent','batchExponent']])s[a]=s[b];
   }
+  for(const k of ['modelRefresh','hardwareRefresh'])s[k]=Math.max(1,Math.min(120,s[k]));
+  s.nextModelGrowth=Math.max(1,Math.min(10,s.nextModelGrowth));
   return s;
 }
 export function calculate(raw) {
