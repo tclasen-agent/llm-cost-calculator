@@ -15,6 +15,6 @@ test('coverage follows actual served demand and flags incompatible hardware with
 });
 test('decision details remain visible without expanding technical breakdown',()=>{
  const html=renderComparison(calculate(planning(defaults)));
- for(const label of ['Upfront cost','month total','IT electricity','Cooling electricity','Reserved cloud compute','Input tokens','Output tokens','Systems / instances needed','Versus API','Versus renting','Rental price source','API price source'])assert.ok(html.includes(label));
+ for(const label of ['Upfront cost','Cost by refresh','IT electricity','Cooling electricity','Reserved cloud compute','Input tokens','Output tokens','Systems / instances needed','Versus API','Versus renting','Rental price source','API price source'])assert.ok(html.includes(label));
  assert.equal((html.match(/aria-label=/g)||[]).length,3);
 });

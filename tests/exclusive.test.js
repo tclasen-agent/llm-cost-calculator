@@ -16,7 +16,7 @@ test('amortized values share one period and reconcile to cumulative cash flows',
  for(const workload of ['swe','swe-factory']){
  const r=calculate(planning({...defaults,workload,users:10})),t=r.amortizationMonths,lo=Math.floor(t),hi=Math.ceil(t);
  for(const k of ['buy','rent','api'])assert.ok(Math.abs(r.amortized[k]*t-(r.rows[lo][k]+(r.rows[hi][k]-r.rows[lo][k])*(t-lo)))<1e-6);
- if(r.payback!==null)assert.equal(t,r.payback);else assert.equal(t,36);
+ assert.equal(t,r.usefulMonths);assert.equal(t,3);
  }
 });
 test('new frontier models have sourced endpoints, memory assumptions and task coverage',()=>{

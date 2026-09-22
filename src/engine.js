@@ -1,5 +1,5 @@
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=17';
-import {energyCost} from './energy.js?v=17';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=18';
+import {energyCost} from './energy.js?v=18';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
@@ -96,15 +96,18 @@ export function calculate(raw){
   if(buy!==null)buy+=buyMonthly;if(rent!==null)rent+=rentMonthly;if(api!==null)api+=apiMonthly;
   rows.push({month:i+1,buy,rent,api,buyMonthly,rentMonthly,apiMonthly,compute,apiUsage,localOverflow,rentalOverflow,requests,localCapacity,rentalCapacity,energy,hours:cal.hours});
  }
- const paybackApi=buyReady&&apiReady?sustainedPayback(rows,'api'):null,paybackRent=buyReady&&rentReady?sustainedPayback(rows,'rent'):null;
+ const usefulMonths=Math.min(120,Math.max(1,Math.min(s.modelRefresh>0?s.modelRefresh:3,s.hardwareRefresh>0?s.hardwareRefresh:6)));
+ const at=(key,t)=>{const lo=Math.floor(t),hi=Math.ceil(t),a=rows[lo][key],b=rows[hi][key];return a===null||b===null?null:a+(b-a)*(t-lo);};
+ const windowRows=rows.slice(0,Math.ceil(usefulMonths)+1);
+ const crossing=key=>{const t=sustainedPayback(windowRows,key);return t!==null&&t<=usefulMonths?t:null;};
+ const paybackApi=buyReady&&apiReady?crossing('api'):null,paybackRent=buyReady&&rentReady?crossing('rent'):null;
  const payback=paybackApi!==null&&paybackRent!==null?Math.max(paybackApi,paybackRent):null;
- const months=payback!==null?Math.min(120,Math.max(12,Math.ceil(payback*1.25/6)*6)):60;
- const review=[s.modelRefresh,s.hardwareRefresh].filter(x=>x!==null&&x>0);
- const lifecycle=ready&&review.length>0&&!!s.lifecycleSource&&(payback===null||payback>Math.min(...review));
- const amortizationMonths=payback!==null&&payback>0?payback:(s.hardwareRefresh>0?s.hardwareRefresh:36);
- const period=Math.min(120,amortizationMonths),lo=Math.floor(period),hi=Math.ceil(period);
- const amortized={};
- for(const key of ['buy','rent','api']){const a=rows[lo][key],b=rows[hi][key];amortized[key]=a===null||b===null?null:(a+(b-a)*(period-lo))/period;}
+ const months=Math.min(24,Math.max(12,Math.ceil(usefulMonths*2)));
+ const lifecycle=buyReady&&(payback===null||payback>=usefulMonths);
+ const period=usefulMonths,amortized={},decisionCosts={};
+ for(const key of ['buy','rent','api']){decisionCosts[key]=at(key,period);amortized[key]=decisionCosts[key]===null?null:decisionCosts[key]/period;}
+ const buyEligible=ready&&payback!==null&&payback<usefulMonths;
+ const unrecovered=buyReady&&rentReady&&apiReady?Math.max(0,decisionCosts.buy-Math.min(decisionCosts.rent,decisionCosts.api)):null;
  const phases={};
  for(const [key,prefix,units] of [['buy','local',localUnits],['rent','rental',rentalUnits]]){
   const prefill=s[prefix+'Prefill'],decode=s[prefix+'Decode'];
@@ -112,5 +115,5 @@ export function calculate(raw){
   const total=prefillSeconds!==null&&decodeSeconds!==null?prefillSeconds+decodeSeconds:null;
   phases[key]={prefill,decode,units,prefillSeconds,decodeSeconds,prefillShare:total>0?prefillSeconds/total:null,decodeShare:total>0?decodeSeconds/total:null,requiredPrefill:demandRph*s.input/3600,requiredDecode:demandRph*s.output/3600,ratio:s.output>0?s.input/s.output:null};
  }
- return {phases,amortizationMonths:period,amortizationBasis:payback!==null&&payback>0?'break-even period':'assumed hardware life (no joint break-even)',amortized,s,m,h,r,localUnits,rentalUnits,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
+ return {usefulMonths,decisionCosts,buyEligible,unrecovered,phases,amortizationMonths:period,amortizationBasis:'useful competitiveness window — earlier model or hardware refresh',amortized,s,m,h,r,localUnits,rentalUnits,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
 }

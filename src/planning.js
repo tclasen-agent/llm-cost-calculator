@@ -1,6 +1,6 @@
-import {defaults,hardware,rentals,models} from './catalog.js?v=17';
-import {gs1Variable} from './energy.js?v=17';
-import {normalize,schedule} from './engine.js?v=17';
+import {defaults,hardware,rentals,models} from './catalog.js?v=18';
+import {gs1Variable} from './energy.js?v=18';
+import {normalize,schedule} from './engine.js?v=18';
 // Deliberately editable planning assumptions, not measurements or vendor benchmarks.
 export const profiles={chat:[30,1500,500,.1],research:[40,12000,2500,.2],bizdev:[35,6000,1500,.15],swe:[75,12000,2500,.4],'swe-factory':[2880,24000,4000,8],support:[100,3000,700,.3],writing:[35,4000,2000,.15],security:[60,16000,3000,.4]};
 const modelGB={'nemotron-lightning':24,kimi3:700,'nemotron-ultra':360,'nemotron-super':90,minimax:160,qwen80:60,kimi25:420,'nemotron-nano':24,deepseek:440,oss120:85,qwen30:24};
@@ -39,8 +39,8 @@ export function planning(raw={}){
  set('tariff','bill');set('baselineKwh',1000);set('peakKw',5);set('tariffConfirmed',0);set('localTax',1);
  // Published GS-1 marginal charges at a representative baseline; eligibility remains an assumption.
  set('billRate',Number(((gs1Variable(1100,cal.month)-gs1Variable(1000,cal.month))/100).toFixed(5)));set('billSource','Planning assumption: published Dominion GS-1 marginal rate at 1,000 kWh baseline in Loudoun; account eligibility assumed. Select verified GS-1 in advanced settings or replace with your bill.');
- set('purchaseDiscount',0);set('rentalDecline',0);set('apiDecline',0);set('priceEvidence','Planning assumption: current prices held constant; no speculative discounts.');
- set('modelRefresh',6);set('hardwareRefresh',36);set('lifecycleSource','Planning review policy: models every 6 months, hardware every 36 months; not a prediction of obsolescence.');
+ set('purchaseDiscount',0);set('rentalDecline',50);set('apiDecline',80);set('priceEvidence','Aggressive scenario: rental compute falls 50% annually; API token rates fall 80% annually, compounded monthly. Current purchase cost unchanged. These are assumptions, not provider promises.');
+ set('modelRefresh',3);set('hardwareRefresh',6);set('lifecycleSource','Aggressive adoption policy: reassess better/larger models every 3 months and hardware price/performance every 6 months. Treat the earlier event as the investment deadline. Hardware does not physically expire; these are competitiveness assumptions.');
  return normalize(s);
 }
 export function assumptionNotes(s){return [

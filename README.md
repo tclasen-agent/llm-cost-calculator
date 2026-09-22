@@ -25,7 +25,7 @@ Buy, rent and API panels show comparable monthly operating costs, upfront cash a
 
 Purchase prices without published totals receive editable whole-system allowances. Default throughput is a coarse proxy (unified memory 30 output-equivalent tokens/s, workstation/rental GPU 100, square-root node and concurrency scaling capped at 4× concurrency benefit; input tokens weighted at one tenth of output). Memory estimates assume 4-bit deployment and explicit headroom. These are deliberately transparent assumptions, not vendor measurements.
 
-Defaults include 8% upfront purchase extras, $20/month local support, $50/month rental extras, 25% cooling overhead, and a 6/36-month model/hardware review policy. No future price reductions are assumed. None of these allowances is a verified quote or obsolescence forecast.
+Defaults include 8% upfront purchase extras, $20/month local support, $50/month rental extras, 25% cooling overhead, and a 3/6-month model/hardware competitiveness policy. Aggressive defaults assume annual rental reductions of 50% and API token reductions of 80%, compounded monthly; purchase cost stays at today’s price. None of these allowances is a verified quote or obsolescence forecast.
 
 ## Power and cooling — Loudoun County, Virginia
 
@@ -43,7 +43,7 @@ Capacity = estimated or measured completed requests/hour × operating hours for 
 
 Unserved work is charged at the same-model API endpoint. Paid rental hours cover the full operating window, assuming instances can be stopped/restarted outside that window. Persistent-storage and other fees are separate. The user must enter documented setup, support, tax, API-platform and other fees, even when confirmed zero. All numbers entered by the user are marked as user-supplied evidence, not independently verified by the application.
 
-The cash-flow engine evaluates 120 months. The chart automatically extends beyond the later sustained payback against both API and rental, capped at 120 months. An earlier crossing that later reverses is not accepted. If no joint payback exists, the display uses a five-year window; that is a presentation choice, not an equipment-life claim. Unknown paths are omitted, not plotted as free. Simple mode fills every required input with sourced data or labeled assumptions; invalid advanced overrides are reported. Resale, financing, growth, future hardware purchases and future model capability are not forecast.
+The cash-flow engine evaluates 120 months. The chart automatically extends beyond a short competitiveness window. An earlier crossing that later reverses is not accepted. The default display spans 12 months; only the first 3 months count toward the default purchase decision. Unknown paths are omitted, not plotted as free. Simple mode fills every required input with sourced data or labeled assumptions; invalid advanced overrides are reported. Resale, financing, growth, future hardware purchases and future model capability are not forecast.
 
 Historical declines cannot establish a future annual discount. Optional price changes therefore require a contract/reference and are explicitly conditional user inputs. Lifecycle alerts are compact, with a details modal, and use editable planning review intervals; no universal industry-standard replacement cycle is asserted.
 
@@ -61,7 +61,7 @@ No dependencies or API keys are needed at runtime. The site uses a dated static 
 
 Buy and rent scale whole system/instance quantities upward to cover all demand; neither includes API requests. Capacity scaling assumes independent serving replicas and linear replication. Setup/support/storage allowances are per configured unit; all electricity/cooling usage is aggregated before tariff calculation. A memory-incompatible or zero-throughput path is unavailable, not supplemented with API.
 
-All three cards show upfront cash, first-month recurring operations, and amortized all-in monthly cost. The latter divides cumulative spend by a common comparison period: joint break-even when it exists, otherwise assumed hardware useful life (default 36 months, adjustable). Fractional months interpolate cumulative cash flows. Break-even is not a prediction of physical useful life. Amortization periods are capped at the 120-month calculation window.
+All three cards show upfront cash, first-month recurring operations, and amortized all-in monthly cost. The latter divides cumulative spend by a common comparison period: the earlier model or hardware refresh deadline (3 months by default). Fractional months interpolate cumulative cash flows. Break-even is not a prediction of physical useful life. Amortization periods are capped at the 120-month calculation window.
 
 Prefill and decode speeds are separately editable per configured system at selected concurrency. Request service time = input tokens / prefill tokens-per-second + output tokens / decode tokens-per-second. Requests/hour = 3600 / service time unless overridden by a benchmark. No overlap, queueing, network latency or batching efficiency is additionally modeled. Cards compare hardware phase-speed ratio with task token ratio and show phase-time shares plus fleet token demand. Default speed proxies are not benchmark results.
 
@@ -72,3 +72,9 @@ Added DeepSeek V4.1 Flash, GLM-5.3, GLM-5.3 Flash, Qwen3.8 2.4T A95B, Qwen3.8 27
 ## Long View decision overview
 
 The top of the page is a standalone decision overview: cumulative cash curves with a zero-dollar baseline, readable month/USD axes, line patterns and direct endpoint labels, an accessible month inspector, and synchronized upfront/operating/amortized/total cost summaries. The headline ranks available paths at the displayed automatic horizon, with savings against the next available option. Joint purchase payback is marked only if sustained against both alternatives. Shading beyond assumed hardware life flags that replacements are not included. Unavailable configurations and assumptions are visible in this same overview. Supporting configuration and detailed evidence follow below.
+
+## Aggressive innovation scenario
+
+Default economic deadline = min(model refresh 3 months, hardware competitiveness 6 months). These are aggressive adoption assumptions, not physical expiration dates or industry guarantees. A better model may be larger, smaller or more efficient; no specific future parameter size is asserted. A purchase must recover its cost against both alternatives strictly before this deadline; later savings never qualify it for recommendation. Amortization uses the same useful window. The 12-month graph retains faded same-model context after the deadline; it does not simulate purchasing replacement generations.
+
+Default rental compute price declines 50%/year and API input/output rates decline 80%/year, via monthly compounding. Power, support and fixed fees do not decline. Purchase equipment is bought at current cost (default purchase discount 0%). The rates are sensitivity assumptions, not contracted prices. Trend context: [NVIDIA annual generation cadence](https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Kicks-Off-the-Next-Generation-of-AI-With-Rubin--Six-New-Chips-One-Incredible-AI-Supercomputer/) and [Stanford historical inference cost declines](https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts). Neither source validates the exact default forecast.
