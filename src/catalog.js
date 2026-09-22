@@ -1,92 +1,215 @@
-export const reviewed = '2026-09-22';
-export const benchmarkSource = 'https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/BENCHMARKS.md';
-// Specs are sourced; costs, cache coefficients, power and cross-model throughput are planning assumptions.
-export const models = [
-  {id:'qwen30', name:'Qwen3-Coder 30B · A3B', params:30.5, active:3.3, context:262144, kv:0.1, tag:'Efficient coding', source:'https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct', note:'A practical small MoE for code and tool use. The M4 reference is the related Qwen3-30B Instruct, not this Coder checkpoint.'},
-  {id:'qwen80', name:'Qwen3-Coder-Next 80B · A3B', params:80, active:3, context:262144, kv:0.08, tag:'Agentic coding', source:'https://huggingface.co/Qwen/Qwen3-Coder-Next', note:'Hybrid architecture; the cache allowance is an editable approximation, not a full hybrid-state allocator.'},
-  {id:'oss120', name:'gpt-oss-120b', params:117, active:5.1, context:131072, kv:0.08, tag:'Reasoning & tools', source:'https://huggingface.co/openai/gpt-oss-120b', note:'Native MXFP4 mixed precision differs from the generic Q4 estimate. Verify actual file size and runtime support.'},
-  {id:'minimax', name:'MiniMax M2.5', params:230, active:10, context:196608, kv:0.2, tag:'Software engineering', source:'https://huggingface.co/MiniMaxAI/MiniMax-M2.5', note:'Strong SWE candidate. Generic quantization and cache estimates require validation with the chosen runtime.'},
-  {id:'deepseek', name:'DeepSeek V3.2', params:685, active:37, context:131072, kv:0.07, tag:'Large reasoning model', source:'https://huggingface.co/deepseek-ai/DeepSeek-V3.2', note:'Large MoE with MLA. At Q4 it needs hundreds of GB; memory fit alone does not guarantee practical speed.'}
+export const reviewed="2026-09-22";
+export const models=[
+  {
+    "id": "nemotron-lightning",
+    "name": "NVIDIA: Nemotron 3.5 Lightning",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+    "apiSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-lightning/endpoints",
+    "apiModel": "nvidia/nemotron-3.5-lightning",
+    "provider": "Darkbloom via OpenRouter",
+    "providerTag": "darkbloom/int4",
+    "quantization": "int4",
+    "context": 262144,
+    "maxOutput": 32768,
+    "maxInput": null,
+    "input": 0.065,
+    "output": 0.18,
+    "cached": null
+  },
+  {
+    "id": "kimi3",
+    "name": "MoonshotAI: Kimi K3",
+    "source": "https://huggingface.co/moonshotai/Kimi-K3",
+    "apiSource": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+    "apiModel": "moonshotai/kimi-k3",
+    "provider": "Relace via OpenRouter",
+    "providerTag": "relace/fp4",
+    "quantization": "fp4",
+    "context": 1048576,
+    "maxOutput": 943718,
+    "maxInput": null,
+    "input": 1.7,
+    "output": 8.5,
+    "cached": 0.16999999999999998
+  },
+  {
+    "id": "nemotron-ultra",
+    "name": "NVIDIA: Nemotron 3 Ultra",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+    "apiSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b/endpoints",
+    "apiModel": "nvidia/nemotron-3-ultra-550b-a55b",
+    "provider": "DeepInfra via OpenRouter",
+    "providerTag": "deepinfra/fp4",
+    "quantization": "fp4",
+    "context": 262144,
+    "maxOutput": 16384,
+    "maxInput": null,
+    "input": 0.5,
+    "output": 2.2,
+    "cached": 0.09999999999999999
+  },
+  {
+    "id": "nemotron-super",
+    "name": "NVIDIA: Nemotron 3 Super",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+    "apiSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-super-120b-a12b/endpoints",
+    "apiModel": "nvidia/nemotron-3-super-120b-a12b",
+    "provider": "DeepInfra via OpenRouter",
+    "providerTag": "deepinfra/bf16",
+    "quantization": "bf16",
+    "context": 262144,
+    "maxOutput": 16384,
+    "maxInput": null,
+    "input": 0.08499999999999999,
+    "output": 0.39999999999999997,
+    "cached": null
+  },
+  {
+    "id": "minimax",
+    "name": "MiniMax: MiniMax M2.5",
+    "source": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5",
+    "apiSource": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.5/endpoints",
+    "apiModel": "minimax/minimax-m2.5",
+    "provider": "Venice via OpenRouter",
+    "providerTag": "venice",
+    "quantization": "unknown",
+    "context": 198000,
+    "maxOutput": 32768,
+    "maxInput": null,
+    "input": 0.27,
+    "output": 0.95,
+    "cached": 0.03
+  },
+  {
+    "id": "qwen80",
+    "name": "Qwen: Qwen3 Coder Next",
+    "source": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+    "apiSource": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-next/endpoints",
+    "apiModel": "qwen/qwen3-coder-next",
+    "provider": "Parasail via OpenRouter",
+    "providerTag": "parasail/bf16",
+    "quantization": "bf16",
+    "context": 262144,
+    "maxOutput": 235929,
+    "maxInput": null,
+    "input": 0.12,
+    "output": 0.7999999999999999,
+    "cached": 0.07
+  },
+  {
+    "id": "kimi25",
+    "name": "MoonshotAI: Kimi K2.5",
+    "source": "https://huggingface.co/moonshotai/Kimi-K2.5",
+    "apiSource": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k2.5/endpoints",
+    "apiModel": "moonshotai/kimi-k2.5",
+    "provider": "SiliconFlow via OpenRouter",
+    "providerTag": "siliconflow/int4",
+    "quantization": "int4",
+    "context": 262144,
+    "maxOutput": 235929,
+    "maxInput": null,
+    "input": 0.44999999999999996,
+    "output": 2.25,
+    "cached": 0.07
+  },
+  {
+    "id": "nemotron-nano",
+    "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
+    "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+    "apiSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints",
+    "apiModel": "nvidia/nemotron-3-nano-30b-a3b",
+    "provider": "Novita via OpenRouter",
+    "providerTag": "novita/fp4",
+    "quantization": "fp4",
+    "context": 262144,
+    "maxOutput": 32768,
+    "maxInput": null,
+    "input": 0.049999999999999996,
+    "output": 0.19999999999999998,
+    "cached": null
+  },
+  {
+    "id": "deepseek",
+    "name": "DeepSeek: DeepSeek V3.2",
+    "source": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+    "apiSource": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v3.2/endpoints",
+    "apiModel": "deepseek/deepseek-v3.2",
+    "provider": "DeepInfra via OpenRouter",
+    "providerTag": "deepinfra/fp4",
+    "quantization": "fp4",
+    "context": 163840,
+    "maxOutput": 16384,
+    "maxInput": null,
+    "input": 0.26,
+    "output": 0.38,
+    "cached": 0.13
+  },
+  {
+    "id": "oss120",
+    "name": "OpenAI: gpt-oss-120b",
+    "source": "https://huggingface.co/openai/gpt-oss-120b",
+    "apiSource": "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+    "apiModel": "openai/gpt-oss-120b",
+    "provider": "AkashML via OpenRouter",
+    "providerTag": "akashml/bf16",
+    "quantization": "bf16",
+    "context": 131072,
+    "maxOutput": 117964,
+    "maxInput": null,
+    "input": 0.03,
+    "output": 0.16999999999999998,
+    "cached": 0.03
+  },
+  {
+    "id": "qwen30",
+    "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
+    "source": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+    "apiSource": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-30b-a3b-instruct/endpoints",
+    "apiModel": "qwen/qwen3-coder-30b-a3b-instruct",
+    "provider": "Novita via OpenRouter",
+    "providerTag": "novita/fp8",
+    "quantization": "fp8",
+    "context": 160000,
+    "maxOutput": 32768,
+    "maxInput": null,
+    "input": 0.07,
+    "output": 0.27,
+    "cached": null
+  }
 ];
 const apple='https://www.apple.com/mac-studio/specs/';
-const gpu='https://docs.nvidia.com/brev/reference/gpu-types';
-export const hardware = [
-  {id:'m5-256',name:'Mac Studio M5 Ultra',variant:'256 GB unified',memory:256,reserve:24,price:8000,idle:30,load:250,decode:113.33,prefill:1753.9,source:apple,proxy:true,note:'M4 Max proxy; no M5 speed uplift. Price is a budget placeholder.'},
-  {id:'m5-512',name:'Mac Studio M5 Ultra',variant:'512 GB unified',memory:512,reserve:40,price:12000,idle:35,load:270,decode:113.33,prefill:1753.9,source:apple,proxy:true,note:'Same M4 Max speed proxy as 256 GB; extra memory does not automatically increase throughput.'},
-  {id:'spark',name:'NVIDIA DGX Spark',variant:'128 GB unified',memory:128,reserve:16,price:4700,idle:30,load:240,decode:55,prefill:1400,source:'https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/',note:'GB10. Synthetic throughput assumptions, not measured DGX benchmarks; confirm current vendor quote.'},
-  {id:'4090',name:'Dual RTX 4090 PC',variant:'2 × 24 GB VRAM',memory:48,reserve:4,price:6500,idle:110,load:1000,decode:130,prefill:2200,source:'https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/',note:'Tensor sharding required. PCIe overhead and software compatibility matter; VRAM is not automatically pooled.'},
-  {id:'5090',name:'Dual RTX 5090 PC',variant:'2 × 32 GB VRAM',memory:64,reserve:6,price:9500,idle:120,load:1300,decode:180,prefill:3500,source:gpu,note:'Requires suitable PSU, cooling, chassis and multi-GPU runtime. Synthetic system-level throughput.'},
-  {id:'rtx6000',name:'Dual RTX 6000 Ada',variant:'2 × 48 GB VRAM',memory:96,reserve:8,price:16000,idle:100,load:750,decode:160,prefill:3000,source:'https://www.nvidia.com/en-us/design-visualization/rtx-6000/',note:'48 GB Ada cards, distinct from 96 GB Blackwell PRO cards. Sharding required.'},
-  {id:'pro6000',name:'RTX PRO 6000 Blackwell',variant:'96 GB VRAM workstation',memory:96,reserve:8,price:12500,idle:90,load:800,decode:210,prefill:4000,source:'https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000-family/',note:'Single 96 GB card plus host budget. Synthetic throughput; quote your complete workstation.'},
-  {id:'a100',name:'Dual A100 80 GB',variant:'2 × 80 GB PCIe server',memory:160,reserve:10,price:24000,idle:170,load:950,decode:180,prefill:4500,source:gpu,note:'Used-market planning budget including host. Server cooling, power and interconnect must be checked.'},
-  {id:'h100',name:'Dual H100 80 GB',variant:'2 × 80 GB PCIe server',memory:160,reserve:10,price:60000,idle:200,load:1100,decode:300,prefill:8500,source:'https://www.nvidia.com/en-us/data-center/h100/',note:'PCIe 80 GB configuration, not SXM. Synthetic throughput; home installation may require infrastructure.'}
+const spark='https://www.nvidia.com/en-us/products/workstations/dgx-spark/';
+const framework='https://frame.work/desktop?tab=machine-learning';
+export const hardware=[
+ {id:'spark',name:'NVIDIA DGX Spark',memory:128,kind:'unified',price:4699,source:spark,priceSource:'https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713',priceKind:'US MSRP, announced February 23, 2026; not a checkout quote',package:'GB10, 20-core Arm CPU, 128 GB unified memory, 4 TB NVMe, DGX OS, ConnectX-7, supplied enclosure and 240 W power supply. PSU rating is not measured consumption.'},
+ {id:'strix-amd-128',name:'AMD Ryzen AI Halo · Strix Halo',memory:128,kind:'unified',price:3999,source:'https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html',priceSource:'https://www.amd.com/en/blogs/2026/amd-ryzen-ai-halo-is-designed-for-the-agentic-era.html',priceKind:'AMD-reported Micro Center system price, July 2026 comparison; confirm checkout',package:'Complete Ryzen AI Halo developer platform: Ryzen AI Max+ 395, 128 GB unified memory. Storage and OS variant must be confirmed with the retailer.'},
+ {id:'strix-framework-64',name:'Framework Desktop Max+ 395 · 64 GB',memory:64,kind:'unified',gpuCeiling:48,price:null,source:framework,package:'Framework desktop chassis and Ryzen AI Max+ 395 / Radeon 8060S platform, 64 GB onboard RAM. Select SSD and OS in a complete-system quote; no bare-mainboard price is used.'},
+ {id:'strix-framework-128',name:'Framework Desktop Max+ 395 · 128 GB',memory:128,kind:'unified',gpuCeiling:96,price:null,source:framework,package:'Framework desktop chassis and Ryzen AI Max+ 395 / Radeon 8060S platform, 128 GB onboard RAM. SSD and OS need a complete-system quote. Vendor lists 96 GB dedicated GPU allocation; Linux can differ.'},
+ {id:'strix-hp-128',name:'HP Z2 Mini G1a · BN8E8UA',memory:128,kind:'unified',price:null,source:'https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1a-workstation-desktop-pc-wolf-pro-security-edition-bn8e8ua-aba',package:'Ryzen AI Max+ PRO 395, Radeon 8060S, 128 GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter. Price not verified.'},
+ ...[256,512].map(memory=>({id:`m5-${memory}`,name:`Mac Studio M5 Ultra · ${memory} GB`,memory,kind:'unified',price:null,source:apple,package:`36-core CPU / 80-core GPU, ${memory} GB unified RAM, 1 TB SSD, macOS, complete Mac Studio. Exact configured price and inference performance need evidence; no M4 proxy is used.`})),
+ {id:'hp-2000',name:'HP Z2 Mini G1i · RTX 2000 Ada',memory:16,kind:'VRAM',price:null,source:'https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k5ua-aba-1',package:'BP6K5UA: Core Ultra 7 265, RTX 2000 Ada 16 GB, 32 GB host RAM, 1 TB SSD, Windows 11 Pro, complete OEM workstation. Host RAM is not VRAM.'},
+ {id:'hp-4000',name:'HP Z2 Mini G1i · RTX 4000 Ada',memory:20,kind:'VRAM',price:null,source:'https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k7ua-aba-1',package:'BP6K7UA: Core Ultra 7 265, RTX 4000 Ada 20 GB, 64 GB host RAM, 1 TB SSD, Windows 11 Pro, complete OEM workstation.'},
+ ...[['5080',16],['5090',32],['PRO 4000 Blackwell',24],['PRO 5000 Blackwell',48],['PRO 6000 Blackwell WS',96]].map(([gpu,memory])=>({id:`puget-${gpu.replaceAll(' ','-').toLowerCase()}`,name:`Puget workstation · RTX ${gpu}`,memory,kind:'VRAM',price:null,source:'https://www.pugetsystems.com/products/workstations/configure/',package:`Vendor-configured complete workstation with RTX ${gpu}. CPU, host RAM, SSD, chassis, PSU, cooling and OS must be specified in the vendor quote. Published GPU add-on prices are not complete-system prices.`,needsBuild:true})),
+ {id:'supermicro-h100',name:'Supermicro 4U · 8× H100 HGX',memory:640,kind:'VRAM',price:null,source:'https://www.supermicro.com/en/products/system/gpu/4u/sys-421ge-tnhr2-lcc',package:'SYS-421GE-TNHR2-LCC H100 configuration: HGX 8-GPU platform, dual Xeon, liquid cooling. CPU SKU, RAM, storage and onsite cooling installation require an integrated system quote.',needsBuild:true},
+ ...[2,4].map(nodes=>({id:`spark-x${nodes}`,name:`${nodes}× DGX Spark cluster`,memory:128*nodes,kind:'distributed unified',price:null,source:spark,package:`${nodes} complete GB10 / 128 GB / 4 TB Spark systems plus ConnectX networking. Total memory is arithmetic across nodes, not automatically pooled. Cluster quote must include networking. No scaling factor is assumed.`,needsBuild:true})),
+ ...[2,4].map(nodes=>({id:`m5-512-x${nodes}`,name:`${nodes}× Mac Studio 512 GB · EXO cluster`,memory:512*nodes,kind:'distributed unified',price:null,source:apple,runtimeSource:'https://github.com/exo-explore/exo',package:`${nodes} complete M5 Ultra 36-core CPU / 80-core GPU, 512 GB RAM, 1 TB SSD systems with Thunderbolt networking. EXO documents RDMA support; exact topology, model compatibility and performance require validation. Networking must be included in the cluster quote.`,needsBuild:true}))
 ];
-// Complete-system reference builds. Prices and wall power include the host, not just GPUs.
-// Separate host RAM is never added to dedicated VRAM for model-fit calculations.
-hardware.push(
- {id:'strix-framework-64',name:'Framework Desktop · Strix Halo',variant:'Max+ 395 · 64 GB unified',memory:64,reserve:16,price:2100,idle:20,load:180,decode:42,prefill:650,rental:0.6,package:'Ryzen AI Max+ 395 / Radeon 8060S, 64 GB soldered unified RAM, 2 TB NVMe, complete Framework chassis, 400 W PSU and cooling; Linux.',source:'https://frame.work/desktop?tab=machine-learning',note:'Conservative 48 GB GPU-accessible budget; 16 GB retained for the OS. Runtime/driver support must be checked. Synthetic throughput, not a benchmark.'},
- {id:'strix-framework-128',name:'Framework Desktop · Strix Halo',variant:'Max+ 395 · 128 GB unified',memory:128,reserve:32,price:2900,idle:20,load:180,decode:42,prefill:650,rental:0.8,package:'Ryzen AI Max+ 395 / Radeon 8060S, 128 GB soldered unified RAM, 2 TB NVMe, complete Framework chassis, 400 W PSU and cooling; Linux.',source:'https://frame.work/desktop?tab=machine-learning',note:'Conservative 96 GB GPU-accessible budget; 32 GB retained for the OS. Extra RAM does not increase assumed speed. Synthetic throughput, not a benchmark.'},
- {id:'strix-hp-128',name:'HP Z2 Mini G1a · Strix Halo',variant:'Max+ PRO 395 · 128 GB unified',memory:128,reserve:32,price:4200,idle:25,load:220,decode:42,prefill:650,rental:1,package:'Ryzen AI Max+ PRO 395 / Radeon 8060S, 128 GB unified RAM, 2 TB NVMe, complete HP mini workstation, OEM PSU and cooling; Linux.',source:'https://h20195.www2.hp.com/v2/getpdf.aspx/c09091191.pdf',note:'96 GB GPU-accessible planning ceiling. Uses the same synthetic throughput as Framework; no unmeasured PRO performance premium.'},
- {id:'3090-used',name:'Refurbished RTX 3090 tower',variant:'1 × 24 GB VRAM',memory:24,reserve:2,price:2200,idle:65,load:550,decode:70,prefill:1000,rental:0.5,package:'Used RTX 3090 24 GB, Ryzen 9 5950X-class host and motherboard, 64 GB DDR4, 2 TB NVMe, tower, 850 W PSU and cooling; Linux.',source:'https://www.nvidia.com/en-eu/geforce/graphics-cards/30-series/rtx-3090/',note:'Refurbished full-system budget already includes used pricing; avoid applying another discount unless justified. Host RAM is not GPU memory.'},
- {id:'5080-pc',name:'RTX 5080 desktop',variant:'1 × 16 GB VRAM',memory:16,reserve:2,price:3000,idle:60,load:600,decode:100,prefill:1800,rental:0.7,package:'RTX 5080 16 GB, Ryzen 9-class CPU and motherboard, 64 GB DDR5, 2 TB NVMe, tower, 1000 W PSU and cooling; Linux.',source:'https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5080/',note:'Small-model desktop; the full model and cache must fit 14 GB after reserve. Synthetic throughput.'},
- {id:'5090-single',name:'RTX 5090 workstation',variant:'1 × 32 GB VRAM',memory:32,reserve:3,price:5500,idle:75,load:850,decode:125,prefill:2400,rental:1.1,package:'RTX 5090 32 GB, Ryzen 9-class CPU and motherboard, 128 GB DDR5, 2 TB NVMe, large tower, 1200 W PSU and cooling; Linux.',source:'https://www.nvidia.com/en-us/geforce/graphics-cards/50-series/rtx-5090/',note:'Complete single-GPU workstation budget. Synthetic throughput; host memory is not added to VRAM.'},
- {id:'pro4000-pc',name:'RTX PRO 4000 Blackwell workstation',variant:'1 × 24 GB VRAM',memory:24,reserve:2,price:4500,idle:60,load:400,decode:85,prefill:1500,rental:0.9,package:'RTX PRO 4000 Blackwell 24 GB, Ryzen 9-class CPU and motherboard, 128 GB DDR5, 2 TB NVMe, tower, 750 W PSU and cooling; Linux.',source:'https://www.nvidia.com/content/dam/en-zz/Solutions/design-visualization/quadro-product-literature/workstation-datasheet-blackwell-rtx-pro-4000-nvidia-3662515.pdf',note:'Full workstation estimate; professional-card memory capacity is sourced, throughput is synthetic.'},
- {id:'pro5000-pc',name:'RTX PRO 5000 Blackwell workstation',variant:'1 × 48 GB VRAM',memory:48,reserve:4,price:7500,idle:75,load:650,decode:145,prefill:2800,rental:1.5,package:'RTX PRO 5000 Blackwell 48 GB, Ryzen 9-class CPU and motherboard, 128 GB DDR5, 2 TB NVMe, tower, 1000 W PSU and cooling; Linux.',source:'https://www.nvidia.com/en-au/products/workstations/professional-desktop-gpus/rtx-pro-5000/',note:'48 GB variant. Complete workstation budget; synthetic throughput.'},
- {id:'l40s-server',name:'Dual L40S inference server',variant:'2 × 48 GB VRAM',memory:96,reserve:8,price:22000,idle:180,load:1100,decode:170,prefill:4000,rental:2.8,package:'2 × L40S 48 GB PCIe, EPYC-class CPU/server board with two x16 slots, 256 GB ECC RAM, 4 TB NVMe, 4U forced-air chassis, 1600 W PSU, 10 GbE; Linux.',source:'https://www.nvidia.com/en-gb/data-center/l40s/',note:'Passive datacenter GPUs require server airflow. Model sharding required; VRAM is not automatically pooled. Synthetic throughput; check electrical and acoustic requirements.'}
-);
-const packages={
- 'm5-256':'Complete Mac Studio, 256 GB unified RAM and 1 TB SSD, built-in PSU/cooling; macOS. M5 budget placeholder.',
- 'm5-512':'Complete Mac Studio, 512 GB unified RAM and 1 TB SSD, built-in PSU/cooling; macOS. M5 budget placeholder.',
- spark:'Complete DGX Spark GB10 system, 128 GB unified RAM, 4 TB SSD, supplied power/cooling and ConnectX networking; DGX OS.',
- '4090':'2 × RTX 4090 24 GB, Threadripper-class CPU and multi-GPU board, 128 GB host RAM, 2 TB NVMe, large tower, 1600 W PSU and cooling; Linux.',
- '5090':'2 × RTX 5090 32 GB, Threadripper-class CPU and multi-GPU board, 128 GB host RAM, 2 TB NVMe, large tower, 2000 W PSU and cooling; Linux. Verify circuit capacity.',
- rtx6000:'2 × RTX 6000 Ada 48 GB, Threadripper-class CPU and multi-GPU board, 128 GB host RAM, 2 TB NVMe, tower, 1200 W PSU and cooling; Linux.',
- pro6000:'RTX PRO 6000 Blackwell 96 GB, Threadripper-class CPU and motherboard, 128 GB host RAM, 2 TB NVMe, tower, 1200 W PSU and cooling; Linux.',
- a100:'2 × A100 PCIe 80 GB, EPYC-class CPU/server board, 256 GB ECC host RAM, 4 TB NVMe, 4U server with forced-air cooling, 1600 W PSU and 10 GbE; Linux. Used-market budget.',
- h100:'2 × H100 PCIe 80 GB, EPYC-class CPU/server board, 256 GB ECC host RAM, 4 TB NVMe, 4U server with forced-air cooling, 1600 W PSU and 10 GbE; Linux.'
-};
-for(const h of hardware)h.package??=packages[h.id];
-for(const id of ['rtx6000','pro6000'])hardware.find(h=>h.id===id).name+=' workstation';
-for(const id of ['a100','h100'])hardware.find(h=>h.id===id).name+=' server';
-export const defaults = {scaleMode:0,pricingOutlook:0,purchaseDiscount:0,rentalDecline:0,apiDecline:0,priceFloor:20,modelRefresh:3,hardwareRefresh:12,nextModelGrowth:2,autoModel:1,autoHardware:1,matchHardware:1,workload:'custom',model:'qwen80',hardware:'m5-256',users:5,agents:2,activity:50,batch:0,requests:50,days:22,hours:8,input:8000,output:2000,context:16384,bits:4,kv:0.08,headroom:15,efficiency:70,batchExponent:0.6,speed:100,decodeOverride:0,prefillOverride:0,price:8000,memory:256,reserve:24,idle:30,load:250,electricity:0.18,cooling:1.1,maintenance:20,setup:0,months:36,resale:0,apiInput:1,apiCached:0.1,cache:20,apiOutput:5,rentalHardware:'h100',rental:2,rentalHours:176,rentalExtra:50,rentalSetup:0,rentalMemory:160,rentalReserve:10,rentalEfficiency:70,rentalSpeed:100,rentalDecodeOverride:0,rentalPrefillOverride:0,rentalBatchExponent:0.6};
-
-// Illustrative business usage assumptions; calibrate against actual request logs.
-// requests is calls per agent per workday, not complete user tasks.
-export const workloads = [
- {id:'chat',name:'Simple Chat',agents:1,activity:10,requests:20,input:1200,output:350,context:4096,note:'20 short exchanges per person per day; one assistant.'},
- {id:'research',name:'Research',agents:2,activity:25,requests:30,input:6000,output:1500,context:16384,note:'About 10 research tasks per person per day, each with 6 model calls across 2 agents.'},
- {id:'bizdev',name:'Business Development',agents:1,activity:20,requests:30,input:4000,output:1000,context:8192,note:'About 10 prospect research or outreach tasks per person per day, 3 model calls each.'},
- {id:'swe',name:'AI-assisted SWE',agents:2,activity:40,requests:75,input:12000,output:2500,context:32768,note:'About 15 coding tasks per person per day, 10 calls each across 2 parallel agents.'},
- {id:'swe-factory',name:'Full-auto software factory · 24/7',agents:4,activity:100,requests:1440,input:24000,output:8000,context:65536,days:30,hours:24,efficiency:95,scaleMode:1,note:'No human in the loop. Each autonomous team runs 4 agents continuously, targeting 1 model call per agent per minute: 24,000 input + 8,000 output tokens per call, including reasoning. This aggressive budget stress test aims to saturate hardware at 95% serving utilization; it is not measured productivity. Excess demand is costed as API overflow, not silently dropped.'},
- {id:'support',name:'Customer Support',agents:1,activity:35,requests:50,input:2500,output:600,context:8192,note:'About 25 assisted cases per person per day, 2 calls each.'},
- {id:'writing',name:'Writing & Content',agents:1,activity:20,requests:20,input:3500,output:1800,context:8192,note:'About 5 drafting tasks per person per day, 4 generation or revision calls each.'},
- {id:'security',name:'Security Analysis',agents:2,activity:35,requests:60,input:16000,output:2000,context:32768,note:'About 12 code or log analysis tasks per person per day, 10 calls each across 2 agents.'}
-];
-export function applyWorkload(state,id) {
- const preset=workloads.find(w=>w.id===id);
- if(!preset)return {...state,workload:'custom'};
- const {agents,activity,requests,input,output,context}=preset;
- const days=preset.days??21.67,hours=preset.hours??8,efficiency=preset.efficiency??70;
- return {...state,workload:id,agents,activity,requests,input,output,context,batch:0,days,hours,rentalHours:days*hours,efficiency,rentalEfficiency:efficiency,scaleMode:preset.scaleMode??0};
-}
-
-// Whole-configuration illustrative rental budgets, not listings or verified availability.
-const rentalRates={'m5-256':1.5,'m5-512':2.5,spark:1,4090:1.4,5090:2.2,rtx6000:2.5,pro6000:2.2,a100:3,h100:5};
-for(const h of hardware){h.rental??=rentalRates[h.id];h.nodes=1;}
-for(const [baseId,nodes,factor,networkCost] of [['m5-256',2,1.5,300],['m5-512',2,1.5,300],['m5-512',4,2.4,900],['spark',2,1.4,300],['spark',4,2,1200]]){
- const base=hardware.find(h=>h.id===baseId),mac=baseId.startsWith('m5');
- hardware.push({...base,id:`${baseId}-x${nodes}`,name:`${nodes} × ${base.name} cluster`,variant:`${base.memory*nodes} GB total · ${mac?'EXO / Thunderbolt 5 RDMA':'ConnectX networking'}`,package:`${nodes} complete nodes, each: ${base.package} Includes inter-node networking allowance.`,nodes,memory:base.memory*nodes,reserve:base.reserve*nodes,price:base.price*nodes+networkCost,idle:base.idle*nodes,load:base.load*nodes+30,decode:base.decode*factor,prefill:base.prefill*factor,rental:base.rental*nodes,source:mac?'https://github.com/exo-explore/exo':'https://www.nvidia.com/en-us/products/workstations/dgx-spark/',note:`Model sharding across ${nodes} nodes. Includes $${networkCost} illustrative networking budget. Assumed ${factor}× single-node throughput, NOT a cluster benchmark. Exact model/runtime support and rental availability require verification.`});
-}
-models.push(
- {id:'kimi25',name:'Kimi K2.5',params:1000,active:32,context:262144,kv:0.1,tag:'Frontier coding & research',source:'https://huggingface.co/moonshotai/Kimi-K2.5',note:'Open weights; 1T total / 32B active. Model-card SWE-Bench Verified: 76.8 with vendor harness. Generic Q4 and cache estimates; exact runtime support unverified.'},
- {id:'kimi3',name:'Kimi K3',params:2800,active:104,context:1048576,kv:0.1,tag:'Frontier long-horizon agents',source:'https://huggingface.co/moonshotai/Kimi-K3',note:'Open weights under Kimi K3 license. Native MXFP4; generic Q4 memory is approximate. Terminal-Bench 2.1: 88.3; BrowseComp: 91.2 with context compaction, vendor-reported at max effort. EXO/MLX support for this exact model is unverified.'}
-);
-
-// Parameter totals include embeddings; marketing size labels are rounded.
-// Hybrid Mamba state is approximated by the editable cache allowance, not an allocator model.
-models.push(
- {id:'nemotron-nano',name:'Nemotron 3 Nano 30B · A3B',params:31.6,active:3.6,context:1048576,kv:0.08,tag:'Efficient reasoning & sub-agents',source:'https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16',note:'Hybrid Mamba/attention MoE. Approx. 31.6B total including embeddings; rounded 30B in the model name. Up to 1M context requires runtime configuration and sufficient memory. Generic Q4 is not a BF16 checkpoint size. Hybrid cache and throughput are planning approximations.'},
- {id:'nemotron-lightning',name:'Nemotron 3.5 Lightning 30B · A3B',params:31.6,active:3.6,context:1048576,kv:0.08,tag:'Fast tool use & specialized agents',source:'https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16',note:'Hybrid MoE with configurable reasoning. Approx. 31.6B total including embeddings. Published BF16 single-H100 recipe uses 256K context; 1M needs additional resources. No speculative-decoding speedup is assumed. Verify quantization and exact runtime support.'},
- {id:'nemotron-super',name:'Nemotron 3 Super 120B · A12B',params:123.6,active:12.7,context:1048576,kv:0.08,tag:'Multi-agent reasoning & coding',source:'https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16',note:'Hybrid LatentMoE with multi-token prediction; approx. 123.6B total and 12.7B active, rounded in the model name. Generic 4-bit sizing is not an exact NVFP4 allocation. MTP speedup is not modeled. Hybrid cache, Mac/EXO compatibility and performance need validation.'},
- {id:'nemotron-ultra',name:'Nemotron 3 Ultra 550B · A55B',params:560.5,active:55,context:1048576,kv:0.1,tag:'Large-scale reasoning & agents',source:'https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16',note:'Hybrid LatentMoE; approx. 560.5B total, marketed as 550B. Published BF16 recipes target multi-GPU datacenter systems. A Q4 memory fit on a Mac or Spark cluster does not establish deployability. Generic quantization, hybrid state and throughput require validation.'}
-);
+// All rates below are full-instance USD/hour, computed from the quoted per-GPU rate.
+// Specs and on-demand rates: https://lambda.ai/instances, checked 2026-09-22.
+export const rentals=[
+ ['quadro',1,'Quadro RTX 6000',24,14,46,'512 GiB',.69],
+ ['a6000',1,'A6000',48,14,100,'512 GiB',1.09],
+ ['a100',1,'A100 PCIe',40,30,225,'512 GiB',1.99],
+ ['h100-pcie',1,'H100 PCIe',80,26,225,'1 TiB',3.29],
+ ['h100',1,'H100 SXM',80,26,225,'2.75 TiB',4.29],
+ ['gh200',1,'GH200',96,64,432,'4 TiB',2.29],
+ ['a6000-x2',2,'A6000',48,28,200,'1 TiB',1.09],
+ ['a6000-x4',4,'A6000',48,56,400,'1 TiB',1.09],
+ ['h100-x2',2,'H100 SXM',80,52,450,'5.5 TiB',4.19],
+ ['h100-x4',4,'H100 SXM',80,104,900,'11 TiB',4.09],
+ ['h100-x8',8,'H100 SXM',80,208,1800,'22 TiB',3.99],
+ ['b200',1,'B200 SXM6',180,26,360,'2.75 TiB',6.99],
+ ['b200-x8',8,'B200 SXM6',180,208,2900,'22 TiB',6.69]
+].map(([id,gpus,gpu,vram,cpu,ram,storage,perGpu])=>({id,name:`Lambda ${gpus}× ${gpu}`,gpu,gpus,memory:gpus*vram,vram,cpu,ram,storage,perGpu,hourly:Number((gpus*perGpu).toFixed(2)),source:'https://lambda.ai/instances',billingSource:'https://docs.lambda.ai/public-cloud/on-demand/billing/',package:`${cpu} vCPU · ${ram} GiB host RAM · ${storage} local SSD`,terms:'On-demand USD; tax extra. Region/stock not guaranteed. Persistent storage and other extras require a quote. Not a performance-equivalent substitute.'}));
+export const workloads=[['chat','Simple Chat'],['research','Research'],['bizdev','Business Development'],['swe','AI-assisted SWE'],['swe-factory','Full-auto software factory · 24/7'],['support','Customer Support'],['writing','Writing & Content'],['security','Security Analysis']];
+export const defaults={workload:'swe',users:1,model:'qwen80',hardware:'spark',rental:'a6000-x4',autoRental:1,autoModel:1,start:'2026-09',calls:null,input:null,output:null,concurrency:null,usageSource:'',localRph:null,rentalRph:null,localMemory:null,rentalMemory:null,localAvailable:null,rentalAvailable:null,localEvidence:'',rentalEvidence:'',localRuntime:'',rentalRuntime:'',quote:null,quoteSource:'',buildDetails:'',localSetup:null,rentalSetup:null,localExtras:null,rentalExtras:null,apiExtras:null,costSource:'',itKwh:null,coolingKwh:null,energySource:'',tariff:'gs1',baselineKwh:null,peakKw:null,tariffConfirmed:0,localTax:1,billRate:null,billSource:'',purchaseDiscount:0,rentalDecline:0,apiDecline:0,priceEvidence:'',modelRefresh:null,hardwareRefresh:null,lifecycleSource:''};

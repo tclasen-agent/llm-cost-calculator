@@ -1,96 +1,99 @@
-import {applyPriceOutlook} from './pricing.js?v=12';
-import {models, hardware, defaults, workloads} from './catalog.js?v=12';
-export function normalize(raw) {
-  const s={...defaults};
-  s.workload=workloads.some(w=>w.id===raw.workload)?raw.workload:'custom';
-  for(const key of Object.keys(defaults)) {
-    if(typeof defaults[key]==='number') { const n=Number(raw[key] ?? defaults[key]); s[key]=Number.isFinite(n)?Math.max(0,n):defaults[key]; }
-  }
-  s.model=models.some(m=>m.id===raw.model)?raw.model:defaults.model;
-  s.rentalHardware=hardware.some(h=>h.id===raw.rentalHardware)?raw.rentalHardware:defaults.rentalHardware;
-  s.rentalEfficiency=Math.min(100,s.rentalEfficiency); s.rentalBatchExponent=Math.min(1,s.rentalBatchExponent);
-  s.hardware=hardware.some(h=>h.id===raw.hardware)?raw.hardware:defaults.hardware;
-  for(const k of ['activity','cache','efficiency','resale']) s[k]=Math.min(100,s[k]);
-  s.bits=[4,8,16].includes(s.bits)?s.bits:4;
-  s.days=Math.min(30,s.days); s.hours=Math.min(24,s.hours); s.rentalHours=Math.min(720,s.rentalHours);
-  s.months=Math.max(1,Math.min(120,Math.round(s.months))); s.batch=Math.min(4096,Math.round(s.batch));
-  s.context=Math.max(1,Math.min(1048576,s.context)); s.batchExponent=Math.min(1,s.batchExponent);
-  s.cooling=Math.max(1,s.cooling); s.load=Math.max(s.idle,s.load);
-  for(const k of ['autoModel','autoHardware','matchHardware','scaleMode'])s[k]=s[k]?1:0;
-  if(s.matchHardware){
-    s.rentalHardware=s.hardware;
-    for(const [a,b] of [['rentalMemory','memory'],['rentalReserve','reserve'],['rentalEfficiency','efficiency'],['rentalSpeed','speed'],['rentalDecodeOverride','decodeOverride'],['rentalPrefillOverride','prefillOverride'],['rentalBatchExponent','batchExponent']])s[a]=s[b];
-  }
-  for(const k of ['modelRefresh','hardwareRefresh'])s[k]=Math.max(1,Math.min(120,s[k]));
-  s.nextModelGrowth=Math.max(1,Math.min(10,s.nextModelGrowth));
-  s.pricingOutlook=[0,1,2,3].includes(s.pricingOutlook)?s.pricingOutlook:3;
-  for(const k of ['purchaseDiscount','rentalDecline','apiDecline'])s[k]=Math.min(99,s[k]);
-  s.priceFloor=Math.min(100,s.priceFloor);
-  return s;
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=13';
+import {energyCost} from './energy.js?v=13';
+export function normalize(raw={}){
+ const s={...defaults};
+ for(const [k,v] of Object.entries(defaults)){
+  if(v===null||typeof v==='number'){
+   const x=raw[k];s[k]=(x===null||x===''||x===undefined)?v:Number.isFinite(Number(x))?Math.max(0,Math.min(1e12,Number(x))):v;
+  }else if(typeof raw[k]==='string')s[k]=raw[k].slice(0,2000);
+ }
+ for(const [k,items] of [['model',models],['hardware',hardware],['rental',rentals]])if(!items.some(x=>x.id===s[k]))s[k]=defaults[k];
+ if(!workloads.some(w=>w[0]===s.workload))s.workload=defaults.workload;
+ if(!/^20\d\d-(0[1-9]|1[0-2])$/.test(s.start))s.start=defaults.start;
+ if(!['gs1','bill'].includes(s.tariff))s.tariff='gs1';
+ for(const k of ['autoRental','autoModel','tariffConfirmed','localTax'])s[k]=s[k]?1:0;
+ for(const k of ['purchaseDiscount','apiDecline','rentalDecline'])s[k]=Math.min(99,s[k]);
+ s.users=Math.min(1000000,Math.floor(s.users));
+ if(s.concurrency!==null)s.concurrency=Math.max(1,Math.floor(Math.min(100000,s.concurrency)));
+ return s;
 }
-export function calculate(raw) {
-  const s=normalize(raw), m=models.find(x=>x.id===s.model), h=hardware.find(x=>x.id===s.hardware);
-  const concurrency=Math.ceil(s.users*s.agents*s.activity/100);
-  const batch=Math.max(1,s.batch||concurrency);
-  const requests=s.users*s.agents*s.requests*s.days;
-  const weight=m.params*s.bits/8*(1+s.headroom/100); // billions of parameters -> decimal GB
-  const cache=s.context*s.kv/1000*batch; // decimal MB/token -> decimal GB
-  const required=weight+cache, available=Math.max(0,s.memory-s.reserve);
-  const fits=required<=available;
-  const contextOk=s.input+s.output<=s.context && s.context<=m.context;
-  // This is an explicit heuristic, not a measured benchmark model.
-  const scale=Math.sqrt(3.3/m.active)*Math.pow(30.5/m.params,0.15)*(4/s.bits);
-  const decode=(s.decodeOverride||h.decode*scale)*s.speed/100*Math.pow(batch,s.batchExponent);
-  const prefill=(s.prefillOverride||h.prefill*scale)*s.speed/100*Math.pow(batch,s.batchExponent);
-  const secondsPerRequest=(s.input ? s.input/(prefill||Number.MIN_VALUE):0)+(s.output ? s.output/(decode||Number.MIN_VALUE):0);
-  const hours=s.days*s.hours;
-  const capacity=fits&&contextOk&&secondsPerRequest>0?hours*3600*s.efficiency/100/secondsPerRequest:0;
-  const localRequests=Math.min(requests,capacity);
-  const localFraction=requests>0?localRequests/requests:0;
-  const activeHours=localRequests>0&&Number.isFinite(secondsPerRequest)?Math.min(hours,localRequests*secondsPerRequest/3600):0;
-  const energyKwh=(s.idle*720+(s.load-s.idle)*activeHours)/1000*s.cooling;
-  const powerCost=energyKwh*s.electricity;
-  const unitCloud=(s.input*((1-s.cache/100)*s.apiInput+s.cache/100*s.apiCached)+s.output*s.apiOutput)/1e6;
-  const cloud=requests*unitCloud;
-  const overflow=(requests-localRequests)*unitCloud;
-  const recurring=powerCost+s.maintenance+overflow;
-  const effectivePrice=s.price*(1-s.purchaseDiscount/100);
-  const capital=effectivePrice+s.setup;
-  const savings=cloud-recurring;
-  const payback=savings>0?capital/savings:null;
-  const resale=effectivePrice*s.resale/100;
-  const localTco=capital+recurring*s.months-resale;
-  const cloudTco=cloud*s.months;
-  // The rental is an independently sized machine serving the SAME model and token mix.
-  const rentalHardware=hardware.find(h=>h.id===s.rentalHardware);
-  const rentalAvailable=Math.max(0,s.rentalMemory-s.rentalReserve);
-  const rentalFits=required<=rentalAvailable;
-  const rentalDecode=(s.rentalDecodeOverride||rentalHardware.decode*scale)*s.rentalSpeed/100*Math.pow(batch,s.rentalBatchExponent);
-  const rentalPrefill=(s.rentalPrefillOverride||rentalHardware.prefill*scale)*s.rentalSpeed/100*Math.pow(batch,s.rentalBatchExponent);
-  const rentalSeconds=(s.input?s.input/(rentalPrefill||Number.MIN_VALUE):0)+(s.output?s.output/(rentalDecode||Number.MIN_VALUE):0);
-  // Bill every provisioned hour; only hours overlapping the workload window serve requests.
-  const rentalServingHours=Math.min(hours,s.rentalHours);
-  const rentalCapacity=rentalFits&&contextOk&&rentalSeconds>0?rentalServingHours*3600*s.rentalEfficiency/100/rentalSeconds:0;
-  const rentalRequests=Math.min(requests,rentalCapacity);
-  const rentalFraction=requests>0?rentalRequests/requests:0;
-  const rentalOverflow=(requests-rentalRequests)*unitCloud;
-  const rentalCompute=s.rental*s.rentalHours;
-  const rentalMonthly=rentalCompute+s.rentalExtra+rentalOverflow;
-  const rentalTco=s.rentalSetup+rentalMonthly*s.months;
-  const rentalSavings=rentalMonthly-recurring;
-  const rentalCapitalGap=capital-s.rentalSetup;
-  const paybackVsRental=rentalSavings>0?Math.max(0,rentalCapitalGap/rentalSavings):null;
-  // Volume threshold amortizes capex over the selected horizon, excluding surplus rental capacity.
-  const incrementalEnergy=secondsPerRequest/3600*(s.load-s.idle)/1000*s.cooling*s.electricity;
-  const fixedMonthly=(capital-resale)/s.months+s.maintenance+s.idle*720/1000*s.cooling*s.electricity;
-  const margin=unitCloud-incrementalEnergy;
-  const threshold=margin>0?fixedMonthly/margin:null;
-  const thresholdFeasible=threshold!==null&&fits&&contextOk&&threshold<=capacity;
-  return applyPriceOutlook({effectivePrice,resaleValue:resale,s,m,h,concurrency,batch,requests,weight,cache,required,available,fits,contextOk,decode,prefill,capacity,localRequests,localFraction,activeHours,energyKwh,powerCost,cloud,overflow,recurring,capital,payback,localTco,cloudTco,rentalMonthly,rentalTco,rentalHardware,rentalAvailable,rentalFits,rentalDecode,rentalPrefill,rentalCapacity,rentalRequests,rentalFraction,rentalOverflow,rentalCompute,rentalServingHours,paybackVsRental,threshold,thresholdFeasible,perStream:decode/batch,ttft:prefill>0?s.input*batch/prefill:Infinity,latency:secondsPerRequest*batch});
+export function schedule(start,factory,offset=0){
+ const [y,m]=start.split('-').map(Number),first=new Date(Date.UTC(y,m-1+offset,1));
+ const year=first.getUTCFullYear(),month=first.getUTCMonth()+1,days=new Date(Date.UTC(year,month,0)).getUTCDate();
+ let business=0;for(let d=1;d<=days;d++){const weekday=new Date(Date.UTC(year,month-1,d)).getUTCDay();if(weekday!==0&&weekday!==6)business++;}
+ return {year,month,days:factory?days:business,hours:(factory?days*24:business*8),calendarDays:days};
 }
-
-// Owning must recover its cost against both alternatives before the chart marks payback.
-export function combinedPayback(apiPayback, rentalPayback) {
-  return [apiPayback, rentalPayback].every(n => typeof n === 'number' && Number.isFinite(n) && n >= 0)
-    ? Math.max(apiPayback, rentalPayback) : null;
+export function suggestRental(s){
+ const h=hardware.find(h=>h.id===s.hardware);
+ const target=s.rentalMemory??s.localMemory??h.gpuCeiling??h.memory;
+ return rentals.filter(r=>r.memory>=target).sort((a,b)=>a.hourly-b.hourly||a.memory-b.memory)[0]??null;
+}
+export function optimize(raw){const s=normalize(raw);if(s.autoRental){const r=suggestRental(s);if(r)s.rental=r.id;}return s;}
+export function clearMeasurements(raw,scope='all'){
+ const s={...raw};
+ if(scope!=='rental')for(const k of ['localRph','localMemory','localAvailable','itKwh','coolingKwh'])s[k]=null;
+ if(scope!=='rental')for(const k of ['localEvidence','localRuntime','energySource'])s[k]='';
+ if(scope!=='local')for(const k of ['rentalRph','rentalMemory','rentalAvailable'])s[k]=null;
+ if(scope!=='local')for(const k of ['rentalEvidence','rentalRuntime'])s[k]='';
+ return s;
+}
+export function sustainedPayback(rows,key){
+ // Require strict savings at the end; no declaration from equality or a temporary crossing.
+ if(rows.at(-1).buy===null||rows.at(-1)[key]===null||rows.at(-1).buy>=rows.at(-1)[key])return null;
+ let last=0;for(let i=0;i<rows.length;i++)if(rows[i].buy>rows[i][key])last=i;
+ if(last===rows.length-1)return null;
+ const a=rows[last],b=rows[last+1],gap=a.buy-a[key],nextGap=b.buy-b[key];
+ return Math.max(0,last+(gap>0?gap/(gap-nextGap):0));
+}
+export function calculate(raw){
+ const s=normalize(raw),m=models.find(m=>m.id===s.model),h=hardware.find(h=>h.id===s.hardware),r=rentals.find(r=>r.id===s.rental);
+ const issues=[];const usage=s.calls!==null&&s.input!==null&&s.output!==null&&s.concurrency!==null&&!!s.usageSource;
+ if(!usage)issues.push('Measured workload: calls, input/output tokens, concurrency and evidence.');
+ const context=usage&&s.input+s.output<=m.context&&(!m.maxOutput||s.output<=m.maxOutput)&&(!m.maxInput||s.input<=m.maxInput);
+ if(usage&&!context)issues.push('The selected API endpoint does not support this request length.');
+ const purchase=s.quote!==null&&s.quoteSource?s.quote:h.price;
+ const priceKnown=purchase!==null&&(s.quote===null||!!s.quoteSource)&&(!h.needsBuild||!!s.buildDetails);
+ const localReady=s.localRph!==null&&s.localMemory!==null&&s.localAvailable!==null&&s.localAvailable<=(h.gpuCeiling??h.memory)&&s.localMemory<=s.localAvailable&&!!s.localEvidence&&!!s.localRuntime;
+ const rentalReady=s.rentalRph!==null&&s.rentalMemory!==null&&s.rentalAvailable!==null&&s.rentalAvailable<=r.memory&&s.rentalMemory<=s.rentalAvailable&&!!s.rentalEvidence&&!!s.rentalRuntime;
+ if(!priceKnown)issues.push('A complete-system purchase quote, including the configured host and networking.');
+ if(!localReady)issues.push('Purchase-system benchmark, runtime/precision, usable memory and peak memory.');
+ if(!rentalReady)issues.push('Rental-instance benchmark, runtime/precision, usable memory and peak memory.');
+ const costsKnown=['localSetup','rentalSetup','localExtras','rentalExtras','apiExtras'].every(k=>s[k]!==null)&&!!s.costSource;
+ if(!costsKnown)issues.push('Installation, support, fees and taxes from your quotes (enter 0 only if confirmed).');
+ const firstSchedule=schedule(s.start,s.workload==='swe-factory');
+ const power=energyCost(s,firstSchedule.month);
+ if(!power)issues.push('Measured IT/cooling energy and confirmed Dominion tariff or bill rate.');
+ const changed=s.purchaseDiscount>0||s.apiDecline>0||s.rentalDecline>0;
+ if(changed&&!s.priceEvidence)issues.push('Evidence for the entered discount or future contractual price changes.');
+ const priceValid=!changed||!!s.priceEvidence;
+ const capital=priceKnown&&s.localSetup!==null&&priceValid?purchase*(1-s.purchaseDiscount/100)+s.localSetup:null;
+ const apiReady=usage&&context&&priceValid&&s.apiExtras!==null&&!!s.costSource;
+ const buyReady=apiReady&&localReady&&capital!==null&&power!==null&&s.localExtras!==null;
+ const rentReady=apiReady&&rentalReady&&s.rentalSetup!==null&&s.rentalExtras!==null;
+ const ready=buyReady&&rentReady&&costsKnown&&priceValid;
+ let buy=buyReady?capital:null,rent=rentReady?s.rentalSetup:null,api=apiReady?0:null;
+ const rows=[{month:0,buy,rent,api}];
+ const unit=(s.input*m.input+s.output*m.output)/1e6;
+ for(let i=0;i<120;i++){
+  const cal=schedule(s.start,s.workload==='swe-factory',i),requests=usage?s.users*s.calls*cal.days:null;
+  const apiFactor=priceValid?(1-s.apiDecline/100)**(i/12):1,rentFactor=priceValid?(1-s.rentalDecline/100)**(i/12):1;
+  const apiUsage=usage&&context?requests*unit*apiFactor:null;
+  const localCapacity=localReady?s.localRph*cal.hours:null,rentalCapacity=rentalReady?s.rentalRph*cal.hours:null;
+  const localOverflow=buyReady?Math.max(0,requests-localCapacity)*unit*apiFactor:null;
+  const rentalOverflow=rentReady?Math.max(0,requests-rentalCapacity)*unit*apiFactor:null;
+  // Measured energy is a monthly budget for the selected schedule. Never infer wall power from TDP.
+  const energy=energyCost(s,cal.month);
+  const buyMonthly=buyReady?energy.total+s.localExtras+localOverflow+(localOverflow>0?s.apiExtras:0):null;
+  const compute=r.hourly*cal.hours*rentFactor;
+  const rentMonthly=rentReady?compute+s.rentalExtras+rentalOverflow+(rentalOverflow>0?s.apiExtras:0):null;
+  const apiMonthly=apiReady?apiUsage+s.apiExtras:null;
+  if(buy!==null)buy+=buyMonthly;if(rent!==null)rent+=rentMonthly;if(api!==null)api+=apiMonthly;
+  rows.push({month:i+1,buy,rent,api,buyMonthly,rentMonthly,apiMonthly,compute,apiUsage,localOverflow,rentalOverflow,requests,localCapacity,rentalCapacity,energy,hours:cal.hours});
+ }
+ const paybackApi=ready?sustainedPayback(rows,'api'):null,paybackRent=ready?sustainedPayback(rows,'rent'):null;
+ const payback=paybackApi!==null&&paybackRent!==null?Math.max(paybackApi,paybackRent):null;
+ const months=payback!==null?Math.min(120,Math.max(12,Math.ceil(payback*1.25/6)*6)):60;
+ const review=[s.modelRefresh,s.hardwareRefresh].filter(x=>x!==null&&x>0);
+ const lifecycle=ready&&review.length>0&&!!s.lifecycleSource&&(payback===null||payback>Math.min(...review));
+ return {s,m,h,r,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
 }

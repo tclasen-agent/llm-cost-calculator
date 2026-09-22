@@ -1,112 +1,50 @@
-# Inference Ledger · LLM Cost Calculator
+# Inference Ledger
 
-A dependency-free SPA for deciding when to own local LLM hardware instead of paying for cloud inference. All calculations run in your browser. No account, API keys, backend, analytics, or external runtime dependencies.
+A static, responsive calculator comparing a complete purchased AI system, an actual rented GPU instance, and an API endpoint for the same named model.
 
-## Run
+## Evidence policy — reviewed September 22, 2026
 
-Requires Node.js 22 or later. No install step needed.
+Catalog prices and specifications link to the vendor or provider that publishes them. A source verifies only the fields it actually reports. Published MSRP, provider list prices, configured quotes and user-entered measurements are distinguished. Missing values are `null`, never zero. No synthetic model throughput, memory-overhead coefficient, cooling multiplier, workload token preset, rental availability, or industry obsolescence period is supplied.
+
+- Purchase catalog: actual Apple, NVIDIA, AMD, Framework, HP, Puget and Supermicro offerings. NVIDIA Spark's $4,699 US MSRP comes from its [price-change announcement](https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713). AMD's $3,999 Ryzen AI Halo system price is [reported by AMD](https://www.amd.com/en/blogs/2026/amd-ryzen-ai-halo-is-designed-for-the-agentic-era.html). Both need checkout confirmation. Other full-system prices remain unknown. Configurable workstations and clusters require a complete build description and quote, including networking.
+- Rental catalog: [Lambda on-demand instances](https://lambda.ai/instances). Rates are USD per GPU-hour multiplied by actual GPU count, not whole-server prices accidentally applied per card. For example, the 8× H100 SXM instance is 8 × $3.99 = $31.92/hour. Host resources are the published full-instance CPU, RAM and local SSD. Stock and region availability are not verified. Additional storage, taxes and fees need evidence.
+- API catalog: [OpenRouter's public model and endpoint APIs](https://openrouter.ai/api/v1/models). Each model has a specific provider tag, precision, context/output limits and a consistent input/output price pair from one endpoint. Promotional endpoints and tiered prices were excluded from this snapshot. The raw selected endpoint records are in `src/api-snapshot.json`. No cached-input discount is assumed. Published cached prices are recorded for provenance but not used. Credit purchase, platform, tax and other fees need documented monthly inputs. Routing to different providers changes the comparison; users must validate availability, rate limits and quality.
+- Model cards remain linked for original evaluation results and deployment instructions. Task suggestions are editorial starting points, not a universal model ranking. API precision may differ from local precision. No quality parity is implied.
+
+## Workflow
+
+1. Choose a task and number of people or autonomous teams. AI-assisted SWE follows 9–5 Monday–Friday. The full-auto factory operates all calendar hours, with no human in the loop. Calls/day, tokens/call and concurrency must come from a pilot/log; a job title alone cannot establish them. Holidays are not deducted. Calendar month length and weekdays are calculated.
+2. Choose the model and inspect the exact API endpoint and rates.
+3. Choose a complete purchase system and a real rental instance. Automatic rental suggestions choose the cheapest listed instance with at least the target memory. This is a memory shortlist, not proof of equal performance or deployability. If no instance matches, the UI says so. Separate benchmarks are required for each hardware path.
+
+Each section keeps its basic controls visible and measurement/quote fields in collapsed advanced sections. Changing task, model, token mix, concurrency, scale, or selected system clears affected measurements. The complete configuration and evidence references are shareable in the URL. Do not enter confidential content into evidence notes intended for sharing. Reset clears the URL and restores defaults. Old schema-1 URLs/local storage are not imported: their illustrative values cannot be promoted to verified evidence.
+
+## Power and cooling — Loudoun County, Virginia
+
+Utility: Dominion Energy Virginia, business account, as requested. Standard **GS-1** is available only for eligible small-business accounts; the calculator requires the user to confirm this schedule and enter whole-site peak demand below 30 kW. It does not infer the building's tariff from a single computer's consumption. Other business tariffs, town tax jurisdictions, special contracts and minimum-demand arrangements require a documented all-in incremental bill rate instead.
+
+Source: [Dominion's filed tariff](https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/rates-and-tariffs/pdfs/virginia/shared/entire-filed-tariff.pdf), downloaded September 22, 2026, and [Loudoun County commercial utility tax](https://www.loudoun.gov/1570/Business-Tax-Rates).
+
+The implementation includes GS-1 distribution/generation blocks at 1,400 kWh, summer generation rates in June–September, base transmission, applicable standard riders effective September 2026, deferred fuel, the sales/use surcharge, and the consumption-tax tiers at 2,500 and 50,000 kWh. County commercial tax is $0.92 plus $0.005393/kWh, capped at $72/account/month. It calculates the incremental bill above existing site consumption, first adding IT, then cooling. Existing fixed meter charges cancel. Additional meter/installation costs belong in the quoted cost fields. Special exemptions, contracts and data-center tax classifications are outside this small-business calculation.
+
+Monthly IT kWh and extra cooling kWh must be measured or documented by the technical/HVAC team. They remain separate; no PSU-rating or GPU-TDP conversion is made. Monthly kWh inputs are treated as a recurring measured energy budget, with seasonal tariff changes applied. Future tariffs are unknown and the published rate structure is held constant for projections. New workload measurements should include corresponding updated energy measurements.
+
+## Cost model
+
+Capacity = measured completed requests/hour × operating hours for each system independently. Measurements must include both prefill and decode and match the chosen workload, model, runtime, precision and concurrency. Runtime peak memory is compared with verified/user-documented usable memory and the catalog's installed capacity. Summed VRAM or node memory alone does not establish sharding support.
+
+Unserved work is charged at the same-model API endpoint. Paid rental hours cover the full operating window, assuming instances can be stopped/restarted outside that window. Persistent-storage and other fees are separate. The user must enter documented setup, support, tax, API-platform and other fees, even when confirmed zero. All numbers entered by the user are marked as user-supplied evidence, not independently verified by the application.
+
+The cash-flow engine evaluates 120 months. The chart automatically extends beyond the later sustained payback against both API and rental, capped at 120 months. An earlier crossing that later reverses is not accepted. If no joint payback exists, the display uses a five-year window; that is a presentation choice, not an equipment-life claim. Unknown paths are omitted, not plotted as free. A purchase recommendation is withheld until all required evidence exists. Resale, financing, growth, future hardware purchases and future model capability are not forecast.
+
+Historical declines cannot establish a future annual discount. Optional price changes therefore require a contract/reference and are explicitly conditional user inputs. Lifecycle alerts are compact, with a details modal, and use only user-documented review intervals; no universal industry-standard replacement cycle is asserted.
+
+## Development
 
 ```sh
-npm start          # http://localhost:4173
-npm test           # calculation tests
-npm run build      # static deliverable in dist/
+npm test
+npm run build
+npm start
 ```
 
-Serve `dist/` with any static host. Relative asset paths also work beneath a repository subpath. Do not open index.html using file://, because ES modules require HTTP. The included development server binds to localhost only.
-
-## What's included
-
-- Users, parallel agents, activity-derived concurrency and manual batch override.
-- Per-call input/output volume, serving window, context, quantization and memory estimation.
-- Mac Studio M5 Ultra 256/512 GB, DGX Spark, dual RTX 4090/5090, dual RTX 6000 Ada, RTX PRO 6000 Blackwell, dual A100 and dual H100.
-- Qwen3-Coder 30B, Qwen3-Coder-Next, gpt-oss-120b, MiniMax M2.5 and DeepSeek V3.2. These are a curated SWE/reasoning shortlist suitable for evaluating security-code analysis; no cyber benchmark ranking or equal task quality is implied.
-- Cloud API input/output/cache pricing; capacity-aware cloud hardware rental comparison.
-- Electricity, cooling, maintenance/admin, setup, horizon and terminal resale.
-- Capacity-limited local serving plus priced API overflow, cumulative cost graph, cash payback and capacity-checked volume threshold.
-- Editable performance assumptions, local browser persistence, JSON scenario export and reset.
-
-## Data quality and provenance
-
-Catalog reviewed **September 22, 2026**. Primary source URLs live beside each record in `src/catalog.js` and appear in the app. Model counts, context and hardware memory are spec-based. **Every purchase price, system power value, GPU performance rate, cache coefficient and default API rate is a planning assumption.** Replace these with actual quotes and measurements before purchasing hardware. Defaults are USD, exclude sales tax and financing, and model 30-day months.
-
-Both M5 Ultra presets use an **M4 Max proxy**, without any M5 performance uplift. The source is [MLX-LM's benchmark table](https://github.com/ml-explore/mlx-lm/blob/main/mlx_lm/BENCHMARKS.md): Qwen3-30B-A3B-Instruct-2507 Q4 at 113.33 generation tok/s and 1,753.90 prompt tok/s on a 64 GB M4 Max, 2,048 prompt and 128 generated tokens, MLX-LM 0.28.2. This is a related Instruct checkpoint, not a measurement of the selected Coder model. Cross-model/precision/batch scaling is explicitly heuristic. More memory does not increase the two Mac presets' assumed speed.
-
-Model sources: [Qwen Coder 30B](https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct), [Qwen Coder Next](https://huggingface.co/Qwen/Qwen3-Coder-Next), [gpt-oss](https://huggingface.co/openai/gpt-oss-120b), [MiniMax M2.5](https://huggingface.co/MiniMaxAI/MiniMax-M2.5), [DeepSeek V3.2](https://huggingface.co/deepseek-ai/DeepSeek-V3.2).
-
-Hardware sources: [Apple specs](https://www.apple.com/mac-studio/specs/), [DGX Spark](https://marketplace.nvidia.com/en-us/enterprise/personal-ai-supercomputers/dgx-spark/), [NVIDIA GPU types](https://docs.nvidia.com/brev/reference/gpu-types), [RTX PRO 6000](https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-6000-family/). Additional product links are in the catalog.
-
-## Calculation contract
-
-1. Requests/month = users × agents/user × calls/agent/day × work days. Every agent loop call is a request. Include billable reasoning tokens in output. Activity percentage affects concurrency only.
-2. Auto batch = ceil(users × agents × active fraction), minimum 1. Manual batch overrides this. A lower batch can introduce queues that the latency estimate does not model.
-3. Weight memory in decimal GB = total model parameters in billions × bits/8 × (1 + overhead fraction). MoE uses **total**, not active, parameters. Cache GB = context tokens × cache MB/token × batch / 1000. Installed memory minus reserve is usable. Cache coefficients are approximate, including hybrid/MLA architectures; use measured allocation. Native MXFP4 and mixed precision can deviate from generic Q4.
-4. Batch-1 heuristic = reference × sqrt(3.3/active parameters) × (30.5/total parameters)^0.15 × 4/bits. A nonzero prefill/decode override replaces the heuristic rate. Both paths apply the speed multiplier and batch^exponent. These are synthetic estimates, not a performance model validated across architectures. Benchmark with your exact model, quantization, runtime, batch and context.
-5. Service seconds/request = input / aggregate prefill + output / aggregate decode. Capacity = monthly serving seconds × utilization cap / service seconds. Local requests are capped by capacity; memory/context invalidity yields zero local requests. Per-stream decode = aggregate / batch. Prefill time and end-to-end batch latency exclude queueing, network, tool calls and scheduling delays.
-6. API cost uses separate uncached input, cached input and output prices. The same rates price overflow. Default rates are examples; switching models does not change them. API caching does not reduce local prefill in this model.
-7. Energy kWh = [idle W × 720 + (load − idle W) × active hours] / 1000 × cooling multiplier. Active hours = served requests × service seconds / 3600. Idle draw continues outside the serving window.
-8. Local monthly expense = energy + maintenance + API overflow. Cash payback = (purchase + setup) / (API-only monthly cost − local monthly expense), if the denominator is positive. A result beyond the horizon is labeled. Resale does not affect cash payback.
-9. Local horizon TCO = purchase + setup + monthly expense × months − terminal resale. Resale appears only in the final chart month. Volume threshold amortizes net capital over the horizon and accounts for idle/maintenance and incremental energy. Thresholds beyond local capacity are not presented as achievable.
-10. Rental runs the same model, precision, context, batch and token workload on an independently selected machine. Its own memory, reserve, utilization, throughput overrides and batch scaling determine capacity. Serving hours = min(workload window, provisioned hours), assuming overlapping schedules. All provisioned hours are billed, including idle time. Monthly rental = hourly whole-system rate × provisioned hours + storage/egress/admin + API overflow. Rental TCO adds one-time setup. Rates are editable examples, not current provider quotes; rented hardware availability must be verified.
-11. Buy-vs-rent cash payback = max(0, purchase-path upfront minus rental setup) / (rental recurring minus purchase recurring), only when purchase recurring is lower. This is sustained payback, excludes resale, and may fall outside the horizon. A lower upfront purchase cost with higher monthly costs has no sustained payback in this metric; compare the horizon totals instead.
-12. The top cards, comparison matrix and chart show all three complete-workload costs. Both hardware paths explicitly include same-model API overflow. The hardware table varies the purchased machine while holding the rented configuration and API rates constant. API throughput/rate limits and provider precision parity are not modeled.
-
-Memory fit does not guarantee runtime/quantization support. Multi-GPU configurations require model sharding; VRAM is not magically shared. No CPU offload, redundant failover, financing, tax treatment, hardware replacement or workload growth is modeled. Task success, latency requirements and provider rate limits must be evaluated independently. A model that costs less per token can cost more per successful task.
-
-## Project map
-
-- `src/catalog.js`: sourced specs and clearly identified editable assumptions.
-- `src/engine.js`: pure calculation and input normalization.
-- `src/app.js`: controls, charts, comparison table and local persistence.
-- `tests/engine.test.js`: arithmetic, capacity, invalid fit/context and edge cases.
-- `.github/workflows/ci.yml`: tests and static build on push / pull request.
-
-To calibrate, benchmark the exact model at batch 1, input length and quantization; enter prefill/decode rates under Performance & memory assumptions, then adjust batch scaling from measured runs. Set exponent 0 for no batching gain. Set speed to 50% and 150% to test uncertainty. Prices should include the host, GPUs, RAM, storage, PSU, cooling and any electrical work.
-
-
-## Usage templates
-
-Choose Simple Chat, Research, Business Development, Software Engineering, Customer Support, Writing & Content, or Security Analysis, then enter the number of users. Templates set per-agent daily calls, input/output tokens, active concurrency, context, and parallel agents. They use an illustrative 9–5 Monday–Friday schedule: 8 hours/day × 21.67 weekdays/month (260 weekdays/year divided by 12, rounded), without holiday or leave adjustments. Applying a template also sets rental provisioned hours to 173.36/month. Each preset explains its assumed tasks and calls. These are editable planning examples, not empirically established business averages. Expand Advanced workload settings to customize them; editing those assumptions switches to Custom workload. Users can change without leaving the preset. Monthly calls = users × agents × calls/agent/day × workdays; peak batch = ceil(users × agents × active percentage), minimum 1. Model, hardware and API prices are independent of the usage template.
-
-The Long View payback marker uses the later of purchase-vs-API and purchase-vs-rental cash payback. If either has no sustained payback, no combined marker is shown. If the later point lies beyond the horizon, the chart explains this instead of marking the earlier crossing.
-
-## Business decision view
-The primary screen asks for task type, users and planning horizon. Pricing, system selection and technical settings are collapsed but remain editable. The lowest-cost eligible scenario is highlighted for the selected horizon; hardware configurations that cannot hold the model are excluded from that recommendation, and invalid context or zero demand suppresses it. Partial-capacity hardware is labeled as a combination with pay-per-use service, including all overflow costs. This is a comparison of entered assumptions, not a supplier recommendation or quality guarantee. Detailed cost, capacity, other systems and sources remain available below the cost chart. Existing saved inputs are preserved.
-
-
-## Guided planning and sharing
-The workflow is task and team size → task model shortlist → system or cluster. Automatic models follow a curated priority list, selecting the first with full estimated catalog capacity; this is not a benchmark ranking. Hardware optimization minimizes purchase budget among systems that fit and cover demand, falling back to best coverage. Manual choices remain pinned. Matching buy/rent hardware is the default, sharing memory and throughput assumptions; rental billing hours remain explicit. Rates are example whole-configuration budgets, not verified listings.
-
-The comparison window is automatic: 25% beyond the later sustained cash payback against both alternatives, rounded up to six months (minimum 12, maximum 120). No joint payback uses a clearly labeled 60-month view. Payback excludes resale.
-
-Mac EXO/Thunderbolt RDMA and two/four-node Spark scenarios include aggregated memory, per-node reserves, whole-cluster cost/power and deliberately sublinear assumed speed. Runtime compatibility is unverified, especially Kimi K3 on EXO. Memory fit alone is insufficient. Kimi K2.5 and K3 specifications and model-card scores link to primary sources. Only text inference is estimated; include reasoning tokens in output budgets where applicable.
-
-The URL contains all normalized form values and automatic/manual modes, overriding local saved preferences when opened. Copy configuration link shares these assumptions; it does not send a message. Comparison months are recomputed. URLs contain custom quotes as well as usage numbers, so share them with intended recipients.
-
-
-Nemotron catalog: Nemotron 3 Nano, Super and Ultra, plus Nemotron 3.5 Lightning. Size estimates use approximately 31.6B / 123.6B / 560.5B total parameters rather than rounded marketing names, per [NVIDIA's family specifications](https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/llm-info/). Each model links its NVIDIA model card and task evidence. BF16 benchmark scores are not claims about generic Q4 quality. Hybrid Mamba state, NVFP4 overhead, MTP and speculative decoding are not modeled precisely; memory fit does not verify runtime compatibility or cloud/API availability.
-
-
-## Lifecycle risk overlay
-Purchase recommendations turn amber if sustained cash payback against both alternatives exceeds either review window. Defaults: models every 3 months, hardware every 12 months. These are editable planning policies, not a universal standard or predicted release date. Recent NVIDIA Nano (December 2025), Super (March 2026), and Ultra (June 2026) releases motivate a quarterly model review; different tiers do not prove a quarterly replacement cycle. NVIDIA's stated annual AI-supercomputer cadence motivates the hardware review, not a Mac/RTX/Spark-specific schedule. Source links are included in the warning.
-
-A separate, explicitly hypothetical 2× model-weight stress test holds cache, context, precision and concurrency fixed. Model memory and inference costs do not necessarily grow with training compute or task quality. The overlay shows memory headroom and unrecovered cash cost at the first review, excluding resale. It does not invent future models or replacement prices, and does not change the fixed-configuration cost curves. All lifecycle inputs persist in share links and reset to defaults.
-
-
-## Discounted equipment and falling service prices
-Step 3 offers fixed prices, falling rental/API prices, or a discounted purchase plus falling prices. The illustrative falling-price preset uses 15% annual rental reductions and 30% API reductions, compounded monthly from month-one quotes, with a floor at 20% of current prices. The discounted-purchase preset adds a 30% upfront equipment discount. These are sensitivity scenarios, not industry forecasts. Select the older hardware you intend to buy and enter actual quotes; leave the discount at zero if already included in the quote. A discount never changes performance or available memory.
-
-Discounts reduce equipment cost and its resale basis, not setup. Rental cuts affect compute only; API cuts apply equally to the standalone API and both hardware overflow paths. Electricity, maintenance, rental extras and setup remain fixed. The cost chart and horizon totals sum monthly cash flows; month-one and final-month charges are identified separately. Declining-price payback is the crossing that holds through month 120, excluding resale; earlier temporary crossings are flagged, and the chart expands to ten years when an advantage reverses. No conclusion is implied after that projection. Replacement purchases, future model capabilities, contracts and availability are not forecast.
-
-Evidence: [AWS GPU-instance price reductions](https://aws.amazon.com/blogs/aws/announcing-up-to-45-price-reduction-for-amazon-ec2-nvidia-gpu-accelerated-instances/) and [Stanford AI Index inference cost trends](https://hai.stanford.edu/ai-index/2025-ai-index-report/research-and-development). Stanford compares constant capability across models; it does not establish price declines for a particular model or the newest frontier model.
-
-
-## Software engineering workload modes
-`AI-assisted SWE` retains the `swe` identifier so existing share links remain valid: two assistants/person, 40% simultaneous activity, 75 calls/assistant/day, 21.67 eight-hour business days, 12k input/2.5k output tokens per call.
-
-`Full-auto software factory · 24/7` uses autonomous agent teams instead of people. Each team has four fully active agents targeting 1,440 calls/day each, with 24k input and 8k output tokens (including reasoning) per call, a 65,536-token context, 30 operating days and 24 hours/day. Owned and matched rental serving utilization is 95%; rental bills all 720 hours. This is an aggressive editable demand stress test, not a measured average or a guarantee of autonomous task success. Actual model throughput/memory still cap local and rental service; all excess demand is priced through the same-model API. One team targets 172,800 calls/month and 5.5296 billion total tokens/month before cache discounts. Switching back to a business template restores its business schedule and 70% utilization. Scale unit persists when advanced usage becomes custom.
-
-### Complete-system hardware presets
-
-Strix Halo options include Framework Desktop Max+ 395 with 64/128 GB and HP Z2 Mini G1a Max+ PRO 395 with 128 GB. Conservative GPU-accessible budgets are 48/96 GB, respectively, with the remainder reserved for the OS. NVIDIA additions include a refurbished RTX 3090 tower, RTX 5080 desktop, single RTX 5090 workstation, RTX PRO 4000/5000 Blackwell workstations, and dual L40S server. Existing multi-GPU presets now document the host configuration too.
-
-Each preset describes a complete system (CPU/platform, host RAM, SSD, enclosure, PSU and cooling), with an illustrative full-system acquisition budget and wall-power estimate. Separate host RAM does not count toward dedicated VRAM. Component specifications link to vendor sources in the application; generic host builds, system prices, rental rates and throughput are editable planning assumptions, not vendor quotes or measured benchmarks. Matching rentals preserve the same memory and throughput assumptions, but availability is not established.
+No dependencies or API keys are needed at runtime. The site uses a dated static catalog, not a background price feed. Source updates require review and a new deployment. GitHub Actions runs tests, builds `dist/`, and deploys GitHub Pages.

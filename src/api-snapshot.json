@@ -1,0 +1,341 @@
+{
+  "checked": "2026-09-22",
+  "source": "https://openrouter.ai/api/v1/models",
+  "models": [
+    {
+      "id": "nvidia/nemotron-3.5-lightning",
+      "name": "NVIDIA: Nemotron 3.5 Lightning",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000007",
+        "completion": "0.0000002",
+        "input_cache_read": "0.00000004"
+      },
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/int4",
+        "pricing": {
+          "prompt": "0.000000065",
+          "completion": "0.00000018",
+          "discount": 0
+        },
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-lightning/endpoints"
+    },
+    {
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "context_length": 1048576,
+      "pricing": {
+        "prompt": "0.000003",
+        "completion": "0.000015",
+        "input_cache_read": "0.0000003"
+      },
+      "hugging_face_id": "moonshotai/Kimi-K3",
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "Relace",
+        "tag": "relace/fp4",
+        "pricing": {
+          "prompt": "0.0000017",
+          "completion": "0.0000085",
+          "input_cache_read": "0.00000017",
+          "discount": 0
+        },
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints"
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "NVIDIA: Nemotron 3 Ultra",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.0000006",
+        "completion": "0.0000024",
+        "input_cache_read": "0.00000012"
+      },
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "top_provider": {
+        "context_length": 202800,
+        "max_completion_tokens": 182520,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000001",
+          "discount": 0
+        },
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b/endpoints"
+    },
+    {
+      "id": "nvidia/nemotron-3-super-120b-a12b",
+      "name": "NVIDIA: Nemotron 3 Super",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000008",
+        "completion": "0.00000045"
+      },
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "pricing": {
+          "prompt": "0.000000085",
+          "completion": "0.0000004",
+          "discount": 0
+        },
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-super-120b-a12b/endpoints"
+    },
+    {
+      "id": "minimax/minimax-m2.5",
+      "name": "MiniMax: MiniMax M2.5",
+      "context_length": 204800,
+      "pricing": {
+        "prompt": "0.00000027",
+        "completion": "0.00000108",
+        "input_cache_read": "0.000000027"
+      },
+      "hugging_face_id": "MiniMaxAI/MiniMax-M2.5",
+      "top_provider": {
+        "context_length": 200000,
+        "max_completion_tokens": 128000,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "Venice",
+        "tag": "venice",
+        "pricing": {
+          "prompt": "0.00000027",
+          "completion": "0.00000095",
+          "input_cache_read": "0.00000003",
+          "discount": 0
+        },
+        "quantization": "unknown",
+        "context_length": 198000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.5/endpoints"
+    },
+    {
+      "id": "qwen/qwen3-coder-next",
+      "name": "Qwen: Qwen3 Coder Next",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000012",
+        "completion": "0.0000008",
+        "input_cache_read": "0.00000007"
+      },
+      "hugging_face_id": "Qwen/Qwen3-Coder-Next",
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "Parasail",
+        "tag": "parasail/bf16",
+        "pricing": {
+          "prompt": "0.00000012",
+          "completion": "0.0000008",
+          "input_cache_read": "0.00000007",
+          "discount": 0
+        },
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-next/endpoints"
+    },
+    {
+      "id": "moonshotai/kimi-k2.5",
+      "name": "MoonshotAI: Kimi K2.5",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000045",
+        "completion": "0.00000225",
+        "input_cache_read": "0.00000007"
+      },
+      "hugging_face_id": "moonshotai/Kimi-K2.5",
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/int4",
+        "pricing": {
+          "prompt": "0.00000045",
+          "completion": "0.00000225",
+          "input_cache_read": "0.00000007",
+          "discount": 0
+        },
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k2.5/endpoints"
+    },
+    {
+      "id": "nvidia/nemotron-3-nano-30b-a3b",
+      "name": "NVIDIA: Nemotron 3 Nano 30B A3B",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000005",
+        "completion": "0.0000002",
+        "input_cache_read": "0.00000003"
+      },
+      "hugging_face_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "Novita",
+        "tag": "novita/fp4",
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000002",
+          "discount": 0
+        },
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints"
+    },
+    {
+      "id": "deepseek/deepseek-v3.2",
+      "name": "DeepSeek: DeepSeek V3.2",
+      "context_length": 163840,
+      "pricing": {
+        "prompt": "0.000000269",
+        "completion": "0.0000004",
+        "input_cache_read": "0.0000001345"
+      },
+      "hugging_face_id": "deepseek-ai/DeepSeek-V3.2",
+      "top_provider": {
+        "context_length": 163840,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "pricing": {
+          "prompt": "0.00000026",
+          "completion": "0.00000038",
+          "input_cache_read": "0.00000013",
+          "discount": 0
+        },
+        "quantization": "fp4",
+        "context_length": 163840,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v3.2/endpoints"
+    },
+    {
+      "id": "openai/gpt-oss-120b",
+      "name": "OpenAI: gpt-oss-120b",
+      "context_length": 131072,
+      "pricing": {
+        "prompt": "0.00000015",
+        "completion": "0.0000006",
+        "input_cache_read": "0.000000075"
+      },
+      "hugging_face_id": "openai/gpt-oss-120b",
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 65536,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "AkashML",
+        "tag": "akashml/bf16",
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.00000017",
+          "input_cache_read": "0.00000003",
+          "discount": 0
+        },
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints"
+    },
+    {
+      "id": "qwen/qwen3-coder-30b-a3b-instruct",
+      "name": "Qwen: Qwen3 Coder 30B A3B Instruct",
+      "context_length": 262144,
+      "pricing": {
+        "prompt": "0.00000007",
+        "completion": "0.00000028"
+      },
+      "hugging_face_id": "Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "is_moderated": false
+      },
+      "endpoint": {
+        "provider_name": "Novita",
+        "tag": "novita/fp8",
+        "pricing": {
+          "prompt": "0.00000007",
+          "completion": "0.00000027",
+          "discount": 0
+        },
+        "quantization": "fp8",
+        "context_length": 160000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null
+      },
+      "endpointSource": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-30b-a3b-instruct/endpoints"
+    }
+  ]
+}
