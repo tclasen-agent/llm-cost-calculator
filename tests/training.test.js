@@ -10,8 +10,8 @@ test('default QLoRA example counts all processed tokens and both hardware paths 
 test('BF16 LoRA cannot silently fit on a single 80 or 96 GB GPU',()=>{
  const r=calculateTraining({method:'lora'});assert.equal(r.buy.ready,false);assert.equal(r.rent.ready,false);assert.equal(r.payback,null);
 });
-test('multi GPU requires explicit sharding validation and does not imply faster training',()=>{
- const raw={method:'lora',rent:'h100x4',rentRate:16.36};assert.equal(calculateTraining(raw).rent.ready,false);
+test('multi GPU exposes sharding assumptions and does not imply faster training',()=>{
+ const raw={method:'lora',rent:'h100x4',rentRate:16.36};assert.equal(calculateTraining(raw).rent.ready,true);assert.ok(calculateTraining(raw).rent.notes.some(n=>n.includes('sharding')));
  const r=calculateTraining({...raw,rentSharding:1});assert.equal(r.rent.ready,true);assert.equal(r.rent.hours[0],calculateTraining({}).rent.hours[0]);assert.equal(r.rent.gpuHours[0],r.rent.hours[0]*4);
 });
 test('long context and microbatch increase modeled memory; peak measurement can replace it',()=>{
@@ -43,8 +43,8 @@ test('every inference picker model is covered by sourced training metadata for b
   for(const method of ['lora','qlora']){const r=calculateTraining({model:model.id,method});assert.equal(r.s.model,model.id);assert.ok(Number.isFinite(r.estimatedGB));assert.ok(r.estimatedGB>0);assert.ok(r.rent.minimumGPUs>=1);}
  }
 });
-test('generic estimates use total parameters and require recipe confirmation',()=>{
- const q=calculateTraining({model:'qwen30'});assert.equal(q.baseGB,31*.625);assert.equal(q.adapterGB,31*.001*16);assert.equal(q.buy.ready,false);
+test('generic estimates use total parameters and disclose recipe assumptions',()=>{
+ const q=calculateTraining({model:'qwen30'});assert.equal(q.baseGB,31*.625);assert.equal(q.adapterGB,31*.001*16);assert.equal(q.buy.ready,true);assert.ok(q.buy.notes.some(n=>n.includes("Generic recipe")));
  assert.equal(calculateTraining({model:'qwen30',recipeConfirmed:1}).buy.ready,true);
  const l=calculateTraining({model:'qwen30',method:'lora',recipeConfirmed:1});assert.equal(l.baseGB,62);assert.ok(l.estimatedGB>q.estimatedGB);
 });

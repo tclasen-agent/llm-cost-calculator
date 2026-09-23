@@ -23,22 +23,28 @@ test('shared approximate inference measurements are allowed without certifying c
  assert.equal(calculate({...s,localMemory:s.localAvailable+1}).buyReady,false);
  assert.equal(calculate({...s,rentalRph:0}).rentReady,false);
 });
-test('every training model and method rejects memory fit and self-certification as verification',()=>{
- for(const m of trainingModels)for(const method of ['lora','qlora'])for(const h of trainingSystems){
-  const s={model:m.id,method,[h.kind]:h.id,recipeConfirmed:1,buySharding:1,rentSharding:1,buyPeak:1,rentPeak:1,buyEvidence:'verified',rentEvidence:'verified',quoteEvidence:'quote',rentQuoteEvidence:'quote',quote:100,rentRate:1};
-  const r=calculateTraining(decodeTraining(encodeTraining(s)));
-  for(const kind of ['buy','rent']){assert.equal(r[kind].ready,false);assert.equal(r[kind].hours,undefined);assert.equal(r[kind].perRun,undefined);assert.equal(r[kind].campaign,undefined);}
-  assert.equal(r.payback,null);assert.equal(r.paybackWithinWindow,false);
+test('training defaults prefer high-confidence estimates without claiming verification',()=>{
+ const s=planTraining(),r=calculateTraining(s);
+ for(const kind of ['buy','rent']){assert.equal(r[kind].ready,true);assert.equal(r[kind].confidence,'high');assert.equal(r[kind].verified,false);assert.ok(r[kind].perRun.every(Number.isFinite));}
+ assert.deepEqual(planTraining(decodeTraining(encodeTraining(s))),s);
+});
+test('generic and sharded configurations show estimates but cannot self-certify',()=>{
+ for(const raw of [{model:'qwen30'},{method:'lora'},{buyPeak:1,buyEvidence:'verified',recipeConfirmed:1}]){
+  const r=calculateTraining(planTraining(raw));
+  assert.equal(r.buy.ready,true);assert.equal(r.buy.confidence,'estimated');assert.equal(r.buy.verified,false);
  }
 });
-test('fine-tuning stays gated while inference automatically selects fitting hardware',()=>{
- let s=planTraining({model:'oss120',method:'lora'});
- assert.equal(calculateTraining(s).buy.ready,false);assert.equal(calculateTraining(s).rent.ready,false);
+test('confidence respects headroom and recipe scope; invalid paths retain specific reasons',()=>{
+ assert.equal(calculateTraining({rent:'h100'}).rent.confidence,'estimated');
+ for(const raw of [{sequence:8192},{microbatch:2},{adapterPercent:1}])assert.notEqual(calculateTraining(raw).buy.confidence,'high');
+ const r=calculateTraining({buyPeak:10000});assert.equal(r.buy.ready,false);assert.ok(r.buy.issues.some(i=>i.includes('memory')));assert.equal(r.payback,null);
+});
+test('training transitions reset scoped measurements and retain usable estimates when fitting',()=>{
+ let s=planTraining();
  for(const [key,value] of [['model','oss20'],['method','qlora'],['sequence',2048],['microbatch',4],['buy','hgx640'],['autoBuy',1]]){
-  s=updateTraining(s,key,value);assert.equal(calculateTraining(s).buy.ready,false);
+  s=updateTraining(s,key,value);const r=calculateTraining(s);assert.equal(r.buy.ready,true);assert.equal(r.rent.ready,true);assert.equal(r.buy.verified,false);
  }
- const p=planning({hardware:'m5-256',rental:'a6000',autoHardware:1,autoRental:1});
- assert.equal(calculate(p).ready,true);assert.ok(p.localMemory<=p.localAvailable);assert.ok(p.rentalMemory<=p.rentalAvailable);
+ s=updateTraining(s,'buyEvidence','pilot');s=updateTraining(s,'model','oss120');assert.equal(s.buyEvidence,'');
 });
 test('memory estimate never clamps a non-fitting model to available memory',()=>{
  const s=planning({model:'kimi3',hardware:'hp-2000',autoHardware:0});assert.ok(s.localMemory>s.localAvailable);

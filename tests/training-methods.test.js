@@ -4,14 +4,14 @@ import {estimateTraining,calculateTraining,normalizeTraining,encodeTraining,deco
 import {trainingMethods,methodKeys} from '../src/training-methods.js';
 import {matchReviewedConfiguration} from '../src/verification.js';
 const large={model:'oss20',recipeConfirmed:1,buy:'customBuy',customBuyGPUs:8,customBuyVRAM:180,quote:100000,quoteEvidence:'fixture',buySharding:1,rent:'customRent',customRentGPUs:8,customRentVRAM:180,rentRate:20,rentQuoteEvidence:'fixture',rentSharding:1,overhead:0,setupHours:0};
-test('all nine methods preserve shared settings and keep unverified costs unavailable',()=>{
+test('all nine methods preserve shared settings and show labeled unverified cost estimates',()=>{
  assert.equal(trainingMethods.length,9);
  for(const {id:method} of trainingMethods)for(const updateMethod of ['full','partial','lora','qlora']){
   const s=normalizeTraining({...large,method,updateMethod});
   assert.deepEqual(decodeTraining(encodeTraining(s)),s);
   const estimate=estimateTraining(s);assert.ok(Number.isFinite(estimate.estimatedGB));assert.ok(estimate.estimatedGB>0);
   assert.equal(estimate.rent.ready,true,method);assert.ok(estimate.rent.hours[0]>0);
-  const publicResult=calculateTraining(s);assert.equal(publicResult.rent.ready,false);assert.equal(publicResult.rent.hours,undefined);assert.equal(publicResult.buy.perRun,undefined);
+  const publicResult=calculateTraining(s);assert.equal(publicResult.rent.ready,true);assert.equal(publicResult.rent.verified,false);assert.equal(publicResult.rent.confidence,"estimated");assert.deepEqual(publicResult.rent.hours,estimate.rent.hours);assert.ok(publicResult.buy.perRun.every(Number.isFinite));
  }
 });
 test('full and partial tuning account for frozen weights and trainable optimizer state separately',()=>{

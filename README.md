@@ -16,7 +16,7 @@ Inference accepts approximate published performance, user estimates and maintain
 
 Changing a model, workload or system resets measurements scoped to the previous configuration. System changes also reset its quote and setup assumptions. Unrelated overrides remain saved. Invalid saved/shared scenarios recover to complete defaults, with the original retained in browser recovery storage.
 
-Fine-tuning alone requires current, reviewed end-to-end evidence for the exact model revision, complete system, runtime and recipe. An empty registry or expired/out-of-scope record keeps that fine-tuning path unavailable. Model cards, memory fit and user confirmations cannot certify compatibility. Inference may use those inputs as labeled planning estimates. Neither mode silently adds API overflow to hardware costs.
+Fine-tuning allows assumption-based estimates when memory fits and cost and throughput inputs are usable. Automatic selection prefers high-confidence feasibility: a published supervised recipe, single GPU, standard sequence/batch/adapter settings and the memory ceiling maintained in training-policy.js. Generic recipes and sharded systems remain lower-confidence estimates. Model cards, memory fit and user confirmations cannot certify compatibility. Inference may use those inputs as labeled planning estimates. Neither mode silently adds API overflow to hardware costs.
 
 ## Calculations and assumptions
 
@@ -26,7 +26,7 @@ The capability comparison uses the declared benchmark version and evaluated sett
 
 Electricity uses either a documented incremental bill rate or the centralized Dominion GS-1 tariff and Loudoun taxes, subject to eligibility. The incremental tariff calculation adds IT and then cooling above existing site consumption. Existing fixed-meter charges cancel. Special contracts, exemptions and other jurisdictions require a suitable bill rate.
 
-Fine-tuning supports supervised adapters, full/partial tuning, continued pretraining, preference optimization, offline distillation and reinforcement-learning recipes. It accounts for training and auxiliary stages using independently supplied throughput. Memory figures are recipe heuristics or documented references, not purchase requirements. Dataset preparation, staff, idle power, financing, replacements and failed experiments are outside the estimate. Exact reviewed configuration evidence remains mandatory for hardware costs and duration.
+Fine-tuning supports supervised adapters, full/partial tuning, continued pretraining, preference optimization, offline distillation and reinforcement-learning recipes. It accounts for training and auxiliary stages using independently supplied throughput. Memory figures are recipe heuristics or documented references, not purchase requirements. Dataset preparation, staff, idle power, financing, replacements and failed experiments are outside the estimate. Exact reviewed evidence is required only for verified status, not estimated hardware costs and duration.
 
 ## Valid default and selections
 
@@ -47,3 +47,5 @@ npm start
 ```
 
 Runtime remains dependency-free. Acorn is a development-only parser for enforcing the data boundary. The build copies the app and shared data folder to `dist/`. CI installs pinned development dependencies, checks data and tests, then builds. GitHub Pages serves the repository's main branch; a release is complete only after the Pages build succeeds and live behavior is verified.
+
+Training policy migration: existing saved inputs and shared links retain their measurements and quotes. Automatic selection now prefers higher-confidence fitting hardware; if it changes systems, existing system-scoped measurements and quotes reset as before. Manual selections remain pinned. No scenario schema change is required.

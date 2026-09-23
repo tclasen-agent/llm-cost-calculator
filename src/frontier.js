@@ -1,5 +1,5 @@
 import {data} from './data/index.js';
-import {referenceModels,selectedBenchmarks,missingBenchmarks,frontierReviewed,benchmarkVersion,methodologySource} from './frontier-data.js?v=27';
+import {referenceModels,selectedBenchmarks,missingBenchmarks,frontierReviewed,benchmarkVersion,methodologySource} from './frontier-data.js?v=28';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>Number.isFinite(v)?'$'+v.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:4}):'Not available';
 const link=(url,name)=>`<a href="${esc(url)}" target="_blank" rel="noreferrer">${esc(name)} ↗</a>`;

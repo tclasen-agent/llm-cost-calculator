@@ -1339,11 +1339,12 @@ Type: **assumption**. Recorded review: **2026-09-23**.
 
 **Source:** sources.training; training method documentation and pilots
 
-**How to update each field:** Recalibrate memory/activation coefficients and monthly capacity allowance. Constants model a recipe, not a compatibility guarantee.
+**How to update each field:** Recalibrate memory/activation coefficients and monthly capacity allowance and high-confidence memory ceiling (fraction of installed VRAM). Constants model a recipe, not a compatibility guarantee.
 
 | Field | Current value |
 |---|---|
 | `usableMemory` | 0.95 |
+| `highConfidenceMemory` | 0.8 |
 | `quantizedBytes` | 0.625 |
 | `frozenBytes` | 2 |
 | `trainableBytes` | 16 |

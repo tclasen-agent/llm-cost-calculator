@@ -1,5 +1,5 @@
-import {trainingWorkload,methodDefaults,methodKeys,trainingMethods} from './training-methods.js?v=27';
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=27';
+import {trainingWorkload,methodDefaults,methodKeys,trainingMethods} from './training-methods.js?v=28';
+import {verifiedConfiguration} from './verification.js?v=28';
 import {data,trainingModels,trainingSystems,trainingDefaults} from './data/index.js';
 export {trainingSource,trainingModels,trainingSystems,trainingDefaults} from './data/index.js';
 const policy=data.trainingPolicy;
@@ -41,11 +41,11 @@ export function estimateTraining(raw){
   const minimumGPUs=Math.ceil(requiredGB/(h.vram*policy.usableMemory));
   const issues=[];
   const notes=[];
-  if(!workload.recipeReference&&!s.recipeConfirmed)issues.push('Generic memory estimate: confirm support for this exact model, training activity and update method.');
+  if(!workload.recipeReference)notes.push('Generic recipe assumption: training-stack support for this model and method needs a pilot.');
   if(h.id==='customBuy'&&(!s.quoteEvidence.trim()||s.quote<=0))issues.push('Enter a positive complete-system purchase quote and its reference.');
   if(h.id==='customRent'&&(!s.rentQuoteEvidence.trim()||s.rentRate<=0))issues.push('Enter a positive whole-cluster rental rate and its reference.');
   if(requiredGB>availableGB)issues.push(`Estimated peak memory exceeds the ${policy.usableMemory*100}% GPU memory budget.`);
-  if(h.gpus>1&&!s[kind+'Sharding'])issues.push('Planning assumes model and training-state sharding across these GPUs. Validate the exact recipe, interconnect and per-device memory before renting or buying.');
+  if(h.gpus>1)notes.push('Planning assumes model and training-state sharding across these GPUs. Validate the exact recipe, interconnect and per-device memory before renting or buying.');
   if(s[kind+'Low']<=0||s[kind+'High']<=0)issues.push('Enter positive training throughput for both ends of the range.');
   if(s[kind+'Low']>s[kind+'High'])issues.push('The lower throughput must not exceed the upper throughput.');
   if((workload.referenceTokens+workload.rewardTokens)>0&&s[kind+'Forward']<=0)issues.push('Enter positive auxiliary forward throughput.');
@@ -85,15 +85,15 @@ function resetTrainingSystem(s,kind,id){
  else {s.rentRate=h.hourly;s.rentQuoteEvidence='';}
 }
 
-// Automatic selection is restricted to independently reviewed configurations.
-// An empty evidence registry must never fall back to a memory-fit candidate.
+// Prefer higher-confidence estimates, then the least expensive fitting system.
 export function planTraining(raw={}){
  const s=normalizeTraining(raw),r=calculateTraining(s);
  for(const kind of ['buy','rent']){
   const automatic=kind==='buy'?s.autoBuy:s.autoRent;
   if(!automatic)continue;
-  const candidates=trainingSystems.filter(h=>h.kind===kind&&verifiedConfiguration('training',s,kind,h.id)&&h.gpus*h.vram*policy.usableMemory>=r.estimatedGB);
-  candidates.sort((a,b)=>(kind==='buy'?a.price-b.price:a.hourly-b.hourly)||a.gpus-b.gpus||a.id.localeCompare(b.id));
+  const candidates=trainingSystems.filter(h=>h.kind===kind&&!h.id.startsWith('custom')&&h.gpus*h.vram*policy.usableMemory>=r.estimatedGB);
+  const high=h=>highConfidence(r,h,r.estimatedGB);
+  candidates.sort((a,b)=>Number(high(b))-Number(high(a))||(kind==='buy'?a.price-b.price:a.hourly-b.hourly)||a.gpus-b.gpus||a.id.localeCompare(b.id));
   const next=candidates[0];
   if(next&&next.id!==s[kind])resetTrainingSystem(s,kind,next.id);
  }
@@ -122,16 +122,24 @@ export function updateTraining(raw,key,value){
  return planTraining(s);
 }
 
-// Estimates alone never authorize a hardware recommendation. Shared inputs are untrusted.
+// Confidence concerns feasibility only; throughput remains an independent assumption.
+function highConfidence(r,h,requiredGB){
+ return r.workload.recipeReference&&h.gpus===1&&!h.id.startsWith('custom')
+  &&r.s.sequence<=policy.activationSequence&&r.s.microbatch===trainingDefaults.microbatch
+  &&r.s.adapterPercent<=trainingDefaults.adapterPercent
+  &&requiredGB<=h.gpus*h.vram*policy.highConfidenceMemory;
+}
 export function calculateTraining(raw){
  const r=estimateTraining(raw);
  for(const kind of ['buy','rent']){
-  if(!verifiedConfiguration('training',r.s,kind,r.s[kind])){
-   const p=r[kind];
-   r[kind]={kind,h:p.h,requiredGB:p.requiredGB,availableGB:p.availableGB,minimumGPUs:p.minimumGPUs,notes:[],ready:false,verified:false,issues:[verificationMessage]};
-  }
+  const p=r[kind];
+  p.verified=Boolean(verifiedConfiguration('training',r.s,kind,r.s[kind]));
+  p.confidence=!p.ready?'unavailable':p.verified?'verified':!r.s[kind+'Peak']&&highConfidence(r,p.h,p.requiredGB)?'high':'estimated';
+  p.confidenceLabel={unavailable:'Configuration unavailable',verified:'Reviewed configuration',high:'High confidence · estimated feasibility',estimated:'Planning estimate · feasibility needs a pilot'}[p.confidence];
+  if(p.ready&&!p.verified)p.notes.push(p.confidence==='high'
+   ?`Published supervised recipe, single GPU and modeled peak within ${policy.highConfidenceMemory*100}% of installed VRAM. This is an assumption-based assessment, not a demonstrated run on this system; throughput is not validated.`
+   :'Memory fits under the modeled assumptions. Runtime support, per-device peaks and throughput are not demonstrated for this configuration.');
  }
- if(!r.buy.ready||!r.rent.ready){r.payback=null;r.paybackWithinWindow=false;}
  return r;
 }
 
