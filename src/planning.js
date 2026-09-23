@@ -1,6 +1,6 @@
-import {defaults,hardware,rentals,models} from './catalog.js?v=21';
-import {gs1Variable} from './energy.js?v=21';
-import {normalize,schedule} from './engine.js?v=21';
+import {defaults,hardware,rentals,models} from './catalog.js?v=22';
+import {gs1Variable} from './energy.js?v=22';
+import {normalize,schedule} from './engine.js?v=22';
 // Deliberately editable planning assumptions, not measurements or vendor benchmarks.
 export const profiles={chat:[30,1500,500,.1],research:[40,12000,2500,.2],bizdev:[35,6000,1500,.15],swe:[75,12000,2500,.4],'swe-factory':[2880,24000,4000,8],support:[100,3000,700,.3],writing:[35,4000,2000,.15],security:[60,16000,3000,.4]};
 const modelGB={'nemotron-lightning':24,kimi3:700,'nemotron-ultra':360,'nemotron-super':90,minimax:160,qwen80:60,kimi25:420,'nemotron-nano':24,deepseek:440,oss120:85,qwen30:24};

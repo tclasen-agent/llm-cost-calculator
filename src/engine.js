@@ -1,5 +1,5 @@
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=21';
-import {energyCost} from './energy.js?v=21';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=22';
+import {energyCost} from './energy.js?v=22';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
