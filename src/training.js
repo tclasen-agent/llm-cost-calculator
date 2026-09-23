@@ -1,7 +1,7 @@
-import {trainingWorkload,methodDefaults,methodKeys,trainingMethods} from './training-methods.js?v=28';
-import {verifiedConfiguration} from './verification.js?v=28';
-import {data,trainingModels,trainingSystems,trainingDefaults} from './data/index.js';
-export {trainingSource,trainingModels,trainingSystems,trainingDefaults} from './data/index.js';
+import {trainingWorkload,methodDefaults,methodKeys,trainingMethods} from './training-methods.js?v=29';
+import {verifiedConfiguration} from './verification.js?v=29';
+import {data,trainingModels,trainingSystems,trainingDefaults} from './data/index.js?v=29';
+export {trainingSource,trainingModels,trainingSystems,trainingDefaults} from './data/index.js?v=29';
 const policy=data.trainingPolicy;
 export function normalizeTraining(raw={}){
  const s={...trainingDefaults};

@@ -1,4 +1,4 @@
-import {data} from './data/index.js';
+import {data} from './data/index.js?v=29';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const money=v=>Number.isFinite(v)?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(v):'Unavailable';
 const n=v=>Number.isFinite(v)?v.toLocaleString('en-US',{maximumFractionDigits:1}):'—';

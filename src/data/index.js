@@ -1,5 +1,5 @@
 // Shared projections only. Edit the adjacent dataset files, never copy their facts here.
-import {data,datasets} from './registry.js';
+import {data,datasets} from './registry.js?v=29';
 export {data,datasets};
 export const reviewed=datasets.models.maintenance.reviewed;
 export const models=Object.entries(data.models).map(([id,m])=>({
