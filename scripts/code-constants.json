@@ -1,0 +1,179 @@
+{
+  "app.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      2,
+      7,
+      100,
+      1000
+    ]
+  },
+  "catalog.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": []
+  },
+  "comparison.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      0.5,
+      1,
+      2,
+      100,
+      1000000
+    ]
+  },
+  "energy.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      100
+    ]
+  },
+  "engine.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      6,
+      12,
+      99,
+      100,
+      2000,
+      3600,
+      100000,
+      1000000,
+      1000000000000
+    ]
+  },
+  "frontier-data.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": []
+  },
+  "frontier.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      2,
+      4,
+      9,
+      10,
+      13,
+      14,
+      15,
+      20,
+      24,
+      28,
+      32,
+      44,
+      60,
+      270,
+      300,
+      330,
+      760,
+      1000000
+    ]
+  },
+  "long-view.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      9,
+      10,
+      12,
+      13,
+      15,
+      20,
+      23,
+      30,
+      36,
+      48,
+      52,
+      64,
+      90,
+      95,
+      97,
+      112,
+      140,
+      330,
+      350,
+      600,
+      1000
+    ]
+  },
+  "planning.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      24,
+      100,
+      1000,
+      3600
+    ]
+  },
+  "sharing.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": []
+  },
+  "task-models.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0
+    ]
+  },
+  "training-methods.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      2,
+      100
+    ]
+  },
+  "training-ui.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      1,
+      1000000
+    ]
+  },
+  "training.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      0.001,
+      0.01,
+      1,
+      2,
+      10,
+      100,
+      1000,
+      1024,
+      3600,
+      4096,
+      1000000000,
+      1000000000000000
+    ]
+  },
+  "verification.js": {
+    "reason": "Algorithm identities, unit conversions, input validation bounds, array indexes, schema versions and visual layout only. Market facts, empirical coefficients, dates and policies must be in src/data/. New literals require explicit classification and review.",
+    "values": [
+      0,
+      10
+    ]
+  }
+}

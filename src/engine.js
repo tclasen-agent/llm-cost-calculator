@@ -1,6 +1,8 @@
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=24';
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=24';
-import {energyCost} from './energy.js?v=24';
+import {data} from './data/index.js';
+const policy=data.inferencePolicy;
+import {verifiedConfiguration,verificationMessage} from './verification.js?v=25';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=25';
+import {energyCost} from './energy.js?v=25';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
@@ -23,7 +25,7 @@ export function schedule(start,factory,offset=0){
  const [y,m]=start.split('-').map(Number),first=new Date(Date.UTC(y,m-1+offset,1));
  const year=first.getUTCFullYear(),month=first.getUTCMonth()+1,days=new Date(Date.UTC(year,month,0)).getUTCDate();
  let business=0;for(let d=1;d<=days;d++){const weekday=new Date(Date.UTC(year,month-1,d)).getUTCDay();if(weekday!==0&&weekday!==6)business++;}
- return {year,month,days:factory?days:business,hours:(factory?days*24:business*8),calendarDays:days};
+ return {year,month,days:factory?days:business,hours:(factory?days*policy.factoryHours:business*policy.businessHours),calendarDays:days};
 }
 export function suggestRental(s){
  const h=hardware.find(h=>h.id===s.hardware);
@@ -62,7 +64,7 @@ export function estimateEconomics(raw){
  if(!rentalReady)issues.push('Rental-instance benchmark, runtime/precision, usable memory and peak memory.');
  const costsKnown=['localSetup','rentalSetup','localExtras','rentalExtras','apiExtras'].every(k=>s[k]!==null)&&!!s.costSource;
  if(!costsKnown)issues.push('Installation, support, fees and taxes from your quotes (enter 0 only if confirmed).');
- const demandRph=s.users*s.calls/(s.workload==='swe-factory'?24:8);
+ const demandRph=s.users*s.calls/(s.workload==='swe-factory'?policy.factoryHours:policy.businessHours);
  const localUnits=localReady&&s.localRph>0?Math.max(1,Math.ceil(demandRph/s.localRph)):null;
  const rentalUnits=rentalReady&&s.rentalRph>0?Math.max(1,Math.ceil(demandRph/s.rentalRph)):null;
  if(localUnits===null)issues.push('Purchase configuration cannot serve this model; choose compatible hardware. No API fallback is used.');
@@ -82,7 +84,7 @@ export function estimateEconomics(raw){
  let buy=buyReady?capital:null,rent=rentReady?s.rentalSetup*rentalUnits:null,api=apiReady?0:null;
  const rows=[{month:0,buy,rent,api}];
  const unit=(s.input*m.input+s.output*m.output)/1e6;
- for(let i=0;i<120;i++){
+ for(let i=0;i<policy.projectionMonths;i++){
   const cal=schedule(s.start,s.workload==='swe-factory',i),requests=usage?s.users*s.calls*cal.days:null;
   const apiFactor=priceValid?(1-s.apiDecline/100)**(i/12):1,rentFactor=priceValid?(1-s.rentalDecline/100)**(i/12):1;
   const apiUsage=usage&&context?requests*unit*apiFactor:null;
@@ -98,13 +100,13 @@ export function estimateEconomics(raw){
   if(buy!==null)buy+=buyMonthly;if(rent!==null)rent+=rentMonthly;if(api!==null)api+=apiMonthly;
   rows.push({month:i+1,buy,rent,api,buyMonthly,rentMonthly,apiMonthly,compute,apiUsage,localOverflow,rentalOverflow,requests,localCapacity,rentalCapacity,energy,hours:cal.hours});
  }
- const usefulMonths=Math.min(120,Math.max(1,Math.min(s.modelRefresh>0?s.modelRefresh:3,s.hardwareRefresh>0?s.hardwareRefresh:6)));
+ const usefulMonths=Math.min(policy.projectionMonths,Math.max(1,Math.min(s.modelRefresh>0?s.modelRefresh:policy.modelRefresh,s.hardwareRefresh>0?s.hardwareRefresh:policy.hardwareRefresh)));
  const at=(key,t)=>{const lo=Math.floor(t),hi=Math.ceil(t),a=rows[lo][key],b=rows[hi][key];return a===null||b===null?null:a+(b-a)*(t-lo);};
  const windowRows=rows.slice(0,Math.ceil(usefulMonths)+1);
  const crossing=key=>{const t=sustainedPayback(windowRows,key);return t!==null&&t<=usefulMonths?t:null;};
  const paybackApi=buyReady&&apiReady?crossing('api'):null,paybackRent=buyReady&&rentReady?crossing('rent'):null;
  const payback=paybackApi!==null&&paybackRent!==null?Math.max(paybackApi,paybackRent):null;
- const months=Math.min(24,Math.max(12,Math.ceil(usefulMonths*2)));
+ const months=Math.min(policy.displayMaxMonths,Math.max(policy.displayMinMonths,Math.ceil(usefulMonths*policy.displayWindowMultiplier)));
  const lifecycle=buyReady&&(payback===null||payback>=usefulMonths);
  const period=usefulMonths,amortized={},decisionCosts={};
  for(const key of ['buy','rent','api']){decisionCosts[key]=at(key,period);amortized[key]=decisionCosts[key]===null?null:decisionCosts[key]/period;}

@@ -1,8 +1,9 @@
-import {methodKeys} from './training-methods.js?v=24';
+import {methodKeys} from './training-methods.js?v=25';
 // Only repository-reviewed records belong here. Sources must demonstrate a
 // successful run on the complete configuration, not merely document GPU specs.
 // No current catalog entry meets this standard. Do not seed this with estimates.
-const reviewedConfigurations = Object.freeze([]);
+import {data} from './data/index.js';
+const reviewedConfigurations = data.reviewedConfigurations;
 export const verificationMessage = 'No verified configuration available. Hardware specifications and estimated memory fit do not establish that this model and workload run successfully. A reviewed end-to-end validation record is required.';
 
 // Exact matching is intentional: no extrapolation to other runtimes, contexts,

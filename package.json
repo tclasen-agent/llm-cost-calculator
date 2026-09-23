@@ -4,6 +4,17 @@
   "private": true,
   "type": "module",
   "description": "Transparent local-vs-cloud LLM capacity and cost planning",
-  "scripts": { "start": "node server.mjs", "test": "node --test", "build": "node build.mjs" },
-  "engines": { "node": ">=22" }
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "npm run data:check && node --test",
+    "build": "npm run data:check && node build.mjs",
+    "data:inventory": "node scripts/data-inventory.mjs",
+    "data:check": "node scripts/data-inventory.mjs --check"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "acorn": "^8.18.0"
+  }
 }
