@@ -1,3 +1,4 @@
+import {methodKeys} from './training-methods.js?v=24';
 // Only repository-reviewed records belong here. Sources must demonstrate a
 // successful run on the complete configuration, not merely document GPU specs.
 // No current catalog entry meets this standard. Do not seed this with estimates.
@@ -8,7 +9,7 @@ export const verificationMessage = 'No verified configuration available. Hardwar
 // batch sizes, quantizations, topologies or custom builds. Costs are not proof.
 const scopeKeys = {
  inference: ['model','workload','users','calls','input','output','concurrency'],
- training: ['model','method','task','examples','tokens','epochs','sequence','microbatch','adapterPercent','overhead','setupHours']
+ training: [...methodKeys,'model','method','task','examples','tokens','epochs','sequence','microbatch','adapterPercent','overhead','setupHours']
 };
 function keysFor(mode,kind){
  if(!scopeKeys[mode]||!['buy','rent'].includes(kind))return [];

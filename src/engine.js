@@ -1,6 +1,6 @@
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=23';
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=23';
-import {energyCost} from './energy.js?v=23';
+import {verifiedConfiguration,verificationMessage} from './verification.js?v=24';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=24';
+import {energyCost} from './energy.js?v=24';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
