@@ -1,6 +1,6 @@
 /**
  * purchase-allowances — assumption
- * Source: Whole-system vendor quotes; hardware source links
+ * Source: Editorial whole-system budgets checked against hardware source links; no verified complete-system quotes
  * Review frequency: Monthly and for each purchase decision.
  * Update: Replace budget estimates with current complete-system allowances; published prices belong in hardware. Include host and cluster networking.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
@@ -10,7 +10,7 @@ export default {
     "kind": "assumption",
     "reviewed": "2026-09-23",
     "frequency": "Monthly and for each purchase decision.",
-    "source": "Whole-system vendor quotes; hardware source links",
+    "source": "Editorial whole-system budgets checked against hardware source links; no verified complete-system quotes",
     "how": "Replace budget estimates with current complete-system allowances; published prices belong in hardware. Include host and cluster networking."
   },
   "values": {
@@ -22,10 +22,10 @@ export default {
     "hp-2000": 3000,
     "hp-4000": 4000,
     "puget-5080": 4500,
-    "puget-5090": 6500,
+    "puget-5090": 10000,
     "puget-pro-4000-blackwell": 6000,
-    "puget-pro-5000-blackwell": 9000,
-    "puget-pro-6000-blackwell-ws": 15000,
+    "puget-pro-5000-blackwell": 12000,
+    "puget-pro-6000-blackwell-ws": 20000,
     "supermicro-h100": 300000,
     "spark-x2": {
       "baseHardwareId": "spark",
@@ -46,6 +46,8 @@ export default {
       "baseHardwareId": "m5-512",
       "nodes": 4,
       "extras": 1500
-    }
+    },
+    "puget-pro-5000-blackwell-72": 14000,
+    "m5-max-128": 6000
   }
 };

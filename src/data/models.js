@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-22",
+    "reviewed": "2026-09-23",
     "frequency": "Weekly; immediately on endpoint, price or model changes.",
     "source": "sources.api; each model source and its /endpoints API",
     "how": "Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card."
@@ -27,8 +27,8 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000013",
-          "completion": "0.00000052",
+          "prompt": "0.0000001",
+          "completion": "0.0000005",
           "input_cache_read": "0.00000001"
         }
       }
@@ -42,7 +42,7 @@ export default {
         "provider_name": "InferenceNet",
         "tag": "inference-net/fp4",
         "quantization": "fp4",
-        "context_length": 1000000,
+        "context_length": 1048576,
         "max_completion_tokens": 131072,
         "max_prompt_tokens": null,
         "pricing": {
@@ -156,9 +156,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000017",
-          "completion": "0.0000085",
-          "input_cache_read": "0.00000017"
+          "prompt": "0.00000195",
+          "completion": "0.00000975",
+          "input_cache_read": "0.000000195"
         }
       }
     },
@@ -318,6 +318,43 @@ export default {
         "pricing": {
           "prompt": "0.00000007",
           "completion": "0.00000027"
+        }
+      }
+    },
+    "oss20": {
+      "name": "OpenAI: gpt-oss-20b",
+      "source": "https://huggingface.co/openai/gpt-oss-20b",
+      "apiModel": "openai/gpt-oss-20b",
+      "evidence": "Compact open-weight reasoning and tool-use candidate; validate quality on the intended task.",
+      "endpoint": {
+        "provider_name": "AkashML",
+        "tag": "akashml/fp4",
+        "quantization": "fp4",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000002",
+          "completion": "0.0000001"
+        }
+      }
+    },
+    "granite42": {
+      "name": "IBM: Granite 4.2 8B",
+      "source": "https://huggingface.co/ibm-granite/granite-4.2-8b",
+      "apiModel": "ibm-granite/granite-4.2-8b",
+      "evidence": "IBM publishes reasoning, coding and tool-calling evaluations. Small dense model candidate; no comparable measured frontier score is assumed.",
+      "endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000025",
+          "input_cache_read": "0.000000015"
         }
       }
     }

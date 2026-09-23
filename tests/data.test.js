@@ -49,3 +49,16 @@ test('boundary checker rejects new prices, source URLs and review dates outside 
  for(const source of ['export const price = 4.29;','export const source = "https://vendor.example/prices";','export const reviewed = "2026-09-23";','export const label = `Checked 2026-09`;'])assert.ok(boundaryViolations(source,'fixture.js',allowed).length);
  assert.ok(boundaryViolations('export const value = 1;','new-module.js',undefined).length);
 });
+
+test('the full audit accounts for every maintained dataset and candidate source',()=>{
+ assert.deepEqual(Object.keys(data.audit.coverage).sort(),Object.keys(datasets).filter(id=>id!=='audit').sort());
+ for(const c of data.audit.candidates)for(const ref of c.sourceRefs??[c.sourceRef])assert.ok(data.sources[ref],`${c.id}: unknown source`);
+});
+test('4-bit inference budgets cannot be smaller than the raw checkpoint weights',()=>{
+ for(const m of models)assert.ok(m.planningMemoryGB>=data.trainingModels[m.id].parameters/2,`${m.id}: budget below raw 4-bit weights`);
+});
+test('new multi-GPU rentals convert per-GPU charges and memory to whole-instance units',()=>{
+ for(const [id,hourly,memory] of [['b200-x2',13.78,360],['b200-x4',27.16,720],['a100-80-x8',22.32,640],['v100-x8',6.32,128]]){
+  const r=rentals.find(r=>r.id===id);assert.equal(r.hourly,hourly);assert.equal(r.memory,memory);
+ }
+});

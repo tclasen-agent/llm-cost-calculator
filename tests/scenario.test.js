@@ -63,3 +63,22 @@ test('model changes reset scoped measurements while preserving unrelated overrid
  assert.ok(!next.state.overrides.split(',').includes('localDecode'));
  assert.equal(next.state.apiExtras,123);assert.equal(calculate(next.state).ready,true);
 });
+
+test('small model additions support buy, rent and API and survive shared-input recovery',async()=>{
+ const {encodeState,decodeState}=await import('../src/sharing.js');
+ for(const model of ['oss20','granite42']){
+  const selected=changeScenario(initialScenario().state,'model',model);
+  assert.equal(selected.accepted,true);
+  const restored=initialScenario(decodeState(encodeState(selected.state)));
+  assert.equal(restored.recovered,false);assert.equal(restored.state.model,model);
+  assert.equal(restored.result.ready,true);
+ }
+});
+test('a saved Kimi scenario invalidated by the memory audit recovers without rewriting its input',()=>{
+ const raw={...defaults,model:'kimi3',autoModel:0,usageSource:'saved workload',apiExtras:17,overrides:'apiExtras'};
+ const before=JSON.stringify(raw),restored=initialScenario(raw);
+ assert.equal(restored.recovered,true);assert.equal(restored.rejected,raw);
+ assert.equal(JSON.stringify(raw),before);assert.equal(restored.result.ready,true);
+ const state=initialScenario().state,next=changeScenario(state,'model','kimi3');
+ assert.equal(next.accepted,false);assert.equal(next.state,state);assert.ok(next.message);
+});

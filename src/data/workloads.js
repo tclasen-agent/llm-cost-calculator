@@ -1,6 +1,6 @@
 /**
  * workloads — assumption
- * Source: Internal pilot usage; models.*.source
+ * Source: Illustrative usage templates and editorial shortlists; models.*.source; no archived usage pilots
  * Review frequency: Monthly; after workload changes, model releases or evaluations.
  * Update: Update calls/person/day, input/output tokens/call, concurrent activity/person, ordered editorial shortlist and rationale.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
@@ -10,7 +10,7 @@ export default {
     "kind": "assumption",
     "reviewed": "2026-09-23",
     "frequency": "Monthly; after workload changes, model releases or evaluations.",
-    "source": "Internal pilot usage; models.*.source",
+    "source": "Illustrative usage templates and editorial shortlists; models.*.source; no archived usage pilots",
     "how": "Update calls/person/day, input/output tokens/call, concurrent activity/person, ordered editorial shortlist and rationale."
   },
   "values": {
@@ -24,7 +24,9 @@ export default {
         "glm53flash",
         "qwen38small",
         "ds41",
-        "glm53"
+        "glm53",
+        "oss20",
+        "granite42"
       ],
       "rationale": "Instruction following and general reasoning inform this shortlist."
     },
@@ -95,7 +97,9 @@ export default {
         "glm53flash",
         "minimax27",
         "qwen38small",
-        "glm53"
+        "glm53",
+        "oss20",
+        "granite42"
       ],
       "rationale": "Instruction following and tool-use are proxies for support quality; validate your policies and knowledge base."
     },

@@ -8,6 +8,7 @@ This folder is the single editable home for data that changes over time. Each to
 
 | File | Information owned here | Review trigger |
 |---|---|---|
+| [audit.js](audit.js) | Full-audit coverage, evidence gaps, candidate dispositions and migration notes; references canonical datasets | Each full audit; candidate availability changes |
 | [models.js](models.js) | Model identities/cards, vendor evaluation text and selected provider endpoint: price pair, cached rate, precision, provider tag and token limits | Weekly; model/endpoint/price changes |
 | [hardware.js](hardware.js) | Complete-system configurations, installed memory, GPU allocation ceiling, published price and source references | Monthly; before purchase; specification changes |
 | [rentals.js](rentals.js) | Per-GPU hourly price, GPU count/model/VRAM and complete-instance CPU/RAM/SSD | Weekly; before rental |

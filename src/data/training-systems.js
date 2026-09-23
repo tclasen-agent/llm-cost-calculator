@@ -56,6 +56,22 @@ export default {
     "h100x8": {
       "rentalId": "h100-x8",
       "kind": "rent"
+    },
+    "b200x2": {
+      "rentalId": "b200-x2",
+      "kind": "rent"
+    },
+    "b200x4": {
+      "rentalId": "b200-x4",
+      "kind": "rent"
+    },
+    "b200x8": {
+      "rentalId": "b200-x8",
+      "kind": "rent"
+    },
+    "a100x8": {
+      "rentalId": "a100-80-x8",
+      "kind": "rent"
     }
   }
 };

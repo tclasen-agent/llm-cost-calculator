@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-22",
+    "reviewed": "2026-09-23",
     "frequency": "Monthly and before purchase; on product/configuration changes.",
     "source": "Each record source/priceSource",
     "how": "Verify complete system specifications, memory type/allocation, host, storage and networking. Use null for an unverified price; put estimates in purchaseAllowances."
@@ -191,6 +191,24 @@ export default {
       "runtimeSourceRef": "exoRuntime",
       "baseHardwareId": "m5-512",
       "nodes": 4
+    },
+    "puget-pro-5000-blackwell-72": {
+      "name": "Puget workstation · RTX PRO 5000 Blackwell · {memory} GB",
+      "memory": 72,
+      "kind": "VRAM",
+      "price": null,
+      "package": "Vendor-configured complete workstation with RTX PRO 5000 Blackwell. CPU, host RAM, SSD, chassis, PSU, cooling and OS must be specified in the vendor quote. Published GPU add-on prices are not complete-system prices.",
+      "needsBuild": true,
+      "sourceRef": "pugetWorkstation",
+      "gpus": 1
+    },
+    "m5-max-128": {
+      "name": "Mac Studio M5 Max · {memory} GB",
+      "memory": 128,
+      "kind": "unified",
+      "price": null,
+      "package": "18-core CPU / 40-core GPU, {memory} GB unified RAM, 1 TB SSD, macOS, complete Mac Studio. Exact configured price and inference performance require validation.",
+      "sourceRef": "appleStudio"
     }
   }
 };

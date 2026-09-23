@@ -144,13 +144,19 @@ export default {
         "taskCost": 0.55,
         "variant": "non-reasoning",
         "source": "https://artificialanalysis.ai/models/qwen3-coder-next/"
+      },
+      "oss20": {
+        "score": 9,
+        "taskCost": 0.01,
+        "variant": "high reasoning"
       }
     },
     "missingBenchmarks": {
       "kimi25": "The available score is an estimate, not an independently measured result in this snapshot.",
       "minimax": "The available score is an estimate, not an independently measured result in this snapshot.",
       "deepseek": "A comparable measured score and task cost have not been verified in this snapshot.",
-      "qwen30": "A comparable measured score and task cost have not been verified in this snapshot."
+      "qwen30": "A comparable measured score and task cost have not been verified in this snapshot.",
+      "granite42": "A comparable measured score and task cost have not been verified in this review."
     },
     "longInputMultiplier": 2,
     "longOutputMultiplier": 1.5,

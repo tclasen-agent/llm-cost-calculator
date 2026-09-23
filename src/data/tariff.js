@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-22",
+    "reviewed": "2026-09-23",
     "frequency": "Check monthly; update on each tariff/tax effective date.",
     "source": "sources.tariff and sources.county",
     "how": "Transcribe GS-1 rates, riders, seasonal boundaries, tax tiers and eligibility threshold. Rates USD/kWh except riders in cents/kWh, county fixed/cap USD. Verify incremental bills at every tier boundary."

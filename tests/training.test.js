@@ -5,7 +5,7 @@ import {estimateTraining as calculateTraining,normalizeTraining,trainingDefaults
 test('default QLoRA example counts all processed tokens and both hardware paths fit',()=>{
  const r=calculateTraining({});assert.equal(r.tokens,80e6);assert.equal(r.estimatedGB,73);assert.equal(r.buy.ready,true);assert.equal(r.rent.ready,true);
  assert.equal(r.rent.hours[0],80e6/1000/3600*1.2+1);assert.equal(r.rent.hours[1],80e6/250/3600*1.2+1);
- assert.equal(r.rent.campaign[0],r.rent.operating[0]*3);assert.equal(r.buy.campaign[0],16200+r.buy.operating[0]*3);
+ assert.equal(r.rent.campaign[0],r.rent.operating[0]*3);assert.equal(r.buy.campaign[0],21600+r.buy.operating[0]*3);
 });
 test('BF16 LoRA cannot silently fit on a single 80 or 96 GB GPU',()=>{
  const r=calculateTraining({method:'lora'});assert.equal(r.buy.ready,false);assert.equal(r.rent.ready,false);assert.equal(r.payback,null);
@@ -32,7 +32,7 @@ test('training share round trip preserves separate inputs; inference URLs are ig
  const s=normalizeTraining({...trainingDefaults,model:'oss20',buyEvidence:'pilot & notes <test>',rentPeak:30});assert.deepEqual(decodeTraining(encodeTraining(s)),s);assert.equal(decodeTraining('?scenario=2'),null);assert.equal(decodeTraining('?mode=training&training=999'),null);
 });
 test('normalization contains malformed shared inputs',()=>{
- const s=normalizeTraining({model:'bad',buy:'bad',examples:-1,sequence:Infinity,runs:0,quote:NaN,rentLow:'invalid',allocationMonths:99999});assert.equal(s.model,'oss120');assert.equal(s.examples,1);assert.equal(s.runs,1);assert.equal(s.sequence,4096);assert.equal(s.quote,15000);assert.equal(s.allocationMonths,120);
+ const s=normalizeTraining({model:'bad',buy:'bad',examples:-1,sequence:Infinity,runs:0,quote:NaN,rentLow:'invalid',allocationMonths:99999});assert.equal(s.model,'oss120');assert.equal(s.examples,1);assert.equal(s.runs,1);assert.equal(s.sequence,4096);assert.equal(s.quote,trainingDefaults.quote);assert.equal(s.allocationMonths,120);
 });
 
 import {models} from '../src/catalog.js';

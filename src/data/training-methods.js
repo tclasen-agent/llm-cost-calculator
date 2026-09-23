@@ -60,13 +60,13 @@ export default {
       "id": "ppo",
       "name": "PPO · reinforcement learning",
       "use": "Useful when task quality can be scored and online exploration is valuable, including learned human/AI preference rewards.",
-      "constraint": "Requires rollouts, reward evaluation and a trained value/critic model. Expensive and sensitive to reward design; guard against reward exploitation."
+      "constraint": "Requires rollouts, reward evaluation and a trained value/critic model. Expensive and sensitive to reward design; guard against reward exploitation. Current TRL exposes PPO through its experimental API; pin and validate the implementation."
     },
     {
       "id": "grpo",
       "name": "GRPO · reinforcement learning",
       "use": "Useful for reasoning, coding and other tasks with verifiable rewards, comparing multiple sampled responses per prompt.",
-      "constraint": "Avoids PPO’s critic, but multiple rollouts can dominate cost. Rewards must distinguish responses; reward quality remains critical."
+      "constraint": "Avoids PPO’s critic, but multiple rollouts can dominate cost. Rewards must distinguish responses; reward quality remains critical. Reference-policy memory depends on whether the recipe enables a KL penalty."
     }
   ]
 };

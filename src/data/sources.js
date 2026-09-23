@@ -16,7 +16,7 @@ export default {
   "values": {
     "api": "https://openrouter.ai/api/v1/models",
     "rental": "https://lambda.ai/instances",
-    "rentalBilling": "https://docs.lambda.ai/public-cloud/on-demand/billing/",
+    "rentalBilling": "https://docs.lambda.ai/public-cloud/billing/",
     "tariff": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/rates-and-tariffs/pdfs/virginia/shared/entire-filed-tariff.pdf",
     "county": "https://www.loudoun.gov/1570/Business-Tax-Rates",
     "training": "https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune",
@@ -29,7 +29,7 @@ export default {
     "amdHalo": "https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html",
     "amdHaloPrice": "https://www.amd.com/en/blogs/2026/amd-ryzen-ai-halo-is-designed-for-the-agentic-era.html",
     "frameworkDesktop": "https://frame.work/desktop?tab=machine-learning",
-    "hpZ2G1a": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1a-workstation-desktop-pc-wolf-pro-security-edition-bn8e8ua-aba",
+    "hpZ2G1a": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1a-workstation-desktop-pc-wolf-pro-security-edition-p-bn8e8ua-aba-1",
     "appleStudio": "https://www.apple.com/mac-studio/specs/",
     "hpZ2G1i2000": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k5ua-aba-1",
     "hpZ2G1i4000": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k7ua-aba-1",

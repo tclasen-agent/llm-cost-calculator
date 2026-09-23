@@ -1,4 +1,5 @@
 import sources from './sources.js';
+import audit from './audit.js';
 import models from './models.js';
 import hardware from './hardware.js';
 import rentals from './rentals.js';
@@ -22,5 +23,5 @@ import reviewedConfigurations from './reviewed-configurations.js';
 
 // Only this module assembles and freezes the maintained datasets.
 function freeze(value){if(value&&typeof value==='object'){Object.values(value).forEach(freeze);Object.freeze(value);}return value;}
-export const datasets=freeze({sources,models,hardware,rentals,rentalTerms,purchaseAllowances,inferenceMemory,workloads,inferenceDefaults,inferencePolicy,tariff,frontier,trainingModels,trainingEligibility,trainingSystems,trainingDefaults,methodDefaults,trainingPolicy,trainingMethods,methodSources,reviewedConfigurations});
+export const datasets=freeze({audit,sources,models,hardware,rentals,rentalTerms,purchaseAllowances,inferenceMemory,workloads,inferenceDefaults,inferencePolicy,tariff,frontier,trainingModels,trainingEligibility,trainingSystems,trainingDefaults,methodDefaults,trainingPolicy,trainingMethods,methodSources,reviewedConfigurations});
 export const data=Object.freeze(Object.fromEntries(Object.entries(datasets).map(([key,dataset])=>[key,dataset.values])));

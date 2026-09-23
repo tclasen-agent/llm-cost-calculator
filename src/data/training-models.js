@@ -69,11 +69,11 @@ export default {
     },
     "oss20": {
       "parameters": 21,
-      "name": "OpenAI: gpt-oss-20b",
-      "context": 131072,
-      "source": "https://huggingface.co/openai/gpt-oss-20b",
       "qlora": 14,
       "lora": 44
+    },
+    "granite42": {
+      "parameters": 9
     }
   }
 };
