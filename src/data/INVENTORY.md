@@ -1250,7 +1250,7 @@ Type: **evidence**. Recorded review: **2026-09-23**.
 
 **Source:** Reproducible end-to-end run logs
 
-**How to update each field:** Add only independently reviewed successful exact configurations with mode, kind, hardwareId, scope, evidenceURL, modelRevision, runtimeVersions, completeSystem, reproduction, result, status, reviewedOn and expiresOn. Add positive and out-of-scope tests. Empty means hardware is unavailable.
+**How to update each field:** Add only independently reviewed successful exact configurations with mode, kind, hardwareId, scope, evidenceURL, modelRevision, runtimeVersions, completeSystem, reproduction, result, status, reviewedOn and expiresOn. Add positive and out-of-scope tests. Empty keeps fine-tuning hardware unavailable; inference permits approximate estimates without these records.
 
 | Field | Current value |
 |---|---|

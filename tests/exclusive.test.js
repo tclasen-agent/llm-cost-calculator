@@ -25,7 +25,7 @@ test('new frontier models have sourced endpoints, memory assumptions and task co
  for(const m of models.filter(m=>m.evidence)){assert.ok(m.apiSource&&m.source&&m.providerTag&&m.planningMemoryGB>0);const r=calculate(planning({...defaults,model:m.id}));assert.ok(r.apiReady);assert.equal(r.buyReady,r.s.localRph>0);}
 });
 test('phase speeds size capacity from both input and output work',()=>{
- const s=planning({...defaults,input:12000,output:2000,localPrefill:600,localDecode:100,overrides:'input,output,localPrefill,localDecode'}),r=calculate(s);
+ const s=planning({...defaults,autoHardware:0,input:12000,output:2000,localPrefill:600,localDecode:100,overrides:'input,output,localPrefill,localDecode'}),r=calculate(s);
  assert.equal(s.localRph,90);assert.equal(r.phases.buy.prefillShare,.5);assert.equal(r.phases.buy.ratio,6);
  const slower=planning({...s,localPrefill:300});assert.equal(slower.localRph,60);
  const noDecode=calculate(planning({...s,localDecode:0}));assert.equal(noDecode.buyReady,false);assert.equal(noDecode.first.localOverflow,0);

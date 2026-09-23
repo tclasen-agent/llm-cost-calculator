@@ -1,7 +1,7 @@
-import {planning} from './planning.js?v=26';
-import {calculate} from './engine.js?v=26';
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=26';
-import {modelSuggestion} from './task-models.js?v=26';
+import {planning} from './planning.js?v=27';
+import {calculate} from './engine.js?v=27';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=27';
+import {taskModels} from './task-models.js?v=27';
 
 // Transactions keep the last usable calculation while the user edits its inputs.
 export function scenarioStatus(raw){
@@ -11,6 +11,8 @@ export function scenarioStatus(raw){
  if(state.input+state.output<=0)issues.push('A request must include input or output tokens.');
  if(!result.context)issues.push(`This endpoint cannot accept the selected input/output token budget. Choose a shorter request or another model.`);
  else if(!result.apiReady)issues.push('The API estimate needs valid usage, prices and fee assumptions.');
+ if(!result.buyReady)issues.push('No purchase configuration fits these inputs with usable cost and performance assumptions.');
+ if(!result.rentReady)issues.push('No rental configuration fits these inputs with usable cost and performance assumptions.');
  return {state,result,valid:issues.length===0,issues};
 }
 export function initialScenario(raw=defaults){
@@ -29,11 +31,27 @@ export function changeScenario(previous,key,value){
  const overrides=new Set(previous.overrides.split(',').filter(Boolean));
  if(!simple.includes(key)){if(value===null||value==='')overrides.delete(key);else overrides.add(key);}
  raw.overrides=[...overrides].join(',');
- if(key==='workload'&&raw.autoModel)raw.model=modelSuggestion(raw.workload);
+
  if(key==='model')raw.autoModel=0;
  if(key==='hardware')raw.autoHardware=0;
  if(key==='rental')raw.autoRental=0;
- if(key==='autoModel'&&Number(value))raw.model=modelSuggestion(raw.workload);
+ // Measurement overrides are scoped to the prior model/workload/system. Quotes
+ // are scoped to hardware; unrelated fee and workload overrides remain intact.
+ const workloadChange=['model','workload','users','input','output','concurrency','autoModel'].includes(key);
+ for(const [side,selection] of [['local','hardware'],['rental','rental']]){
+  if(workloadChange||key===selection)for(const suffix of ['Prefill','Decode','Rph','Available','Memory','Runtime','Evidence'])overrides.delete(side+suffix);
+ }
+ if(workloadChange||key==='hardware')for(const field of ['itKwh','coolingKwh','energySource'])overrides.delete(field);
+ if(key==='hardware')for(const field of ['quote','quoteSource','buildDetails','localSetup'])overrides.delete(field);
+ if(key==='rental')for(const field of ['rentalSetup','rentalExtras'])overrides.delete(field);
+ if(['localPrefill','localDecode','localRph','localMemory','localAvailable','localRuntime','localEvidence','quote','quoteSource','buildDetails'].includes(key))raw.autoHardware=0;
+ if(['rentalPrefill','rentalDecode','rentalRph','rentalMemory','rentalAvailable','rentalRuntime','rentalEvidence'].includes(key))raw.autoRental=0;
+ raw.overrides=[...overrides].join(',');
+ if((key==='workload'&&raw.autoModel)||(key==='autoModel'&&Number(value))){
+  const suggested=taskModels[raw.workload].map(model=>({...raw,model})).find(candidate=>scenarioStatus(candidate).valid);
+  if(suggested)raw.model=suggested.model;
+  else return {accepted:false,state:previous,message:'No model in this task shortlist fits the current inputs. Reduce the request size or enable automatic hardware selection. The previous calculation is unchanged.'};
+ }
  const next=scenarioStatus(raw),current=calculate(previous);
  for(const kind of ['buy','rent'])if(current[kind+'Ready']&&!next.result[kind+'Ready'])next.issues.push(`This change would invalidate the current ${kind} comparison. Choose inputs covered by an available configuration.`);
  next.valid=next.issues.length===0;

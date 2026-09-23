@@ -8,21 +8,20 @@ import {renderComparison} from '../src/comparison.js';
 import {decision,longViewHTML,longViewSVG} from '../src/long-view.js';
 import {encodeState,decodeState} from '../src/sharing.js';
 
-test('all inference catalog systems are blocked without reviewed configuration evidence',()=>{
- for(const m of models)for(const h of hardware){
-  const s=planning({model:m.id,hardware:h.id,localEvidence:'Verified',localRuntime:'Tested',overrides:'localEvidence,localRuntime'});
-  const r=calculate(s);
-  assert.equal(r.buyReady,false);assert.equal(r.buyEligible,false);assert.equal(r.capital,null);assert.equal(r.payback,null);
-  assert.ok(r.rows.every(row=>row.buy===null));assert.notEqual(decision(r).winner?.key,'buy');
- }
- for(const m of models)for(const h of rentals){const r=calculate(planning({model:m.id,rental:h.id}));assert.equal(r.rentReady,false);assert.ok(r.rows.every(row=>row.rent===null));}
+test('inference estimates are usable without independently reviewed configurations',()=>{
+ const r=calculate(planning());
+ assert.equal(r.ready,true);assert.deepEqual(r.verification,{buy:false,rent:false});
+ assert.ok(r.rows.every(row=>Number.isFinite(row.buy)&&Number.isFinite(row.rent)));
+ assert.ok(renderComparison(r).includes('Planning estimate'));
+ assert.ok(longViewHTML(r).includes('has the lowest'));assert.ok(!longViewSVG(r).includes('NaN'));
 });
-test('legacy shared inference evidence cannot bypass verification and API pricing remains available',()=>{
- const s=planning({model:'oss120',localEvidence:'verified successful pilot',rentalEvidence:'verified successful pilot',localRph:100000,rentalRph:100000,localMemory:1,rentalMemory:1,overrides:'localEvidence,rentalEvidence,localRph,rentalRph,localMemory,rentalMemory'});
+test('shared approximate inference measurements are allowed without certifying compatibility',()=>{
+ const s=planning({model:'oss120',autoHardware:0,autoRental:0,localEvidence:'pilot estimate',rentalEvidence:'pilot estimate',localRph:100000,rentalRph:100000,localMemory:1,rentalMemory:1,overrides:'localEvidence,rentalEvidence,localRph,rentalRph,localMemory,rentalMemory'});
  const r=calculate(decodeState(encodeState(s)));
- assert.equal(r.buyReady,false);assert.equal(r.rentReady,false);assert.equal(r.apiReady,true);
- assert.equal(suggestRental(s),null);assert.ok(renderComparison(r).includes('Available cost estimate'));
- assert.ok(longViewHTML(r).includes('API estimate:'));assert.ok(!longViewSVG(r).includes('NaN'));
+ assert.equal(r.ready,true);assert.deepEqual(r.verification,{buy:false,rent:false});
+ assert.ok(suggestRental(s));
+ assert.equal(calculate({...s,localMemory:s.localAvailable+1}).buyReady,false);
+ assert.equal(calculate({...s,rentalRph:0}).rentReady,false);
 });
 test('every training model and method rejects memory fit and self-certification as verification',()=>{
  for(const m of trainingModels)for(const method of ['lora','qlora'])for(const h of trainingSystems){
@@ -32,14 +31,14 @@ test('every training model and method rejects memory fit and self-certification 
   assert.equal(r.payback,null);assert.equal(r.paybackWithinWindow,false);
  }
 });
-test('automatic and manual changes never fall back to unverified hardware',()=>{
+test('fine-tuning stays gated while inference automatically selects fitting hardware',()=>{
  let s=planTraining({model:'oss120',method:'lora'});
  assert.equal(calculateTraining(s).buy.ready,false);assert.equal(calculateTraining(s).rent.ready,false);
  for(const [key,value] of [['model','oss20'],['method','qlora'],['sequence',2048],['microbatch',4],['buy','hgx640'],['autoBuy',1]]){
   s=updateTraining(s,key,value);assert.equal(calculateTraining(s).buy.ready,false);
  }
  const p=planning({hardware:'m5-256',rental:'a6000',autoHardware:1,autoRental:1});
- assert.equal(p.hardware,'m5-256');assert.equal(p.rental,'a6000');
+ assert.equal(calculate(p).ready,true);assert.ok(p.localMemory<=p.localAvailable);assert.ok(p.rentalMemory<=p.rentalAvailable);
 });
 test('memory estimate never clamps a non-fitting model to available memory',()=>{
  const s=planning({model:'kimi3',hardware:'hp-2000',autoHardware:0});assert.ok(s.localMemory>s.localAvailable);

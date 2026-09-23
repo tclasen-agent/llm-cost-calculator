@@ -10,11 +10,13 @@ The catalog is a dated snapshot, not a live feed. Shared projections derive endp
 
 [AGENTS.md](AGENTS.md) makes this architecture mandatory for future changes. Tests and builds check the data contract and inventory freshness.
 
-## Verified hardware only
+## Inference estimates and fine-tuning verification
 
-Hardware selection and recommendations fail closed in inference and fine-tuning. Reviewed end-to-end records live in the shared data folder. An empty registry or an expired/out-of-scope record leaves the corresponding hardware path unavailable; API pricing remains a separate estimate.
+Inference accepts approximate published performance, user estimates and maintained planning heuristics. Automatic selection chooses systems that fit the estimated memory requirement. The default provides buy, rent and API costs; incompatible choices are disabled and invalid edits retain the previous usable calculation. Estimates do not certify runtime compatibility or benchmark performance.
 
-Model cards, GPU specifications, memory heuristics, user checkboxes, quotes and shared URLs cannot certify compatibility. Evidence must cover the exact model revision, complete system, runtime versions, recipe, command/configuration, logs, memory measurements, throughput and workload. No fallback to unverified hardware or implicit API overflow is allowed.
+Changing a model, workload or system resets measurements scoped to the previous configuration. System changes also reset its quote and setup assumptions. Unrelated overrides remain saved. Invalid saved/shared scenarios recover to complete defaults, with the original retained in browser recovery storage.
+
+Fine-tuning alone requires current, reviewed end-to-end evidence for the exact model revision, complete system, runtime and recipe. An empty registry or expired/out-of-scope record keeps that fine-tuning path unavailable. Model cards, memory fit and user confirmations cannot certify compatibility. Inference may use those inputs as labeled planning estimates. Neither mode silently adds API overflow to hardware costs.
 
 ## Calculations and assumptions
 

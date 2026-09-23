@@ -1,7 +1,7 @@
 import {data,datasets} from './data/index.js';
-import {trainingMethods,methodSources} from './training-methods.js?v=26';
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=26';
-import {planTraining,updateTraining,trainingDefaults,trainingModels,trainingSystems,trainingSource,normalizeTraining,calculateTraining,encodeTraining,decodeTraining} from './training.js?v=26';
+import {trainingMethods,methodSources} from './training-methods.js?v=27';
+import {verifiedConfiguration,verificationMessage} from './verification.js?v=27';
+import {planTraining,updateTraining,trainingDefaults,trainingModels,trainingSystems,trainingSource,normalizeTraining,calculateTraining,encodeTraining,decodeTraining} from './training.js?v=27';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num=(n,d=1)=>n.toLocaleString('en-US',{maximumFractionDigits:d});
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);

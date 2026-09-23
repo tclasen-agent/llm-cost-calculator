@@ -12,7 +12,7 @@ test('decision ranking and savings use exactly the displayed horizon totals',()=
 });
 test('unavailable paths are excluded from cheapest ranking and flagged',()=>{
  const r=calculate(planning({...defaults,model:'kimi3',hardware:'hp-2000',autoHardware:0}));
- assert.equal(decision(r).complete,false);assert.notEqual(decision(r).winner.key,'buy');assert.ok(longViewHTML(r).includes('Hardware comparisons are pending verification'));
+ assert.equal(decision(r).complete,false);assert.notEqual(decision(r).winner.key,'buy');assert.ok(longViewHTML(r).includes('Some configurations do not fit the current inputs.'));
  assert.ok(!longViewSVG(r).includes('NaN'));
 });
 test('timeline inspector includes upfront cost at month zero',()=>{

@@ -1,8 +1,8 @@
 import {data} from './data/index.js';
 const policy=data.inferencePolicy;
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=26';
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=26';
-import {energyCost} from './energy.js?v=26';
+import {verifiedConfiguration} from './verification.js?v=27';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=27';
+import {energyCost} from './energy.js?v=27';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
@@ -30,7 +30,7 @@ export function schedule(start,factory,offset=0){
 export function suggestRental(s){
  const h=hardware.find(h=>h.id===s.hardware);
  const target=s.rentalMemory??s.localMemory??h.gpuCeiling??h.memory;
- return rentals.filter(r=>verifiedConfiguration('inference',s,'rent',r.id)&&r.memory>=target).sort((a,b)=>a.hourly-b.hourly||a.memory-b.memory)[0]??null;
+ return rentals.filter(r=>r.memory*policy.rentalUsable>=target).sort((a,b)=>a.hourly-b.hourly||a.memory-b.memory)[0]??null;
 }
 export function optimize(raw){const s=normalize(raw);if(s.autoRental){const r=suggestRental(s);if(r)s.rental=r.id;}return s;}
 export function clearMeasurements(raw,scope='all'){
@@ -122,15 +122,10 @@ export function estimateEconomics(raw){
  return {usefulMonths,decisionCosts,buyEligible,unrecovered,phases,amortizationMonths:period,amortizationBasis:'useful competitiveness window — earlier model or hardware refresh',amortized,s,m,h,r,localUnits,rentalUnits,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
 }
 
-// Public application boundary: user-supplied evidence cannot certify hardware.
+// Inference permits approximate benchmarks and planning assumptions. Reviewed
+// records describe provenance only; they do not gate inference estimates.
 export function calculate(raw){
- const s=normalize(raw),gated={...s};
- const buy=verifiedConfiguration('inference',s,'buy',s.hardware);
- const rent=verifiedConfiguration('inference',s,'rent',s.rental);
- if(!buy){gated.localRph=null;gated.localEvidence='';}
- if(!rent){gated.rentalRph=null;gated.rentalEvidence='';}
- const r=estimateEconomics(gated);
- r.s=s;r.verification={buy:!!buy,rent:!!rent};
- if(!buy||!rent)r.issues=[verificationMessage,...r.issues.filter(x=>!x.includes('cannot serve')&&!x.includes('benchmark, runtime'))];
+ const r=estimateEconomics(raw);
+ r.verification={buy:!!verifiedConfiguration('inference',r.s,'buy',r.s.hardware),rent:!!verifiedConfiguration('inference',r.s,'rent',r.s.rental)};
  return r;
 }
