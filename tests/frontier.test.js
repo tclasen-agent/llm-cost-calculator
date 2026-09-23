@@ -1,8 +1,9 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {paretoFrontier,callCost,frontierData,frontierSVG,frontierHTML} from '../src/frontier.js';
 import {referenceModels} from '../src/frontier-data.js';
-import {calculate,normalize} from '../src/engine.js';
+import {estimateEconomics as calculate,normalize} from '../src/engine.js';
 import {planning} from '../src/planning.js';
 import {defaults,models} from '../src/catalog.js';
 import {encodeState,decodeState} from '../src/sharing.js';

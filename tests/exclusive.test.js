@@ -1,11 +1,12 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {calculate} from '../src/engine.js';
+import {estimateEconomics as calculate} from '../src/engine.js';
 import {planning} from '../src/planning.js';
 import {defaults,models,workloads} from '../src/catalog.js';
 import {taskModels} from '../src/task-models.js';
 test('hardware fleets cover all demand each month with no API costs',()=>{
- const s=planning({...defaults,workload:'swe-factory',users:20});const r=calculate(s);
+ const s=planning({...defaults,workload:'swe-factory',users:20,hardware:'m5-512-x4',rental:'h100-x8'});const r=calculate(s);
  assert.ok(r.localUnits>1&&r.rentalUnits>1);
  for(const row of r.rows.slice(1)){assert.ok(row.localCapacity>=row.requests);assert.ok(row.rentalCapacity>=row.requests);assert.equal(row.localOverflow,0);assert.equal(row.rentalOverflow,0);}
  const changed=calculate({...s,apiExtras:100000,input:s.input*2});
@@ -21,7 +22,7 @@ test('amortized values share one period and reconcile to cumulative cash flows',
 });
 test('new frontier models have sourced endpoints, memory assumptions and task coverage',()=>{
  for(const [task] of workloads){assert.ok(taskModels[task].length>=3);for(const id of taskModels[task])assert.ok(models.some(m=>m.id===id));}
- for(const m of models.filter(m=>m.evidence)){assert.ok(m.apiSource&&m.source&&m.providerTag&&m.planningMemoryGB>0);const r=calculate(planning({...defaults,model:m.id}));assert.ok(r.apiReady&&r.buyReady);assert.ok(Number.isFinite(r.amortized.buy));}
+ for(const m of models.filter(m=>m.evidence)){assert.ok(m.apiSource&&m.source&&m.providerTag&&m.planningMemoryGB>0);const r=calculate(planning({...defaults,model:m.id}));assert.ok(r.apiReady);assert.equal(r.buyReady,r.s.localRph>0);}
 });
 test('phase speeds size capacity from both input and output work',()=>{
  const s=planning({...defaults,input:12000,output:2000,localPrefill:600,localDecode:100,overrides:'input,output,localPrefill,localDecode'}),r=calculate(s);

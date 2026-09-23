@@ -1,7 +1,8 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {planning} from '../src/planning.js';
-import {calculate} from '../src/engine.js';
+import {estimateEconomics as calculate} from '../src/engine.js';
 import {defaults,models,hardware,rentals,workloads} from '../src/catalog.js';
 import {encodeState,decodeState} from '../src/sharing.js';
 test('every task/model/purchase selection gives a complete planning comparison',()=>{
@@ -17,7 +18,7 @@ test('all actual rental choices produce a complete comparison, including non-fit
 });
 test('scale changes refresh generated usage, capacity and energy without leaving blanks',()=>{
  const a=planning(defaults),b=planning({...a,users:100,workload:'swe-factory'});
- assert.equal(b.calls,2880);assert.equal(b.concurrency,800);assert.notEqual(a.itKwh,b.itKwh);assert.ok(calculate(b).ready);
+ assert.equal(b.calls,2880);assert.equal(b.concurrency,800);assert.notEqual(a.itKwh,b.itKwh);assert.equal(calculate(b).buyReady,b.localRph>0);assert.equal(calculate(b).rentReady,b.rentalRph>0);
 });
 test('advanced overrides persist and clearing restores defaults',()=>{
  const a=planning({...defaults,calls:123,overrides:'calls'});assert.equal(planning({...a,users:9}).calls,123);

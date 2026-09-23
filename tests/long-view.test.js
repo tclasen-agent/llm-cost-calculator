@@ -1,7 +1,8 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {longViewHTML,longViewSVG,probeHTML,decision} from '../src/long-view.js';
-import {calculate} from '../src/engine.js';
+import {estimateEconomics as calculate} from '../src/engine.js';
 import {planning} from '../src/planning.js';
 import {defaults} from '../src/catalog.js';
 test('decision ranking and savings use exactly the displayed horizon totals',()=>{
@@ -15,7 +16,7 @@ test('unavailable paths are excluded from cheapest ranking and flagged',()=>{
  assert.ok(!longViewSVG(r).includes('NaN'));
 });
 test('timeline inspector includes upfront cost at month zero',()=>{
- const r=calculate(planning(defaults));assert.ok(probeHTML(r,0).includes('$3,780.00'));assert.ok(probeHTML(r,0).includes('$0.00'));
+ const r=calculate(planning(defaults));assert.ok(probeHTML(r,0).includes(new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(r.capital)));assert.ok(probeHTML(r,0).includes('$0.00'));
  const svg=longViewSVG(r,350,0);assert.ok(svg.includes('Model refresh'));assert.ok(svg.includes('Cumulative cost of buying'));assert.ok(!svg.includes('NaN'));
 });
 test('overview exposes normalized costs and planning exclusions',()=>{

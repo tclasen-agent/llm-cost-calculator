@@ -1,7 +1,8 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {defaults,hardware,models,rentals} from '../src/catalog.js';
-import {calculate,normalize,schedule,suggestRental,optimize,clearMeasurements,sustainedPayback} from '../src/engine.js';
+import {estimateEconomics as calculate,normalize,schedule,suggestRental,optimize,clearMeasurements,sustainedPayback} from '../src/engine.js';
 import {encodeState,decodeState} from '../src/sharing.js';
 import {ridersRate,gs1Variable,countyTax,consumptionTax,energyCost} from '../src/energy.js';
 const measured={...defaults,model:'qwen30',rental:'a6000',calls:100,input:1000,output:500,concurrency:1,usageSource:'pilot log',localRph:100,rentalRph:200,localMemory:20,rentalMemory:20,localAvailable:100,rentalAvailable:44,localEvidence:'local log',rentalEvidence:'rental log',localRuntime:'test FP8',rentalRuntime:'test FP8',localSetup:0,rentalSetup:0,localExtras:10,rentalExtras:10,apiExtras:0,costSource:'invoices',itKwh:100,coolingKwh:20,energySource:'meter report',baselineKwh:1000,peakKw:5,tariffConfirmed:1};
@@ -9,7 +10,7 @@ test('unknown inputs remain null and never invent an ROI',()=>{const r=calculate
 test('empty and invalid numbers cannot become measured zero',()=>{const s=normalize({calls:'',localRph:Infinity,quote:'oops'});assert.equal(s.calls,null);assert.equal(s.localRph,null);assert.equal(s.quote,null);});
 test('calendar respects business days, leap years and factory 24/7',()=>{assert.equal(schedule('2026-09',false).days,22);assert.equal(schedule('2026-09',false).hours,176);assert.equal(schedule('2026-09',true).hours,720);assert.equal(schedule('2028-02',true).hours,696);assert.equal(schedule('2026-12',true,1).year,2027);});
 test('rental prices multiply per-GPU rate by actual instance count',()=>{assert.equal(rentals.find(x=>x.id==='h100-x8').hourly,31.92);assert.equal(rentals.find(x=>x.id==='a6000-x2').hourly,2.18);assert.equal(rentals.find(x=>x.id==='b200-x8').memory,1440);});
-test('comparable rentals use actual offers and never create Mac rental',()=>{const s=optimize({...defaults,hardware:'m5-256'});const r=rentals.find(x=>x.id===s.rental);assert.ok(r.memory>=256);assert.ok(!r.name.includes('Mac'));assert.equal(suggestRental({...defaults,hardware:'m5-512-x4'}),null);});
+test('rental suggestions require verification, not aggregate memory',()=>{const s=optimize({...defaults,hardware:'m5-256'});assert.equal(s.rental,defaults.rental);assert.equal(suggestRental(s),null);});
 test('task workload is real input, not invented preset volume',()=>{const r=calculate(measured);assert.equal(r.first.requests,2200);assert.equal(r.first.hours,176);assert.equal(calculate({...measured,workload:'swe-factory'}).first.requests,3000);});
 test('API rates follow exact selected endpoint',()=>{const r=calculate(measured);assert.ok(Math.abs(r.first.apiUsage-2200*(1000*.07+500*.27)/1e6)<1e-9);assert.equal(r.m.provider,'Novita via OpenRouter');});
 test('context/output restrictions block API-backed comparisons',()=>{const r=calculate({...measured,output:1000000});assert.equal(r.context,false);assert.equal(r.ready,false);assert.equal(r.first.apiMonthly,null);});

@@ -1,6 +1,7 @@
-import {defaults,hardware,rentals,models} from './catalog.js?v=22';
-import {gs1Variable} from './energy.js?v=22';
-import {normalize,schedule} from './engine.js?v=22';
+import {verifiedConfiguration} from './verification.js?v=23';
+import {defaults,hardware,rentals,models} from './catalog.js?v=23';
+import {gs1Variable} from './energy.js?v=23';
+import {normalize,schedule} from './engine.js?v=23';
 // Deliberately editable planning assumptions, not measurements or vendor benchmarks.
 export const profiles={chat:[30,1500,500,.1],research:[40,12000,2500,.2],bizdev:[35,6000,1500,.15],swe:[75,12000,2500,.4],'swe-factory':[2880,24000,4000,8],support:[100,3000,700,.3],writing:[35,4000,2000,.15],security:[60,16000,3000,.4]};
 const modelGB={'nemotron-lightning':24,kimi3:700,'nemotron-ultra':360,'nemotron-super':90,minimax:160,qwen80:60,kimi25:420,'nemotron-nano':24,deepseek:440,oss120:85,qwen30:24};
@@ -13,9 +14,9 @@ export function planning(raw={}){
  set('calls',calls);set('input',input);set('output',output);set('concurrency',Math.max(1,Math.ceil(s.users*activity)));
  set('usageSource','Planning assumption: task template; replace with pilot usage.');
  const required=(models.find(m=>m.id===s.model).planningMemoryGB??modelGB[s.model])+Math.max(0,s.concurrency-1)*.5;
- if(s.autoHardware){const candidates=hardware.filter(h=>(h.gpuCeiling??h.memory)*.85>=required);s.hardware=(candidates.sort((a,b)=>(a.price??prices[a.id])-(b.price??prices[b.id]))[0]??hardware.at(-1)).id;}
+ if(s.autoHardware){const candidates=hardware.filter(h=>verifiedConfiguration('inference',s,'buy',h.id)&&(h.gpuCeiling??h.memory)*.85>=required);s.hardware=(candidates.sort((a,b)=>(a.price??prices[a.id])-(b.price??prices[b.id]))[0]??{id:s.hardware}).id;}
  const h=hardware.find(h=>h.id===s.hardware);
- if(s.autoRental){s.rental=(rentals.filter(r=>r.memory*.9>=required).sort((a,b)=>a.hourly-b.hourly)[0]??rentals.at(-1)).id;}
+ if(s.autoRental){s.rental=(rentals.filter(r=>verifiedConfiguration('inference',s,'rent',r.id)&&r.memory*.9>=required).sort((a,b)=>a.hourly-b.hourly)[0]??{id:s.rental}).id;}
  const r=rentals.find(r=>r.id===s.rental),cal=schedule(s.start,s.workload==='swe-factory');
  const available=(h.gpuCeiling??h.memory)*.85,rv=r.memory*.9;
  const localFits=required<=available,rentalFits=required<=rv;
@@ -24,7 +25,7 @@ export function planning(raw={}){
  const localTps=(h.kind==='VRAM'?100:30)*Math.sqrt(nodes)*Math.min(4,Math.sqrt(s.concurrency));
  const rentTps=100*Math.sqrt(r.gpus)*Math.min(4,Math.sqrt(s.concurrency));
  set('localAvailable',available);set('rentalAvailable',rv);
- set('localMemory',Math.min(required,available));set('rentalMemory',Math.min(required,rv));
+ set('localMemory',required);set('rentalMemory',required);
  set('localPrefill',localTps*10);set('localDecode',localTps);set('rentalPrefill',rentTps*10);set('rentalDecode',rentTps);
  const rate=(pre,dec)=>{if((s.input>0&&pre<=0)||(s.output>0&&dec<=0))return 0;const seconds=(s.input>0?s.input/pre:0)+(s.output>0?s.output/dec:0);return seconds>0?3600/seconds:3600;};
  set('localRph',localFits?rate(s.localPrefill,s.localDecode):0);

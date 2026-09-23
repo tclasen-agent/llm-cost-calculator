@@ -1,5 +1,6 @@
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=22';
-import {energyCost} from './energy.js?v=22';
+import {verifiedConfiguration,verificationMessage} from './verification.js?v=23';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=23';
+import {energyCost} from './energy.js?v=23';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
@@ -27,7 +28,7 @@ export function schedule(start,factory,offset=0){
 export function suggestRental(s){
  const h=hardware.find(h=>h.id===s.hardware);
  const target=s.rentalMemory??s.localMemory??h.gpuCeiling??h.memory;
- return rentals.filter(r=>r.memory>=target).sort((a,b)=>a.hourly-b.hourly||a.memory-b.memory)[0]??null;
+ return rentals.filter(r=>verifiedConfiguration('inference',s,'rent',r.id)&&r.memory>=target).sort((a,b)=>a.hourly-b.hourly||a.memory-b.memory)[0]??null;
 }
 export function optimize(raw){const s=normalize(raw);if(s.autoRental){const r=suggestRental(s);if(r)s.rental=r.id;}return s;}
 export function clearMeasurements(raw,scope='all'){
@@ -46,7 +47,7 @@ export function sustainedPayback(rows,key){
  const a=rows[last],b=rows[last+1],gap=a.buy-a[key],nextGap=b.buy-b[key];
  return Math.max(0,last+(gap>0?gap/(gap-nextGap):0));
 }
-export function calculate(raw){
+export function estimateEconomics(raw){
  const s=normalize(raw),m=models.find(m=>m.id===s.model),h=hardware.find(h=>h.id===s.hardware),r=rentals.find(r=>r.id===s.rental);
  const issues=[];const usage=s.calls!==null&&s.input!==null&&s.output!==null&&s.concurrency!==null&&!!s.usageSource;
  if(!usage)issues.push('Measured workload: calls, input/output tokens, concurrency and evidence.');
@@ -117,4 +118,17 @@ export function calculate(raw){
   phases[key]={prefill,decode,units,prefillSeconds,decodeSeconds,prefillShare:total>0?prefillSeconds/total:null,decodeShare:total>0?decodeSeconds/total:null,requiredPrefill:demandRph*s.input/3600,requiredDecode:demandRph*s.output/3600,ratio:s.output>0?s.input/s.output:null};
  }
  return {usefulMonths,decisionCosts,buyEligible,unrecovered,phases,amortizationMonths:period,amortizationBasis:'useful competitiveness window — earlier model or hardware refresh',amortized,s,m,h,r,localUnits,rentalUnits,usage,context,ready,issues,purchase,capital,power,localReady,rentalReady,apiReady,buyReady,rentReady,rows,payback,paybackApi,paybackRent,months,lifecycle,first:rows[1],last:rows[months],firstSchedule};
+}
+
+// Public application boundary: user-supplied evidence cannot certify hardware.
+export function calculate(raw){
+ const s=normalize(raw),gated={...s};
+ const buy=verifiedConfiguration('inference',s,'buy',s.hardware);
+ const rent=verifiedConfiguration('inference',s,'rent',s.rental);
+ if(!buy){gated.localRph=null;gated.localEvidence='';}
+ if(!rent){gated.rentalRph=null;gated.rentalEvidence='';}
+ const r=estimateEconomics(gated);
+ r.s=s;r.verification={buy:!!buy,rent:!!rent};
+ if(!buy||!rent)r.issues=[verificationMessage,...r.issues.filter(x=>!x.includes('cannot serve')&&!x.includes('benchmark, runtime'))];
+ return r;
 }

@@ -1,7 +1,8 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {planning} from '../src/planning.js';
-import {calculate} from '../src/engine.js';
+import {estimateEconomics as calculate} from '../src/engine.js';
 import {defaults} from '../src/catalog.js';
 import {decision,longViewHTML} from '../src/long-view.js';
 test('aggressive defaults give a short investment deadline and declining cloud prices',()=>{

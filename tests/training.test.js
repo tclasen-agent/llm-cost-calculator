@@ -1,6 +1,7 @@
+// Arithmetic regression tests use unverified estimates; verification.test.js tests the public safety boundary.
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {calculateTraining,normalizeTraining,trainingDefaults,encodeTraining,decodeTraining} from '../src/training.js';
+import {estimateTraining as calculateTraining,normalizeTraining,trainingDefaults,encodeTraining,decodeTraining} from '../src/training.js';
 test('default QLoRA example counts all processed tokens and both hardware paths fit',()=>{
  const r=calculateTraining({});assert.equal(r.tokens,80e6);assert.equal(r.estimatedGB,73);assert.equal(r.buy.ready,true);assert.equal(r.rent.ready,true);
  assert.equal(r.rent.hours[0],80e6/1000/3600*1.2+1);assert.equal(r.rent.hours[1],80e6/250/3600*1.2+1);
