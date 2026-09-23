@@ -1,7 +1,7 @@
-import {verifiedConfiguration} from './verification.js?v=25';
-import {defaults,hardware,rentals,models} from './catalog.js?v=25';
-import {gs1Variable} from './energy.js?v=25';
-import {normalize,schedule} from './engine.js?v=25';
+import {verifiedConfiguration} from './verification.js?v=26';
+import {defaults,hardware,rentals,models} from './catalog.js?v=26';
+import {gs1Variable} from './energy.js?v=26';
+import {normalize,schedule} from './engine.js?v=26';
 import {data,profiles,purchaseAllowances} from './data/index.js';
 export {profiles} from './data/index.js';
 const policy=data.inferencePolicy,prices=purchaseAllowances;

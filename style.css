@@ -95,3 +95,6 @@ main{max-width:1680px;padding:24px 3% 0}.workspace{grid-template-columns:310px m
 @media(max-width:1100px){.training-facts{grid-template-columns:1fr;gap:0}.training-cards{grid-template-columns:1fr}.training-card h2{min-height:0}}
 @media(max-width:580px){.mode-toggle{display:flex}.mode-toggle button{flex:1}.training-total{font-size:26px}}
 @media(max-width:580px){header{height:auto;min-height:85px;padding-top:12px;padding-bottom:12px}#share-status:empty{display:none}}
+
+/* Available-only comparisons use the full result area. */
+.lv-scorecards:has(> :only-child),.decision-panels:has(> :only-child){grid-template-columns:1fr}

@@ -1,4 +1,4 @@
-import {methodKeys} from './training-methods.js?v=25';
+import {methodKeys} from './training-methods.js?v=26';
 // Only repository-reviewed records belong here. Sources must demonstrate a
 // successful run on the complete configuration, not merely document GPU specs.
 // No current catalog entry meets this standard. Do not seed this with estimates.

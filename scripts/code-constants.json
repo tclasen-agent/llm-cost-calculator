@@ -175,5 +175,12 @@
       0,
       10
     ]
+  },
+  "scenario.js": {
+    "reason": "Zero/one identities for validation and boolean selection flags; all default inputs come from the shared data folder.",
+    "values": [
+      0,
+      1
+    ]
   }
 }

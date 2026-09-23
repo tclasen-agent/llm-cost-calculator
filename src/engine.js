@@ -1,8 +1,8 @@
 import {data} from './data/index.js';
 const policy=data.inferencePolicy;
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=25';
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=25';
-import {energyCost} from './energy.js?v=25';
+import {verifiedConfiguration,verificationMessage} from './verification.js?v=26';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=26';
+import {energyCost} from './energy.js?v=26';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){

@@ -1,5 +1,5 @@
-import {trainingWorkload,methodDefaults,methodKeys,trainingMethods} from './training-methods.js?v=25';
-import {verifiedConfiguration,verificationMessage} from './verification.js?v=25';
+import {trainingWorkload,methodDefaults,methodKeys,trainingMethods} from './training-methods.js?v=26';
+import {verifiedConfiguration,verificationMessage} from './verification.js?v=26';
 import {data,trainingModels,trainingSystems,trainingDefaults} from './data/index.js';
 export {trainingSource,trainingModels,trainingSystems,trainingDefaults} from './data/index.js';
 const policy=data.trainingPolicy;

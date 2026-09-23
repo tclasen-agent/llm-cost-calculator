@@ -1,4 +1,4 @@
-import {defaults} from './catalog.js?v=25';
-import {normalize} from './engine.js?v=25';
+import {defaults} from './catalog.js?v=26';
+import {normalize} from './engine.js?v=26';
 export function encodeState(s){const p=new URLSearchParams({scenario:'2'});for(const k of Object.keys(defaults))p.set(k,s[k]===null?'':String(s[k]));return p.toString();}
 export function decodeState(query){const p=new URLSearchParams(query);if(p.get('scenario')!=='2')return null;const raw={};for(const k of Object.keys(defaults))if(p.has(k))raw[k]=p.get(k);return normalize(raw);}

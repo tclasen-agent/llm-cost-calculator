@@ -21,8 +21,8 @@ test('legacy shared inference evidence cannot bypass verification and API pricin
  const s=planning({model:'oss120',localEvidence:'verified successful pilot',rentalEvidence:'verified successful pilot',localRph:100000,rentalRph:100000,localMemory:1,rentalMemory:1,overrides:'localEvidence,rentalEvidence,localRph,rentalRph,localMemory,rentalMemory'});
  const r=calculate(decodeState(encodeState(s)));
  assert.equal(r.buyReady,false);assert.equal(r.rentReady,false);assert.equal(r.apiReady,true);
- assert.equal(suggestRental(s),null);assert.ok(renderComparison(r).includes('No verified configuration available'));
- assert.ok(longViewHTML(r).includes('No verified hardware configuration available'));assert.ok(!longViewSVG(r).includes('NaN'));
+ assert.equal(suggestRental(s),null);assert.ok(renderComparison(r).includes('Available cost estimate'));
+ assert.ok(longViewHTML(r).includes('API estimate:'));assert.ok(!longViewSVG(r).includes('NaN'));
 });
 test('every training model and method rejects memory fit and self-certification as verification',()=>{
  for(const m of trainingModels)for(const method of ['lora','qlora'])for(const h of trainingSystems){

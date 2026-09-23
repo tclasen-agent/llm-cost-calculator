@@ -26,6 +26,10 @@ Electricity uses either a documented incremental bill rate or the centralized Do
 
 Fine-tuning supports supervised adapters, full/partial tuning, continued pretraining, preference optimization, offline distillation and reinforcement-learning recipes. It accounts for training and auxiliary stages using independently supplied throughput. Memory figures are recipe heuristics or documented references, not purchase requirements. Dataset preparation, staff, idle power, financing, replacements and failed experiments are outside the estimate. Exact reviewed configuration evidence remains mandatory for hardware costs and duration.
 
+## Valid default and selections
+
+The landing page leads with an available cost estimate. Hardware evidence gaps do not replace a working API estimate with a page-level error. Model/task choices that would invalidate the current calculation are disabled; incompatible edits retain the previous result and show an explanation. Invalid saved or shared inputs recover to current defaults, with the original input retained in browser recovery storage.
+
 ## Saved scenarios
 
 Browser storage and share URLs preserve user inputs separately for inference and training. Reopening a scenario combines its saved inputs with the current catalog; it does not restore an immutable old price snapshot. Review old quotes and measurements before using them. Reset restores current defaults. Download assumptions exports the active mode's input/result evidence.
