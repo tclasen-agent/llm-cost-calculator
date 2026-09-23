@@ -1,11 +1,12 @@
-import {refreshExplanation,decision,longViewHTML,longViewSVG,probeHTML} from './long-view.js?v=20';
-import {taskModels,taskRationale,modelSuggestion} from './task-models.js?v=20';
-import {renderComparison} from './comparison.js?v=20';
-import {planning,assumptionNotes} from './planning.js?v=20';
-import {models,hardware,rentals,workloads,defaults,reviewed} from './catalog.js?v=20';
-import {calculate,normalize,optimize,suggestRental,clearMeasurements} from './engine.js?v=20';
-import {encodeState,decodeState} from './sharing.js?v=20';
-import {tariffSource,countySource,ridersCents} from './energy.js?v=20';
+import {frontierHTML,frontierSVG,frontierData} from './frontier.js?v=21';
+import {refreshExplanation,decision,longViewHTML,longViewSVG,probeHTML} from './long-view.js?v=21';
+import {taskModels,taskRationale,modelSuggestion} from './task-models.js?v=21';
+import {renderComparison} from './comparison.js?v=21';
+import {planning,assumptionNotes} from './planning.js?v=21';
+import {models,hardware,rentals,workloads,defaults,reviewed} from './catalog.js?v=21';
+import {calculate,normalize,optimize,suggestRental,clearMeasurements} from './engine.js?v=21';
+import {encodeState,decodeState} from './sharing.js?v=21';
+import {tariffSource,countySource,ridersCents} from './energy.js?v=21';
 const $=id=>document.getElementById(id),esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const n=(x,d=1)=>typeof x==='number'&&Number.isFinite(x)?x.toLocaleString('en-US',{maximumFractionDigits:d}):'Not verified';
 const money=x=>typeof x==='number'&&Number.isFinite(x)?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(x):'Not verified';
@@ -40,6 +41,9 @@ function render(){
  $('capacity').innerHTML=`<h2>Capacity evidence</h2><p>Purchase: ${r.localReady?'Entered estimate fits the memory budget; validate with a benchmark.':'Not verified.'} Rental: ${r.rentalReady?'Entered estimate fits the memory budget; validate with a benchmark.':'Not verified.'}</p><p>Memory is checked against measured peak use and usable memory for each runtime. A sum of card or node memory does not establish sharding support. Benchmark evidence must include the exact model, precision, context, concurrency and deployment recipe.</p>`;
  $('hardware-table').innerHTML=hardware.map(h=>`<tr><td><button type="button" data-hardware="${h.id}">${esc(h.name)}</button></td><td>${h.memory} GB ${esc(h.kind)}</td><td>${money(h.price??planning({...defaults,hardware:h.id,autoHardware:0}).quote)}${h.price===null?' (assumed)':' (published)'}</td><td>${link(h.source,'Specs')}${h.priceSource?' · '+link(h.priceSource,'Price'):''}</td><td>Planning proxy; benchmark before buying</td></tr>`).join('');
  draw(r);
+ $('frontier').innerHTML=frontierHTML(r);
+ $('frontier-svg').innerHTML=frontierSVG(frontierData(r),$('frontier-svg').clientWidth);
+ $('frontier-basis').addEventListener('change',e=>{state=normalize({...state,frontierBasis:e.target.value});render();});
  $('lifecycle-content').innerHTML=`${refreshExplanation()}<p>Better/larger model refresh: ${n(state.modelRefresh)} months. Hardware competitiveness window: ${n(state.hardwareRefresh)} months.</p><p>${esc(state.lifecycleSource)}</p><p>The earlier refresh is the economic deadline: payback after it does not qualify a purchase. New releases can be better, larger, or more efficient; they do not necessarily make existing hardware unusable.</p><p>Trend context: <a href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Kicks-Off-the-Next-Generation-of-AI-With-Rubin--Six-New-Chips-One-Incredible-AI-Supercomputer/" target="_blank" rel="noreferrer">NVIDIA annual generation cadence</a> · <a href="https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts" target="_blank" rel="noreferrer">Stanford inference cost trends</a>. These historical trends do not establish our exact 3/6-month or 50%/80% assumptions.</p>`;
  const isDefault=encodeState(state)===encodeState(planning(defaults));
  history.replaceState(null,'',location.pathname+(isDefault?'':'?'+encodeState(state)));
@@ -53,7 +57,7 @@ function draw(r){
  $('lv-month').addEventListener('input',e=>{const month=Number(e.target.value);$('lv-month-value').textContent=month;$('lv-probe').innerHTML=probeHTML(r,month);$('lv-svg').innerHTML=longViewSVG(r,$('lv-svg').clientWidth,month);});
 }
 let chartResize;
-addEventListener('resize',()=>{clearTimeout(chartResize);chartResize=setTimeout(()=>{if(chartResult&&$('lv-svg'))$('lv-svg').innerHTML=longViewSVG(chartResult,$('lv-svg').clientWidth,Number($('lv-month').value));},100);});
+addEventListener('resize',()=>{clearTimeout(chartResize);chartResize=setTimeout(()=>{if(chartResult&&$('frontier-svg'))$('frontier-svg').innerHTML=frontierSVG(frontierData(chartResult),$('frontier-svg').clientWidth);if(chartResult&&$('lv-svg'))$('lv-svg').innerHTML=longViewSVG(chartResult,$('lv-svg').clientWidth,Number($('lv-month').value));},100);});
 
 $('controls').addEventListener('submit',e=>e.preventDefault());
 $('controls').addEventListener('change',e=>{

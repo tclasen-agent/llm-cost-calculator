@@ -1,5 +1,5 @@
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=20';
-import {energyCost} from './energy.js?v=20';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=21';
+import {energyCost} from './energy.js?v=21';
 export function normalize(raw={}){
  const s={...defaults};
  for(const [k,v] of Object.entries(defaults)){
@@ -8,6 +8,7 @@ export function normalize(raw={}){
   }else if(typeof raw[k]==='string')s[k]=raw[k].slice(0,2000);
  }
  for(const [k,items] of [['model',models],['hardware',hardware],['rental',rentals]])if(!items.some(x=>x.id===s[k]))s[k]=defaults[k];
+ if(!['benchmark','call'].includes(s.frontierBasis))s.frontierBasis='benchmark';
  if(!workloads.some(w=>w[0]===s.workload))s.workload=defaults.workload;
  if(!/^20\d\d-(0[1-9]|1[0-2])$/.test(s.start))s.start=defaults.start;
  if(!['gs1','bill'].includes(s.tariff))s.tariff='gs1';
