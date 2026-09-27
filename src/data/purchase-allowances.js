@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "Monthly and for each purchase decision.",
     "source": "Editorial whole-system budgets checked against hardware source links; no verified complete-system quotes",
     "how": "Replace budget estimates with current complete-system allowances; published prices belong in hardware. Include host and cluster networking."

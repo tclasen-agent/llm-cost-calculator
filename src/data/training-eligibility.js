@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "editorial",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "On license or stack support changes.",
     "source": "Model licenses and training-stack documentation",
     "how": "Review eligibility wording; open weights alone do not verify working training."

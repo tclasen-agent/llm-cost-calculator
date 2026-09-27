@@ -4,6 +4,8 @@ This folder is the single editable home for data that changes over time. Each to
 
 `registry.js` registers and recursively freezes the datasets. `index.js` builds shared application views and resolves references. These two files contain derivations, not independently maintained facts. Existing modules such as `../catalog.js` re-export those views for compatibility. There is no background price fetch.
 
+The visible **Accurate as of** date is the oldest `maintenance.reviewed` date across the entire registry, including assumptions and audit coverage. It uses UTC calendar formatting and stays unchanged on page reload, reset or a partial refresh. Advance each dataset's date only after its source review; review unchanged assumptions as assumptions. The disclosure links to the inventory and explains that the date is not a guarantee of availability or compatibility.
+
 ## Files to update
 
 | File | Information owned here | Review trigger |

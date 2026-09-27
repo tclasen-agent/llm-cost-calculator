@@ -1,8 +1,8 @@
-import {defaults,hardware,rentals,models} from './catalog.js?v=29';
-import {gs1Variable} from './energy.js?v=29';
-import {normalize,schedule} from './engine.js?v=29';
-import {data,profiles,purchaseAllowances} from './data/index.js?v=29';
-export {profiles} from './data/index.js?v=29';
+import {defaults,hardware,rentals,models} from './catalog.js?v=30';
+import {gs1Variable} from './energy.js?v=30';
+import {normalize,schedule} from './engine.js?v=30';
+import {data,profiles,purchaseAllowances} from './data/index.js?v=30';
+export {profiles} from './data/index.js?v=30';
 const policy=data.inferencePolicy,prices=purchaseAllowances;
 export function planning(raw={}){
  let s=normalize(raw); const overrides=new Set(s.overrides.split(',').filter(Boolean));

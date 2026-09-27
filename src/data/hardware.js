@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "Monthly and before purchase; on product/configuration changes.",
     "source": "Each record source/priceSource",
     "how": "Verify complete system specifications, memory type/allocation, host, storage and networking. Use null for an unverified price; put estimates in purchaseAllowances."

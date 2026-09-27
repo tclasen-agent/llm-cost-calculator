@@ -1,5 +1,5 @@
-import {data,methodDefaults,trainingMethods,methodSources} from './data/index.js?v=29';
-export {methodDefaults,trainingMethods,methodSources} from './data/index.js?v=29';
+import {data,methodDefaults,trainingMethods,methodSources} from './data/index.js?v=30';
+export {methodDefaults,trainingMethods,methodSources} from './data/index.js?v=30';
 export const methodKeys=Object.keys(methodDefaults);
 const policy=data.trainingPolicy;
 export function trainingWorkload(s,model){

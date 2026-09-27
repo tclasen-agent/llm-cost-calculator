@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "With rental billing changes.",
     "source": "sources.rentalBilling",
     "how": "Review taxes, storage and reservation/availability limitations."

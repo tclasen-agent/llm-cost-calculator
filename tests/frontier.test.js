@@ -32,3 +32,12 @@ test('cost basis round trips with configuration links and rejects unknown values
  assert.equal(decodeState(encodeState({...defaults,frontierBasis:'call'})).frontierBasis,'call');
  assert.equal(normalize({frontierBasis:'bogus'}).frontierBasis,'benchmark');
 });
+test('the refreshed Granite benchmark is usable in both cost views',()=>{
+ const r=calculate(planning({...defaults,model:'granite42'}));
+ const benchmark=frontierData(r,'benchmark'),call=frontierData(r,'call');
+ assert.equal(benchmark.current.score,11);
+ assert.equal(benchmark.current.cost,.02);
+ assert.equal(call.current.score,11);
+ assert.ok(call.current.cost>0);
+ assert.ok(!frontierHTML(r).includes('A comparable measured score and task cost have not been verified'));
+});

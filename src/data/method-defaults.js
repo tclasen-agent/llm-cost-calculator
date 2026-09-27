@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "Every training recipe or experiment change.",
     "source": "Dataset/recipe pilot and teacher/reward service invoices",
     "how": "Update auxiliary generation/forward throughput in tokens/sec, teacher/reward costs, model sizes, rollout counts and trainable percentages."

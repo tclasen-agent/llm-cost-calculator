@@ -1,6 +1,6 @@
-import {data,datasets} from './data/index.js?v=29';
-import {trainingMethods,methodSources} from './training-methods.js?v=29';
-import {planTraining,updateTraining,trainingDefaults,trainingModels,trainingSystems,trainingSource,normalizeTraining,calculateTraining,encodeTraining,decodeTraining} from './training.js?v=29';
+import {data,datasets} from './data/index.js?v=30';
+import {trainingMethods,methodSources} from './training-methods.js?v=30';
+import {planTraining,updateTraining,trainingDefaults,trainingModels,trainingSystems,trainingSource,normalizeTraining,calculateTraining,encodeTraining,decodeTraining} from './training.js?v=30';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const num=(n,d=1)=>n.toLocaleString('en-US',{maximumFractionDigits:d});
 const money=n=>new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0}).format(n);

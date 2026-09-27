@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "Weekly; immediately on endpoint, price or model changes.",
     "source": "sources.api; each model source and its /endpoints API",
     "how": "Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card."
@@ -21,14 +21,14 @@ export default {
       "evidence": "Vendor reports DeepSWE 1.1 74.2 and CyberGym 88.1 at maximum reasoning effort; agent harness and precision affect results.",
       "endpoint": {
         "provider_name": "Relace",
-        "tag": "relace/fp4",
-        "quantization": "fp4",
+        "tag": "relace",
+        "quantization": "unknown",
         "context_length": 1048576,
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000001",
-          "completion": "0.0000005",
+          "prompt": "0.00000005",
+          "completion": "0.0000006",
           "input_cache_read": "0.00000001"
         }
       }
@@ -39,16 +39,16 @@ export default {
       "apiModel": "z-ai/glm-5.3",
       "evidence": "Vendor reports CyberGym 84.5 and Toolathlon Verified 73.0; agentic coding, research and security candidate.",
       "endpoint": {
-        "provider_name": "InferenceNet",
-        "tag": "inference-net/fp4",
+        "provider_name": "Inceptron",
+        "tag": "inceptron/fp4",
         "quantization": "fp4",
         "context_length": 1048576,
-        "max_completion_tokens": 131072,
+        "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000009",
-          "completion": "0.000003",
-          "input_cache_read": "0.00000015"
+          "prompt": "0.0000003032",
+          "completion": "0.0000025146",
+          "input_cache_read": "0.0000000623"
         }
       }
     },
@@ -103,8 +103,8 @@ export default {
         "max_completion_tokens": 32768,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000001",
-          "completion": "0.0000018"
+          "prompt": "0.000000069",
+          "completion": "0.0000022"
         }
       }
     },
@@ -139,7 +139,7 @@ export default {
         "max_completion_tokens": 32768,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.000000065",
+          "prompt": "0.000000039",
           "completion": "0.00000018"
         }
       }
@@ -156,9 +156,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000195",
-          "completion": "0.00000975",
-          "input_cache_read": "0.000000195"
+          "prompt": "0.0000021",
+          "completion": "0.0000105",
+          "input_cache_read": "0.00000021"
         }
       }
     },

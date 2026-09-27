@@ -8,34 +8,34 @@
 export default {
   "maintenance": {
     "kind": "editorial",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "With each full external-data audit; revisit deferred options on publication or availability changes.",
     "source": "Registered dataset source references and the candidate sources below.",
     "how": "Review every registered dataset. Record scope, unresolved evidence and candidate disposition without copying canonical prices or specifications. A source check is not a pilot, quote or compatibility certification."
   },
   "values": {
     "coverage": {
-      "sources": "Checked all shared links. Replaced the Lambda billing redirect and the moved HP product URL. Vendor pages that rejected direct requests were inspected through web retrieval; the HP sibling listing confirms the smaller Ada SKU.",
-      "models": "Compared every existing selected provider/tag against its endpoint response, including paired prices, precision and limits. Checked model cards and retained vendor attribution. Refreshed changed endpoint fields; added smaller open-weight alternatives.",
-      "hardware": "Reviewed vendor specifications, configured GPU options, published system-price evidence and EXO documentation. Added listed configurations; retained null prices where no exact complete-system quote is available. HP placeholder zero prices are not prices.",
-      "rentals": "Compared every existing instance against the full provider table; added omitted configurations. Host resources and per-GPU prices were transcribed together. Region availability remains unverified.",
-      "rentalTerms": "Reviewed the current billing page, including idle-instance and persistent-filesystem billing; replaced the redirect and clarified terms.",
-      "purchaseAllowances": "Retained estimates as estimates. Raised selected workstation budgets where current GPU add-on prices left insufficient or no host-system allowance. New hardware budgets are editorial, not quotes.",
-      "inferenceMemory": "Checked every budget against total checkpoint size at the stated planning precision. Corrected undersized Kimi budgets and added small-model budgets. Context, KV cache, batching and runtime overhead still require measurement.",
-      "workloads": "Reviewed task shortlists against model-card capabilities. Added compact chat/support candidates without promoting them as benchmark leaders. Usage templates remain illustrative.",
-      "inferenceDefaults": "Reviewed selected IDs and current planning month; kept the default scenario and empty evidence fields. Validate initial load, reset and saved/shared recovery with the refreshed catalog.",
-      "inferencePolicy": "Reviewed all coefficients as illustrative planning policy. Vendor performance claims and historical cost trends do not justify replacing unmeasured throughput, energy or future decline assumptions.",
-      "tariff": "Compared GS-1 blocks, seasonal rates, transmission, every maintained rider, deferred fuel, surcharge and consumption tiers against the filed tariff, and commercial utility tax against the county page. Existing values match. Data-center classifications, demand/minimum charges and exemptions remain outside this small-business calculation.",
-      "frontier": "Rechecked benchmark version, evaluated variants, scores and task costs; checked all official reference-model prices, limits, long-input policy and promotional qualification. Added a measured small-model result; unavailable comparisons remain explicitly missing.",
-      "trainingModels": "Checked total checkpoint sizes against model-card tensor summaries and supervised recipe memory against Unsloth. Existing parameter and recipe values match. Shared model identity now owns the promoted inference model; the new small-model size follows the tensor summary rather than the rounded marketing name.",
-      "trainingEligibility": "Retained license and stack-support qualification. Open weights and a documented recipe do not establish exact end-to-end compatibility.",
-      "trainingSystems": "Reviewed references and power assumptions. Added rental references without copying provider prices or resources; power values remain assumptions.",
-      "trainingDefaults": "Reviewed dataset, cadence, sequence, cost and throughput defaults as scenario inputs. No new user dataset, utility bill, quote or pilot was supplied; empty evidence fields remain empty.",
-      "methodDefaults": "Reviewed auxiliary model, rollout, throughput and teacher/reward assumptions. No measured experiment or invoice evidence is available to recalibrate these defaults.",
-      "trainingPolicy": "Reviewed memory arithmetic against the memory and recipe documentation. Coefficients remain recipe assumptions; no exact training compatibility is inferred.",
-      "trainingMethods": "Reviewed memory, DPO, PPO, GRPO and sequence-distillation documentation. Clarified experimental PPO support and optional GRPO reference-policy memory.",
-      "methodSources": "Retrieved every linked method document and confirmed scope. Links still resolve; version pinning remains necessary for reproduction.",
-      "reviewedConfigurations": "No exact, current, independently reviewed end-to-end run was established. Kept the registry empty and fine-tuning hardware gates closed."
+      "sources": "Retrieved all shared source links. AMD, Framework, HP and NVIDIA investor pages required web retrieval after direct requests failed. The same source scopes remain available; no link replacements were needed.",
+      "models": "Reviewed every model card and selected endpoint response. Refreshed changed prices. The previous DeepSeek Relace and GLM InferenceNet tags disappeared: DeepSeek now uses the current Relace tag with unknown precision; GLM uses the non-discounted Inceptron FP4 endpoint because InferenceNet now reports a temporary discount. Price pairs, precision and limits come from each selected record together.",
+      "hardware": "Rechecked all vendor configurations, memory, host specifications, MSRP evidence and EXO documentation. Existing specifications and published prices match. HP listings do not establish a usable purchase price; configurable systems still require complete quotes. Coming-soon memory variants are not treated as orderable configurations.",
+      "rentals": "Compared every maintained instance with the complete Lambda table, including per-GPU price and whole-instance CPU, RAM and storage. All stored values match. Stock and region availability still require a checkout check.",
+      "rentalTerms": "Reviewed minute billing from launch and health checks through termination, including idle time, taxes and persistent filesystem billing. Existing terms remain applicable.",
+      "purchaseAllowances": "Reviewed every whole-system budget and cluster networking allowance against the hardware sources, including current GPU add-on costs. Retained the illustrative budgets; component prices do not establish complete-system quotes.",
+      "inferenceMemory": "Compared every planning budget with the model-card total checkpoint size at the assumed four-bit precision. Existing budgets remain above raw weight storage. Context, cache, batching and runtime overhead are still assumptions requiring a pilot.",
+      "workloads": "Reviewed every task template, shortlist and rationale against current model-card capabilities. Kept usage assumptions and task ordering; published general benchmarks do not establish performance on the user’s workload.",
+      "inferenceDefaults": "Reviewed all initial values, selected IDs, planning month and empty evidence fields. Kept the usable default and user-owned overrides. Initial/reset, saved/shared recovery and enabled selector transitions are regression checked.",
+      "inferencePolicy": "Reviewed all memory, performance, power, fee, schedule, lifecycle and price-decline coefficients. Retained them as illustrative planning assumptions; vendor examples and historical cost trends do not provide a replacement measurement for these scenarios.",
+      "tariff": "Rechecked the filed GS-1 distribution and seasonal generation blocks, transmission, every maintained rider, deferred fuel, sales/use surcharge, consumption-tax tiers and Loudoun commercial utility tax. All stored values match. The conservative demand gate and exclusion of data-center classifications and special minimum charges remain.",
+      "frontier": "Rechecked the benchmark version, every maintained score/cost pair, missing-result pages and official reference-model prices, context/output limits, long-input policy and promotion. Updated Nemotron Ultra task cost and added the now-measured Granite result. Missing task costs remain excluded; deprecated benchmark pages are historical evaluations, not new runs.",
+      "trainingModels": "Compared all total checkpoint sizes with model-card tensor summaries and both supervised adapter memory recipes with Unsloth. Existing values match. Recipe memory is not evidence of arbitrary training methods or exact end-to-end compatibility.",
+      "trainingEligibility": "Reviewed model-card licenses and training documentation. Kept the requirement to qualify adaptation by the actual license and stack; open weights alone do not establish exact support.",
+      "trainingSystems": "Reviewed every shared hardware/rental reference, custom scenario and power assumption. Prices and resources still derive from their canonical owners; no measured power evidence was supplied.",
+      "trainingDefaults": "Reviewed every dataset, sequence, cadence, throughput, cost and energy default. Retained illustrative values and empty evidence fields because no user dataset, bill, quote or pilot was supplied.",
+      "methodDefaults": "Reviewed auxiliary models, rollout counts, trainable fractions, forward/generation rates and teacher/reward cost assumptions against the method descriptions. No experiment or invoice evidence was supplied to recalibrate the examples.",
+      "trainingPolicy": "Checked memory arithmetic against Transformers memory documentation and Unsloth recipes: base weights plus additional master weights, gradients and optimizer state remain consistent. Activation, headroom and monthly capacity are planning assumptions.",
+      "trainingMethods": "Reviewed the memory, DPO, experimental PPO, GRPO and sequence-distillation documentation. Existing descriptions remain applicable, including recipe-dependent reference-policy memory and the need to pin implementation versions.",
+      "methodSources": "Retrieved every method documentation link and the original distillation paper. Each still supports its maintained explanation.",
+      "reviewedConfigurations": "Reviewed the empty evidence registry. No independently reviewed exact end-to-end run was established; kept it empty. Both calculator modes permit labeled estimates without implying certified compatibility."
     },
     "candidates": [
       {
@@ -77,6 +77,12 @@ export default {
         ],
         "status": "further-review",
         "reason": "Published inference examples could support configuration-specific presets, but workload, precision, context and software versions must be modeled before replacing the generic throughput proxy."
+      },
+      {
+        "id": "amd-next-memory",
+        "sourceRef": "amdHalo",
+        "status": "deferred",
+        "reason": "The vendor labels its next processor and larger-memory Halo configuration as coming soon. Wait for orderable complete systems and allocation evidence."
       }
     ],
     "migration": "Existing IDs and browser-storage/URL formats remain unchanged. No saved measurement is rewritten by this data refresh. Scenarios that no longer fit are preserved as rejected input by recovery and fall back to the usable default; explicit configuration changes continue to clear only scoped measurements and system quotes."

@@ -98,3 +98,14 @@ main{max-width:1680px;padding:24px 3% 0}.workspace{grid-template-columns:310px m
 
 /* Available-only comparisons use the full result area. */
 .lv-scorecards:has(> :only-child),.decision-panels:has(> :only-child){grid-template-columns:1fr}
+
+/* Shared catalog review date stays visible in both calculator modes. */
+.calculator-toolbar{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.calculator-toolbar .mode-toggle{margin-bottom:0}
+.data-freshness{max-width:480px;font-size:12px;line-height:1.6;color:var(--muted);border:1px solid var(--border);border-radius:9px;background:#fff}
+.data-freshness summary{cursor:pointer;padding:11px 15px;color:var(--green)}
+.data-freshness time{font-weight:650;white-space:nowrap}
+.freshness-details{padding:0 15px 14px}
+.freshness-details p{margin:0 0 10px}
+.freshness-details a{color:var(--green)}
+@media(max-width:580px){.calculator-toolbar{gap:12px}.calculator-toolbar .mode-toggle,.data-freshness{width:100%;max-width:none}}

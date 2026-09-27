@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "provenance",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "With each related data review; check links monthly.",
     "source": "Publisher/provider documents",
     "how": "Replace moved URLs only after confirming the same document scope; retain historical evidence."

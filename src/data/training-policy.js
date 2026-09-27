@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "On training stack, optimizer or memory-layout changes.",
     "source": "sources.training; training method documentation and pilots",
     "how": "Recalibrate memory/activation coefficients and monthly capacity allowance and high-confidence memory ceiling (fraction of installed VRAM). Constants model a recipe, not a compatibility guarantee."

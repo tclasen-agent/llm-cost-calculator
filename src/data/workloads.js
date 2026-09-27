@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "Monthly; after workload changes, model releases or evaluations.",
     "source": "Illustrative usage templates and editorial shortlists; models.*.source; no archived usage pilots",
     "how": "Update calls/person/day, input/output tokens/call, concurrent activity/person, ordered editorial shortlist and rationale."

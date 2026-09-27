@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-23",
+    "reviewed": "2026-09-27",
     "frequency": "Weekly; on benchmark version, pricing or promotion changes.",
     "source": "sources.benchmark, sources.methodology and record source/priceSource",
     "how": "Refresh comparable benchmark score, task cost and reasoning setting together. API prices USD/million tokens. Update all reference context limits and long-context multipliers; review promotion at its date. Never impute missing scores."
@@ -110,7 +110,7 @@ export default {
       },
       "nemotron-ultra": {
         "score": 23,
-        "taskCost": 0.55,
+        "taskCost": 0.6,
         "variant": "reasoning"
       },
       "nemotron-super": {
@@ -149,14 +149,19 @@ export default {
         "score": 9,
         "taskCost": 0.01,
         "variant": "high reasoning"
+      },
+      "granite42": {
+        "score": 11,
+        "taskCost": 0.02,
+        "variant": "reasoning",
+        "source": "https://artificialanalysis.ai/models/granite-4-2-8b"
       }
     },
     "missingBenchmarks": {
-      "kimi25": "The available score is an estimate, not an independently measured result in this snapshot.",
-      "minimax": "The available score is an estimate, not an independently measured result in this snapshot.",
-      "deepseek": "A comparable measured score and task cost have not been verified in this snapshot.",
-      "qwen30": "A comparable measured score and task cost have not been verified in this snapshot.",
-      "granite42": "A comparable measured score and task cost have not been verified in this review."
+      "kimi25": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
+      "minimax": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
+      "deepseek": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
+      "qwen30": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison."
     },
     "longInputMultiplier": 2,
     "longOutputMultiplier": 1.5,

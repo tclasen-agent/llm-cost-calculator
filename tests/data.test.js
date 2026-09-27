@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {data,datasets,models,rentals,hardware,purchaseAllowances,trainingSystems,trainingDefaults,referenceModels} from '../src/data/index.js';
+import {data,datasets,dataReviewed,oldestReviewDate,models,rentals,hardware,purchaseAllowances,trainingSystems,trainingDefaults,referenceModels} from '../src/data/index.js';
 import {inventory,leaves,validate} from '../scripts/data-tools.mjs';
 
 test('maintained datasets satisfy the schema, source boundary and inventory contract',async()=>{
@@ -10,6 +10,16 @@ test('maintained datasets satisfy the schema, source boundary and inventory cont
   assert.ok(Object.isFrozen(d.values)||typeof d.values!=='object');
   for(const [field] of leaves(d.values))assert.ok(text.includes('`'+(field||'(collection)')+'`'),`${id}.${field} missing`);
  }
+});
+test('catalog freshness cannot advance when only some datasets are refreshed',()=>{
+ const records={prices:{maintenance:{reviewed:'2026-09-27'}},assumptions:{maintenance:{reviewed:'2026-09-23'}}};
+ assert.equal(oldestReviewDate(records),'2026-09-23');
+ records.prices.maintenance.reviewed='2026-10-01';
+ assert.equal(oldestReviewDate(records),'2026-09-23');
+ records.assumptions.maintenance.reviewed='2026-10-01';
+ assert.equal(oldestReviewDate(records),'2026-10-01');
+ assert.equal(dataReviewed,oldestReviewDate(datasets));
+ assert.ok(Object.values(datasets).every(d=>d.maintenance.reviewed>=dataReviewed));
 });
 test('selected endpoint prices and limits derive from the same raw provider record',()=>{
  for(const m of models){const e=data.models[m.id].endpoint;
