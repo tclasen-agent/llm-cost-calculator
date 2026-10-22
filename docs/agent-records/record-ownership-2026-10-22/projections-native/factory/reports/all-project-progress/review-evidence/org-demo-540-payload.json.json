@@ -1,0 +1,38 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/org-demo-540-payload.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "4a7a2530f8efb3b494611c1347ae8ef13331e771bdebe60b48f20ef56a6d341b",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/files/agent-org~1factory~1reports~1project-demos~1CALCULATOR.md",
+      "value": "766195c4399fb130d801092a8b7e6f5b5d6ba394d1c0983d5333f5bf1102d4c6"
+    },
+    {
+      "pointer": "/files/agent-org~1factory~1reports~1project-demos~1PLAN.md",
+      "value": "1f894897ec11dcf9e21a53da224e3352dac8de6eca7e9e4e8657ac4961f1e4cb"
+    },
+    {
+      "pointer": "/files/agent-org~1factory~1reports~1project-demos~1README.md",
+      "value": "d214d69e22dd42bf6f7a9d455e984e689e6b7884c1053dc55265e9e0214ea0f6"
+    },
+    {
+      "pointer": "/files/agent-org~1factory~1reports~1project-demos~1REVIEW.md",
+      "value": "b1fcd3b686f23c3f389cbdef175594c97afb7665588a06dc2bec394717cc8cc9"
+    },
+    {
+      "pointer": "/files/agent-org~1knowledge~1projects~1llm-cost-calculator~1PROFILE.md",
+      "value": "0702f556217820a63cd619ca016e058581615ff835fd43456cfb4ac03c4bcc5d"
+    },
+    {
+      "pointer": "/files/agent-org~1runs~1RUN-000086.md",
+      "value": "990eafe5ae1ad7638aa66dd17298012a53438f8b3d5824c5cdf50fcf48a9da79"
+    },
+    {
+      "pointer": "/files/agent-org~1tasks~1project~1TASK-000090.md",
+      "value": "995cd95d991ba1b291faf3f350e888c6446b9fa945a6fd88b29a03fc8310df40"
+    }
+  ]
+}

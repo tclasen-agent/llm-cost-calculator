@@ -1,0 +1,50 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/sha256-phase3.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "73c429fac83b7ff5c87979890a5b405e63eae9433b952d3a9bead9325b3ee0bd",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/calculator-findings.json",
+      "value": "c8817d1bfa3e5bb7ba924f4c2abbbd0610862884f2dabb25d7e2d27937b72429"
+    },
+    {
+      "pointer": "/calculator-phase2~1browser-final.png",
+      "value": "12e2197e32db67dc814647897e3dc0ae7b5f994950b4e418ec8e38da65ce8a0b"
+    },
+    {
+      "pointer": "/calculator-phase2~1browser-results.json",
+      "value": "96f18021b68a70e381085ee7d2a8454d70968f5205c22d09d9d02f7b3d631403"
+    },
+    {
+      "pointer": "/calculator-phase2~1implementer-browser-results.json",
+      "value": "7ba677641eced1b469a1531d07dfe0f372fed01086fda26eb5f4d3f1fc1679c8"
+    },
+    {
+      "pointer": "/calculator-phase2~1implementer-index.md",
+      "value": "8e4451e9e5331cdb63084e2e02aa156f00222556e9ea6c6e4fec2ba8906229dc"
+    },
+    {
+      "pointer": "/calculator-phase2~1implementer-media-validation.json",
+      "value": "9b6f5f5ef17c46752f8316e35597ebed12f54afc38049abe482f7dacadb98bac"
+    },
+    {
+      "pointer": "/calculator-phase2~1implementer-source-candidate.json",
+      "value": "122b70b724f056401045fe579696629cacec525e8bb654f1d32c1c0281dbeab5"
+    },
+    {
+      "pointer": "/calculator-phase2~1outcome-13.png",
+      "value": "722e3079493604a7ce9f06270acb0d37f39b17e4d87ca5bb8a8468894c55de89"
+    },
+    {
+      "pointer": "/calculator-phase2~1outcome-15.png",
+      "value": "82f8cbf93284aa36af14a641d0fc0f396424bf61a39250e716eb9d6cee0fd3a6"
+    },
+    {
+      "pointer": "/calculator-phase2~1review-results.json",
+      "value": "c4387c37a8b1f1ec249610e745eaace78d7722aaf29704b6e00a055171648d79"
+    }
+  ]
+}

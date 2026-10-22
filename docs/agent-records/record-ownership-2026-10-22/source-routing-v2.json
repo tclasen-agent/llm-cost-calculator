@@ -1,0 +1,405 @@
+{
+  "schema_version": 2,
+  "owner": "llm-cost-calculator",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "frozen_v1_manifest": "source-routing.json",
+  "frozen_v1_manifest_sha256": "2fd3d3f5a415c1e6f62161dc81c8b7e914c16116b6fcf1f9c71d7b58e21489ae",
+  "scope": "Tracked native evidence phase under APP109/TASK155. Initial v2 preserved v1 bytes; APP113/PLAN2 now corrects one rejected Calculator Markdown projection and affected provenance/navigation. Native selections remain unchanged. No source scripts, app/runtime/Git mutation or fresh application verification.",
+  "inventory_native_inputs_hash_checked": 58,
+  "records": [
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/effects.jsonl",
+      "source_sha256": "22f5a7d2d7c17e09281dad77305a81c040d24cf101f4839b5d1c768e59a459ca",
+      "source_bytes": 70274,
+      "destination": "projections-native/factory/reports/all-project-progress/effects.jsonl.json",
+      "destination_sha256": "ed6113c494387b5108f7a9c3b05fea12bad7e4a87580bc163abd62f3caef94b7",
+      "destination_bytes": 8171,
+      "mode": "derived_projection",
+      "selected_units": 9
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/org-review-evidence/candidate-audit.json",
+      "source_sha256": "0c8f56ce06c05ad4da5fb3d5680396e6a60be0e259823a64112ba5a8e6458185",
+      "source_bytes": 33190,
+      "destination": "projections-native/factory/reports/all-project-progress/org-review-evidence/candidate-audit.json.json",
+      "destination_sha256": "2718478a9f53fe3b59c4a1a60f965ba41a5452e7c8ccd24f4ebe46f5c6f4ed9a",
+      "destination_bytes": 9198,
+      "mode": "derived_projection",
+      "selected_units": 30
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/org-review-evidence/checks.json",
+      "source_sha256": "af77c0097f93281a1b851507f677046f6f18553d7e29e153572dbbc344095078",
+      "source_bytes": 6461,
+      "destination": "projections-native/factory/reports/all-project-progress/org-review-evidence/checks.json.json",
+      "destination_sha256": "f1daa50edb381e4237c51e5f682c218fa025972be60cdf354d2e0b46f789babc",
+      "destination_bytes": 1343,
+      "mode": "derived_projection",
+      "selected_units": 1
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/org-review-evidence/sha256.json",
+      "source_sha256": "327e11dd6e2c8c4b8c8dc0b3eee167d9c039db8451eef9327ff75cd544200624",
+      "source_bytes": 1171,
+      "destination": "projections-native/factory/reports/all-project-progress/org-review-evidence/sha256.json.json",
+      "destination_sha256": "9bc5e59d017279e3d8b3c15510cf977d8e369a6e62d4b39d6fe1f64ca9d59e39",
+      "destination_bytes": 1009,
+      "mode": "derived_projection",
+      "selected_units": 1
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-findings.json",
+      "source_sha256": "c8817d1bfa3e5bb7ba924f4c2abbbd0610862884f2dabb25d7e2d27937b72429",
+      "source_bytes": 1495,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-findings.json",
+      "destination_sha256": "c8817d1bfa3e5bb7ba924f4c2abbbd0610862884f2dabb25d7e2d27937b72429",
+      "destination_bytes": 1495,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/browser-results.json",
+      "source_sha256": "96f18021b68a70e381085ee7d2a8454d70968f5205c22d09d9d02f7b3d631403",
+      "source_bytes": 1930,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/browser-results.json",
+      "destination_sha256": "96f18021b68a70e381085ee7d2a8454d70968f5205c22d09d9d02f7b3d631403",
+      "destination_bytes": 1930,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-browser-results.json",
+      "source_sha256": "7ba677641eced1b469a1531d07dfe0f372fed01086fda26eb5f4d3f1fc1679c8",
+      "source_bytes": 8013,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-browser-results.json",
+      "destination_sha256": "7ba677641eced1b469a1531d07dfe0f372fed01086fda26eb5f4d3f1fc1679c8",
+      "destination_bytes": 8013,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-media-validation.json",
+      "source_sha256": "9b6f5f5ef17c46752f8316e35597ebed12f54afc38049abe482f7dacadb98bac",
+      "source_bytes": 3833,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-media-validation.json",
+      "destination_sha256": "9b6f5f5ef17c46752f8316e35597ebed12f54afc38049abe482f7dacadb98bac",
+      "destination_bytes": 3833,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-source-candidate.json",
+      "source_sha256": "122b70b724f056401045fe579696629cacec525e8bb654f1d32c1c0281dbeab5",
+      "source_bytes": 6481,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-source-candidate.json",
+      "destination_sha256": "122b70b724f056401045fe579696629cacec525e8bb654f1d32c1c0281dbeab5",
+      "destination_bytes": 6481,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/review-results.json",
+      "source_sha256": "c4387c37a8b1f1ec249610e745eaace78d7722aaf29704b6e00a055171648d79",
+      "source_bytes": 1564,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/review-results.json",
+      "destination_sha256": "c4387c37a8b1f1ec249610e745eaace78d7722aaf29704b6e00a055171648d79",
+      "destination_bytes": 1564,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/media-relocation.json",
+      "source_sha256": "fa3e0758ebdf93b20ac52d77d0a70a449a7effe44204c4e55c27edbf189372b3",
+      "source_bytes": 3871,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/media-relocation.json.json",
+      "destination_sha256": "c9fc9a3398b4881b3aa68e235bbe43cd05226ee6cfe0eaf6d7e6a48bfaaf0671",
+      "destination_bytes": 2235,
+      "mode": "derived_projection",
+      "selected_units": 3
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/org-demo-540-payload.json",
+      "source_sha256": "4a7a2530f8efb3b494611c1347ae8ef13331e771bdebe60b48f20ef56a6d341b",
+      "source_bytes": 6773,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/org-demo-540-payload.json.json",
+      "destination_sha256": "921da00b4be7753b6c227da16f7e258eb7f23b8ec0d0b76d9a30e90db674b562",
+      "destination_bytes": 2041,
+      "mode": "derived_projection",
+      "selected_units": 7
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/snapshot-index.json",
+      "source_sha256": "5c8d7cbf3bad9e633adf046e4672e36cf39c45f9e8d0f32b2a77acb9fe4fd4ff",
+      "source_bytes": 1735,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/review-snapshots/snapshot-index.json.json",
+      "destination_sha256": "183c652431e3b0962d2f3cbed3d7ac8a9394453be61503a7c4c38095bb56b52b",
+      "destination_bytes": 2983,
+      "mode": "derived_projection",
+      "selected_units": 6
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/sha256-phase2.json",
+      "source_sha256": "c3a02a5f3e85b63533611282cf385f27eb70929ce1a1d23f2593dc2855598205",
+      "source_bytes": 1839,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/sha256-phase2.json.json",
+      "destination_sha256": "8b837f1e416067dd301012c7fd8a637ecd1dfcf1b60bb5d087874a1d2d8a77aa",
+      "destination_bytes": 2392,
+      "mode": "derived_projection",
+      "selected_units": 10
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/sha256-phase3.json",
+      "source_sha256": "73c429fac83b7ff5c87979890a5b405e63eae9433b952d3a9bead9325b3ee0bd",
+      "source_bytes": 4107,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/sha256-phase3.json.json",
+      "destination_sha256": "c63e6106ae873781db1126639dbd4d22346d0e09c65dba54faca77c915931593",
+      "destination_bytes": 2392,
+      "mode": "derived_projection",
+      "selected_units": 10
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/sha256-phase4-final.json",
+      "source_sha256": "cd8633538b4a65b42f58c916dc2616c45cf775e9cb448f2422c6474ebb444978",
+      "source_bytes": 5316,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/sha256-phase4-final.json.json",
+      "destination_sha256": "23b3cd76ad7971166299457946358b5708ea9374f0621f8d73b744c57b241e86",
+      "destination_bytes": 1945,
+      "mode": "derived_projection",
+      "selected_units": 7
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/sha256.json",
+      "source_sha256": "2ba5da8ecc6de41c0604018ce17da580be8c941078d2fa34bccc194a8b36802a",
+      "source_bytes": 724,
+      "destination": "projections-native/factory/reports/all-project-progress/review-evidence/sha256.json.json",
+      "destination_sha256": "3c0ec2bd9b9727526d9424d64965b711b0e7e877a39e98d3e6e188eb3747fbcd",
+      "destination_bytes": 959,
+      "mode": "derived_projection",
+      "selected_units": 1
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/baseline.json",
+      "source_sha256": "769d03f64a971534de78f1f878a20b4f23544d76cd38259dd099356fdada9775",
+      "source_bytes": 145489,
+      "destination": "projections-native/factory/reports/project-cleanup/baseline.json.json",
+      "destination_sha256": "fc7d2419173b8b776ec443bfbc4e4d159834f2806192d471ad4803f421d594a6",
+      "destination_bytes": 8308,
+      "mode": "derived_projection",
+      "selected_units": 1
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/candidate.json",
+      "source_sha256": "23954812f96e6345403ab3ac7c95616dad521427ddab717da955af8885d5fc8d",
+      "source_bytes": 113514,
+      "destination": "projections-native/factory/reports/project-cleanup/candidate.json.json",
+      "destination_sha256": "983bfa8cf9e518bdc8163639d9c95c48af924f2b1f9723867ab099541bce93c4",
+      "destination_bytes": 8289,
+      "mode": "derived_projection",
+      "selected_units": 1
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/delivery-heads.json",
+      "source_sha256": "f076e5e2f3be4149b76827b5d3a3f9b8c7a4f659c850ff7ff6af1cf279b2a8f0",
+      "source_bytes": 4689,
+      "destination": "projections-native/factory/reports/project-cleanup/delivery-heads.json.json",
+      "destination_sha256": "747cf5820777743434fecd52a10180ec901a2658db99a5add5b0530038a158ae",
+      "destination_bytes": 1916,
+      "mode": "derived_projection",
+      "selected_units": 1
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/delivery-superseded-heads.json",
+      "source_sha256": "ae06b95fac054ea191220c6a302b60bb0bfca8e6da2e5bd403bdbed1039b6440",
+      "source_bytes": 2054,
+      "destination": "projections-native/factory/reports/project-cleanup/delivery-superseded-heads.json.json",
+      "destination_sha256": "f7cf07b7c89415b55c08415a40458ef47bcdae9c75a47924eda7d300975c2198",
+      "destination_bytes": 1340,
+      "mode": "derived_projection",
+      "selected_units": 1
+    }
+  ],
+  "native_exclusions": [
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/org-review-evidence/film-audit.json",
+      "source_sha256": "ae4c8e5df531fc1b4417f16aa008c5228b9711f1058e5605ca102004d379ffac",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live-empty/browser-checks.json",
+      "source_sha256": "21bf5e232aa63def01810a2562009bc663bfdf3fe6e9af66eeabde247cbef759",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live-empty/browser-lifecycle.json",
+      "source_sha256": "dd4a902ca9ec82d1deb6d2965a4be5e8ccdaaa786e130ba0b74baa8528a252b7",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live-empty/browser.stderr.txt",
+      "source_sha256": "9a44e363824db3fb7f72d2301c8ce2f5077651e3bd64885bbc10e674a93dec4b",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live-populated/browser-checks.json",
+      "source_sha256": "fa5fe20291fd10b953e85345038a2ef8247a581021efeb837f816cd4d43404a7",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live-populated/browser-lifecycle.json",
+      "source_sha256": "0729d89bb40b3abd1ba700d81efbbd9bc60230d3b3f0838ec94a995b8944307e",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live-populated/browser.stderr.txt",
+      "source_sha256": "aa3125dafd62e0e58e0d9ef200dad4e918f84b122d0809312336a0fb30f3890d",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live/independent-negative.json",
+      "source_sha256": "84957da11c90105dc920fbd2bf3b8bfb269521191423c48a148fd203942bba1b",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-live/offline-independent.json",
+      "source_sha256": "b54f5f940862bb407aa33610892b3f78109cb126c89f51dd0534a30b9c620ea9",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-parent/browser-checks.json",
+      "source_sha256": "7d0b1251491fabf83d2627584ad6820a8ea4c936cf1b54e3f913a02e6e9e71af",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-parent/browser-lifecycle.json",
+      "source_sha256": "3b1f37683d3f06cdaeb3ac61917dc9accdaca6b823bc99166d27e9adac932e05",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/commons-parent/browser.stderr.txt",
+      "source_sha256": "56cf5efab9ca0c8ceac5c205e719fe96f2376330b7626ca7f3eea6726d4ec45c",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/every-game-code/canonical-review-result.json",
+      "source_sha256": "f02d2c167e215780a3b07adef16d7a18fec86c86347696ae8528230a6b7c5880",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/every-game-code/canonical-review-start.json",
+      "source_sha256": "4b84942e99cf6c5819877cdada559bc3f9e2b5067d146e1cf0c530e6093659a5",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/every-game-code/canonical-review.log",
+      "source_sha256": "927582b1f925a233f8d8fe18efd1a80ae79eb72ca9409cccfb88ba112a1ba130",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/every-game-code/independent-final-review.json",
+      "source_sha256": "d0de63228c073b859ec32a0ab1c3c66c34f931ca7c481a9cd32cf286c384a36c",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/resonance/independent-browser-results.json",
+      "source_sha256": "6a4e82e19dcfdae9a8d2e66d87aed313e41da729780a17ebe86da76f89818978",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/resonance/independent-summary.json",
+      "source_sha256": "64f8bba2772f1a29f7dfcedc616dea7a6299793403496088b3e75eab30aab169",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/resonance/targeted-python-command.json",
+      "source_sha256": "3c3696983b77bea59901a3f9cd3ec0b5d6c074aec83500e72376859a12f6aefa",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/resonance/targeted-python.log",
+      "source_sha256": "c0fe99c99c57223c0156290c4627d3bba6506555ece6e618a0624eaa1a7407e2",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/signed-head-mapping.json",
+      "source_sha256": "4c113e8160e49ca3ae818d079b643da7210fcb76f320937298f7402f931fb91c",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/wired-independent-audit.json",
+      "source_sha256": "af3c9936b92ba3718c5c20b98e1205ffb2e76cb1a1f33682b4d371fafc4eb21f",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/wired-rework-final.json",
+      "source_sha256": "d2d70b6579c016d8eec1a18805bcff8e579bae308d95a86d5524523e41271536",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/wired-rework-independent-audit.json",
+      "source_sha256": "d8533dda0e607951c2b884c741f411c7e81de5ddb65e8f34e92191de519c42c0",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/wired-rework-probes.json",
+      "source_sha256": "5526ffc1430049af1577113a4cfaec8a8b32dfbe13d6f56e2c58a344f70a27bd",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/wired-schedule-rejection.json",
+      "source_sha256": "8fdd17ea259a9c717d2244c37e4f7e8eacbfde954fa8617c2cb313428df8543d",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/git-nested-classification.json",
+      "source_sha256": "08a751b5f13371d7f81c596069c15b9a9b0eb80e397f71fb1bae905f0ab0685a",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/git-nested-discovery.json",
+      "source_sha256": "5b71a4a1fcae3f588d5e9b6f7822c530fb09a6eda3bd3eaf033cdd90dc329dbc",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/git-nested-inventory.json",
+      "source_sha256": "370c3ac5e79be6964bc1a1ba49936584cb7c50acb6ba163ffca8f3d70fc5739a",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/git-nested-metadata.json",
+      "source_sha256": "d0855a5288ab90aa0888bf3a9f763f71f87d1d424af670132ce40b4d175de1e8",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learning-coverage.json",
+      "source_sha256": "74f2fa4e4b74bd4d954ed9e246c24a42b0a575ccd3ded499bf305b3f362224e4",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learning-duplicates.json",
+      "source_sha256": "6548440ba3ed86c0e2088673b8fbb834afc85479afc4009e1bc80a6270569dc8",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learning-evidence.json",
+      "source_sha256": "17abe7cb8798318c4ce28132616be8b62bd46985f16c2b2816c3ea32ae686ce6",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learning-inventory.json",
+      "source_sha256": "079b2b79358f9730b80bc358e4d56f121ed3cc134d55f92ae33a7db032bbf6f6",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learning-metrics.json",
+      "source_sha256": "af451a40696553f9fcacc7766dd8ebfc848cb180d66071ceee9591ed698a81cf",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learning-sources.jsonl",
+      "source_sha256": "d7d565abbb43ef087bd0634ebbb121e4ff328c7a7434cc1562e81577d7d866ca",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-demos/runtime-effects.jsonl",
+      "source_sha256": "7c396389939283ab92f72b50469bf43646489fcf715c92ec9c7d6a5128e35d27",
+      "reason": "No isolated owning-project native row/key; general organization or other-owner native data remains outside this owner archive."
+    }
+  ],
+  "legacy_coverage": "Bounded tracked metadata only: named Git nested inventories/classification/discovery and project-learning inventory/evidence/coverage/duplicates/metrics/sources. No old/ path or ignored artifact accessed. Other legacy general governance/history remains source-preserved and outside this phase.",
+  "initial_v2_rejected_v1_manifest_sha256": "9d4038938917e077425c24b4df2f0b526d15b3ae55263909fa43a784c2484acb",
+  "repair_supersession": "The compatibility field frozen_v1_manifest_sha256 now identifies the repaired current source-routing.json. The original value is retained as initial_v2_rejected_v1_manifest_sha256. Historical preparer validations and invariance statements are superseded by REVIEW159 FAIL for ownership isolation and APP113 affected repair; fresh independent review remains required."
+}

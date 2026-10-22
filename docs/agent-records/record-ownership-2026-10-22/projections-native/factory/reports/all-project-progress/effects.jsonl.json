@@ -1,0 +1,184 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/effects.jsonl",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "22f5a7d2d7c17e09281dad77305a81c040d24cf101f4839b5d1c768e59a459ca",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "jsonl_line": 44,
+      "value": {
+        "data": {
+          "authority": "APP-000035; standing normal delivery; independentreviewc1dd0834",
+          "candidate_hash": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+          "effect_id": "calculator-recovery-push",
+          "operation": "push expectedhead5c08c21b956a896afb868a81cc0b6a013b809844",
+          "resource": "git:branch",
+          "run": "RUN-000110",
+          "target": "tclasen-agent/llm-cost-calculator:fix/invalid-saved-scenario-recovery",
+          "task": "TASK-000115"
+        },
+        "effect_id": "calculator-recovery-push",
+        "hash": "b826c1087214a548d4d2545a7ef45c38adaa2705c6e9f8106afe2350d4d14c37",
+        "kind": "prepared",
+        "previous_hash": "a144902a1e471ec769548ae15ea5b33278af7727d300d01afa905ab12e2a11bf",
+        "recorded_at": "2026-10-22T03:52:05.775143Z",
+        "schema_version": 1,
+        "sequence": 44
+      }
+    },
+    {
+      "jsonl_line": 45,
+      "value": {
+        "data": {
+          "attempt": 1
+        },
+        "effect_id": "calculator-recovery-push",
+        "hash": "e9079d792c96804ab7526972634bb48b3cd60928e8e103346b2c392c91461398",
+        "kind": "attempted",
+        "previous_hash": "b826c1087214a548d4d2545a7ef45c38adaa2705c6e9f8106afe2350d4d14c37",
+        "recorded_at": "2026-10-22T03:52:05.888678Z",
+        "schema_version": 1,
+        "sequence": 45
+      }
+    },
+    {
+      "jsonl_line": 46,
+      "value": {
+        "data": {
+          "authority": "APP-000035; standing normal delivery; independentreviewc1dd0834",
+          "candidate_hash": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+          "effect_id": "calculator-recovery-pr",
+          "operation": "create normal PR main <- fix/invalid-saved-scenario-recovery",
+          "resource": "github:pull_request",
+          "run": "RUN-000110",
+          "target": "tclasen-agent/llm-cost-calculator:fix/invalid-saved-scenario-recovery",
+          "task": "TASK-000115"
+        },
+        "effect_id": "calculator-recovery-pr",
+        "hash": "8bdc95d4d9d8110e81416e785b5ce6907f7b509416666f765fa0bdae720c9535",
+        "kind": "prepared",
+        "previous_hash": "e9079d792c96804ab7526972634bb48b3cd60928e8e103346b2c392c91461398",
+        "recorded_at": "2026-10-22T03:52:06.100568Z",
+        "schema_version": 1,
+        "sequence": 46
+      }
+    },
+    {
+      "jsonl_line": 47,
+      "value": {
+        "data": {
+          "attempt": 1
+        },
+        "effect_id": "calculator-recovery-pr",
+        "hash": "369f5485d4a58359e2ee219fc0fa04356f702a47dd80b433f85dba0749eab57f",
+        "kind": "attempted",
+        "previous_hash": "8bdc95d4d9d8110e81416e785b5ce6907f7b509416666f765fa0bdae720c9535",
+        "recorded_at": "2026-10-22T03:52:06.213684Z",
+        "schema_version": 1,
+        "sequence": 47
+      }
+    },
+    {
+      "jsonl_line": 51,
+      "value": {
+        "data": {
+          "candidate_hash": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+          "observed_at": "2026-10-22T03:54:09.484709Z",
+          "remote_identity": "https://github.com/tclasen-agent/llm-cost-calculator/pull/3",
+          "resource": "git:branch",
+          "source": "independent ls-remote expected5c08c21 verified",
+          "status": "confirmed",
+          "target": "tclasen-agent/llm-cost-calculator:fix/invalid-saved-scenario-recovery"
+        },
+        "effect_id": "calculator-recovery-push",
+        "hash": "e00bcadf63954a7cceca2bb5adea65ae6dc1afb2ba17f5c38c121ffb752b80ba",
+        "kind": "observed",
+        "previous_hash": "d31fe7fa92734dd222501a7d81e79922f6f85da8c2e87de4bbe62b0cada1b0f3",
+        "recorded_at": "2026-10-22T03:54:09.610519Z",
+        "schema_version": 1,
+        "sequence": 51
+      }
+    },
+    {
+      "jsonl_line": 52,
+      "value": {
+        "data": {
+          "candidate_hash": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+          "observed_at": "2026-10-22T03:54:09.717958Z",
+          "remote_identity": "https://github.com/tclasen-agent/llm-cost-calculator/pull/3",
+          "resource": "github:pull_request",
+          "source": "liveAPI PR3 exact5c08c21 clean mergeable; installed CIvalidate success, independent review nofindings",
+          "status": "confirmed",
+          "target": "tclasen-agent/llm-cost-calculator:fix/invalid-saved-scenario-recovery"
+        },
+        "effect_id": "calculator-recovery-pr",
+        "hash": "1c81a37dec7e9c79a02c07f19ebaf292be0ab4d6ce792d017b9d87a9dc53feaf",
+        "kind": "observed",
+        "previous_hash": "e00bcadf63954a7cceca2bb5adea65ae6dc1afb2ba17f5c38c121ffb752b80ba",
+        "recorded_at": "2026-10-22T03:54:09.847115Z",
+        "schema_version": 1,
+        "sequence": 52
+      }
+    },
+    {
+      "jsonl_line": 53,
+      "value": {
+        "data": {
+          "authority": "APP-000035; standing normal delivery; independentreviewc1dd0834",
+          "candidate_hash": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+          "effect_id": "calculator-recovery-merge",
+          "operation": "normal squash merge expectedhead5c08c21b956a896afb868a81cc0b6a013b809844; independentphase2 review,2installedCIchecks success,noreviewthreads",
+          "resource": "github:pull_request",
+          "run": "RUN-000110",
+          "target": "tclasen-agent/llm-cost-calculator/pull/3",
+          "task": "TASK-000115"
+        },
+        "effect_id": "calculator-recovery-merge",
+        "hash": "66d2ccf0a7b8cff488386edb8e14e04292890a7740b704c1fa6ec6c387f4620e",
+        "kind": "prepared",
+        "previous_hash": "1c81a37dec7e9c79a02c07f19ebaf292be0ab4d6ce792d017b9d87a9dc53feaf",
+        "recorded_at": "2026-10-22T03:54:21.263024Z",
+        "schema_version": 1,
+        "sequence": 53
+      }
+    },
+    {
+      "jsonl_line": 54,
+      "value": {
+        "data": {
+          "attempt": 1
+        },
+        "effect_id": "calculator-recovery-merge",
+        "hash": "533be496f6730454cb5b4fc70084d7343e80018bd525066afecfaa87150c0c81",
+        "kind": "attempted",
+        "previous_hash": "66d2ccf0a7b8cff488386edb8e14e04292890a7740b704c1fa6ec6c387f4620e",
+        "recorded_at": "2026-10-22T03:54:21.379873Z",
+        "schema_version": 1,
+        "sequence": 54
+      }
+    },
+    {
+      "jsonl_line": 58,
+      "value": {
+        "data": {
+          "candidate_hash": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+          "observed_at": "2026-10-22T04:02:56.761925Z",
+          "remote_identity": "https://github.com/tclasen-agent/llm-cost-calculator/pull/3",
+          "resource": "github:pull_request",
+          "source": "normal squash merge API0418b3ab3b4bf4589745bcae89c4a1206796339f; separatefetchowningmain same tip, mergeancestryverified, fulltreef757c60 equalreviewed5c08c21; installed2validatechecksSUCCESS,notthreads",
+          "status": "confirmed",
+          "target": "tclasen-agent/llm-cost-calculator/pull/3"
+        },
+        "effect_id": "calculator-recovery-merge",
+        "hash": "8c019548eecf520b2d1a3519c29cfccd1ac649db3b031c615900d9fb4f8c3c41",
+        "kind": "observed",
+        "previous_hash": "ba2b48aefb4ecfaacb93e3bb6f64ef38f32d3d651ea3ab385dd404633a82d35d",
+        "recorded_at": "2026-10-22T04:02:56.866746Z",
+        "schema_version": 1,
+        "sequence": 58
+      }
+    }
+  ]
+}

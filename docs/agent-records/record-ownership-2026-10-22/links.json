@@ -1,0 +1,135 @@
+{
+  "scope": "Original evidence links preserved byte-identically; no network check or artifact copy. owning_record overlays route original relative links when the destination record is present. Newly authored README/INDEX links are validated separately.",
+  "links": [
+    {
+      "document": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "label": "Watch final recovery recording",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/recovery-20261022/qualified/recovery-demonstration.mp4",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "label": "timestamp index",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/recovery-20261022/qualified/index.md",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "label": "machine index",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/recovery-20261022/qualified/index.json",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "label": "Watch revision 2 recording",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/recovery-rework-20261022/recovery-demonstration.mp4",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "label": "current timestamp index",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/recovery-rework-20261022/index.md",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "label": "machine index",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/recovery-rework-20261022/index.json",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-index.md",
+      "label": "Watch the annotated recording",
+      "original_target": "recovery-demonstration.mp4",
+      "original_source_resolution": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/recovery-demonstration.mp4",
+      "classification": "original_context_reference_not_copied_in_this_owner_scope"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "PR4",
+      "original_target": "https://github.com/tclasen-agent/llm-cost-calculator/pull/4",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "OpenRouter endpoint API",
+      "original_target": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "Original DeepSeek Flash's page",
+      "original_target": "https://artificialanalysis.ai/models/deepseek-v4-1-flash",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "methodology",
+      "original_target": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "official provider model pages",
+      "original_target": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "Lambda",
+      "original_target": "https://lambda.ai/instances",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "label": "Billing",
+      "original_target": "https://docs.lambda.ai/public-cloud/billing/",
+      "classification": "external_reference_not_refreshed"
+    },
+    {
+      "document": "records/factory/reports/project-demos/CALCULATOR.md",
+      "label": "Watch the demo",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/demonstration.mp4",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "records/factory/reports/project-demos/CALCULATOR.md",
+      "label": "verification evidence",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/verification-20261022/browser-results.json",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/project-demos/README.md",
+      "label": "01:17.120 video",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/demonstration.mp4",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/project-demos/README.md",
+      "label": "index",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/demonstration-index.md",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/factory/reports/project-demos/README.md",
+      "label": "report",
+      "original_target": "CALCULATOR.md",
+      "original_source_resolution": "agent-org/factory/reports/project-demos/CALCULATOR.md",
+      "classification": "archived_owner_record_routed",
+      "owning_record": "records/factory/reports/project-demos/CALCULATOR.md"
+    },
+    {
+      "document": "projections/factory/reports/project-demos/REVIEW.md",
+      "label": "Movie",
+      "original_target": "/Users/Shared/llm-cost-calculator/artifacts/demonstration.mp4",
+      "classification": "original_host_local_evidence_or_instruction_reference_not_exported"
+    },
+    {
+      "document": "projections/knowledge/projects/llm-cost-calculator/PROFILE.md",
+      "label": "APP-000040",
+      "original_target": "../../../approvals/APP-000040.md",
+      "original_source_resolution": "agent-org/approvals/APP-000040.md",
+      "classification": "original_context_reference_not_copied_in_this_owner_scope"
+    }
+  ]
+}

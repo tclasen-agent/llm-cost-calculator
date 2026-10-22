@@ -1,0 +1,3391 @@
+{
+  "schema_version": 1,
+  "owner_repository": "llm-cost-calculator",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_inventory_sha256": "1ae9761d8bcd2cb3a22fabc08058e4b2c77234c67f2b4083f7637230c2dbe440",
+  "inventory_total_files": 1217,
+  "markdown_files_hash_checked": 804,
+  "scope": "Documentation relocation only; original source immutable and retained locally. No application verification or fact refresh.",
+  "exact_copy_rule": "records/<original agent-org-relative path> has byte-identical content and source SHA-256.",
+  "projection_rule": "projections/<original path> contains owner-specific verbatim spans with original line/character provenance, or an explicitly marked project-only paraphrase with source approval/hash attribution; every projection states derivedness.",
+  "records": [
+    {
+      "source_path": "agent-org/approvals/APP-000016.md",
+      "source_sha256": "676741d925c1b0bfb36f931ac245ac46032657dea927a7a379da5a078ec18a63",
+      "source_bytes": 1759,
+      "destination": "projections/approvals/APP-000016.md",
+      "destination_sha256": "21f50acaedf8fd83e6b4e96b3205ebfbddb9e430de277e62f22057f615cfec98",
+      "destination_bytes": 982,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 20,
+          "start": 0,
+          "end": 216
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000035.md",
+      "source_sha256": "d09ad5703a394a17da9b9f475bad67990410fd8fac01cedfdbef339c4204b501",
+      "source_bytes": 1344,
+      "destination": "projections/approvals/APP-000035.md",
+      "destination_sha256": "2fa0aa8902b624301c36ceaf92e6e0d65022d305f63079909b99c31c04dbf16d",
+      "destination_bytes": 1023,
+      "mode": "derived_projection",
+      "derivation": "Explicit project-only paraphrase of the source approval; shared other-owner scope omitted."
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000049.md",
+      "source_sha256": "c81ddec57b3808b9f3183c798981b53d2dc0cfa68a6b734ca52e994a643e961a",
+      "source_bytes": 3633,
+      "destination": "projections/approvals/APP-000049.md",
+      "destination_sha256": "88cfbf58c338e52017a00aec61c10662720da36c0ab98de984490969365ab8ef",
+      "destination_bytes": 1326,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 6,
+          "start": 116,
+          "end": 245
+        },
+        {
+          "line": 7,
+          "start": 127,
+          "end": 256
+        },
+        {
+          "line": 21,
+          "start": 210,
+          "end": 345
+        },
+        {
+          "line": 24,
+          "start": 74,
+          "end": 113
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000055.md",
+      "source_sha256": "e1b834dff698bca533b102a3ea0338f0b0af7e423f66734bb3574d2c225df7d9",
+      "source_bytes": 2337,
+      "destination": "records/approvals/APP-000055.md",
+      "destination_sha256": "e1b834dff698bca533b102a3ea0338f0b0af7e423f66734bb3574d2c225df7d9",
+      "destination_bytes": 2337,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000062.md",
+      "source_sha256": "20f88fd26a93f2910dba9e4e41529bc072437c91e95d8cd14113cc697216a02b",
+      "source_bytes": 2821,
+      "destination": "records/approvals/APP-000062.md",
+      "destination_sha256": "20f88fd26a93f2910dba9e4e41529bc072437c91e95d8cd14113cc697216a02b",
+      "destination_bytes": 2821,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/CALCULATOR.md",
+      "source_sha256": "294fe7e0b49172fa87936ee3fa138ee58b4763b1cdf3558f1ce3aa6a984a8106",
+      "source_bytes": 16977,
+      "destination": "projections/factory/reports/all-project-progress/CALCULATOR.md",
+      "destination_sha256": "e91d66a35ae03f457630b00d66fef74493d5996774c0bf9cf563bfb9dc094692",
+      "destination_bytes": 20985,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 56
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 24
+        },
+        {
+          "line": 4,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 128
+        },
+        {
+          "line": 6,
+          "start": 0,
+          "end": 176
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 24
+        },
+        {
+          "line": 8,
+          "start": 0,
+          "end": 34
+        },
+        {
+          "line": 9,
+          "start": 0,
+          "end": 41
+        },
+        {
+          "line": 10,
+          "start": 0,
+          "end": 175
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 613
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 259
+        },
+        {
+          "line": 16,
+          "start": 0,
+          "end": 25
+        },
+        {
+          "line": 18,
+          "start": 0,
+          "end": 552
+        },
+        {
+          "line": 20,
+          "start": 0,
+          "end": 45
+        },
+        {
+          "line": 22,
+          "start": 0,
+          "end": 17
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 9
+        },
+        {
+          "line": 24,
+          "start": 0,
+          "end": 307
+        },
+        {
+          "line": 25,
+          "start": 0,
+          "end": 182
+        },
+        {
+          "line": 26,
+          "start": 0,
+          "end": 200
+        },
+        {
+          "line": 27,
+          "start": 0,
+          "end": 215
+        },
+        {
+          "line": 28,
+          "start": 0,
+          "end": 130
+        },
+        {
+          "line": 29,
+          "start": 0,
+          "end": 107
+        },
+        {
+          "line": 31,
+          "start": 0,
+          "end": 390
+        },
+        {
+          "line": 33,
+          "start": 0,
+          "end": 38
+        },
+        {
+          "line": 35,
+          "start": 0,
+          "end": 85
+        },
+        {
+          "line": 37,
+          "start": 0,
+          "end": 28
+        },
+        {
+          "line": 38,
+          "start": 0,
+          "end": 9
+        },
+        {
+          "line": 39,
+          "start": 0,
+          "end": 223
+        },
+        {
+          "line": 40,
+          "start": 0,
+          "end": 148
+        },
+        {
+          "line": 41,
+          "start": 0,
+          "end": 64
+        },
+        {
+          "line": 42,
+          "start": 0,
+          "end": 189
+        },
+        {
+          "line": 43,
+          "start": 0,
+          "end": 111
+        },
+        {
+          "line": 44,
+          "start": 0,
+          "end": 153
+        },
+        {
+          "line": 45,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 46,
+          "start": 0,
+          "end": 216
+        },
+        {
+          "line": 47,
+          "start": 0,
+          "end": 179
+        },
+        {
+          "line": 49,
+          "start": 0,
+          "end": 674
+        },
+        {
+          "line": 51,
+          "start": 0,
+          "end": 709
+        },
+        {
+          "line": 53,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 55,
+          "start": 0,
+          "end": 337
+        },
+        {
+          "line": 57,
+          "start": 0,
+          "end": 740
+        },
+        {
+          "line": 59,
+          "start": 0,
+          "end": 22
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 9
+        },
+        {
+          "line": 61,
+          "start": 0,
+          "end": 122
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 117
+        },
+        {
+          "line": 63,
+          "start": 0,
+          "end": 88
+        },
+        {
+          "line": 64,
+          "start": 0,
+          "end": 87
+        },
+        {
+          "line": 65,
+          "start": 0,
+          "end": 95
+        },
+        {
+          "line": 67,
+          "start": 0,
+          "end": 433
+        },
+        {
+          "line": 69,
+          "start": 0,
+          "end": 39
+        },
+        {
+          "line": 71,
+          "start": 0,
+          "end": 124
+        },
+        {
+          "line": 71,
+          "start": 124,
+          "end": 185
+        },
+        {
+          "line": 71,
+          "start": 185,
+          "end": 309
+        },
+        {
+          "line": 71,
+          "start": 309,
+          "end": 347
+        },
+        {
+          "line": 71,
+          "start": 347,
+          "end": 533
+        },
+        {
+          "line": 71,
+          "start": 533,
+          "end": 611
+        },
+        {
+          "line": 71,
+          "start": 705,
+          "end": 748
+        },
+        {
+          "line": 73,
+          "start": 0,
+          "end": 411
+        },
+        {
+          "line": 75,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 77,
+          "start": 0,
+          "end": 475
+        },
+        {
+          "line": 79,
+          "start": 0,
+          "end": 65
+        },
+        {
+          "line": 81,
+          "start": 0,
+          "end": 486
+        },
+        {
+          "line": 83,
+          "start": 0,
+          "end": 813
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 981
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 91
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 33
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 9
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 100
+        },
+        {
+          "line": 92,
+          "start": 0,
+          "end": 104
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 126
+        },
+        {
+          "line": 94,
+          "start": 0,
+          "end": 172
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 276
+        },
+        {
+          "line": 96,
+          "start": 0,
+          "end": 178
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 171
+        },
+        {
+          "line": 98,
+          "start": 0,
+          "end": 152
+        },
+        {
+          "line": 100,
+          "start": 0,
+          "end": 332
+        },
+        {
+          "line": 102,
+          "start": 0,
+          "end": 634
+        },
+        {
+          "line": 104,
+          "start": 0,
+          "end": 30
+        },
+        {
+          "line": 105,
+          "start": 0,
+          "end": 9
+        },
+        {
+          "line": 106,
+          "start": 0,
+          "end": 112
+        },
+        {
+          "line": 107,
+          "start": 0,
+          "end": 133
+        },
+        {
+          "line": 108,
+          "start": 0,
+          "end": 86
+        },
+        {
+          "line": 109,
+          "start": 0,
+          "end": 90
+        },
+        {
+          "line": 110,
+          "start": 0,
+          "end": 93
+        },
+        {
+          "line": 112,
+          "start": 0,
+          "end": 673
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/CHECKPOINT.md",
+      "source_sha256": "d1a03ccffd897f9dbab21e3ff5d5d36173443f77c7db1b1cf5e1b5457d89e841",
+      "source_bytes": 5724,
+      "destination": "projections/factory/reports/all-project-progress/CHECKPOINT.md",
+      "destination_sha256": "75726b625698a56ab2b7b01a229df2f450b900b5e6272de465c142cf4ab4efdf",
+      "destination_bytes": 962,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 5,
+          "start": 185,
+          "end": 222
+        },
+        {
+          "line": 5,
+          "start": 427,
+          "end": 516
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/DELIVERY.md",
+      "source_sha256": "fa7e606faccf7b17f753813789a09d244aee15a80a572f48e69d0c746b9e3355",
+      "source_bytes": 4609,
+      "destination": "projections/factory/reports/all-project-progress/DELIVERY.md",
+      "destination_sha256": "0db2d0e575ece0726120205a64c32127e660d53f014dcda9b5a10fff1ba84980",
+      "destination_bytes": 1045,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 11,
+          "start": 0,
+          "end": 254
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/LANE-112.md",
+      "source_sha256": "9bb4f7645c13c2744feed63fcba3fee34aaa3a4a6e15df3eb7599587eae194cc",
+      "source_bytes": 15683,
+      "destination": "projections/factory/reports/all-project-progress/LANE-112.md",
+      "destination_sha256": "f12ea07b3f80ab8699fb4e93ebae6f90b705dc87ba7ed56ba7d083bec7d7ae9e",
+      "destination_bytes": 8948,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 18,
+          "start": 130,
+          "end": 190
+        },
+        {
+          "line": 18,
+          "start": 274,
+          "end": 339
+        },
+        {
+          "line": 20,
+          "start": 404,
+          "end": 464
+        },
+        {
+          "line": 24,
+          "start": 249,
+          "end": 335
+        },
+        {
+          "line": 26,
+          "start": 0,
+          "end": 55
+        },
+        {
+          "line": 28,
+          "start": 0,
+          "end": 316
+        },
+        {
+          "line": 30,
+          "start": 0,
+          "end": 625
+        },
+        {
+          "line": 32,
+          "start": 0,
+          "end": 84
+        },
+        {
+          "line": 34,
+          "start": 0,
+          "end": 5
+        },
+        {
+          "line": 35,
+          "start": 0,
+          "end": 31
+        },
+        {
+          "line": 36,
+          "start": 0,
+          "end": 42
+        },
+        {
+          "line": 37,
+          "start": 0,
+          "end": 50
+        },
+        {
+          "line": 38,
+          "start": 0,
+          "end": 57
+        },
+        {
+          "line": 39,
+          "start": 0,
+          "end": 65
+        },
+        {
+          "line": 40,
+          "start": 0,
+          "end": 55
+        },
+        {
+          "line": 41,
+          "start": 0,
+          "end": 40
+        },
+        {
+          "line": 42,
+          "start": 0,
+          "end": 86
+        },
+        {
+          "line": 43,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 44,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 45,
+          "start": 0,
+          "end": 51
+        },
+        {
+          "line": 46,
+          "start": 0,
+          "end": 1
+        },
+        {
+          "line": 47,
+          "start": 0,
+          "end": 75
+        },
+        {
+          "line": 48,
+          "start": 0,
+          "end": 86
+        },
+        {
+          "line": 49,
+          "start": 0,
+          "end": 2
+        },
+        {
+          "line": 50,
+          "start": 0,
+          "end": 3
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 299
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 479
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 338
+        },
+        {
+          "line": 59,
+          "start": 0,
+          "end": 292
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 555
+        },
+        {
+          "line": 61,
+          "start": 0,
+          "end": 464
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 519
+        },
+        {
+          "line": 63,
+          "start": 0,
+          "end": 436
+        },
+        {
+          "line": 65,
+          "start": 0,
+          "end": 467
+        },
+        {
+          "line": 116,
+          "start": 0,
+          "end": 470
+        },
+        {
+          "line": 120,
+          "start": 0,
+          "end": 246
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/ORG-REVIEW.md",
+      "source_sha256": "7ce137514363918438a140083dfef728f11cb5c75c83c1953c25cc17c510a0b1",
+      "source_bytes": 9782,
+      "destination": "projections/factory/reports/all-project-progress/ORG-REVIEW.md",
+      "destination_sha256": "d4e956fbc4a84f0ae1932de56e9a21a5de1700cdf7d0539158c8db787528db63",
+      "destination_bytes": 840,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 24,
+          "start": 290,
+          "end": 335
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/PLAN.md",
+      "source_sha256": "b9d0eac4f06d42b979483a18cf79b22ffa2c0be403b555d1cb59c6de1c36ec53",
+      "source_bytes": 22990,
+      "destination": "projections/factory/reports/all-project-progress/PLAN.md",
+      "destination_sha256": "dc76de4e48433b415a7ea3a99cc2c65ddf11af82e1fe1117232d7d10cf4d7961",
+      "destination_bytes": 1630,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 24,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 42,
+          "start": 260,
+          "end": 378
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/RESONANCE.md",
+      "source_sha256": "646e96b18b7cf33030ebe338b2c1fd571001810932e4f9a226efb28ac4311af0",
+      "source_bytes": 21005,
+      "destination": "projections/factory/reports/all-project-progress/RESONANCE.md",
+      "destination_sha256": "09f282a280c06d0d17b80573b73dea43acdd13a6d2a801bf3125abe669e88e4e",
+      "destination_bytes": 1238,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 40,
+          "start": 0,
+          "end": 446
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/REVIEW.md",
+      "source_sha256": "89ecaf4d681379c7b70e38bf3db09dbfc76d604ecd977d0656624d59844a3b28",
+      "source_bytes": 45487,
+      "destination": "projections/factory/reports/all-project-progress/REVIEW.md",
+      "destination_sha256": "6249374abcbf64409e8798f413f760faaeca06cad6467fe9a43d58776a9896f8",
+      "destination_bytes": 10831,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-index.md",
+      "source_sha256": "8e4451e9e5331cdb63084e2e02aa156f00222556e9ea6c6e4fec2ba8906229dc",
+      "source_bytes": 2623,
+      "destination": "records/factory/reports/all-project-progress/review-evidence/calculator-phase2/implementer-index.md",
+      "destination_sha256": "8e4451e9e5331cdb63084e2e02aa156f00222556e9ea6c6e4fec2ba8906229dc",
+      "destination_bytes": 2623,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-89ecaf4d681379c7b70e38bf3db09dbfc76d604ecd977d0656624d59844a3b28.md",
+      "source_sha256": "89ecaf4d681379c7b70e38bf3db09dbfc76d604ecd977d0656624d59844a3b28",
+      "source_bytes": 45487,
+      "destination": "projections/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-89ecaf4d681379c7b70e38bf3db09dbfc76d604ecd977d0656624d59844a3b28.md",
+      "destination_sha256": "10fa163e18c675d1f644b71873157a44bfa7e18ae409fab2996f033b084d05ec",
+      "destination_bytes": 10929,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-b9fcdbf7e2482247cf6038dd208f19c198ea2603a846e08dc1197bbf5c63928e.md",
+      "source_sha256": "b9fcdbf7e2482247cf6038dd208f19c198ea2603a846e08dc1197bbf5c63928e",
+      "source_bytes": 38131,
+      "destination": "projections/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-b9fcdbf7e2482247cf6038dd208f19c198ea2603a846e08dc1197bbf5c63928e.md",
+      "destination_sha256": "088ccd020f4ba123373f8fb96b96c9feff80708a641fddf483738896167872ae",
+      "destination_bytes": 10929,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-baf56ca4d5686c491ba3fb3dd3df557bc31d9f042bd043aac542ed00b7c29fa0.md",
+      "source_sha256": "baf56ca4d5686c491ba3fb3dd3df557bc31d9f042bd043aac542ed00b7c29fa0",
+      "source_bytes": 25878,
+      "destination": "projections/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-baf56ca4d5686c491ba3fb3dd3df557bc31d9f042bd043aac542ed00b7c29fa0.md",
+      "destination_sha256": "39d92a9890c6b00b4e9a8bf78009f4dabde0e36ad7f736aa8018bc3ac32e116e",
+      "destination_bytes": 10929,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-c1dd08342ae2093861f64dbb209c3c082d40b4cb08de431a9826a8ff016ac4f0.md",
+      "source_sha256": "c1dd08342ae2093861f64dbb209c3c082d40b4cb08de431a9826a8ff016ac4f0",
+      "source_bytes": 20308,
+      "destination": "projections/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-c1dd08342ae2093861f64dbb209c3c082d40b4cb08de431a9826a8ff016ac4f0.md",
+      "destination_sha256": "e581d0d1fd0f552077b6bb1d71feb7405414181bb2455b556a9d0864d5929469",
+      "destination_bytes": 10929,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-eddc4e41410079d55e42e208b01f40ac07104bcd505a5d868fe0ef51ed1a3871.md",
+      "source_sha256": "eddc4e41410079d55e42e208b01f40ac07104bcd505a5d868fe0ef51ed1a3871",
+      "source_bytes": 39315,
+      "destination": "projections/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-eddc4e41410079d55e42e208b01f40ac07104bcd505a5d868fe0ef51ed1a3871.md",
+      "destination_sha256": "312a4d65223eddf68f5c221163b1a0b9c72604835fc1dcb3d2ad537e1121b07e",
+      "destination_bytes": 10929,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-fa6d6cc58c3a277a6a8a32389fb556c4208634bccb1060be1080d5c77d62bb1f.md",
+      "source_sha256": "fa6d6cc58c3a277a6a8a32389fb556c4208634bccb1060be1080d5c77d62bb1f",
+      "source_bytes": 44883,
+      "destination": "projections/factory/reports/all-project-progress/review-evidence/review-snapshots/REVIEW-fa6d6cc58c3a277a6a8a32389fb556c4208634bccb1060be1080d5c77d62bb1f.md",
+      "destination_sha256": "9af7eb6d07634c593831f758da4b35ac5114be426cb0954b3f97a64978d30754",
+      "destination_bytes": 10929,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 9,
+          "start": 0,
+          "end": 80
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 74
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 480
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 54,
+          "start": 0,
+          "end": 456
+        },
+        {
+          "line": 56,
+          "start": 0,
+          "end": 605
+        },
+        {
+          "line": 58,
+          "start": 0,
+          "end": 760
+        },
+        {
+          "line": 60,
+          "start": 0,
+          "end": 576
+        },
+        {
+          "line": 62,
+          "start": 0,
+          "end": 682
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 547
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 722
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 35
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 13
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 468
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 208
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 501
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 287
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 229
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 615
+        },
+        {
+          "line": 93,
+          "start": 0,
+          "end": 419
+        },
+        {
+          "line": 95,
+          "start": 0,
+          "end": 670
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 587
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/CHECKS.md",
+      "source_sha256": "7179d322c8f864ef0cc26b93c1bb7273f349421bfc8eb6de350a097f16dd5cde",
+      "source_bytes": 3826,
+      "destination": "projections/factory/reports/project-cleanup/CHECKS.md",
+      "destination_sha256": "7d406f9f85b938e0fb616575f46abf4f9075ac91fb338860077cda6554671d7b",
+      "destination_bytes": 900,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 16,
+          "start": 480,
+          "end": 594
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/DELIVERY-PLAN.md",
+      "source_sha256": "38b0d306969707ade5e3dbe8be993efc44620c0d8778a57749245fd082cf8de8",
+      "source_bytes": 11169,
+      "destination": "projections/factory/reports/project-cleanup/DELIVERY-PLAN.md",
+      "destination_sha256": "1cdc08aecee359a056f97a8dd872239316a45ef9939bf14f813e743e185efca5",
+      "destination_bytes": 1941,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 33,
+          "start": 0,
+          "end": 139
+        },
+        {
+          "line": 35,
+          "start": 0,
+          "end": 529
+        },
+        {
+          "line": 43,
+          "start": 0,
+          "end": 400
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/DELIVERY-REVIEW.md",
+      "source_sha256": "fdb14d334106a1176f6010bd4be61b15aaa3a13405f082d91dad18aef7f4baef",
+      "source_bytes": 10069,
+      "destination": "projections/factory/reports/project-cleanup/DELIVERY-REVIEW.md",
+      "destination_sha256": "a0e68bf649f342ca6c7f2079bd569f2ea309aced397ad13b22b8841535311625",
+      "destination_bytes": 906,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 25,
+          "start": 0,
+          "end": 113
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/DELIVERY-STATUS.md",
+      "source_sha256": "c9d9127525a60dc997222fafb145aeb17d0339e6449363b610525794950e214c",
+      "source_bytes": 4579,
+      "destination": "projections/factory/reports/project-cleanup/DELIVERY-STATUS.md",
+      "destination_sha256": "f75109e50a546970ce6b1d552dcb1d34e8cd173563ef68e753585f3cfa5d0c97",
+      "destination_bytes": 1690,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 16,
+          "start": 376,
+          "end": 422
+        },
+        {
+          "line": 18,
+          "start": 0,
+          "end": 808
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/PLAN.md",
+      "source_sha256": "caaf9a8650c29b22c735eb5636ceefa7d7a019fe3711bb700aab643229ee2f79",
+      "source_bytes": 14225,
+      "destination": "projections/factory/reports/project-cleanup/PLAN.md",
+      "destination_sha256": "bb258de59b424c1cf0454f6e01ffa4086ef869097cdca357968cddcb3129739f",
+      "destination_bytes": 2184,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 12,
+          "start": 0,
+          "end": 105
+        },
+        {
+          "line": 76,
+          "start": 0,
+          "end": 37
+        },
+        {
+          "line": 78,
+          "start": 0,
+          "end": 186
+        },
+        {
+          "line": 80,
+          "start": 0,
+          "end": 238
+        },
+        {
+          "line": 81,
+          "start": 0,
+          "end": 364
+        },
+        {
+          "line": 82,
+          "start": 0,
+          "end": 266
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/REVIEW.md",
+      "source_sha256": "d504df3bf8b4dc5ddc7f0185752e6ec8c0052939ef7b33088aad5ae0a735ef95",
+      "source_bytes": 7376,
+      "destination": "projections/factory/reports/project-cleanup/REVIEW.md",
+      "destination_sha256": "c056cfe989a482bac8943681209ea942e12e67f46b4ea2344e0adbb02dc356d2",
+      "destination_bytes": 1474,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 29,
+          "start": 0,
+          "end": 196
+        },
+        {
+          "line": 39,
+          "start": 0,
+          "end": 453
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/COORDINATOR-CHECKPOINT.md",
+      "source_sha256": "70d6d1e192e141b741484fb34071d98f0cdf8f2ff35f778bb7465a4be7a1616a",
+      "source_bytes": 21734,
+      "destination": "projections/factory/reports/project-continuation/COORDINATOR-CHECKPOINT.md",
+      "destination_sha256": "a92a21032dd56327ad9388dab42365e9aa8d384bfa009297e2848d7c5a993df8",
+      "destination_bytes": 1304,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 17,
+          "start": 0,
+          "end": 286
+        },
+        {
+          "line": 51,
+          "start": 204,
+          "end": 274
+        },
+        {
+          "line": 93,
+          "start": 127,
+          "end": 184
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/IMPLEMENTATION-130.md",
+      "source_sha256": "cddebae137f6ca2a348a5b8dc08146ae99f9c76c2999fb5bd0b932adc8bbfe11",
+      "source_bytes": 11160,
+      "destination": "records/factory/reports/project-continuation/IMPLEMENTATION-130.md",
+      "destination_sha256": "cddebae137f6ca2a348a5b8dc08146ae99f9c76c2999fb5bd0b932adc8bbfe11",
+      "destination_bytes": 11160,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/LANE-126.md",
+      "source_sha256": "665cb7537d390614683e5ea882474b4be9878401603c79cb6dd7bb1e554681c0",
+      "source_bytes": 24010,
+      "destination": "projections/factory/reports/project-continuation/LANE-126.md",
+      "destination_sha256": "68a200ffacd8ad5fb72a3a77102dd201b55abd203b2d01ed89fb17244b3df9e8",
+      "destination_bytes": 10763,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 18,
+          "start": 0,
+          "end": 487
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 185
+        },
+        {
+          "line": 25,
+          "start": 191,
+          "end": 257
+        },
+        {
+          "line": 27,
+          "start": 192,
+          "end": 299
+        },
+        {
+          "line": 75,
+          "start": 0,
+          "end": 54
+        },
+        {
+          "line": 77,
+          "start": 0,
+          "end": 523
+        },
+        {
+          "line": 79,
+          "start": 0,
+          "end": 463
+        },
+        {
+          "line": 81,
+          "start": 0,
+          "end": 38
+        },
+        {
+          "line": 83,
+          "start": 0,
+          "end": 7
+        },
+        {
+          "line": 84,
+          "start": 0,
+          "end": 18
+        },
+        {
+          "line": 85,
+          "start": 0,
+          "end": 19
+        },
+        {
+          "line": 86,
+          "start": 0,
+          "end": 20
+        },
+        {
+          "line": 87,
+          "start": 0,
+          "end": 21
+        },
+        {
+          "line": 88,
+          "start": 0,
+          "end": 18
+        },
+        {
+          "line": 89,
+          "start": 0,
+          "end": 20
+        },
+        {
+          "line": 90,
+          "start": 0,
+          "end": 22
+        },
+        {
+          "line": 91,
+          "start": 0,
+          "end": 22
+        },
+        {
+          "line": 92,
+          "start": 0,
+          "end": 3
+        },
+        {
+          "line": 94,
+          "start": 0,
+          "end": 714
+        },
+        {
+          "line": 96,
+          "start": 0,
+          "end": 63
+        },
+        {
+          "line": 97,
+          "start": 0,
+          "end": 19
+        },
+        {
+          "line": 98,
+          "start": 0,
+          "end": 527
+        },
+        {
+          "line": 99,
+          "start": 0,
+          "end": 556
+        },
+        {
+          "line": 100,
+          "start": 0,
+          "end": 461
+        },
+        {
+          "line": 101,
+          "start": 0,
+          "end": 537
+        },
+        {
+          "line": 102,
+          "start": 0,
+          "end": 285
+        },
+        {
+          "line": 104,
+          "start": 0,
+          "end": 702
+        },
+        {
+          "line": 106,
+          "start": 0,
+          "end": 504
+        },
+        {
+          "line": 108,
+          "start": 0,
+          "end": 578
+        },
+        {
+          "line": 110,
+          "start": 0,
+          "end": 659
+        },
+        {
+          "line": 112,
+          "start": 0,
+          "end": 616
+        },
+        {
+          "line": 114,
+          "start": 0,
+          "end": 386
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/ORG-COS-150.md",
+      "source_sha256": "4e1946ec71bf74398dd0a7f849f5eb9c08df20f2be74504aaa6d1a76b7feb148",
+      "source_bytes": 11130,
+      "destination": "projections/factory/reports/project-continuation/ORG-COS-150.md",
+      "destination_sha256": "f39e43474272a368407bf7516fda2f5283e6a24b7e9c944e1e9361e28552ef54",
+      "destination_bytes": 1050,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 32,
+          "start": 242,
+          "end": 297
+        },
+        {
+          "line": 45,
+          "start": 134,
+          "end": 290
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/ORG-REVIEW-149-FINAL.md",
+      "source_sha256": "ed6a2f8c3ec99d0816a2149217930275429a72e286d8bec664188fb06d9ba0a1",
+      "source_bytes": 13890,
+      "destination": "projections/factory/reports/project-continuation/ORG-REVIEW-149-FINAL.md",
+      "destination_sha256": "b638e1f7a989cb9ba0556d8e3db0f48f85e4c6a32af8574c23696d8930b32661",
+      "destination_bytes": 1249,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 52,
+          "start": 0,
+          "end": 446
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/ORG-REVIEW-149.md",
+      "source_sha256": "c12482eee0cb307908a3737137bb51fe406ac9b8d31d7244512a928b56ed3ae2",
+      "source_bytes": 13861,
+      "destination": "projections/factory/reports/project-continuation/ORG-REVIEW-149.md",
+      "destination_sha256": "6e916d47eb35fc1f6ff8dee593d934b01177dc3ac8df96b8744ba3c1eabff47f",
+      "destination_bytes": 1365,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 51,
+          "start": 0,
+          "end": 568
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/PLAN.md",
+      "source_sha256": "ab2588d3f086d60940c3ddddc5df2541c4ada37d9cbfe2579e99325ac1a72dc9",
+      "source_bytes": 25120,
+      "destination": "projections/factory/reports/project-continuation/PLAN.md",
+      "destination_sha256": "ea5265edcf89c8a74b3fd6f28d9f2439294918ebe362d5bc26c33c78d776cd85",
+      "destination_bytes": 1085,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 30,
+          "start": 229,
+          "end": 298
+        },
+        {
+          "line": 30,
+          "start": 546,
+          "end": 642
+        },
+        {
+          "line": 30,
+          "start": 824,
+          "end": 869
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-continuation/REVIEW-136.md",
+      "source_sha256": "9a7c2c0577dc3c467964e08d854c5d023d32ca4b2538dd05ea1ff5dfcc44b6c6",
+      "source_bytes": 16077,
+      "destination": "records/factory/reports/project-continuation/REVIEW-136.md",
+      "destination_sha256": "9a7c2c0577dc3c467964e08d854c5d023d32ca4b2538dd05ea1ff5dfcc44b6c6",
+      "destination_bytes": 16077,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-demos/APPROVAL.md",
+      "source_sha256": "a1033cc3a93bb97bbf53fe6888e6787d0c52f91e090b3b2334639ce45a931984",
+      "source_bytes": 6546,
+      "destination": "projections/factory/reports/project-demos/APPROVAL.md",
+      "destination_sha256": "f63f35a64e43118e69f25fffc856fa2bfc5ca2c8d7194f7a6e07dba0c5d7ba4e",
+      "destination_bytes": 878,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 27,
+          "start": 370,
+          "end": 462
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-demos/CALCULATOR.md",
+      "source_sha256": "766195c4399fb130d801092a8b7e6f5b5d6ba394d1c0983d5333f5bf1102d4c6",
+      "source_bytes": 3329,
+      "destination": "records/factory/reports/project-demos/CALCULATOR.md",
+      "destination_sha256": "766195c4399fb130d801092a8b7e6f5b5d6ba394d1c0983d5333f5bf1102d4c6",
+      "destination_bytes": 3329,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-demos/PLAN.md",
+      "source_sha256": "1f894897ec11dcf9e21a53da224e3352dac8de6eca7e9e4e8657ac4961f1e4cb",
+      "source_bytes": 14114,
+      "destination": "projections/factory/reports/project-demos/PLAN.md",
+      "destination_sha256": "5e9c919823f79dc6e1a3c219dab15cde71a2125016062b6215eadec279d20c3a",
+      "destination_bytes": 1393,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 31,
+          "start": 0,
+          "end": 613
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-demos/README.md",
+      "source_sha256": "d214d69e22dd42bf6f7a9d455e984e689e6b7884c1053dc55265e9e0214ea0f6",
+      "source_bytes": 4294,
+      "destination": "projections/factory/reports/project-demos/README.md",
+      "destination_sha256": "bf25035dcad9b4d704275222205d95386fc59dc9e2cefdad0407a77d4dd9e8bc",
+      "destination_bytes": 1174,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 11,
+          "start": 0,
+          "end": 310
+        },
+        {
+          "line": 13,
+          "start": 525,
+          "end": 564
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-demos/REVIEW.md",
+      "source_sha256": "b1fcd3b686f23c3f389cbdef175594c97afb7665588a06dc2bec394717cc8cc9",
+      "source_bytes": 8950,
+      "destination": "projections/factory/reports/project-demos/REVIEW.md",
+      "destination_sha256": "7cd3aba130516a01f06d46d537914d47f6228ea8573304c42c3614e536a0e470",
+      "destination_bytes": 1589,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 21,
+          "start": 0,
+          "end": 489
+        },
+        {
+          "line": 25,
+          "start": 307,
+          "end": 438
+        },
+        {
+          "line": 27,
+          "start": 403,
+          "end": 504
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/knowledge/projects/llm-cost-calculator/PROFILE.md",
+      "source_sha256": "182ebca4153b200bca214ca7d8d5c0b833693aaac0844106f64b5c211b7942e2",
+      "source_bytes": 6279,
+      "destination": "projections/knowledge/projects/llm-cost-calculator/PROFILE.md",
+      "destination_sha256": "13482ea92d2a7c590caf7884d206486adee072f995bedbd168629428d749617d",
+      "destination_bytes": 8428,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 62
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 73
+        },
+        {
+          "line": 4,
+          "start": 0,
+          "end": 113
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 125
+        },
+        {
+          "line": 6,
+          "start": 0,
+          "end": 151
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 155
+        },
+        {
+          "line": 8,
+          "start": 0,
+          "end": 161
+        },
+        {
+          "line": 9,
+          "start": 0,
+          "end": 173
+        },
+        {
+          "line": 10,
+          "start": 0,
+          "end": 205
+        },
+        {
+          "line": 11,
+          "start": 0,
+          "end": 203
+        },
+        {
+          "line": 12,
+          "start": 0,
+          "end": 75
+        },
+        {
+          "line": 12,
+          "start": 86,
+          "end": 118
+        },
+        {
+          "line": 12,
+          "start": 169,
+          "end": 203
+        },
+        {
+          "line": 13,
+          "start": 89,
+          "end": 155
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 124
+        },
+        {
+          "line": 15,
+          "start": 0,
+          "end": 51
+        },
+        {
+          "line": 17,
+          "start": 0,
+          "end": 388
+        },
+        {
+          "line": 19,
+          "start": 0,
+          "end": 38
+        },
+        {
+          "line": 21,
+          "start": 0,
+          "end": 255
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 207
+        },
+        {
+          "line": 25,
+          "start": 0,
+          "end": 45
+        },
+        {
+          "line": 27,
+          "start": 0,
+          "end": 55
+        },
+        {
+          "line": 29,
+          "start": 0,
+          "end": 33
+        },
+        {
+          "line": 30,
+          "start": 0,
+          "end": 82
+        },
+        {
+          "line": 31,
+          "start": 0,
+          "end": 99
+        },
+        {
+          "line": 32,
+          "start": 0,
+          "end": 82
+        },
+        {
+          "line": 33,
+          "start": 0,
+          "end": 66
+        },
+        {
+          "line": 34,
+          "start": 0,
+          "end": 164
+        },
+        {
+          "line": 35,
+          "start": 0,
+          "end": 260
+        },
+        {
+          "line": 36,
+          "start": 0,
+          "end": 191
+        },
+        {
+          "line": 37,
+          "start": 0,
+          "end": 157
+        },
+        {
+          "line": 38,
+          "start": 0,
+          "end": 144
+        },
+        {
+          "line": 39,
+          "start": 0,
+          "end": 155
+        },
+        {
+          "line": 40,
+          "start": 0,
+          "end": 117
+        },
+        {
+          "line": 41,
+          "start": 0,
+          "end": 156
+        },
+        {
+          "line": 42,
+          "start": 0,
+          "end": 137
+        },
+        {
+          "line": 44,
+          "start": 0,
+          "end": 39
+        },
+        {
+          "line": 46,
+          "start": 0,
+          "end": 445
+        },
+        {
+          "line": 48,
+          "start": 0,
+          "end": 72
+        },
+        {
+          "line": 50,
+          "start": 0,
+          "end": 506
+        },
+        {
+          "line": 52,
+          "start": 0,
+          "end": 312
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000086.md",
+      "source_sha256": "990eafe5ae1ad7638aa66dd17298012a53438f8b3d5824c5cdf50fcf48a9da79",
+      "source_bytes": 2963,
+      "destination": "projections/runs/RUN-000086.md",
+      "destination_sha256": "ffa5b44617268a935404ba15dbbef44100061d30ada55028b631d10f69f9ff1d",
+      "destination_bytes": 4727,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 28
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 16
+        },
+        {
+          "line": 4,
+          "start": 0,
+          "end": 24
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 6,
+          "start": 0,
+          "end": 142
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 153
+        },
+        {
+          "line": 8,
+          "start": 0,
+          "end": 26
+        },
+        {
+          "line": 9,
+          "start": 0,
+          "end": 34
+        },
+        {
+          "line": 10,
+          "start": 0,
+          "end": 28
+        },
+        {
+          "line": 11,
+          "start": 0,
+          "end": 119
+        },
+        {
+          "line": 13,
+          "start": 0,
+          "end": 19
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 19
+        },
+        {
+          "line": 15,
+          "start": 0,
+          "end": 51
+        },
+        {
+          "line": 16,
+          "start": 0,
+          "end": 29
+        },
+        {
+          "line": 17,
+          "start": 0,
+          "end": 23
+        },
+        {
+          "line": 18,
+          "start": 0,
+          "end": 27
+        },
+        {
+          "line": 19,
+          "start": 0,
+          "end": 22
+        },
+        {
+          "line": 20,
+          "start": 0,
+          "end": 46
+        },
+        {
+          "line": 21,
+          "start": 0,
+          "end": 87
+        },
+        {
+          "line": 22,
+          "start": 0,
+          "end": 176
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 288
+        },
+        {
+          "line": 24,
+          "start": 0,
+          "end": 119
+        },
+        {
+          "line": 24,
+          "start": 172,
+          "end": 220
+        },
+        {
+          "line": 24,
+          "start": 220,
+          "end": 242
+        },
+        {
+          "line": 25,
+          "start": 0,
+          "end": 98
+        },
+        {
+          "line": 26,
+          "start": 0,
+          "end": 120
+        },
+        {
+          "line": 28,
+          "start": 0,
+          "end": 811
+        },
+        {
+          "line": 30,
+          "start": 0,
+          "end": 270
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000110.md",
+      "source_sha256": "637e81303ee830b6d8556c7f41e3cfea4c7845f93dfaf3a1ad90b825979b9719",
+      "source_bytes": 2309,
+      "destination": "projections/runs/RUN-000110.md",
+      "destination_sha256": "a3c5d21b9c2d3cc5aa09767e7a2ad617c8cca18c1b096301f7d76e6a46fc972b",
+      "destination_bytes": 4038,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 53
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 16
+        },
+        {
+          "line": 4,
+          "start": 0,
+          "end": 24
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 6,
+          "start": 0,
+          "end": 172
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 183
+        },
+        {
+          "line": 8,
+          "start": 0,
+          "end": 24
+        },
+        {
+          "line": 9,
+          "start": 0,
+          "end": 34
+        },
+        {
+          "line": 10,
+          "start": 0,
+          "end": 28
+        },
+        {
+          "line": 11,
+          "start": 0,
+          "end": 163
+        },
+        {
+          "line": 13,
+          "start": 0,
+          "end": 19
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 19
+        },
+        {
+          "line": 15,
+          "start": 0,
+          "end": 48
+        },
+        {
+          "line": 16,
+          "start": 0,
+          "end": 86
+        },
+        {
+          "line": 17,
+          "start": 0,
+          "end": 46
+        },
+        {
+          "line": 18,
+          "start": 0,
+          "end": 30
+        },
+        {
+          "line": 19,
+          "start": 0,
+          "end": 27
+        },
+        {
+          "line": 20,
+          "start": 0,
+          "end": 23
+        },
+        {
+          "line": 21,
+          "start": 0,
+          "end": 27
+        },
+        {
+          "line": 22,
+          "start": 0,
+          "end": 186
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 223
+        },
+        {
+          "line": 24,
+          "start": 0,
+          "end": 28
+        },
+        {
+          "line": 25,
+          "start": 0,
+          "end": 89
+        },
+        {
+          "line": 27,
+          "start": 0,
+          "end": 157
+        },
+        {
+          "line": 29,
+          "start": 0,
+          "end": 336
+        },
+        {
+          "line": 31,
+          "start": 0,
+          "end": 205
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000123.md",
+      "source_sha256": "e652d0b7020c432077bb9957249b3d042aee2f35dc7fa132225a6d818e8951f0",
+      "source_bytes": 3553,
+      "destination": "projections/runs/RUN-000123.md",
+      "destination_sha256": "ea864f79c995e4c076149c02049c8e89e22347ff0e23b7038bdf2f2f0e0ae976",
+      "destination_bytes": 951,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 27,
+          "start": 0,
+          "end": 190
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000125.md",
+      "source_sha256": "ec45e27663eec4291b7906ae704c37605b0aefae12670072488a590b7a09e17c",
+      "source_bytes": 3106,
+      "destination": "records/runs/RUN-000125.md",
+      "destination_sha256": "ec45e27663eec4291b7906ae704c37605b0aefae12670072488a590b7a09e17c",
+      "destination_bytes": 3106,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000131.md",
+      "source_sha256": "5c06ff4413adac0e78e8c2661d8539a07bd1ecba3717e48900ee42d5804576e0",
+      "source_bytes": 2147,
+      "destination": "records/runs/RUN-000131.md",
+      "destination_sha256": "5c06ff4413adac0e78e8c2661d8539a07bd1ecba3717e48900ee42d5804576e0",
+      "destination_bytes": 2147,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/tasks/project/TASK-000047.md",
+      "source_sha256": "c1884145219c6ad5c2cec6d33656a9f5ef33492b4468b671ca8dd20f68d53198",
+      "source_bytes": 3514,
+      "destination": "records/tasks/project/TASK-000047.md",
+      "destination_sha256": "c1884145219c6ad5c2cec6d33656a9f5ef33492b4468b671ca8dd20f68d53198",
+      "destination_bytes": 3514,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/tasks/project/TASK-000090.md",
+      "source_sha256": "995cd95d991ba1b291faf3f350e888c6446b9fa945a6fd88b29a03fc8310df40",
+      "source_bytes": 3034,
+      "destination": "projections/tasks/project/TASK-000090.md",
+      "destination_sha256": "4e015bd572dd8a7b21076ab1d25333b43efc5dc5e826ff867c9ee4fa9997f8e4",
+      "destination_bytes": 5449,
+      "mode": "derived_projection",
+      "selected_spans": [
+        {
+          "line": 1,
+          "start": 0,
+          "end": 36
+        },
+        {
+          "line": 3,
+          "start": 0,
+          "end": 17
+        },
+        {
+          "line": 4,
+          "start": 0,
+          "end": 24
+        },
+        {
+          "line": 5,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 6,
+          "start": 0,
+          "end": 142
+        },
+        {
+          "line": 7,
+          "start": 0,
+          "end": 153
+        },
+        {
+          "line": 8,
+          "start": 0,
+          "end": 26
+        },
+        {
+          "line": 9,
+          "start": 0,
+          "end": 34
+        },
+        {
+          "line": 10,
+          "start": 0,
+          "end": 28
+        },
+        {
+          "line": 11,
+          "start": 0,
+          "end": 119
+        },
+        {
+          "line": 13,
+          "start": 0,
+          "end": 18
+        },
+        {
+          "line": 14,
+          "start": 0,
+          "end": 21
+        },
+        {
+          "line": 15,
+          "start": 0,
+          "end": 20
+        },
+        {
+          "line": 16,
+          "start": 0,
+          "end": 29
+        },
+        {
+          "line": 17,
+          "start": 0,
+          "end": 32
+        },
+        {
+          "line": 18,
+          "start": 0,
+          "end": 106
+        },
+        {
+          "line": 19,
+          "start": 0,
+          "end": 50
+        },
+        {
+          "line": 20,
+          "start": 0,
+          "end": 18
+        },
+        {
+          "line": 21,
+          "start": 0,
+          "end": 27
+        },
+        {
+          "line": 22,
+          "start": 0,
+          "end": 17
+        },
+        {
+          "line": 23,
+          "start": 0,
+          "end": 132
+        },
+        {
+          "line": 24,
+          "start": 0,
+          "end": 95
+        },
+        {
+          "line": 25,
+          "start": 0,
+          "end": 157
+        },
+        {
+          "line": 26,
+          "start": 0,
+          "end": 47
+        },
+        {
+          "line": 27,
+          "start": 0,
+          "end": 178
+        },
+        {
+          "line": 29,
+          "start": 0,
+          "end": 53
+        },
+        {
+          "line": 29,
+          "start": 53,
+          "end": 121
+        },
+        {
+          "line": 29,
+          "start": 121,
+          "end": 172
+        },
+        {
+          "line": 29,
+          "start": 172,
+          "end": 232
+        },
+        {
+          "line": 29,
+          "start": 232,
+          "end": 313
+        },
+        {
+          "line": 29,
+          "start": 313,
+          "end": 368
+        },
+        {
+          "line": 29,
+          "start": 368,
+          "end": 441
+        },
+        {
+          "line": 29,
+          "start": 441,
+          "end": 505
+        },
+        {
+          "line": 29,
+          "start": 505,
+          "end": 558
+        },
+        {
+          "line": 29,
+          "start": 558,
+          "end": 643
+        },
+        {
+          "line": 29,
+          "start": 742,
+          "end": 790
+        },
+        {
+          "line": 29,
+          "start": 790,
+          "end": 888
+        },
+        {
+          "line": 31,
+          "start": 0,
+          "end": 136
+        },
+        {
+          "line": 33,
+          "start": 0,
+          "end": 138
+        },
+        {
+          "line": 33,
+          "start": 266,
+          "end": 352
+        },
+        {
+          "line": 33,
+          "start": 352,
+          "end": 419
+        }
+      ],
+      "excluded_spans": [
+        {
+          "line": 33,
+          "start": 138,
+          "end": 225,
+          "reason": "Unrelated-owner delivery clause; critical independent REVIEW159 finding R159-L1. No Calculator fact in this clause."
+        }
+      ]
+    },
+    {
+      "source_path": "agent-org/tasks/project/TASK-000115.md",
+      "source_sha256": "a23a79565d8acec1b4c5fc4a43895853db185a99cd568f9b31494a1e7a33a30e",
+      "source_bytes": 2082,
+      "destination": "records/tasks/project/TASK-000115.md",
+      "destination_sha256": "a23a79565d8acec1b4c5fc4a43895853db185a99cd568f9b31494a1e7a33a30e",
+      "destination_bytes": 2082,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/tasks/project/TASK-000130.md",
+      "source_sha256": "edd455d943b72a29d6b0b6561f6205f3103c58bbed502bb438a1f33ead0b9046",
+      "source_bytes": 4348,
+      "destination": "records/tasks/project/TASK-000130.md",
+      "destination_sha256": "edd455d943b72a29d6b0b6561f6205f3103c58bbed502bb438a1f33ead0b9046",
+      "destination_bytes": 4348,
+      "mode": "exact_copy"
+    },
+    {
+      "source_path": "agent-org/tasks/project/TASK-000136.md",
+      "source_sha256": "f575c057ffcefeff48147740fade9df4558dad3fbf9b0a84725dd3e9e77e896a",
+      "source_bytes": 2289,
+      "destination": "records/tasks/project/TASK-000136.md",
+      "destination_sha256": "f575c057ffcefeff48147740fade9df4558dad3fbf9b0a84725dd3e9e77e896a",
+      "destination_bytes": 2289,
+      "mode": "exact_copy"
+    }
+  ],
+  "candidate_exclusions": [
+    {
+      "source_path": "agent-org/approvals/APP-000004.md",
+      "source_sha256": "ef6c897b08879d8d7d5bc1bf2cc5afa81b0f3b5a73dd98f8d6cbb448e07343d9",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000006.md",
+      "source_sha256": "427d091336fc92c1f65e38e0c6de93bae97232fbe519703dadcecabd9d94559d",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000012.md",
+      "source_sha256": "f24b82856415e6a3472f3914a907122b9df23cb468701c49baa34f65fa296867",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000024.md",
+      "source_sha256": "1e7c5ca06f6900b360ce1055bd252d0db1add35e0e1f941277371425a14d2282",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000036.md",
+      "source_sha256": "b45b7b21633cde01d61c68d5168b6dca74b19fdd3dbd877b045361b78618e9e8",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/approvals/APP-000094.md",
+      "source_sha256": "2a27554466eea4e1a05c925f567d64c2afab1eab27c83c7d56da351ede5d53c3",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/approvals/INDEX.md",
+      "source_sha256": "2af4ac0c2202f5810b0013e9207a07720ef60fdd30f0e086d64407da46f11734",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/artifacts/ART-000004.md",
+      "source_sha256": "3f1e7f379ec5fed98345f9af566aef69c3fcbd1de42424400d36db35ff03a945",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/artifacts/DIRECTORY_STRUCTURE.md",
+      "source_sha256": "166d4d9c803730b707022582748fe8f9004a05653da804aadab4dd9b8897ae6d",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/artifacts/INSTALLATION_REPORT.md",
+      "source_sha256": "17d8283ce3eea84f75ff9d707a69620450bd3d61bb22559600052cabdd9e37cf",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/capabilities/CAP-000014.md",
+      "source_sha256": "c365178c518e479a259b150f7d79e722881fa3777b255cc002df8c74edf43204",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/capabilities/INDEX.md",
+      "source_sha256": "1a93f40401037fbc5d5f93a5640dbddb0978762e1519fec66bd9da35b60faba2",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/evaluations/EVAL-000002.md",
+      "source_sha256": "dbabfa06e9830a77b177c805fb3dcccb50d0fcf2440fc485d521e0acc02709a2",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/baselines/dora-1.0.0/DEFINITIONS.md",
+      "source_sha256": "2ab41b0fc05a8f79c350cac17ad347f1e2361dff58bd8d6605ca96511959660c",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/baselines/measurement-candidate-attempt1/dora/DEFINITIONS.md",
+      "source_sha256": "3025b51e03da0a2b3777962c9e5cf780aa35b3536b2d89701ca26d175761a95e",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/dora/DEFINITIONS.md",
+      "source_sha256": "3025b51e03da0a2b3777962c9e5cf780aa35b3536b2d89701ca26d175761a95e",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/metrics/DEFINITIONS.md",
+      "source_sha256": "d91a754ff2ce3ea5c5098b619e31617b7258ecece2864c1c18aae19ebe7f5a79",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/RUN-000015-attempt1/original/factory/dora/DEFINITIONS.md",
+      "source_sha256": "2ab41b0fc05a8f79c350cac17ad347f1e2361dff58bd8d6605ca96511959660c",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/RUN-000015/original/factory/dora/DEFINITIONS.md",
+      "source_sha256": "2ab41b0fc05a8f79c350cac17ad347f1e2361dff58bd8d6605ca96511959660c",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/all-project-progress/APPROVAL.md",
+      "source_sha256": "c410396217679a551deed4182e27050431b096c1567b2edf1bdbf4b4601332a3",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/factory-learnings.md",
+      "source_sha256": "cd32b5c28e08dc4fb7a095dfa91178cb91a80e3fe728aebef7e52f3c0257fd35",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/git-access-cases.md",
+      "source_sha256": "5a423bc56f36c2c7524c17f3e76d7cb897f52b5342809a2c66308380c9071668",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/legacy-retirement/project-learnings.md",
+      "source_sha256": "3b97b621327129fa11aec9b64ff814b1d6abf9976d6e4b6eed5b9f174112d2e8",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/CLOSURE.md",
+      "source_sha256": "c657dd0c902b39c602efa46c3766e686146ab10dcb4f0f2da15d2f0e81404e87",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/factory/reports/project-cleanup/DELIVERY-APPROVAL.md",
+      "source_sha256": "803795c98666033964312215912863be3a396d191146427da0289fb5260c922b",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/factory/reports/remote-main/BACKLOG.md",
+      "source_sha256": "56e9f7e9e34b3641f61e0a59926d22731a046e35da98805c7948c20fa2b7ce6f",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/factory/reports/worktree-cleanup/AUDIT.md",
+      "source_sha256": "9706de370f34a62d9824137c7d67f37b8112bbb739f22ce6712d89f151e43e39",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/intake/ACCEPTANCE_CONTRACT.md",
+      "source_sha256": "6d8b6288776ab23c3b7bce6ad2f37d727e27597d280a845fbcdd71d9e11fb125",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/intake/COVERAGE.md",
+      "source_sha256": "a74e36fe59dced44b9053751f8cba5587b40afdc0f640a306858f9a2c01594d2",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/intake/approved-v0.1/ACCEPTANCE_CONTRACT.md",
+      "source_sha256": "9ac84a1c3ed82d3986b20067b5f3e83b2a82f0b67ce13ff5be6c5eb8593571b6",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/intake/approved-v0.1/COVERAGE.md",
+      "source_sha256": "d0c80249d6f93a2a9c5b5949a0439019389e26913f1aca60ceedfc52a94ef6f6",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/knowledge/projects/INDEX.md",
+      "source_sha256": "bc31d28d0ec42dea6f4997b17e0d22a739f9b2d90c48d70207d870201806847d",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/knowledge/projects/semantic_search/PROFILE.md",
+      "source_sha256": "1d1b6a552540fa3ce54699d81d933f9270167a99a9e869b090365f1b87914abd",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/knowledge/projects/wired_to_survive/PROFILE.md",
+      "source_sha256": "18e595787f7fe24118b5d904f03bf9c07730ef9fed78611b806706424766cd07",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/requirements/cross-boundary/REQ-000048.md",
+      "source_sha256": "6e259eb731b6c63616ebf61d9e5bf3e9dc54c7b800ca0d00e820979a102394f4",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/requirements/cross-boundary/REQ-000054.md",
+      "source_sha256": "79f5b82207e952fd6b3526471d7aeb871fc7d4f627e20d93cc1a7af7f683affe",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/requirements/cross-boundary/REQ-000055.md",
+      "source_sha256": "2e59c82d500282222e05edbd2f46e3963f587e277ecbfc91ccc0134fa131a99e",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/INDEX.md",
+      "source_sha256": "a149ad510470d2bc4705979f91a3eda6a0bcc00d45675cf7340db491b7a85a94",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000013.md",
+      "source_sha256": "65563502ed828512110a53642060882da01326bd5cf2ae318b7080cb0505b59e",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000015.md",
+      "source_sha256": "9200fba9bc0485abb321eb3aecbb42a28175074c2a49ed53977f11ce35f44da6",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000041.md",
+      "source_sha256": "76009c28bd2c4c675dec9cd74a94aa1082d1e24b1ea9e285a77fa8488926c922",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000042.md",
+      "source_sha256": "18af63d3b568134de658388c453545dccc7242e6a60f6fb04bd0e8a3d523baa2",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000043.md",
+      "source_sha256": "0cc43217bce00839b28f30b965460a300b327b3581ba8c235e76fbcaac4b6576",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000044.md",
+      "source_sha256": "b4a67eaed9bf8a11cf75f321064ca58af956e09f1c0a1b757d999e075f4d1ce4",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000080.md",
+      "source_sha256": "2574c39d3293a96efa631995c181828f95fedafe0457c645c7e8cedd27d3af22",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000107.md",
+      "source_sha256": "26108dca25de8593f137af383aec322b79482452f791de513059391cfcc65d0f",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000113.md",
+      "source_sha256": "3d83ab6fb3dc5bedff3f0d46d6127ee8f916da70ef921de1687fdcfca88f223a",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000121.md",
+      "source_sha256": "46fefe2e35084986746770ca1bd5e191139bc0720cb935eb1b4c50174606b819",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/runs/RUN-000124.md",
+      "source_sha256": "c064df38769de59b4233aee4ec1fe258547247a4734c0957c432b919c259c0b9",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/shared/ID_LEDGER.md",
+      "source_sha256": "2d28ac08246e58e2426f8665404425a0c8d07b7da0a7d59165f24c21d6e94021",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/tasks/INDEX.md",
+      "source_sha256": "17b4e0bad00982c00b0befc73f192b5cb962a957906ec73f8a55ac8b86ac6973",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/tasks/cross-boundary/TASK-000041.md",
+      "source_sha256": "1627516243c0886112bfaad2d25204120708b8c56aaec639bfe738677f90436a",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/tasks/organization/TASK-000015.md",
+      "source_sha256": "3f4b59d0a2fd30206d49222379ed07dd6bfb01bf42f2443c7331f4a00a420fd5",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/tasks/organization/TASK-000017.md",
+      "source_sha256": "7fd7b7352c88a21f1b9887577c27ef999a9eef662e1a6b3260f342c4330741da",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/tasks/organization/TASK-000049.md",
+      "source_sha256": "2b39cb231ecef6df80dd195d14a75f2f24fa6d17c09b79cb589210843f68e850",
+      "disposition": "organization_governance_or_installation_history_or_other_owner",
+      "reason": "Incidental identity or policy reference; no owning-project evidence copied from this source."
+    },
+    {
+      "source_path": "agent-org/tasks/organization/TASK-000112.md",
+      "source_sha256": "92f0107465d537343a56fb5dc719c9383c6435a29464ecf913a5ac6bfc298b1f",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/tasks/organization/TASK-000126.md",
+      "source_sha256": "6c32aa503d3873a2a67fd3220bd3a811ed9dca2095a971e814100551005744f4",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    },
+    {
+      "source_path": "agent-org/tasks/organization/TASK-000149.md",
+      "source_sha256": "9ab9e570ef87268d5688e8775376d98d9e55ea040b5ed06f1337c1e0c8ee82de",
+      "disposition": "mixed_source_without_isolated_owner_excerpt",
+      "reason": "Shared governance or references remain in preserved source; no isolated project fact block selected."
+    }
+  ],
+  "unexamined_content": "No secret-bearing configuration, private corpus, media, raw ignored artifacts, model/runtime state or downloaded source bodies were read/exported; inventory-backed tracked Markdown only.",
+  "coverage_exclusions": [
+    "General organization policies, indexes, installation/intake histories, synthetic governance baselines and other owners profiles remain organization-owned.",
+    "Unrelated project-specific source documents are not copied.",
+    "Original links in byte-identical archives are preserved; routing/link overlay is recorded separately."
+  ],
+  "repair": {
+    "approval": "APP-000113",
+    "plan_revision": 2,
+    "review": "REVIEW-159.md",
+    "finding": "R159-L1",
+    "changed_source": "agent-org/tasks/project/TASK-000090.md",
+    "action": "Excluded exactly the unrelated-owner delivery clause; all retained Calculator source spans and immutable source hashes unchanged.",
+    "previous_validation_disposition": "Earlier v1/v2 preparer PASS assertions were insufficient for ownership isolation and are superseded by independent REVIEW159 FAIL and this affected repair, pending fresh independent review."
+  }
+}

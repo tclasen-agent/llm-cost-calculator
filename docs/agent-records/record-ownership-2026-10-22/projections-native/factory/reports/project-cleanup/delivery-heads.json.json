@@ -1,0 +1,36 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/project-cleanup/delivery-heads.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "f076e5e2f3be4149b76827b5d3a3f9b8c7a4f659c850ff7ff6af1cf279b2a8f0",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/llm-cost-calculator",
+      "value": {
+        "head": "7ea1584d0432353108856aacaa24ad2e197cf341",
+        "tree": "26d1fca6e2fa502db12e85ea968d99fb01771890",
+        "branch": "chore/centralize-agent-org-verified-20261022",
+        "remote": "https://github.com/tclasen-agent/llm-cost-calculator.git",
+        "repository": "tclasen-agent/llm-cost-calculator",
+        "merge_method": "squash",
+        "superseded_pr": 1,
+        "superseded_pr_url": "https://github.com/tclasen-agent/llm-cost-calculator/pull/1",
+        "pr": 2,
+        "pr_url": "https://github.com/tclasen-agent/llm-cost-calculator/pull/2",
+        "github_signature": {
+          "verified": true,
+          "reason": "valid"
+        },
+        "merged": true,
+        "merge_sha": "3f356cf63586922a53ee88db5d414841ed19565a",
+        "remote_main": "3f356cf63586922a53ee88db5d414841ed19565a",
+        "remote_main_tree": "26d1fca6e2fa502db12e85ea968d99fb01771890",
+        "content_equivalence": true,
+        "main_contains_merge": true,
+        "verified_at": "2026-10-22T01:26:07.674997+00:00"
+      }
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "candidate": "5c08c21b956a896afb868a81cc0b6a013b809844",
+  "origin": "http://127.0.0.1:58278",
+  "cases": [
+    {
+      "case": "saved raw numeric rejection",
+      "raw": {
+        "apiExtras": 10000000000001,
+        "overrides": "apiExtras"
+      },
+      "retained": {
+        "apiExtras": 10000000000001,
+        "overrides": "apiExtras"
+      },
+      "passed": true
+    },
+    {
+      "case": "saved raw numeric rejection",
+      "raw": {
+        "purchaseDiscount": 100,
+        "overrides": "purchaseDiscount"
+      },
+      "retained": {
+        "purchaseDiscount": 100,
+        "overrides": "purchaseDiscount"
+      },
+      "passed": true
+    },
+    {
+      "case": "saved raw numeric rejection",
+      "raw": {
+        "users": 1000001
+      },
+      "retained": {
+        "users": 1000001
+      },
+      "passed": true
+    },
+    {
+      "case": "saved raw numeric rejection",
+      "raw": {
+        "concurrency": 100001,
+        "overrides": "concurrency"
+      },
+      "retained": {
+        "concurrency": 100001,
+        "overrides": "concurrency"
+      },
+      "passed": true
+    },
+    {
+      "case": "saved raw numeric rejection",
+      "raw": {
+        "autoModel": 2
+      },
+      "retained": {
+        "autoModel": 2
+      },
+      "passed": true
+    },
+    {
+      "case": "shared raw numeric-string retained",
+      "retained": {
+        "overrides": "apiExtras",
+        "usageSource": "Exact shared note",
+        "apiExtras": "10000000000001"
+      },
+      "passed": true
+    },
+    {
+      "case": "older partial compatible",
+      "passed": true
+    },
+    {
+      "case": "exact maximum fee retained and all paths usable",
+      "passed": true
+    },
+    {
+      "case": "invalid edit transaction retains previous",
+      "passed": true
+    },
+    {
+      "case": "training storage separation",
+      "passed": true
+    }
+  ],
+  "pageErrors": [],
+  "browserContextAndServerClosed": true
+}

@@ -1,0 +1,37 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/media-relocation.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "fa3e0758ebdf93b20ac52d77d0a70a449a7effe44204c4e55c27edbf189372b3",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/files/0",
+      "value": {
+        "source": "/Users/Shared/project-progress-org/agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/browser-final.png",
+        "destination": "/Users/Shared/agent-org/factory/artifacts/all-project-progress/review-evidence/calculator-phase2/browser-final.png",
+        "sha256": "12e2197e32db67dc814647897e3dc0ae7b5f994950b4e418ec8e38da65ce8a0b",
+        "bytes": 132251
+      }
+    },
+    {
+      "pointer": "/files/1",
+      "value": {
+        "source": "/Users/Shared/project-progress-org/agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/outcome-13.png",
+        "destination": "/Users/Shared/agent-org/factory/artifacts/all-project-progress/review-evidence/calculator-phase2/outcome-13.png",
+        "sha256": "722e3079493604a7ce9f06270acb0d37f39b17e4d87ca5bb8a8468894c55de89",
+        "bytes": 489207
+      }
+    },
+    {
+      "pointer": "/files/2",
+      "value": {
+        "source": "/Users/Shared/project-progress-org/agent-org/factory/reports/all-project-progress/review-evidence/calculator-phase2/outcome-15.png",
+        "destination": "/Users/Shared/agent-org/factory/artifacts/all-project-progress/review-evidence/calculator-phase2/outcome-15.png",
+        "sha256": "82f8cbf93284aa36af14a641d0fc0f396424bf61a39250e716eb9d6cee0fd3a6",
+        "bytes": 494043
+      }
+    }
+  ]
+}
