@@ -1,0 +1,22 @@
+{
+  "observed_at": "2026-10-22T15:45:53.965689+00:00",
+  "head": "16da3521233475d2cc5bec7186232cfd36d4fa20",
+  "branch": "work/next-milestone-20261022",
+  "files": {
+    "AGENTS.md": "295d29e4310d32c14c2a63ebc02545476feb5f860b2e35242e3d6596ac1a9fb8",
+    "README.md": "c2d0a7a17cac28b899bb86d4b310927923c669aeb8c01386370e2ff32bb078c7",
+    "src/data/README.md": "5d01b31447b7c2814dfdc784f838261adfaf5879a79522d75ac64aa99ff66b93",
+    "src/data/models.js": "36cde0cd4a5c8246a469fb97dca0c3ec4fa4e9de83d8f8434aa14628969d578d",
+    "src/data/inference-memory.js": "a85446cc0e171c44818bcc419930f06880cf5de2dddca57a36843e6a1c778027",
+    "src/data/index.js": "ff5a6a189375c6ba8141db5216a3477af65b4494a6f6f468fc4aa8348a3a2a53",
+    "src/data/audit.js": "c246dd9c730a38255ff4e24c03071a86da1a9ee97e83901da8c7b112e75e7a23",
+    "src/planning.js": "ea0ea5f5ccfb10db58a486fd3312233059b98174a4bd18127e7edaab86e9e833",
+    "src/app.js": "b6a7fbd4c291edf11810d6057096f8ec6a4ce54065f7aa2865912557663b8231",
+    "tests/data.test.js": "da2b2f315624d67b58bed949ce41f4c3b2d21a15492281ebb0de287e16dcc027",
+    "tests/scenario.test.js": "15b4cb72a6e69ac688a72f40e56b38938728a7934a8fe16bd4477130a60414ff",
+    "tests/engine.test.js": "6e5e4b5ae7dd1466838bb05e6e789725f1786401289fc5828caec58757f7c0b9",
+    "package.json": "a1ad24f171d4e19af3519c823aa3c033e54db93e6b55491c2efb310871c8ac32",
+    "artifacts/next-milestone-20261022/qwen38large-endpoints.json": "9a54385dc0ba8a65c28a463869c954df306b4c9191dabdb1be06da6f5fddab21",
+    "artifacts/next-milestone-20261022/source-receipt.json": "6320fc1cefffd6ae811310df47958fba06a67b0a45e578d75fa5802b8e5c270e"
+  }
+}

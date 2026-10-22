@@ -84,3 +84,15 @@ test('small endpoint cache rates retain sub-cent precision in the shared view',(
  assert.equal(datasets.rentals.maintenance.reviewed,'2026-10-22');
  assert.equal(dataReviewed,'2026-09-27');
 });
+
+test('API endpoint precision does not redefine the independent self-hosted memory recipe',async()=>{
+ const {planning}=await import('../src/planning.js');
+ const model=models.find(m=>m.id==='qwen38large');
+ const scenario=planning({...data.inferenceDefaults,model:model.id,concurrency:1,overrides:'concurrency'});
+ assert.equal(model.quantization,data.models[model.id].endpoint.quantization);
+ assert.equal(scenario.localMemory,data.inferenceMemory[model.id]);
+ assert.equal(scenario.rentalMemory,data.inferenceMemory[model.id]);
+ // The API tuple is not a measured local runtime or compatibility record.
+ assert.match(scenario.localRuntime,/4.bit/i);
+ assert.equal(data.reviewedConfigurations.length,0);
+});

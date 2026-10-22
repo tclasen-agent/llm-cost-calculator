@@ -1,0 +1,19 @@
+{
+  "source_receipt_sha256": "9a54385dc0ba8a65c28a463869c954df306b4c9191dabdb1be06da6f5fddab21",
+  "record": "values.qwen38large.endpoint",
+  "old_sha256": "b00bced2988f192aa2547611bab40d5160af7237cf9e7a5dba2e08746102a0a4",
+  "new_sha256": "a6ed26e43f3544e6b2a6f59f94e1b7e0f51f5a9136a3d585e518b4c9f654f139",
+  "source_fields": [
+    "provider_name",
+    "tag",
+    "quantization",
+    "context_length",
+    "max_completion_tokens",
+    "max_prompt_tokens",
+    "pricing.prompt",
+    "pricing.completion",
+    "pricing.input_cache_read"
+  ],
+  "source_status_and_discount_eligible": true,
+  "numeric_canonical_owner": "src/data/models.js"
+}

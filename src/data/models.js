@@ -3,7 +3,7 @@
  * Source: sources.api; each model source and its /endpoints API
  * Review frequency: Weekly; immediately on endpoint, price or model changes.
  * Update: Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card.
- * 2026-10-22 partial review: qwen38large DeepInfra/fp4 and qwen30 Novita/fp8 were absent from current endpoint listings. Their historical tuples and dataset review date are retained.
+ * 2026-10-22 partial review: qwen38large now uses the current non-discounted SiliconFlow/fp8 tuple. qwen30 Novita/fp8 remains absent; its historical tuple and the dataset review date are retained.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
@@ -78,16 +78,16 @@ export default {
       "apiModel": "qwen/qwen3.8-2.4t-a95b",
       "evidence": "Large open-weight flagship with published coding, reasoning, tool-use and instruction-following evaluations. Cluster-scale deployment.",
       "endpoint": {
-        "provider_name": "DeepInfra",
-        "tag": "deepinfra/fp4",
-        "quantization": "fp4",
-        "context_length": 262144,
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
         "max_completion_tokens": 131072,
         "max_prompt_tokens": null,
         "pricing": {
           "prompt": "0.000002",
           "completion": "0.000006",
-          "input_cache_read": "0.0000002"
+          "input_cache_read": "0.00000025"
         }
       }
     },

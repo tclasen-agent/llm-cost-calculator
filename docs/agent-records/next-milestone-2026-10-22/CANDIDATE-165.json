@@ -1,0 +1,30 @@
+{
+  "task": "TASK-000165",
+  "run": "RUN-000160",
+  "approval": "APP-000125",
+  "observed_at": "2026-10-22T16:01:06.298758+00:00",
+  "candidate": {
+    "src/data/models.js": "872d1fd82312e4a347ff69db3b704a79043d19423a8ef66831f87b356e1413e0",
+    "src/data/INVENTORY.md": "2472ab8adbd374f8fb2c41b742da26f6b51d897d4fc912b47d720f66b0f72d59",
+    "tests/data.test.js": "e21fec425fbfe45f84544d958b3b634b9afcb8270a31c71d163530103cfd41d0",
+    "tests/engine.test.js": "16f2f755f21a3d69a34ed0005f1f80bc497050c436fd2324d4e6e77fd2387585",
+    "tests/scenario.test.js": "274ff5fa9a8349efb685a6e02bfff39b98493066ec75b9c0cba54bed4d5d1297"
+  },
+  "evidence": {
+    "docs/agent-records/next-milestone-2026-10-22/inventory-165.log": "5b509dae65b68fed21a31b052cde5e1111cc3de27e5202f9f33103a576b19a31",
+    "docs/agent-records/next-milestone-2026-10-22/test-165.log": "2a652d0c42d68b3689d44b5957e5ab033a436c4c36c991de578c2e8aad78959f",
+    "docs/agent-records/next-milestone-2026-10-22/build-165.log": "0d9214aa52c5d243017fc7e9561fcd941dbf1dbf52ed99973df4ec0463360654",
+    "docs/agent-records/next-milestone-2026-10-22/endpoint-change-165.json": "f2d7c3356f6d4f66c9f0c2c6c65c00f12c596be000278fb7e2cb8127faa30879"
+  },
+  "baseline_snapshot_sha256": "36cde0cd4a5c8246a469fb97dca0c3ec4fa4e9de83d8f8434aa14628969d578d",
+  "official_receipt_sha256": "9a54385dc0ba8a65c28a463869c954df306b4c9191dabdb1be06da6f5fddab21",
+  "checks": {
+    "source_tuple_exact": true,
+    "only_endpoint_value_changes": true,
+    "unrelated_pinned_sources_unchanged": true,
+    "diff_check_exit": 0,
+    "npm_test": "129 passed,0 failed",
+    "npm_build": "exit0; inventory current"
+  },
+  "browser_release": "unrun; root scheduled independently"
+}
