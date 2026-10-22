@@ -3,6 +3,7 @@
  * Source: sources.benchmark, sources.methodology and record source/priceSource
  * Review frequency: Weekly; on benchmark version, pricing or promotion changes.
  * Update: Refresh comparable benchmark score, task cost and reasoning setting together. API prices USD/million tokens. Update all reference context limits and long-context multipliers; review promotion at its date. Never impute missing scores.
+ * 2026-10-22 partial review: MiniMax M2.7 currently has no published task cost. Its historical score/cost pair and dataset review date are retained. Other comparable values were checked against v4.3.2.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
@@ -60,7 +61,7 @@ export default {
         "id": "gpt-6-sol",
         "name": "GPT-6 Sol",
         "score": 48,
-        "taskCost": 1.06,
+        "taskCost": 1.04,
         "input": 2,
         "output": 10,
         "source": "https://artificialanalysis.ai/models/gpt-6-sol",
@@ -69,7 +70,7 @@ export default {
       {
         "id": "gpt-6-luna",
         "name": "GPT-6 Luna",
-        "score": 37,
+        "score": 38,
         "taskCost": 0.07,
         "input": 0.1,
         "output": 0.5,
@@ -80,7 +81,7 @@ export default {
     "selectedBenchmarks": {
       "ds41": {
         "score": 39,
-        "taskCost": 0.27,
+        "taskCost": 0.4,
         "variant": "max reasoning"
       },
       "glm53": {
@@ -90,7 +91,7 @@ export default {
       },
       "glm53flash": {
         "score": 42,
-        "taskCost": 0.25,
+        "taskCost": 0.28,
         "variant": "AA evaluated configuration"
       },
       "qwen38large": {
@@ -110,7 +111,7 @@ export default {
       },
       "nemotron-ultra": {
         "score": 23,
-        "taskCost": 0.6,
+        "taskCost": 0.47,
         "variant": "reasoning"
       },
       "nemotron-super": {
@@ -130,7 +131,7 @@ export default {
       },
       "nemotron-lightning": {
         "score": 13,
-        "taskCost": 0.1,
+        "taskCost": 0.08,
         "variant": "AA evaluated configuration"
       },
       "minimax27": {
@@ -141,7 +142,7 @@ export default {
       },
       "qwen80": {
         "score": 9,
-        "taskCost": 0.55,
+        "taskCost": 0.47,
         "variant": "non-reasoning",
         "source": "https://artificialanalysis.ai/models/qwen3-coder-next/"
       },

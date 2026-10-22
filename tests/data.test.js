@@ -72,3 +72,15 @@ test('new multi-GPU rentals convert per-GPU charges and memory to whole-instance
   const r=rentals.find(r=>r.id===id);assert.equal(r.hourly,hourly);assert.equal(r.memory,memory);
  }
 });
+
+test('small endpoint cache rates retain sub-cent precision in the shared view',()=>{
+ for(const [id,input,output,cached] of [['qwen38small',.035,2.2,.0175],['nemotron-lightning',.025,.12,.0125],['oss120',.03,.187,.03]]){
+  const model=models.find(m=>m.id===id);
+  for(const [key,expected] of Object.entries({input,output,cached}))assert.ok(Math.abs(model[key]-expected)<1e-12,`${id}.${key}`);
+ }
+ // This partial source review cannot refresh a missing endpoint or the full audit.
+ assert.equal(datasets.models.maintenance.reviewed,'2026-09-27');
+ assert.equal(datasets.frontier.maintenance.reviewed,'2026-09-27');
+ assert.equal(datasets.rentals.maintenance.reviewed,'2026-10-22');
+ assert.equal(dataReviewed,'2026-09-27');
+});
