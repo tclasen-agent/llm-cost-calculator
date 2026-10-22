@@ -1,5 +1,10 @@
 # Required data architecture
 
+Read [the parent entrypoint](../AGENTS.md) and initialize `../agent-org/` before
+project work. The parent organization owns admission, roles, coordination,
+approvals, and delivery. The product requirements below supplement its rules;
+project records do not authorize new deployment or work outside the current task.
+
 These requirements apply to every future change in this repository.
 
 1. All maintained external facts, prices, model/hardware specifications, benchmarks, tariffs/taxes, empirical coefficients, planning assumptions, default scenario values, source URLs, review dates and reviewed configuration records MUST live in `src/data/`.
@@ -9,6 +14,6 @@ These requirements apply to every future change in this repository.
 5. Run `npm test` and `npm run build`. Both enforce the data contract and inventory freshness. Add meaningful tests for new data shapes, references, unit conversions, tariff/pricing boundaries and new reviewed configurations. Do not weaken checks or expand the code-constant allowlist to sneak maintained data into application code. The allowlist is only for stable algorithm, unit-conversion, validation and presentation constants, with a specific rationale required for changes.
 6. Keep user-entered scenarios in browser storage/URLs; they are not repository facts or independent verification. Preserve unrelated saved inputs. Document migrations explicitly; never silently overwrite user measurements on a catalog refresh. Explicit model, workload or system changes reset measurements scoped to the previous configuration; system changes also reset system-specific quotes.
 7. Fine-tuning permits labeled assumption-based feasibility estimates without exact end-to-end evidence. Prefer published supervised recipes, single-GPU layouts and conservative memory headroom for high-confidence estimates; reserve verified status for exact, current reviewed runs. Inference explicitly permits loosely verified published metrics, user estimates and maintained planning heuristics. Label approximate performance and memory assumptions, allow fitting inference configurations without reviewed end-to-end records, and never represent an estimate as certified compatibility.
-8. Complete requested changes by committing verified work to `main`, safely integrating remote updates, pushing, waiting for successful GitHub Pages deployment, and verifying the affected behavior on the live site. Do not bypass branch protections or overwrite unrelated work. Follow an explicit request to stop before release.
+8. Delivery and any GitHub Pages deployment follow the parent organization and the current task's authorization. For an authorized release, verify affected behavior on the live site, respect branch protections, and preserve unrelated work.
 
 9. The maintained inference default must produce complete buy, rent and API estimates. Every accepted inference edit must retain all three usable paths. Test initial load, reset, saved/shared input recovery, and every enabled selector transition. Validate changes transactionally: do not replace the last usable result with an invalid combination. Disable incompatible choices with an explanation. Lead with available results; keep missing optional-path evidence scoped to that path. Never manufacture verification records to satisfy this requirement.
