@@ -1,5 +1,5 @@
 import {planning} from './planning.js?v=30';
-import {calculate} from './engine.js?v=30';
+import {calculate,normalize} from './engine.js?v=30';
 import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=30';
 import {taskModels} from './task-models.js?v=30';
 
@@ -31,6 +31,15 @@ function persistedIssues(raw){
  }
  if(raw.start!==undefined&&!/^20\d\d-(0[1-9]|1[0-2])$/.test(raw.start))issues.push('Saved starting month is invalid.');
  for(const [key,options] of [['tariff',['gs1','bill']],['frontierBasis',['benchmark','call']]])if(raw[key]!==undefined&&!options.includes(raw[key]))issues.push(`Saved ${key} is invalid.`);
+ if(!issues.length){
+  // Reuse the normalizer's domains, including integer/flag constraints, without
+  // copying its bounds. Recovery must see values that normalization would clamp.
+  const normalized=normalize(raw);
+  for(const [key,defaultValue] of Object.entries(defaults)){
+   const value=raw[key];
+   if((defaultValue===null||typeof defaultValue==='number')&&value!==undefined&&value!==null&&value!==''&&Number(value)!==normalized[key])issues.push(`Saved ${key} is outside its supported numeric domain.`);
+  }
+ }
  return issues;
 }
 export function initialScenario(raw=defaults){

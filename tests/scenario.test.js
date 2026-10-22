@@ -46,6 +46,48 @@ test('invalid persisted numbers recover before normalization can turn them into 
   assert.deepEqual(loaded.state,initialScenario().state);
  }
 });
+test('every persisted numeric field rejects values beyond its normalizer domain before clamping',()=>{
+ for(const [key,value] of Object.entries(defaults)){
+  if(value!==null&&typeof value!=='number')continue;
+  const raw={...defaults,[key]:10000000000001,overrides:key};
+  const loaded=initialScenario(raw);
+  assert.equal(loaded.recovered,true,key);
+  assert.equal(loaded.rejected,raw);
+  assert.equal(raw[key],10000000000001);
+  assert.ok(loaded.issues.some(issue=>issue.includes(key)&&issue.includes('numeric domain')),key);
+  assert.deepEqual(loaded.state,initialScenario().state);
+ }
+});
+test('persisted numeric domain endpoints remain usable and one beyond recovers exactly',()=>{
+ const state=initialScenario().state;
+ const fitting={...state,autoHardware:0,autoRental:0,concurrency:1,localMemory:1,rentalMemory:1,
+  overrides:'concurrency,localMemory,rentalMemory'};
+ for(const [key,max] of [['apiExtras',1e12],['purchaseDiscount',99],['apiDecline',99],['rentalDecline',99],['users',1000000],['concurrency',100000],['autoRental',1],['autoModel',1],['tariffConfirmed',1],['localTax',1]]){
+  const basis=['users','concurrency'].includes(key)?fitting:state;
+  const raw={...basis,[key]:max,overrides:basis.overrides+','+key};
+  const loaded=initialScenario(raw);
+  assert.equal(loaded.recovered,false,`${key} endpoint`);
+  assert.equal(loaded.state[key],max,`${key} endpoint is preserved`);
+  assert.equal(loaded.result.ready,true,`${key} endpoint stays usable`);
+  for(const value of [max+1,String(max+1)]){
+   const invalid={...raw,[key]:value};
+   const recovered=initialScenario(invalid);
+   assert.equal(recovered.recovered,true,`${key} beyond endpoint`);
+   assert.equal(recovered.rejected,invalid);
+   assert.equal(recovered.rejected[key],value);
+   assert.ok(recovered.issues.some(issue=>issue.includes(key)&&issue.includes('numeric domain')),key);
+  }
+ }
+});
+test('persisted integer and flag domains reject fractional or nonbinary controls',()=>{
+ for(const [key,value] of [['users',1.5],['concurrency',1.5],['concurrency',0],['autoRental',0.5],['autoModel',2],['tariffConfirmed',2],['localTax',2]]){
+  const raw={...defaults,[key]:value};
+  const recovered=initialScenario(raw);
+  assert.equal(recovered.recovered,true,key);
+  assert.equal(recovered.rejected,raw);
+  assert.ok(recovered.issues.some(issue=>issue.includes(key)&&issue.includes('numeric domain')),key);
+ }
+});
 test('unavailable saved catalog identifiers recover without reusing another configuration',()=>{
  for(const key of ['model','hardware','rental','workload']){
   const raw={...defaults,[key]:'retired-or-unknown-id',usageSource:'Original scope'};
