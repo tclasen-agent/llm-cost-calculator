@@ -52,3 +52,31 @@ test('refreshed selected-provider price pair bills uncached input and output tog
  assert.ok(Math.abs(r.first.apiUsage-.704)<1e-12);
  assert.notEqual(r.first.apiUsage,2200*(1000*.008+500*.5)/1e6);
 });
+
+test('large-model provider context and output boundaries fail without discarding other path estimates',()=>{
+ const model=models.find(m=>m.id==='qwen38large');
+ // Arithmetic fixtures only: these measured fields do not certify this large model's hardware fit.
+ const basis={...measured,model:model.id,input:model.context-model.maxOutput,output:model.maxOutput};
+ const atContext=calculate(basis);
+ assert.equal(atContext.context,true);assert.equal(atContext.apiReady,true);
+ const beyondContext=calculate({...basis,input:basis.input+1});
+ assert.equal(beyondContext.context,false);assert.equal(beyondContext.first.apiMonthly,null);
+ assert.equal(beyondContext.first.buyMonthly,atContext.first.buyMonthly);
+ assert.equal(beyondContext.first.rentMonthly,atContext.first.rentMonthly);
+ const atOutput=calculate({...basis,input:1});
+ assert.equal(atOutput.apiReady,true);
+ const beyondOutput=calculate({...basis,input:1,output:model.maxOutput+1});
+ assert.equal(beyondOutput.context,false);assert.equal(beyondOutput.first.apiUsage,null);
+});
+
+test('large-model uncached API cost uses both coherent provider rates despite cache provenance',()=>{
+ const model=models.find(m=>m.id==='qwen38large');
+ assert.ok(model.cached>0&&model.cached<model.input);
+ for(const [input,output] of [[1000,0],[0,500],[1000,500]]){
+  const result=calculate({...measured,model:model.id,input,output});
+  const inputOnly=result.first.requests*input*model.input/1e6;
+  const outputOnly=result.first.requests*output*model.output/1e6;
+  assert.ok(Math.abs(result.first.apiUsage-inputOnly-outputOnly)<1e-12);
+  if(input>0)assert.notEqual(result.first.apiUsage,result.first.requests*(input*model.cached+output*model.output)/1e6);
+ }
+});

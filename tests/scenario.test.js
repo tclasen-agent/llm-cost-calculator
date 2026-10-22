@@ -173,3 +173,18 @@ test('a saved Kimi scenario invalidated by the memory audit recovers without rew
  const state=initialScenario().state,next=changeScenario(state,'model','kimi3');
  assert.equal(next.accepted,false);assert.equal(next.state,state);assert.ok(next.message);
 });
+
+test('provider refresh preserves original large-model saved/shared measurements when recovery is required',async()=>{
+ const {encodeState,readState}=await import('../src/sharing.js');
+ const raw={...initialScenario().state,model:'qwen38large',autoModel:0,localRuntime:'Saved runtime and precision',localEvidence:'Original pilot notes',rentalEvidence:'Original rental measurements',apiExtras:17,overrides:'apiExtras'};
+ const frozen=structuredClone(raw);
+ const restored=initialScenario(raw);
+ assert.equal(restored.recovered,true);assert.equal(restored.result.ready,true);
+ assert.equal(restored.rejected,raw);assert.deepEqual(raw,frozen);
+ const shared=readState(encodeState(raw)),before=structuredClone(shared),recovered=initialScenario(shared);
+ assert.equal(recovered.recovered,true);assert.equal(recovered.rejected,shared);
+ assert.deepEqual(shared,before);assert.equal(shared.localEvidence,raw.localEvidence);
+ assert.equal(shared.rentalEvidence,raw.rentalEvidence);assert.equal(shared.model,raw.model);
+ const current=initialScenario().state,rejected=changeScenario(current,'model',raw.model);
+ assert.equal(rejected.accepted,false);assert.equal(rejected.state,current);assert.ok(rejected.message);
+});

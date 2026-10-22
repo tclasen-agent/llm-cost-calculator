@@ -161,15 +161,15 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `qwen38large.source` | "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B" |
 | `qwen38large.apiModel` | "qwen/qwen3.8-2.4t-a95b" |
 | `qwen38large.evidence` | "Large open-weight flagship with published coding, reasoning, tool-use and instruction-following evaluations. Cluster-scale deployment." |
-| `qwen38large.endpoint.provider_name` | "DeepInfra" |
-| `qwen38large.endpoint.tag` | "deepinfra/fp4" |
-| `qwen38large.endpoint.quantization` | "fp4" |
-| `qwen38large.endpoint.context_length` | 262144 |
+| `qwen38large.endpoint.provider_name` | "SiliconFlow" |
+| `qwen38large.endpoint.tag` | "siliconflow/fp8" |
+| `qwen38large.endpoint.quantization` | "fp8" |
+| `qwen38large.endpoint.context_length` | 1048576 |
 | `qwen38large.endpoint.max_completion_tokens` | 131072 |
 | `qwen38large.endpoint.max_prompt_tokens` | null |
 | `qwen38large.endpoint.pricing.prompt` | "0.000002" |
 | `qwen38large.endpoint.pricing.completion` | "0.000006" |
-| `qwen38large.endpoint.pricing.input_cache_read` | "0.0000002" |
+| `qwen38large.endpoint.pricing.input_cache_read` | "0.00000025" |
 | `qwen38small.name` | "Qwen: Qwen3.8 27B" |
 | `qwen38small.source` | "https://huggingface.co/Qwen/Qwen3.8-27B" |
 | `qwen38small.apiModel` | "qwen/qwen3.8-27b" |
