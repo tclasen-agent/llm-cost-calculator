@@ -30,7 +30,7 @@ Fine-tuning supports supervised adapters, full/partial tuning, continued pretrai
 
 ## Valid default and selections
 
-The landing page leads with an available cost estimate. Hardware evidence gaps do not replace a working API estimate with a page-level error. Model/task choices that would invalidate the current calculation are disabled; incompatible edits retain the previous result and show an explanation. Invalid saved or shared inputs recover to current defaults, with the original input retained in browser recovery storage.
+The landing page leads with an available cost estimate. Hardware evidence gaps do not replace a working API estimate with a page-level error. Model/task choices that would invalidate the current calculation are disabled; incompatible edits retain the previous result and show an explanation. Invalid saved or shared inputs recover to current defaults before invalid numbers or unavailable catalog choices can be silently replaced. The original saved object, malformed saved text, or shared field values are retained in browser recovery storage (`inference-ledger-recovery-v1`); the app reports if browser storage prevents retention. Valid older partial scenarios inherit missing defaults and preserve their overrides.
 
 ## Saved scenarios
 
