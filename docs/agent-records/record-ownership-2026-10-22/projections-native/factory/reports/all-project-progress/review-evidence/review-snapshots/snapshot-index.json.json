@@ -1,0 +1,64 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/review-evidence/review-snapshots/snapshot-index.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "5c8d7cbf3bad9e633adf046e4672e36cf39c45f9e8d0f32b2a77acb9fe4fd4ff",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/0",
+      "value": {
+        "path": "review-snapshots/REVIEW-89ecaf4d681379c7b70e38bf3db09dbfc76d604ecd977d0656624d59844a3b28.md",
+        "sha256": "89ecaf4d681379c7b70e38bf3db09dbfc76d604ecd977d0656624d59844a3b28",
+        "bytes": 45487,
+        "provenance": "direct immutable report snapshot at recorded checkpoint"
+      }
+    },
+    {
+      "pointer": "/1",
+      "value": {
+        "path": "review-snapshots/REVIEW-b9fcdbf7e2482247cf6038dd208f19c198ea2603a846e08dc1197bbf5c63928e.md",
+        "sha256": "b9fcdbf7e2482247cf6038dd208f19c198ea2603a846e08dc1197bbf5c63928e",
+        "bytes": 38131,
+        "provenance": "direct immutable report snapshot at recorded checkpoint"
+      }
+    },
+    {
+      "pointer": "/2",
+      "value": {
+        "path": "review-snapshots/REVIEW-baf56ca4d5686c491ba3fb3dd3df557bc31d9f042bd043aac542ed00b7c29fa0.md",
+        "sha256": "baf56ca4d5686c491ba3fb3dd3df557bc31d9f042bd043aac542ed00b7c29fa0",
+        "bytes": 25878,
+        "provenance": "exact verified historical report prefix"
+      }
+    },
+    {
+      "pointer": "/3",
+      "value": {
+        "path": "review-snapshots/REVIEW-c1dd08342ae2093861f64dbb209c3c082d40b4cb08de431a9826a8ff016ac4f0.md",
+        "sha256": "c1dd08342ae2093861f64dbb209c3c082d40b4cb08de431a9826a8ff016ac4f0",
+        "bytes": 20308,
+        "provenance": "exact verified historical report prefix"
+      }
+    },
+    {
+      "pointer": "/4",
+      "value": {
+        "path": "review-snapshots/REVIEW-eddc4e41410079d55e42e208b01f40ac07104bcd505a5d868fe0ef51ed1a3871.md",
+        "sha256": "eddc4e41410079d55e42e208b01f40ac07104bcd505a5d868fe0ef51ed1a3871",
+        "bytes": 39315,
+        "provenance": "direct immutable report snapshot at recorded checkpoint"
+      }
+    },
+    {
+      "pointer": "/5",
+      "value": {
+        "path": "review-snapshots/REVIEW-fa6d6cc58c3a277a6a8a32389fb556c4208634bccb1060be1080d5c77d62bb1f.md",
+        "sha256": "fa6d6cc58c3a277a6a8a32389fb556c4208634bccb1060be1080d5c77d62bb1f",
+        "bytes": 44883,
+        "provenance": "direct immutable report snapshot at recorded checkpoint"
+      }
+    }
+  ]
+}

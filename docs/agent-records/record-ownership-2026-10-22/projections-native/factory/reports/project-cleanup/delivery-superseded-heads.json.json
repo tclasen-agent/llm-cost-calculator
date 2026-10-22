@@ -1,0 +1,23 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/project-cleanup/delivery-superseded-heads.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "ae06b95fac054ea191220c6a302b60bb0bfca8e6da2e5bd403bdbed1039b6440",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/llm-cost-calculator",
+      "value": {
+        "head": "c96967558d3d1f8521e32abe531f98efd57514b5",
+        "tree": "26d1fca6e2fa502db12e85ea968d99fb01771890",
+        "branch": "chore/centralize-agent-org-20261022",
+        "remote": "https://github.com/tclasen-agent/llm-cost-calculator.git",
+        "repository": "tclasen-agent/llm-cost-calculator",
+        "pr": 1,
+        "pr_url": "https://github.com/tclasen-agent/llm-cost-calculator/pull/1",
+        "merge_method": "squash"
+      }
+    }
+  ]
+}

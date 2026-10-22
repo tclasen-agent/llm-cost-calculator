@@ -1,0 +1,60 @@
+{
+  "candidate": "77e77ee8402babc5535af9be79d4cd9e4a6a8ca7",
+  "tree": "4876f5499b0cdd1044a92af574412a47234722bd",
+  "kind": "reviewer-recorded actual command observations; source tool transcripts retained by session",
+  "node_reproductions": [
+    {
+      "raw": {
+        "apiExtras": 10000000000001,
+        "overrides": "apiExtras"
+      },
+      "recovered": false,
+      "ready": true,
+      "normalized_apiExtras": 1000000000000
+    },
+    {
+      "raw": {
+        "purchaseDiscount": 100,
+        "overrides": "purchaseDiscount"
+      },
+      "recovered": false,
+      "ready": true,
+      "normalized_purchaseDiscount": 99
+    }
+  ],
+  "browser_observations": [
+    {
+      "case": "negative",
+      "apiExtras": 0,
+      "users": 1,
+      "recovery": {
+        "apiExtras": -12,
+        "overrides": "apiExtras"
+      },
+      "feedbackHidden": false
+    },
+    {
+      "case": "older-partial",
+      "apiExtras": 17,
+      "users": 12,
+      "recovery": null,
+      "feedbackHidden": true
+    },
+    {
+      "case": "upper-bound",
+      "apiExtras": 1000000000000,
+      "users": 1,
+      "recovery": null,
+      "feedbackHidden": true
+    }
+  ],
+  "pageErrors": [],
+  "npm_test": {
+    "tests": 120,
+    "pass": 120,
+    "fail": 0,
+    "skip": 0
+  },
+  "npm_build": "exit0;22datasets/1153fieldpaths;inventory current",
+  "browser": "owned loopback built dist server; headless installed chromium1243 --disable-gpu; external requests aborted; browser/context/server awaited closed"
+}

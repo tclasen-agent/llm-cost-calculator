@@ -1,0 +1,50 @@
+{
+  "kind": "independent reviewer observed terminal results; command transcripts retained in session",
+  "candidate": "5c08c21b956a896afb868a81cc0b6a013b809844",
+  "tree": "f757c60bc86a538a52570ba684d6c71585a04eca",
+  "npm_test": {
+    "passed": 123,
+    "failed": 0,
+    "skipped": 0,
+    "exit": 0
+  },
+  "npm_build": {
+    "exit": 0,
+    "datasets": 22,
+    "field_paths": 1153
+  },
+  "independent_domain_sweep": {
+    "numeric_fields": 36,
+    "invalid_cases": 258,
+    "numeric_endpoint_cases": 72,
+    "explicit_usable_fee_percentage_endpoints": 4,
+    "raw_inputs_unchanged": true,
+    "all_passed": true,
+    "limit": "numeric endpoint admission inspected separately from scenario semantic fit; not every generic high-valued endpoint is a viable scenario"
+  },
+  "full_movie_decode": {
+    "command": "ffmpeg -v error -threads 2 -i artifacts/recovery-rework-20261022/recovery-demonstration.mp4 -f null -",
+    "exit": 0,
+    "output": ""
+  },
+  "fresh_probe": {
+    "duration": 118.2,
+    "frames": 2955,
+    "width": 1440,
+    "height": 1000,
+    "codec": "h264",
+    "fps": "25/1",
+    "bytes": 6033229
+  },
+  "representative_encoded_inspection": [
+    "REC-13 midpoint",
+    "REC-15 midpoint",
+    "REC-16 midpoint",
+    "independently extracted95.5s REC-13 PASS outcome; actual recovery visible"
+  ],
+  "movie_sha256": "0abc46ee9cb1ca7c2613dbba4dba4e9d962bf0f37b23fb7858fd89946a7ce9ae",
+  "source_manifest_all69entries_match": true,
+  "before_after_candidate_manifest_equal": true,
+  "final_head_tree_unchanged": true,
+  "no_material_findings": true
+}

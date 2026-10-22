@@ -1,0 +1,133 @@
+{
+  "encodeExitCode": 0,
+  "probeExitCode": 0,
+  "decodeExitCode": 0,
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1440,
+        "height": 1000,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "25/1",
+        "nb_frames": "2955",
+        "nb_read_frames": "2955"
+      }
+    ],
+    "format": {
+      "duration": "118.200000",
+      "size": "6033229"
+    }
+  },
+  "all16BrowserCasesPassed": true,
+  "pageErrors": [],
+  "encodedFrameExtractions": [
+    {
+      "id": "REC-01",
+      "approximateSeconds": 3.42,
+      "file": "artifacts/recovery-rework-20261022/REC-01-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-02",
+      "approximateSeconds": 9.2345,
+      "file": "artifacts/recovery-rework-20261022/REC-02-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-03",
+      "approximateSeconds": 15.375,
+      "file": "artifacts/recovery-rework-20261022/REC-03-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-04",
+      "approximateSeconds": 21.499499999999998,
+      "file": "artifacts/recovery-rework-20261022/REC-04-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-05",
+      "approximateSeconds": 27.625,
+      "file": "artifacts/recovery-rework-20261022/REC-05-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-06",
+      "approximateSeconds": 34.248000000000005,
+      "file": "artifacts/recovery-rework-20261022/REC-06-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-07",
+      "approximateSeconds": 41.191,
+      "file": "artifacts/recovery-rework-20261022/REC-07-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-08",
+      "approximateSeconds": 49.215500000000006,
+      "file": "artifacts/recovery-rework-20261022/REC-08-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-09",
+      "approximateSeconds": 58.2275,
+      "file": "artifacts/recovery-rework-20261022/REC-09-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-10",
+      "approximateSeconds": 69.46549999999999,
+      "file": "artifacts/recovery-rework-20261022/REC-10-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-11",
+      "approximateSeconds": 80.74,
+      "file": "artifacts/recovery-rework-20261022/REC-11-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-12",
+      "approximateSeconds": 87.91749999999999,
+      "file": "artifacts/recovery-rework-20261022/REC-12-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-13",
+      "approximateSeconds": 93.7165,
+      "file": "artifacts/recovery-rework-20261022/REC-13-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-14",
+      "approximateSeconds": 99.794,
+      "file": "artifacts/recovery-rework-20261022/REC-14-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-15",
+      "approximateSeconds": 105.886,
+      "file": "artifacts/recovery-rework-20261022/REC-15-encoded.png",
+      "exitCode": 0
+    },
+    {
+      "id": "REC-16",
+      "approximateSeconds": 111.9865,
+      "file": "artifacts/recovery-rework-20261022/REC-16-encoded.png",
+      "exitCode": 0
+    }
+  ],
+  "ownedLoopbackPortClosed": true,
+  "portReadbackCode": 61,
+  "portReadbackErrno": "ECONNREFUSED",
+  "browserAndContextClosed": "awaited by recording script before successful process exit",
+  "rawSHA256": "1ebd157f32350e11094ce8fd1b725c99bf18837f94c1b77358d48e63671fddff",
+  "movieSHA256": "0abc46ee9cb1ca7c2613dbba4dba4e9d962bf0f37b23fb7858fd89946a7ce9ae",
+  "sourceManifestSHA256": "122b70b724f056401045fe579696629cacec525e8bb654f1d32c1c0281dbeab5",
+  "candidateDiffSHA256": "adce35876aadc32fa4cd701cdca45039482e4ddb842cf6fdc92882e52fa92284",
+  "recordScriptSHA256": "c7cbe698147fdb4c0f0048f5fcd065360152883d4cee270d860430c8d8e5a6d6"
+}

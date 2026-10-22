@@ -1,0 +1,14 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/org-review-evidence/sha256.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "327e11dd6e2c8c4b8c8dc0b3eee167d9c039db8451eef9327ff75cd544200624",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/files/agent-org~1factory~1reports~1all-project-progress~1ORG-REVIEW.md",
+      "value": "7ce137514363918438a140083dfef728f11cb5c75c83c1953c25cc17c510a0b1"
+    }
+  ]
+}

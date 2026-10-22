@@ -1,0 +1,231 @@
+{
+  "baseline": "3f356cf63586922a53ee88db5d414841ed19565a",
+  "candidateManifest": "source-candidate.json",
+  "rejectedReviewCandidate": "77e77ee",
+  "startedAt": "2026-10-22T03:41:25.477Z",
+  "finishedAt": "2026-10-22T03:43:20.508Z",
+  "origin": "http://127.0.0.1:57241",
+  "automation": "Built dist; isolated headless Chromium with disable-gpu; synthetic input fixtures; nonintercepting caption/pointer; HTTP egress limited to owned loopback server; actual UI assertions, storage and calculation checks.",
+  "inventory": [
+    {
+      "id": "REC-01",
+      "title": "Initial complete default",
+      "expected": "Buy, rent and API have finite costs",
+      "result": "PASS",
+      "detail": "",
+      "start": 0.671,
+      "end": 6.169
+    },
+    {
+      "id": "REC-02",
+      "title": "Invalid saved fee",
+      "expected": "Negative original retained; complete defaults shown",
+      "result": "PASS",
+      "detail": "",
+      "start": 6.169,
+      "end": 12.3
+    },
+    {
+      "id": "REC-03",
+      "title": "Unavailable saved model",
+      "expected": "Unknown model retained without reuse; defaults usable",
+      "result": "PASS",
+      "detail": "",
+      "start": 12.3,
+      "end": 18.45
+    },
+    {
+      "id": "REC-04",
+      "title": "Malformed saved JSON",
+      "expected": "Exact broken text retained; no page error",
+      "result": "PASS",
+      "detail": "",
+      "start": 18.45,
+      "end": 24.549
+    },
+    {
+      "id": "REC-05",
+      "title": "Invalid shared controls",
+      "expected": "Raw negative URL value retained before normalization",
+      "result": "PASS",
+      "detail": "",
+      "start": 24.549,
+      "end": 30.701
+    },
+    {
+      "id": "REC-06",
+      "title": "Back and forward recovery",
+      "expected": "Back retains invalid input; forward restores valid link",
+      "result": "PASS",
+      "detail": "",
+      "start": 30.701,
+      "end": 37.795
+    },
+    {
+      "id": "REC-07",
+      "title": "Valid older partial save",
+      "expected": "User fees and Unicode notes survive; missing defaults fill",
+      "result": "PASS",
+      "detail": "",
+      "start": 37.795,
+      "end": 44.587
+    },
+    {
+      "id": "REC-08",
+      "title": "Reset and saved reload",
+      "expected": "Default reset clears feedback; edited size survives reload",
+      "result": "PASS",
+      "detail": "",
+      "start": 44.587,
+      "end": 53.844
+    },
+    {
+      "id": "REC-09",
+      "title": "Transactional invalid edit",
+      "expected": "Oversized token edit retains last usable calculation",
+      "result": "PASS",
+      "detail": "",
+      "start": 53.844,
+      "end": 62.611
+    },
+    {
+      "id": "REC-10",
+      "title": "Enabled selectors",
+      "expected": "Task, model, buy and rental transitions keep all three costs",
+      "result": "PASS",
+      "detail": "",
+      "start": 62.611,
+      "end": 76.32
+    },
+    {
+      "id": "REC-11",
+      "title": "Training remains separate",
+      "expected": "Training inputs persist; inference stays usable on return",
+      "result": "PASS",
+      "detail": "",
+      "start": 76.32,
+      "end": 85.16
+    },
+    {
+      "id": "REC-12",
+      "title": "Recovery storage unavailable",
+      "expected": "Defaults stay usable; retention failure is explicit",
+      "result": "PASS",
+      "detail": "",
+      "start": 85.16,
+      "end": 90.675
+    },
+    {
+      "id": "REC-13",
+      "title": "Oversized saved fee",
+      "expected": "Original oversized value retained; no silent cap",
+      "result": "PASS",
+      "detail": "",
+      "start": 90.675,
+      "end": 96.758
+    },
+    {
+      "id": "REC-14",
+      "title": "Out-of-range shared percentages",
+      "expected": "100 percent values retained; no silent 99 percent estimate",
+      "result": "PASS",
+      "detail": "",
+      "start": 96.758,
+      "end": 102.83
+    },
+    {
+      "id": "REC-15",
+      "title": "Valid upper numeric endpoints",
+      "expected": "Exact maximum fee and 99 percent settings remain usable",
+      "result": "PASS",
+      "detail": "",
+      "start": 102.83,
+      "end": 108.942
+    },
+    {
+      "id": "REC-16",
+      "title": "Bounded counts and flags",
+      "expected": "Beyond-domain counts and nonbinary flag recover exactly",
+      "result": "PASS",
+      "detail": "",
+      "start": 108.942,
+      "end": 115.031
+    }
+  ],
+  "observations": [
+    {
+      "id": "REC-01",
+      "ready": true,
+      "buy": 29.188928000000004,
+      "rent": 433.68,
+      "api": 5.676,
+      "state": {
+        "frontierBasis": "benchmark",
+        "localPrefill": 300,
+        "localDecode": 30,
+        "rentalPrefill": 1414.213562373095,
+        "rentalDecode": 141.4213562373095,
+        "autoHardware": 1,
+        "overrides": "",
+        "workload": "swe",
+        "users": 1,
+        "model": "qwen80",
+        "hardware": "strix-framework-128",
+        "rental": "a6000-x2",
+        "autoRental": 1,
+        "autoModel": 1,
+        "start": "2026-09",
+        "calls": 75,
+        "input": 12000,
+        "output": 2500,
+        "concurrency": 1,
+        "usageSource": "Planning assumption: task template; replace with pilot usage.",
+        "localRph": 29.18918918918919,
+        "rentalRph": 137.59915742008494,
+        "localMemory": 60,
+        "rentalMemory": 60,
+        "localAvailable": 81.6,
+        "rentalAvailable": 86.4,
+        "localEvidence": "Planning proxy, not a benchmark. A non-fitting model makes that hardware path unavailable; no API fallback.",
+        "rentalEvidence": "Planning proxy, not a benchmark. A non-fitting model makes that hardware path unavailable; no API fallback.",
+        "localRuntime": "Planning assumption: 4-bit runtime; validate quality and deployment support",
+        "rentalRuntime": "Planning assumption: 4-bit runtime; validate quality and deployment support",
+        "quote": 3500,
+        "quoteSource": "Planning allowance for the whole system; replace with a vendor quote.",
+        "buildDetails": "Framework desktop chassis and Ryzen AI Max+ 395 / Radeon 8060S platform, 128 GB onboard RAM. SSD and OS need a complete-system quote. Vendor lists 96 GB dedicated GPU allocation; Linux can differ. Planning allowance includes a complete host and cluster networking; obtain an exact configuration.",
+        "localSetup": 280,
+        "rentalSetup": 0,
+        "localExtras": 20,
+        "rentalExtras": 50,
+        "apiExtras": 0,
+        "costSource": "Planning allowances: 8% purchase extras, $20/month local support, $50/month rental extras, $0 API extras. Not quotes.",
+        "itKwh": 46.080000000000005,
+        "coolingKwh": 11.520000000000001,
+        "energySource": "Planning assumption: 200 W per unified-memory node, 600 W workstation or 10 kW HGX; 10% idle power; cooling adds 25%. Replace with measurements.",
+        "tariff": "bill",
+        "baselineKwh": 1000,
+        "peakKw": 5,
+        "tariffConfirmed": 0,
+        "localTax": 1,
+        "billRate": 0.15953,
+        "billSource": "Planning assumption: published Dominion GS-1 marginal rate at 1,000 kWh baseline in Loudoun; account eligibility assumed. Select verified GS-1 in advanced settings or replace with your bill.",
+        "purchaseDiscount": 0,
+        "rentalDecline": 50,
+        "apiDecline": 80,
+        "priceEvidence": "Aggressive scenario: rental compute falls 50% annually; API token rates fall 80% annually, compounded monthly. Current purchase cost unchanged. These are assumptions, not provider promises.",
+        "modelRefresh": 3,
+        "hardwareRefresh": 6,
+        "lifecycleSource": "Aggressive adoption policy: reassess better/larger models every 3 months and hardware price/performance every 6 months. Treat the earlier event as the investment deadline. Hardware does not physically expire; these are competitiveness assumptions."
+      }
+    },
+    {
+      "id": "REC-02",
+      "retained": {
+        "apiExtras": -12,
+        "overrides": "apiExtras",
+        "usageSource": "Original negative fee"
+      }
+    }
+  ],
+  "pageErrors": []
+}

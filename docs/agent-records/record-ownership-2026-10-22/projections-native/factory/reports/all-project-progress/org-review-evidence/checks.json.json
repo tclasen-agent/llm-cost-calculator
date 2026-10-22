@@ -1,0 +1,23 @@
+{
+  "owner": "llm-cost-calculator",
+  "derived": true,
+  "source_path": "agent-org/factory/reports/all-project-progress/org-review-evidence/checks.json",
+  "source_head": "105c9f55b7f208b6f1717e522acfcc29f37a93eb",
+  "source_sha256": "af77c0097f93281a1b851507f677046f6f18553d7e29e153572dbbc344095078",
+  "scope": "Owner-only tracked native evidence projection; no new verification. Each selected value is verbatim JSON data at the original JSON Pointer or JSONL line. Original cumulative counts and hash-chain fields are documentary metadata; this filtered projection is not the complete original manifest or effect chain. Source snapshot hashes identify mixed originals, never the project-only Markdown projection. Media paths/hashes are metadata only; no image/video/corpus/auth payload copied.",
+  "selections": [
+    {
+      "pointer": "/project_readbacks/2",
+      "value": {
+        "project": "llm-cost-calculator",
+        "root": "/Users/Shared/llm-cost-calculator",
+        "head": "0418b3ab3b4bf4589745bcae89c4a1206796339f",
+        "tree": "f757c60bc86a538a52570ba684d6c71585a04eca",
+        "local_origin_main": "0418b3ab3b4bf4589745bcae89c4a1206796339f",
+        "status": "",
+        "remote": "https://github.com/tclasen-agent/llm-cost-calculator.git",
+        "entire_old_profile_preserved_verbatim": true
+      }
+    }
+  ]
+}
