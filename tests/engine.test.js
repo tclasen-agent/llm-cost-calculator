@@ -33,6 +33,11 @@ test('forecast changes need evidence and discount does not alter speed',()=>{con
 test('changing workload or hardware invalidates scoped benchmark evidence',()=>{const s=clearMeasurements(measured,'local');assert.equal(s.localRph,null);assert.equal(s.rentalRph,200);assert.equal(s.itKwh,null);assert.equal(clearMeasurements(measured).rentalRph,null);});
 test('URL preserves nulls, all controls, notes and selected actual instance',()=>{const s=normalize({...measured,quote:null,usageSource:'Pilot & <test> / 2026'});assert.deepEqual(decodeState(encodeState(s)),s);});
 test('legacy hypothetical URLs are rejected instead of silently trusted',()=>{assert.equal(decodeState('?scenario=1&price=8000&rental=2'),null);assert.equal(decodeState(''),null);});
+test('low-level URL normalization remains compatible for arithmetic callers',()=>{
+ const s=decodeState('?scenario=2&apiExtras=-12&overrides=apiExtras');
+ assert.equal(s.apiExtras,0);
+ assert.equal(s.overrides,'apiExtras');
+});
 test('payback ignores a temporary crossing and uses sustained late crossing',()=>{assert.equal(sustainedPayback([{buy:10,api:0},{buy:11,api:20},{buy:50,api:30}],'api'),null);assert.equal(sustainedPayback([{buy:10,api:0},{buy:10,api:20},{buy:50,api:30},{buy:50,api:70}],'api'),2.5);});
 test('long view marks the later crossing and auto extends',()=>{const r=calculate({...measured,quote:1,quoteSource:'quote',localExtras:0,tariff:'bill',billRate:0,billSource:'actual tariff',calls:10000,localRph:100000,rentalRph:100000});assert.equal(r.payback,Math.max(r.paybackApi,r.paybackRent));assert.ok(r.months>=r.payback);});
 test('every known purchase price has provenance and every model endpoint has rates',()=>{for(const h of hardware)if(h.price!==null)assert.ok(h.priceSource);for(const m of models){assert.ok(m.apiSource.includes('/endpoints'));assert.ok(m.input>0&&m.output>0);assert.ok(m.context>0);}});

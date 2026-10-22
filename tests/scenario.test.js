@@ -35,6 +35,55 @@ test('invalid saved input is recovered without mutating the rejected scenario',(
  assert.equal(loaded.recovered,true);assert.equal(loaded.result.apiReady,true);
  assert.equal(loaded.rejected,raw);assert.equal(JSON.stringify(raw),before);
 });
+test('invalid persisted numbers recover before normalization can turn them into defaults or zero',()=>{
+ for(const value of [-12,'-12',Infinity,'Infinity','not a number',' ','\t',false,{}]){
+  const raw={...defaults,apiExtras:value,overrides:'apiExtras',usageSource:'Original fee input'};
+  const loaded=initialScenario(raw);
+  assert.equal(loaded.recovered,true,`fee ${String(value)} must recover`);
+  assert.equal(loaded.rejected,raw);
+  assert.equal(raw.apiExtras,value);
+  assert.equal(loaded.result.ready,true);
+  assert.deepEqual(loaded.state,initialScenario().state);
+ }
+});
+test('unavailable saved catalog identifiers recover without reusing another configuration',()=>{
+ for(const key of ['model','hardware','rental','workload']){
+  const raw={...defaults,[key]:'retired-or-unknown-id',usageSource:'Original scope'};
+  const loaded=initialScenario(raw);
+  assert.equal(loaded.recovered,true,key);
+  assert.equal(loaded.rejected,raw);
+  assert.equal(raw[key],'retired-or-unknown-id');
+  assert.deepEqual(loaded.state,initialScenario().state);
+ }
+});
+test('malformed saved structures and text recover with their original value intact',()=>{
+ for(const raw of [null,[],42,false,'{"apiExtras":']){
+  const loaded=initialScenario(raw);
+  assert.equal(loaded.recovered,true);
+  assert.equal(loaded.rejected,raw);
+  assert.equal(loaded.result.ready,true);
+ }
+});
+test('valid older partial scenarios retain user overrides and fill missing defaults',()=>{
+ const raw={users:12,apiExtras:17,usageSource:'Pilot & café <notes>',overrides:'apiExtras,usageSource'};
+ const before=JSON.stringify(raw),loaded=initialScenario(raw);
+ assert.equal(loaded.recovered,false);assert.equal(loaded.result.ready,true);
+ assert.equal(loaded.state.users,12);assert.equal(loaded.state.apiExtras,17);
+ assert.equal(loaded.state.usageSource,raw.usageSource);
+ assert.equal(JSON.stringify(raw),before);
+});
+test('raw shared controls survive parsing until recovery and valid links remain compatible',async()=>{
+ const {readState,encodeState,decodeState}=await import('../src/sharing.js');
+ const query='?scenario=2&apiExtras=-12&overrides=apiExtras&usageSource=Original+fee';
+ const raw=readState(query),loaded=initialScenario(raw);
+ assert.equal(raw.apiExtras,'-12');assert.equal(loaded.recovered,true);
+ assert.equal(loaded.rejected,raw);assert.equal(loaded.rejected.usageSource,'Original fee');
+ assert.equal(loaded.result.ready,true);
+ const valid=changeScenario(initialScenario().state,'apiExtras',17).state;
+ assert.deepEqual(initialScenario(readState(encodeState(valid))).state,valid);
+ assert.deepEqual(decodeState(encodeState(valid)),valid);
+ assert.equal(readState('?scenario=1&apiExtras=-12'),null);
+});
 test('valid saved overrides persist and empty edits restore automatic values',()=>{
  const saved=initialScenario({...defaults,calls:123,overrides:'calls'});
  assert.equal(saved.recovered,false);assert.equal(saved.state.calls,123);

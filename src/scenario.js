@@ -15,8 +15,27 @@ export function scenarioStatus(raw){
  if(!result.rentReady)issues.push('No rental configuration fits these inputs with usable cost and performance assumptions.');
  return {state,result,valid:issues.length===0,issues};
 }
+function persistedIssues(raw){
+ if(raw===null||typeof raw!=='object'||Array.isArray(raw))return ['Saved inputs must be a scenario object.'];
+ const issues=[];
+ for(const [key,defaultValue] of Object.entries(defaults)){
+  const value=raw[key];
+  if(value===undefined)continue; // Older partial scenarios inherit missing fields.
+  if(defaultValue===null||typeof defaultValue==='number'){
+   if(value===null||value==='')continue;
+   if(!['number','string'].includes(typeof value)||(typeof value==='string'&&!value.trim())||!Number.isFinite(Number(value))||Number(value)<0)issues.push(`Saved ${key} must be a finite, nonnegative number.`);
+  }else if(typeof value!=='string')issues.push(`Saved ${key} must be text.`);
+ }
+ for(const [key,ids] of [['model',models.map(x=>x.id)],['hardware',hardware.map(x=>x.id)],['rental',rentals.map(x=>x.id)],['workload',workloads.map(x=>x[0])]]){
+  if(raw[key]!==undefined&&!ids.includes(raw[key]))issues.push(`Saved ${key} is no longer available.`);
+ }
+ if(raw.start!==undefined&&!/^20\d\d-(0[1-9]|1[0-2])$/.test(raw.start))issues.push('Saved starting month is invalid.');
+ for(const [key,options] of [['tariff',['gs1','bill']],['frontierBasis',['benchmark','call']]])if(raw[key]!==undefined&&!options.includes(raw[key]))issues.push(`Saved ${key} is invalid.`);
+ return issues;
+}
 export function initialScenario(raw=defaults){
- const candidate=scenarioStatus(raw);
+ const issues=persistedIssues(raw);
+ const candidate=issues.length?{valid:false,issues}:scenarioStatus(raw);
  if(candidate.valid)return {...candidate,recovered:false};
  const fallback=scenarioStatus(defaults);
  if(!fallback.valid)throw new Error('The maintained default scenario is invalid: '+fallback.issues.join(' '));
