@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-22",
     "frequency": "Weekly and before renting; on billing changes.",
     "source": "sources.rental and sources.rentalBilling",
     "how": "Replace published per-GPU USD/hour and full-instance resources together. Total memory and hourly price are derived. Confirm stock/region separately."

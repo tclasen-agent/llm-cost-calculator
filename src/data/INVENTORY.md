@@ -128,9 +128,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `ds41.endpoint.context_length` | 1048576 |
 | `ds41.endpoint.max_completion_tokens` | 943718 |
 | `ds41.endpoint.max_prompt_tokens` | null |
-| `ds41.endpoint.pricing.prompt` | "0.00000005" |
-| `ds41.endpoint.pricing.completion` | "0.0000006" |
-| `ds41.endpoint.pricing.input_cache_read` | "0.00000001" |
+| `ds41.endpoint.pricing.prompt` | "0.00000007" |
+| `ds41.endpoint.pricing.completion` | "0.0000005" |
+| `ds41.endpoint.pricing.input_cache_read` | "0.000000008" |
 | `glm53.name` | "Z.ai: GLM 5.3" |
 | `glm53.source` | "https://huggingface.co/zai-org/GLM-5.3" |
 | `glm53.apiModel` | "z-ai/glm-5.3" |
@@ -141,9 +141,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `glm53.endpoint.context_length` | 1048576 |
 | `glm53.endpoint.max_completion_tokens` | 943718 |
 | `glm53.endpoint.max_prompt_tokens` | null |
-| `glm53.endpoint.pricing.prompt` | "0.0000003032" |
-| `glm53.endpoint.pricing.completion` | "0.0000025146" |
-| `glm53.endpoint.pricing.input_cache_read` | "0.0000000623" |
+| `glm53.endpoint.pricing.prompt` | "0.00000055" |
+| `glm53.endpoint.pricing.completion` | "0.00000196" |
+| `glm53.endpoint.pricing.input_cache_read` | "0.00000018" |
 | `glm53flash.name` | "Z.ai: GLM 5.3 Flash" |
 | `glm53flash.source` | "https://huggingface.co/zai-org/GLM-5.3-Flash" |
 | `glm53flash.apiModel` | "z-ai/glm-5.3-flash" |
@@ -180,8 +180,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `qwen38small.endpoint.context_length` | 262144 |
 | `qwen38small.endpoint.max_completion_tokens` | 32768 |
 | `qwen38small.endpoint.max_prompt_tokens` | null |
-| `qwen38small.endpoint.pricing.prompt` | "0.000000069" |
+| `qwen38small.endpoint.pricing.prompt` | "0.000000035" |
 | `qwen38small.endpoint.pricing.completion` | "0.0000022" |
+| `qwen38small.endpoint.pricing.input_cache_read` | "0.0000000175" |
 | `minimax27.name` | "MiniMax: MiniMax M2.7" |
 | `minimax27.source` | "https://huggingface.co/MiniMaxAI/MiniMax-M2.7" |
 | `minimax27.apiModel` | "minimax/minimax-m2.7" |
@@ -204,8 +205,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `nemotron-lightning.endpoint.context_length` | 262144 |
 | `nemotron-lightning.endpoint.max_completion_tokens` | 32768 |
 | `nemotron-lightning.endpoint.max_prompt_tokens` | null |
-| `nemotron-lightning.endpoint.pricing.prompt` | "0.000000039" |
-| `nemotron-lightning.endpoint.pricing.completion` | "0.00000018" |
+| `nemotron-lightning.endpoint.pricing.prompt` | "0.000000025" |
+| `nemotron-lightning.endpoint.pricing.completion` | "0.00000012" |
+| `nemotron-lightning.endpoint.pricing.input_cache_read` | "0.0000000125" |
 | `kimi3.name` | "MoonshotAI: Kimi K3" |
 | `kimi3.source` | "https://huggingface.co/moonshotai/Kimi-K3" |
 | `kimi3.apiModel` | "moonshotai/kimi-k3" |
@@ -215,9 +217,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `kimi3.endpoint.context_length` | 1048576 |
 | `kimi3.endpoint.max_completion_tokens` | 943718 |
 | `kimi3.endpoint.max_prompt_tokens` | null |
-| `kimi3.endpoint.pricing.prompt` | "0.0000021" |
-| `kimi3.endpoint.pricing.completion` | "0.0000105" |
-| `kimi3.endpoint.pricing.input_cache_read` | "0.00000021" |
+| `kimi3.endpoint.pricing.prompt` | "0.0000003" |
+| `kimi3.endpoint.pricing.completion` | "0.000012" |
+| `kimi3.endpoint.pricing.input_cache_read` | "0.00000025" |
 | `nemotron-ultra.name` | "NVIDIA: Nemotron 3 Ultra" |
 | `nemotron-ultra.source` | "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16" |
 | `nemotron-ultra.apiModel` | "nvidia/nemotron-3-ultra-550b-a55b" |
@@ -274,9 +276,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `kimi25.endpoint.context_length` | 262144 |
 | `kimi25.endpoint.max_completion_tokens` | 235929 |
 | `kimi25.endpoint.max_prompt_tokens` | null |
-| `kimi25.endpoint.pricing.prompt` | "0.00000045" |
-| `kimi25.endpoint.pricing.completion` | "0.00000225" |
-| `kimi25.endpoint.pricing.input_cache_read` | "0.00000007" |
+| `kimi25.endpoint.pricing.prompt` | "0.0000005" |
+| `kimi25.endpoint.pricing.completion` | "0.0000025" |
+| `kimi25.endpoint.pricing.input_cache_read` | "0.00000015" |
 | `nemotron-nano.name` | "NVIDIA: Nemotron 3 Nano 30B A3B" |
 | `nemotron-nano.source` | "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16" |
 | `nemotron-nano.apiModel` | "nvidia/nemotron-3-nano-30b-a3b" |
@@ -310,7 +312,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `oss120.endpoint.max_completion_tokens` | 117964 |
 | `oss120.endpoint.max_prompt_tokens` | null |
 | `oss120.endpoint.pricing.prompt` | "0.00000003" |
-| `oss120.endpoint.pricing.completion` | "0.00000017" |
+| `oss120.endpoint.pricing.completion` | "0.000000187" |
 | `oss120.endpoint.pricing.input_cache_read` | "0.00000003" |
 | `qwen30.name` | "Qwen: Qwen3 Coder 30B A3B Instruct" |
 | `qwen30.source` | "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct" |
@@ -518,7 +520,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 
 ## [rentals.js](rentals.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-22**.
 
 **Frequency:** Weekly and before renting; on billing changes.
 
@@ -1078,27 +1080,27 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `referenceModels.4.id` | "gpt-6-sol" |
 | `referenceModels.4.name` | "GPT-6 Sol" |
 | `referenceModels.4.score` | 48 |
-| `referenceModels.4.taskCost` | 1.06 |
+| `referenceModels.4.taskCost` | 1.04 |
 | `referenceModels.4.input` | 2 |
 | `referenceModels.4.output` | 10 |
 | `referenceModels.4.source` | "https://artificialanalysis.ai/models/gpt-6-sol" |
 | `referenceModels.4.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6-sol" |
 | `referenceModels.5.id` | "gpt-6-luna" |
 | `referenceModels.5.name` | "GPT-6 Luna" |
-| `referenceModels.5.score` | 37 |
+| `referenceModels.5.score` | 38 |
 | `referenceModels.5.taskCost` | 0.07 |
 | `referenceModels.5.input` | 0.1 |
 | `referenceModels.5.output` | 0.5 |
 | `referenceModels.5.source` | "https://artificialanalysis.ai/models/gpt-6-luna" |
 | `referenceModels.5.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6-luna" |
 | `selectedBenchmarks.ds41.score` | 39 |
-| `selectedBenchmarks.ds41.taskCost` | 0.27 |
+| `selectedBenchmarks.ds41.taskCost` | 0.4 |
 | `selectedBenchmarks.ds41.variant` | "max reasoning" |
 | `selectedBenchmarks.glm53.score` | 45 |
 | `selectedBenchmarks.glm53.taskCost` | 2.01 |
 | `selectedBenchmarks.glm53.variant` | "max reasoning" |
 | `selectedBenchmarks.glm53flash.score` | 42 |
-| `selectedBenchmarks.glm53flash.taskCost` | 0.25 |
+| `selectedBenchmarks.glm53flash.taskCost` | 0.28 |
 | `selectedBenchmarks.glm53flash.variant` | "AA evaluated configuration" |
 | `selectedBenchmarks.qwen38large.score` | 40 |
 | `selectedBenchmarks.qwen38large.taskCost` | 2.16 |
@@ -1110,7 +1112,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `selectedBenchmarks.kimi3.taskCost` | 2 |
 | `selectedBenchmarks.kimi3.variant` | "max reasoning" |
 | `selectedBenchmarks.nemotron-ultra.score` | 23 |
-| `selectedBenchmarks.nemotron-ultra.taskCost` | 0.6 |
+| `selectedBenchmarks.nemotron-ultra.taskCost` | 0.47 |
 | `selectedBenchmarks.nemotron-ultra.variant` | "reasoning" |
 | `selectedBenchmarks.nemotron-super.score` | 13 |
 | `selectedBenchmarks.nemotron-super.taskCost` | 1.64 |
@@ -1122,14 +1124,14 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `selectedBenchmarks.oss120.taskCost` | 0.11 |
 | `selectedBenchmarks.oss120.variant` | "high reasoning" |
 | `selectedBenchmarks.nemotron-lightning.score` | 13 |
-| `selectedBenchmarks.nemotron-lightning.taskCost` | 0.1 |
+| `selectedBenchmarks.nemotron-lightning.taskCost` | 0.08 |
 | `selectedBenchmarks.nemotron-lightning.variant` | "AA evaluated configuration" |
 | `selectedBenchmarks.minimax27.score` | 23 |
 | `selectedBenchmarks.minimax27.taskCost` | 0.1 |
 | `selectedBenchmarks.minimax27.variant` | "reasoning" |
 | `selectedBenchmarks.minimax27.source` | "https://artificialanalysis.ai/models/minimax-m2-7" |
 | `selectedBenchmarks.qwen80.score` | 9 |
-| `selectedBenchmarks.qwen80.taskCost` | 0.55 |
+| `selectedBenchmarks.qwen80.taskCost` | 0.47 |
 | `selectedBenchmarks.qwen80.variant` | "non-reasoning" |
 | `selectedBenchmarks.qwen80.source` | "https://artificialanalysis.ai/models/qwen3-coder-next/" |
 | `selectedBenchmarks.oss20.score` | 9 |

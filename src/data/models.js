@@ -3,6 +3,7 @@
  * Source: sources.api; each model source and its /endpoints API
  * Review frequency: Weekly; immediately on endpoint, price or model changes.
  * Update: Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card.
+ * 2026-10-22 partial review: qwen38large DeepInfra/fp4 and qwen30 Novita/fp8 were absent from current endpoint listings. Their historical tuples and dataset review date are retained.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
@@ -27,9 +28,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000005",
-          "completion": "0.0000006",
-          "input_cache_read": "0.00000001"
+          "prompt": "0.00000007",
+          "completion": "0.0000005",
+          "input_cache_read": "0.000000008"
         }
       }
     },
@@ -46,9 +47,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000003032",
-          "completion": "0.0000025146",
-          "input_cache_read": "0.0000000623"
+          "prompt": "0.00000055",
+          "completion": "0.00000196",
+          "input_cache_read": "0.00000018"
         }
       }
     },
@@ -103,8 +104,9 @@ export default {
         "max_completion_tokens": 32768,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.000000069",
-          "completion": "0.0000022"
+          "prompt": "0.000000035",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000000175"
         }
       }
     },
@@ -139,8 +141,9 @@ export default {
         "max_completion_tokens": 32768,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.000000039",
-          "completion": "0.00000018"
+          "prompt": "0.000000025",
+          "completion": "0.00000012",
+          "input_cache_read": "0.0000000125"
         }
       }
     },
@@ -156,9 +159,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000021",
-          "completion": "0.0000105",
-          "input_cache_read": "0.00000021"
+          "prompt": "0.0000003",
+          "completion": "0.000012",
+          "input_cache_read": "0.00000025"
         }
       }
     },
@@ -245,9 +248,9 @@ export default {
         "max_completion_tokens": 235929,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000045",
-          "completion": "0.00000225",
-          "input_cache_read": "0.00000007"
+          "prompt": "0.0000005",
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000015"
         }
       }
     },
@@ -299,7 +302,7 @@ export default {
         "max_prompt_tokens": null,
         "pricing": {
           "prompt": "0.00000003",
-          "completion": "0.00000017",
+          "completion": "0.000000187",
           "input_cache_read": "0.00000003"
         }
       }

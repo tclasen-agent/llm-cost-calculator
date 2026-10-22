@@ -43,3 +43,12 @@ test('long view marks the later crossing and auto extends',()=>{const r=calculat
 test('every known purchase price has provenance and every model endpoint has rates',()=>{for(const h of hardware)if(h.price!==null)assert.ok(h.priceSource);for(const m of models){assert.ok(m.apiSource.includes('/endpoints'));assert.ok(m.input>0&&m.output>0);assert.ok(m.context>0);}});
 test('unsourced quote cannot silently use the MSRP for a recommendation',()=>{const r=calculate({...measured,quote:100,quoteSource:''});assert.equal(r.ready,false);assert.equal(r.capital,null);});
 test('unsourced future rates cannot produce a total projection',()=>{const r=calculate({...measured,apiDecline:30,priceEvidence:''});assert.equal(r.first.apiMonthly,null);assert.equal(r.first.buyMonthly,null);assert.equal(r.first.rentMonthly,null);});
+
+test('refreshed selected-provider price pair bills uncached input and output together',()=>{
+ const r=calculate({...measured,model:'ds41'});
+ assert.equal(r.m.providerTag,'relace');
+ assert.equal(r.first.requests,2200);
+ // 2.2M input tokens at $0.07/M plus 1.1M output tokens at $0.50/M.
+ assert.ok(Math.abs(r.first.apiUsage-.704)<1e-12);
+ assert.notEqual(r.first.apiUsage,2200*(1000*.008+500*.5)/1e6);
+});
