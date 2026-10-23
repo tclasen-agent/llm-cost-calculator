@@ -1,0 +1,297 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP-000304 NEW model-audit304/** evidence/proposal only; source/application/userstate read-only",
+  "Affected Paths or Resources": "public primary-source unauthenticated metadata GET attempts and this audit prefix",
+  "Owning Role": "Researcher /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owning AGENTS requirements 1\u20139",
+  "Related Tasks": "TASK-000165 / RUN-000160 plan revision 7",
+  "Approval Requirements": "APP-000304; independent APP305 and separately admitted implementation/normal PR/main delivery remain pending",
+  "frozen_utc": "2026-10-23T07:43:23.789375+00:00",
+  "status": "incomplete audit; frozen; ALL STOP",
+  "delivery": "local only; root owns independent review and normal owning-public-repo delivery",
+  "files": [
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/AUDIT.md",
+      "sha256": "7be3a8fa002e2210d4232f7b75b2b23c09a545e5b197a60fae3bd636696cd5b2",
+      "bytes": 5248,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/CHANGE-PROPOSAL.md",
+      "sha256": "7f20fd56f7c59a7bf1adb76e04a24258a3c62a897451f22bc2aa259314f6ee4d",
+      "bytes": 2653,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/HANDOFF.md",
+      "sha256": "e0a264ad1908f1f14f52301422bdabe7e1f5015a43c6b2d8a7d6a853cf54835b",
+      "bytes": 3344,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/audit-matrix.json",
+      "sha256": "f804b82ef2bfdb92ceb741b1f2f7bc60021d48bfc25e27af26a2050a9862f081",
+      "bytes": 24926,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/collect.py",
+      "sha256": "4646cb9218a6708988847577983715b07b371a528d7ae14ebe742bcefb7b4740",
+      "bytes": 3141,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/freeze.py",
+      "sha256": "2b19c356ce2177c0cf1fd8c054c74b1ba1f8925e9761d518be0658d9a89c2419",
+      "bytes": 11905,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/deepseek-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/deepseek-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/ds41-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/ds41-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/glm53-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/glm53-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/glm53flash-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/glm53flash-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/granite42-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/granite42-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/kimi25-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/kimi25-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/kimi3-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/kimi3-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/minimax-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/minimax-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/minimax27-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/minimax27-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-lightning-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-lightning-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-nano-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-nano-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-super-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-super-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-ultra-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/nemotron-ultra-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/oss120-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/oss120-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/oss20-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/oss20-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen30-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen30-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen38large-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen38large-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen38small-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen38small-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen80-endpoints.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/raw/qwen80-model-card.json",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/source-baseline.json",
+      "sha256": "49256a34d2fc5ca5dc24c07d700594f4910a1586ff902601ac2de18344ecf087",
+      "bytes": 2341,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/source-evidence.json",
+      "sha256": "b4e7e0384b15de23ea83a3e574d9a8ed89f45b58fa08c3051e75505360fe29e4",
+      "bytes": 23805,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/web-observation.json",
+      "sha256": "26a45d6d7b61e4c393bf1497d85238ab25b0827e03316e69edc2435b961e32de",
+      "bytes": 1605,
+      "mode": "0o644"
+    }
+  ]
+}

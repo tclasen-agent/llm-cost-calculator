@@ -1,0 +1,38 @@
+{
+  "status": "PASS_CUMULATIVE_TARGETED_BROWSER",
+  "first_result": "FAIL new derivedfloatstrictassertion,12journeys/347transitionsPASS; retained",
+  "retry_result": "3remainingjourneys/1transitionPASS, exactrawstrings and1e-12 derivedfloat tolerance",
+  "total_qualified_journeys": 15,
+  "total_selector_transitions": 348,
+  "processes": [
+    {
+      "pid": 35690,
+      "exit": {
+        "code": 0,
+        "signal": null,
+        "time": "2026-10-23T08:19:31.676Z"
+      },
+      "absent": true,
+      "port_closed": "ECONNREFUSED",
+      "started": "2026-10-23T08:18:06.075Z",
+      "finished": "2026-10-23T08:19:31.719Z"
+    },
+    {
+      "pid": 35877,
+      "exit": {
+        "code": 0,
+        "signal": null,
+        "time": "2026-10-23T08:21:32.523Z"
+      },
+      "absent": true,
+      "port_closed": "ECONNREFUSED",
+      "started": "2026-10-23T08:21:30.327Z",
+      "finished": "2026-10-23T08:21:32.535Z"
+    }
+  ],
+  "bounds": "each own180swatchdog+15closure; no continuousaggregate240claim",
+  "source_candidate_sha256": "a7d1fdb976351e4785298b693ea36179555c18eb7b771e103feb88831c19afd7",
+  "new_output_bytes": 120388686,
+  "free_bytes": 614400000000,
+  "observed": "2026-10-23T08:23:26.952694+00:00"
+}
