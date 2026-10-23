@@ -1,0 +1,61 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP-000306 NEW model-recovery306/** public source audit/proposals only; APP304 and all src/application/userstate read-only",
+  "Affected Paths or Resources": "38 unauthenticated primary-source metadata GETs, one web metadata query, this NEW prefix",
+  "Owning Role": "Researcher /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owning AGENTS requirements1\u20139 and canonical weekly model review",
+  "Related Tasks": "TASK-000165 / RUN-000160 plan revision8",
+  "Approval Requirements": "APP-000306; independent305, separate implementation admission and normal owning-public-repository delivery pending",
+  "head": "7071c89bf1832b07b6066889c381ef7d10979d20",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "295d29e4310d32c14c2a63ebc02545476feb5f860b2e35242e3d6596ac1a9fb8",
+      "bytes": 3916,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/README.md",
+      "sha256": "5d01b31447b7c2814dfdc784f838261adfaf5879a79522d75ac64aa99ff66b93",
+      "bytes": 12769,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/models.js",
+      "sha256": "872d1fd82312e4a347ff69db3b704a79043d19423a8ef66831f87b356e1413e0",
+      "bytes": 12969,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/registry.js",
+      "sha256": "936e96390303b4bea3db67c01eae55db9f8ea42bf1f512d7f35e98b4a51423b3",
+      "bytes": 1807,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/index.js",
+      "sha256": "ff5a6a189375c6ba8141db5216a3477af65b4494a6f6f468fc4aa8348a3a2a53",
+      "bytes": 4753,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/sources.js",
+      "sha256": "5f83fc6e14bcba0c82e7142bd2618ad6c2a36cd5268238df46928617dfafc5a9",
+      "bytes": 2767,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/frontier.js",
+      "sha256": "9d0dea90de960ed65c23dcb60019ead609dd83bcfa4ae3743d9c561ab54185d9",
+      "bytes": 6445,
+      "mode": "0o644"
+    }
+  ],
+  "prior304_candidate": {
+    "path": "docs/agent-records/next-milestone-2026-10-22/model-audit304/CANDIDATE.json",
+    "sha256": "e17c4825ea71267b37f7f1b9464429673b932e4a2bae56a8d20b9e160ef38ff4",
+    "bytes": 12204,
+    "mode": "0o644"
+  }
+}
