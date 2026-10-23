@@ -1,0 +1,642 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP-000304 NEW model-audit304/** evidence/proposal only; source/application/userstate read-only",
+  "Affected Paths or Resources": "public primary-source unauthenticated metadata GET attempts and this audit prefix",
+  "Owning Role": "Researcher /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owning AGENTS requirements 1\u20139",
+  "Related Tasks": "TASK-000165 / RUN-000160 plan revision 7",
+  "Approval Requirements": "APP-000304; independent APP305 and separately admitted implementation/normal PR/main delivery remain pending",
+  "source_baseline": {
+    "path": "src/data/models.js",
+    "sha256": "872d1fd82312e4a347ff69db3b704a79043d19423a8ef66831f87b356e1413e0",
+    "bytes": 12969,
+    "mode": "0o644"
+  },
+  "current_fact_coverage": "incomplete",
+  "models": [
+    {
+      "id": "ds41",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "deepseek/deepseek-v4.1-flash",
+      "model_card_source": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Relace",
+        "tag": "relace",
+        "quantization": "unknown",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000007",
+          "completion": "0.0000005",
+          "input_cache_read": "0.000000008"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "glm53",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "z-ai/glm-5.3",
+      "model_card_source": "https://huggingface.co/zai-org/GLM-5.3",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Inceptron",
+        "tag": "inceptron/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000055",
+          "completion": "0.00000196",
+          "input_cache_read": "0.00000018"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "glm53flash",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "z-ai/glm-5.3-flash",
+      "model_card_source": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Z.AI",
+        "tag": "z-ai/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000005",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "qwen38large",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "qwen/qwen3.8-2.4t-a95b",
+      "model_card_source": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-2.4t-a95b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "qwen38small",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "qwen/qwen3.8-27b",
+      "model_card_source": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000035",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000000175"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "minimax27",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "minimax/minimax-m2.7",
+      "model_card_source": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.7/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Minimax",
+        "tag": "minimax/fp8",
+        "quantization": "fp8",
+        "context_length": 204800,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "input_cache_read": "0.00000006"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "nemotron-lightning",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "nvidia/nemotron-3.5-lightning",
+      "model_card_source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-lightning/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/int4",
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000025",
+          "completion": "0.00000012",
+          "input_cache_read": "0.0000000125"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "kimi3",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "moonshotai/kimi-k3",
+      "model_card_source": "https://huggingface.co/moonshotai/Kimi-K3",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Relace",
+        "tag": "relace/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000012",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "nemotron-ultra",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "nvidia/nemotron-3-ultra-550b-a55b",
+      "model_card_source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000001"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "nemotron-super",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "nvidia/nemotron-3-super-120b-a12b",
+      "model_card_source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-super-120b-a12b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000085",
+          "completion": "0.0000004"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "minimax",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "minimax/minimax-m2.5",
+      "model_card_source": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.5/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Venice",
+        "tag": "venice",
+        "quantization": "unknown",
+        "context_length": 198000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000027",
+          "completion": "0.00000095",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "qwen80",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "qwen/qwen3-coder-next",
+      "model_card_source": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-next/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Parasail",
+        "tag": "parasail/bf16",
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000012",
+          "completion": "0.0000008",
+          "input_cache_read": "0.00000007"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "kimi25",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "moonshotai/kimi-k2.5",
+      "model_card_source": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k2.5/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/int4",
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000015"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "nemotron-nano",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "nvidia/nemotron-3-nano-30b-a3b",
+      "model_card_source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Novita",
+        "tag": "novita/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000002"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "deepseek",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "deepseek/deepseek-v3.2",
+      "model_card_source": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v3.2/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "quantization": "fp4",
+        "context_length": 163840,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000026",
+          "completion": "0.00000038",
+          "input_cache_read": "0.00000013"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "oss120",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "openai/gpt-oss-120b",
+      "model_card_source": "https://huggingface.co/openai/gpt-oss-120b",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "AkashML",
+        "tag": "akashml/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.000000187",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "qwen30",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "qwen/qwen3-coder-30b-a3b-instruct",
+      "model_card_source": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-30b-a3b-instruct/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "Novita",
+        "tag": "novita/fp8",
+        "quantization": "fp8",
+        "context_length": 160000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000007",
+          "completion": "0.00000027"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "Web tool extractor showed no selected Novita/fp8 row; original HTTP bytes unavailable, so provisional only."
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "oss20",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "openai/gpt-oss-20b",
+      "model_card_source": "https://huggingface.co/openai/gpt-oss-20b",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/openai/gpt-oss-20b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "AkashML",
+        "tag": "akashml/fp4",
+        "quantization": "fp4",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000002",
+          "completion": "0.0000001"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    },
+    {
+      "id": "granite42",
+      "maintained_snapshot_reviewed": "2026-09-27",
+      "apiModel": "ibm-granite/granite-4.2-8b",
+      "model_card_source": "https://huggingface.co/ibm-granite/granite-4.2-8b",
+      "endpoint_source": "https://openrouter.ai/api/v1/models/ibm-granite/granite-4.2-8b/endpoints",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000025",
+          "input_cache_read": "0.000000015"
+        }
+      },
+      "current_observation": {
+        "provider_name": null,
+        "tag": null,
+        "quantization": null,
+        "pricing": null,
+        "context_length": null,
+        "max_completion_tokens": null,
+        "max_prompt_tokens": null,
+        "status": null,
+        "reason": "DNS failure; not reverified"
+      },
+      "model_card_review": "unknown; metadata request failed DNS, evaluation/identity/license/architecture not reverified",
+      "action": "retain all values and historical date; obtain fresh raw primary-source evidence before changes"
+    }
+  ]
+}

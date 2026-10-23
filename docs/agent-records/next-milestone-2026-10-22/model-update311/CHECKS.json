@@ -1,0 +1,59 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP311 only two glm53 rate leaves/generated inventory/one data test/new311 evidence",
+  "Affected Paths or Resources": "src/data/models.js; src/data/INVENTORY.md; tests/data.test.js; model-update311/**",
+  "Owning Role": "Developer /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owningAGENTS1\u20139",
+  "Related Tasks": "TASK-000165 / RUN-000160 revision10",
+  "Approval Requirements": "APP311; fresh affected305/rootbrowser/normal owning PR/main/live pending",
+  "observed_utc": "2026-10-23T08:16:15.547088+00:00",
+  "outcome": "PASS",
+  "model_diff": "exactly admitted2 price string leaves; full parsed models equal baseline after reverting those leaves; raw file bytes reconstruct baseline",
+  "inventory_diff": "exactly2 generated value rows; reverting2 rows reproduces baseline SHA256",
+  "test_diff": "exactly1 added meaningful test; removing it reproduces baseline SHA256",
+  "source_tuple": "entire selected endpoint equals305-qualified306 proposed row",
+  "protected_evidence": "all304/306 candidate pins/members/modes and305 report/map pins unchanged",
+  "canonical_inventory": "npm run data:inventory exit0;22 datasets1155distinctfieldpaths; npm test/build both data:check passed",
+  "test_outcome": "260 tests passed,0 failed after1 diagnosed new-test floating-point assertion correction",
+  "commands": [
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 2.0713037499808706,
+      "finished_utc": "2026-10-23T08:14:26.652189+00:00",
+      "log": "test-initial-failure.log",
+      "diagnosis": "Strict equality on binary floating-point USD/million conversion; use1e-12 tolerance consistent with existing fractional-price tests. Exact raw price strings remain strict."
+    },
+    {
+      "command": [
+        "npm",
+        "test"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.121530791046098,
+      "finished_utc": "2026-10-23T08:14:51.415767+00:00",
+      "log": "test.log"
+    },
+    {
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.823856542003341,
+      "finished_utc": "2026-10-23T08:14:52.240036+00:00",
+      "log": "build.log"
+    }
+  ],
+  "cumulative_test_build_seconds": 5.0166910830303095,
+  "resource_bound_seconds": 600,
+  "network_requests": 0,
+  "browser": "not run; root owns",
+  "delivery": "pending root independent review/normal owning PR/main/live",
+  "procedural_deviation": "One unnecessary read-only git status during initial inspection despite no-Git instruction; no mutation and no subsequent Git commands."
+}

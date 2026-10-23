@@ -47,9 +47,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000055",
+          "prompt": "0.0000004",
           "completion": "0.00000196",
-          "input_cache_read": "0.00000018"
+          "input_cache_read": "0.00000012"
         }
       }
     },

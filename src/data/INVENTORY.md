@@ -141,9 +141,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `glm53.endpoint.context_length` | 1048576 |
 | `glm53.endpoint.max_completion_tokens` | 943718 |
 | `glm53.endpoint.max_prompt_tokens` | null |
-| `glm53.endpoint.pricing.prompt` | "0.00000055" |
+| `glm53.endpoint.pricing.prompt` | "0.0000004" |
 | `glm53.endpoint.pricing.completion` | "0.00000196" |
-| `glm53.endpoint.pricing.input_cache_read` | "0.00000018" |
+| `glm53.endpoint.pricing.input_cache_read` | "0.00000012" |
 | `glm53flash.name` | "Z.ai: GLM 5.3 Flash" |
 | `glm53flash.source` | "https://huggingface.co/zai-org/GLM-5.3-Flash" |
 | `glm53flash.apiModel` | "z-ai/glm-5.3-flash" |

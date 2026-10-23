@@ -1,0 +1,60 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP-000306 NEW model-recovery306/** public source audit/proposals only; APP304 and all src/application/userstate read-only",
+  "Affected Paths or Resources": "38 unauthenticated primary-source metadata GETs, one web metadata query, this NEW prefix",
+  "Owning Role": "Researcher /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owning AGENTS requirements1\u20139 and canonical weekly model review",
+  "Related Tasks": "TASK-000165 / RUN-000160 plan revision8",
+  "Approval Requirements": "APP-000306; independent305, separate implementation admission and normal owning-public-repository delivery pending",
+  "implementation_status": "PROPOSAL ONLY; no source edit",
+  "canonical_owner": "src/data/models.js",
+  "minimal_changes": [
+    {
+      "id": "glm53",
+      "identity_policy": "Preserve existing Inceptron/inceptron/fp4/fp4 tuple; coherent entire selected endpoint object revalidated atomically",
+      "raw_source": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3/endpoints",
+      "raw_observed_utc": "2026-10-23T08:00:56.106376+00:00",
+      "raw_json_path": "raw/glm53-endpoints.body",
+      "raw_json_sha256": "1a9341cf7e94c61c0e96758087eca8493e5abbf3fbcdaaff97f1f0736e1da377",
+      "raw_json_pointer": "/data/endpoints/9",
+      "leaf_changes": [
+        {
+          "field": "endpoint.pricing.prompt",
+          "maintained": "0.00000055",
+          "observed": "0.0000004"
+        },
+        {
+          "field": "endpoint.pricing.input_cache_read",
+          "maintained": "0.00000018",
+          "observed": "0.00000012"
+        }
+      ],
+      "proposed_endpoint": {
+        "provider_name": "Inceptron",
+        "tag": "inceptron/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000004",
+          "completion": "0.00000196",
+          "input_cache_read": "0.00000012"
+        }
+      },
+      "raw_status": 0,
+      "raw_discount": 0,
+      "raw_service_tier": null
+    }
+  ],
+  "preserve": [
+    "all stable IDs/apiModel/provider/tag/precision/context/output/prompt limits",
+    "all other endpoint price leaves",
+    "qwen30 historical Novita/fp8 gap",
+    "all model cards/evaluation prose",
+    "models maintenance.reviewed and global/full-audit dates",
+    "hardware/defaults/memory/benchmarks/user measurements"
+  ],
+  "partial_metadata_option": "Optional separately admitted per-model endpoint reviewedOn/source/evidence receipt references in canonical models.js only; do not imply whole-model or dataset review. Existing schema changes require independent design/test review."
+}

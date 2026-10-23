@@ -1,0 +1,86 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP311 only two glm53 rate leaves/generated inventory/one data test/new311 evidence",
+  "Affected Paths or Resources": "src/data/models.js; src/data/INVENTORY.md; tests/data.test.js; model-update311/**",
+  "Owning Role": "Developer /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owningAGENTS1\u20139",
+  "Related Tasks": "TASK-000165 / RUN-000160 revision10",
+  "Approval Requirements": "APP311; fresh affected305/rootbrowser/normal owning PR/main/live pending",
+  "frozen_utc": "2026-10-23T08:16:15.553543+00:00",
+  "status": "frozen; ALL STOP; implementation only, independent affected review/browser/delivery pending",
+  "files": [
+    {
+      "path": "src/data/models.js",
+      "sha256": "f8116cbae764c5195a8f5dd7903233868a9fc892f0e72728e02b019ba5529f69",
+      "bytes": 12968,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/INVENTORY.md",
+      "sha256": "74c34daa30853b04635bba4acb33c2e21aa37ed88d59fb536c782785981cb7c8",
+      "bytes": 72205,
+      "mode": "0o644"
+    },
+    {
+      "path": "tests/data.test.js",
+      "sha256": "5efa375351c1eff119182d20879e54f53bd55ac27da5862224983a90c1afac13",
+      "bytes": 7652,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/CHECKS.json",
+      "sha256": "f8e45f43cb0e53431881b2716236f909bff1268ed158c776e37f7b68f72b539c",
+      "bytes": 2710,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/HANDOFF.md",
+      "sha256": "e19c5b85d24643008efaa066f751d710aa5750f7986dca3df7991a0578fd4613",
+      "bytes": 3103,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/IMPLEMENTATION.md",
+      "sha256": "032cad2f3a79ca31a704b7fa28038a497c5087e35430b115864db90ff279b726",
+      "bytes": 1978,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/SOURCE.json",
+      "sha256": "4d1ac252362dd232bfd21e2555892122aebe4add83c0642d46f3e776419b0cc5",
+      "bytes": 14110,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/build.log",
+      "sha256": "7e2ea09880575944deee33889857edf09c563036a746b798fc32bc4ef4bb49d1",
+      "bytes": 1654,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/commands.json",
+      "sha256": "704d9c91b51a21b50f8590d6ed70c58847a912e3ab72bf185a648523c92bb7e3",
+      "bytes": 824,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/freeze.py",
+      "sha256": "6e8988a265e47b973a87bf18980f1b0aeb4311d6c2e98fd9d83fe6b97ba42536",
+      "bytes": 9066,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/test-initial-failure.log",
+      "sha256": "7dc5ef7787c5355bf2741c7b46f4e169ce9e6fd4e020a6ecee1600d988fb800c",
+      "bytes": 25685,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/model-update311/test.log",
+      "sha256": "1520ea331c593250c011954551d6acd4d3c63d732b5afef4ba94783e3f8513fc",
+      "bytes": 24746,
+      "mode": "0o644"
+    }
+  ]
+}

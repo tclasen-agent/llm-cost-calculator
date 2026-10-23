@@ -1,0 +1,1352 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP-000306 NEW model-recovery306/** public source audit/proposals only; APP304 and all src/application/userstate read-only",
+  "Affected Paths or Resources": "38 unauthenticated primary-source metadata GETs, one web metadata query, this NEW prefix",
+  "Owning Role": "Researcher /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owning AGENTS requirements1\u20139 and canonical weekly model review",
+  "Related Tasks": "TASK-000165 / RUN-000160 plan revision8",
+  "Approval Requirements": "APP-000306; independent305, separate implementation admission and normal owning-public-repository delivery pending",
+  "models": [
+    {
+      "id": "ds41",
+      "apiModel": "deepseek/deepseek-v4.1-flash",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Relace",
+        "tag": "relace",
+        "quantization": "unknown",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000007",
+          "completion": "0.0000005",
+          "input_cache_read": "0.000000008"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:56.019387+00:00",
+      "raw_json_sha256": "c32783efb20e39716cf2011a2ce5805f077794d29833f6f84e832a28a6647fa3",
+      "raw_json_path": "raw/ds41-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/1",
+      "endpoint_rows_observed": 40,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Relace",
+        "tag": "relace",
+        "quantization": "unknown",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000007",
+          "completion": "0.0000005",
+          "input_cache_read": "0.000000008"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+        "raw_source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash/raw/main/README.md",
+        "raw_path": "raw/ds41-card.body",
+        "observed_utc": "2026-10-23T08:01:00.324698+00:00",
+        "sha256": "347c9db4e5506acb531cbc3b724407ab88e9af8781679152f0823d7bac16d251",
+        "identity_line_pointers": [
+          7,
+          40,
+          45,
+          47,
+          49
+        ],
+        "license_frontmatter_observed": {
+          "license": "mit"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            109,
+            111,
+            115,
+            128,
+            131
+          ],
+          "result": "Vendor table supports maintained DeepSWE1.1 and CyberGym values at max effort; harness/settings caveats retained. Vendor report, not independent measurement."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "glm53",
+      "apiModel": "z-ai/glm-5.3",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Inceptron",
+        "tag": "inceptron/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000055",
+          "completion": "0.00000196",
+          "input_cache_read": "0.00000018"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:56.106376+00:00",
+      "raw_json_sha256": "1a9341cf7e94c61c0e96758087eca8493e5abbf3fbcdaaff97f1f0736e1da377",
+      "raw_json_path": "raw/glm53-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/9",
+      "endpoint_rows_observed": 48,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Inceptron",
+        "tag": "inceptron/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000004",
+          "completion": "0.00000196",
+          "input_cache_read": "0.00000012"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [
+        {
+          "field": "endpoint.pricing.prompt",
+          "maintained": "0.00000055",
+          "observed": "0.0000004"
+        },
+        {
+          "field": "endpoint.pricing.input_cache_read",
+          "maintained": "0.00000018",
+          "observed": "0.00000012"
+        }
+      ],
+      "disposition": "propose atomic same-provider owned-field refresh",
+      "card": {
+        "canonical_url": "https://huggingface.co/zai-org/GLM-5.3",
+        "raw_source_url": "https://huggingface.co/zai-org/GLM-5.3/raw/main/README.md",
+        "raw_path": "raw/glm53-card.body",
+        "observed_utc": "2026-10-23T08:01:00.452260+00:00",
+        "sha256": "ed1c0a4563c437a32f8953d637a1db9bd831de1b24bd3062a5ace9e04340b1cf",
+        "identity_line_pointers": [
+          7,
+          11,
+          13,
+          15,
+          16
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "glm-5.3"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            22,
+            32,
+            35,
+            55,
+            66,
+            69
+          ],
+          "result": "Vendor table supports maintained CyberGym and Toolathlon Verified values; benchmark settings are source-specific. No cross-provider quality guarantee."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "glm53flash",
+      "apiModel": "z-ai/glm-5.3-flash",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Z.AI",
+        "tag": "z-ai/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000005",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:56.182582+00:00",
+      "raw_json_sha256": "36e3f39a2f8ee90942f93b4a004dba8ad96f40c4614aac5b7372e43ea60467c6",
+      "raw_json_path": "raw/glm53flash-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/33",
+      "endpoint_rows_observed": 37,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Z.AI",
+        "tag": "z-ai/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000015",
+          "completion": "0.0000005",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+        "raw_source_url": "https://huggingface.co/zai-org/GLM-5.3-Flash/raw/main/README.md",
+        "raw_path": "raw/glm53flash-card.body",
+        "observed_utc": "2026-10-23T08:01:00.570966+00:00",
+        "sha256": "e6c5d41400e28f5a89418a0d15b09b9c113314a7553d40d7d4a8a72fcdb87d02",
+        "identity_line_pointers": [
+          10,
+          18,
+          20,
+          25,
+          27
+        ],
+        "license_frontmatter_observed": {
+          "license": "mit"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            25,
+            29,
+            45,
+            50,
+            52,
+            53,
+            55
+          ],
+          "result": "README supports multimodality and coding/tool evaluation methodology. Score chart is an external image not fetched; no new numeric quality claim. Lower current selected endpoint prices are independently in endpoint receipts, not inferred from vendor comparison prose."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "qwen38large",
+      "apiModel": "qwen/qwen3.8-2.4t-a95b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-2.4t-a95b/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:56.265937+00:00",
+      "raw_json_sha256": "320cf5ae893a48887f8b5b72773e92cbe8a6116c4b4405f089e44220b82f68da",
+      "raw_json_path": "raw/qwen38large-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/2",
+      "endpoint_rows_observed": 5,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/fp8",
+        "quantization": "fp8",
+        "context_length": 1048576,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000002",
+          "completion": "0.000006",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+        "raw_source_url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B/raw/main/README.md",
+        "raw_path": "raw/qwen38large-card.body",
+        "observed_utc": "2026-10-23T08:01:00.694377+00:00",
+        "sha256": "7690c680c2d6eb284179ef5dd4db63260d248531cae9087b09b2c2200230f331",
+        "identity_line_pointers": [
+          9,
+          21,
+          346,
+          353,
+          392
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "qwen3.8-max",
+          "license_link": "LICENSE"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            9,
+            25,
+            28,
+            41,
+            67,
+            222,
+            263
+          ],
+          "result": "Identity and published coding/reasoning/tool/instruction-following evaluations supported by README text/tables. Cluster-scale wording remains editorial planning context, not measured compatibility."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "qwen38small",
+      "apiModel": "qwen/qwen3.8-27b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000035",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000000175"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:56.342409+00:00",
+      "raw_json_sha256": "da25108e68ee1190d7c0a21f770266ebc24f86750d55d0f0dd7e16eba2eda083",
+      "raw_json_path": "raw/qwen38small-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/1",
+      "endpoint_rows_observed": 21,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000035",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000000175"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+        "raw_source_url": "https://huggingface.co/Qwen/Qwen3.8-27B/raw/main/README.md",
+        "raw_path": "raw/qwen38small-card.body",
+        "observed_utc": "2026-10-23T08:01:00.827881+00:00",
+        "sha256": "57e4bdb258ee1a7d2635c5174ebd4e56abe392505cdb5f8bbb356b0dc4293641",
+        "identity_line_pointers": [
+          7,
+          16,
+          20,
+          24,
+          72
+        ],
+        "license_frontmatter_observed": {
+          "license": "apache-2.0"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            7,
+            20,
+            56,
+            142,
+            177,
+            179
+          ],
+          "result": "Identity and general compact dense/coding/reasoning/instruction-following description supported. No leadership ranking or measured runtime compatibility asserted."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "minimax27",
+      "apiModel": "minimax/minimax-m2.7",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Minimax",
+        "tag": "minimax/fp8",
+        "quantization": "fp8",
+        "context_length": 204800,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "input_cache_read": "0.00000006"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.7/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:56.436154+00:00",
+      "raw_json_sha256": "cfa0e2dbf8e9ca75a6aa68c2f9884695a3b1e8fbbad31361e595e443d77eacbf",
+      "raw_json_path": "raw/minimax27-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/3",
+      "endpoint_rows_observed": 6,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Minimax",
+        "tag": "minimax/fp8",
+        "quantization": "fp8",
+        "context_length": 204800,
+        "max_completion_tokens": 131072,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.0000012",
+          "input_cache_read": "0.00000006"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7",
+        "raw_source_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7/raw/main/README.md",
+        "raw_path": "raw/minimax27-card.body",
+        "observed_utc": "2026-10-23T08:01:00.952745+00:00",
+        "sha256": "2e871f2f502616c7168e4db41427c0d58c3906ba7357e73064a4564c93c33c62",
+        "identity_line_pointers": [
+          5,
+          59,
+          65,
+          70,
+          114
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "other",
+          "license_link": "https://github.com/MiniMax-AI/MiniMax-M2.7/blob/main/LICENSE"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            70,
+            90,
+            92,
+            100
+          ],
+          "result": "Vendor prose supports maintained SWE-Pro56.22 and GDPval-AA1495 claims. No independent evaluation or universal task-quality claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "nemotron-lightning",
+      "apiModel": "nvidia/nemotron-3.5-lightning",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/int4",
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000025",
+          "completion": "0.00000012",
+          "input_cache_read": "0.0000000125"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-lightning/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.009788+00:00",
+      "raw_json_sha256": "0c829fd95a8f7a3c852ba1bfb2e6cf594d532e47dd131ec1c5cf8863ebbe2f4e",
+      "raw_json_path": "raw/nemotron-lightning-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/0",
+      "endpoint_rows_observed": 4,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Darkbloom",
+        "tag": "darkbloom/int4",
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000025",
+          "completion": "0.00000012",
+          "input_cache_read": "0.0000000125"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+        "raw_source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16/raw/main/README.md",
+        "raw_path": "raw/nemotron-lightning-card.body",
+        "observed_utc": "2026-10-23T08:01:01.086411+00:00",
+        "sha256": "5d9d96d2f2b154d72625d39628a011e39e0477ffb99e45967eefe4cfd269b928",
+        "identity_line_pointers": [
+          24,
+          94,
+          111,
+          175,
+          181
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "openmdw-1.1",
+          "license_link": "https://openmdw.ai/license/1-1/"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "kimi3",
+      "apiModel": "moonshotai/kimi-k3",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Relace",
+        "tag": "relace/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000012",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.099964+00:00",
+      "raw_json_sha256": "81b1a4441f2213a593cdc9163efb13faef469912077e51b64cbbf38fb288eac1",
+      "raw_json_path": "raw/kimi3-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/3",
+      "endpoint_rows_observed": 29,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Relace",
+        "tag": "relace/fp4",
+        "quantization": "fp4",
+        "context_length": 1048576,
+        "max_completion_tokens": 943718,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000003",
+          "completion": "0.000012",
+          "input_cache_read": "0.00000025"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/moonshotai/Kimi-K3",
+        "raw_source_url": "https://huggingface.co/moonshotai/Kimi-K3/raw/main/README.md",
+        "raw_path": "raw/kimi3-card.body",
+        "observed_utc": "2026-10-23T08:01:01.218496+00:00",
+        "sha256": "57de265b5842dfa465c6e73b368b0e15a89b8793b5450528dad577da202cc6fe",
+        "identity_line_pointers": [
+          6,
+          28,
+          33,
+          618,
+          620
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "\"kimi-k3\""
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "nemotron-ultra",
+      "apiModel": "nvidia/nemotron-3-ultra-550b-a55b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000001"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.241988+00:00",
+      "raw_json_sha256": "f5dc377d71c86550b3b1d0c0b08b2d97ac009e06201edfba5f043f126f97f0d2",
+      "raw_json_path": "raw/nemotron-ultra-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/1",
+      "endpoint_rows_observed": 5,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000022",
+          "input_cache_read": "0.0000001"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+        "raw_source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16/raw/main/README.md",
+        "raw_path": "raw/nemotron-ultra-card.body",
+        "observed_utc": "2026-10-23T08:01:01.361416+00:00",
+        "sha256": "8ac2780e2662ac579b68f2a228f566839f8b1608ac39ee6bde29f2580a08dcec",
+        "identity_line_pointers": [
+          33,
+          171,
+          175,
+          212,
+          708
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "openmdw-1.1",
+          "license_link": ">-"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "nemotron-super",
+      "apiModel": "nvidia/nemotron-3-super-120b-a12b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000085",
+          "completion": "0.0000004"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-super-120b-a12b/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.325054+00:00",
+      "raw_json_sha256": "b0f54db55493734c641cdd11598a036b472496bef75e059cc47f43950c763708",
+      "raw_json_path": "raw/nemotron-super-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/1",
+      "endpoint_rows_observed": 3,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.000000085",
+          "completion": "0.0000004"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+        "raw_source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8/raw/main/README.md",
+        "raw_path": "raw/nemotron-super-card.body",
+        "observed_utc": "2026-10-23T08:01:01.502587+00:00",
+        "sha256": "7d8cf610376dc7668b788b082b53c4b39229b3b0df5478f5504ba07e6a960228",
+        "identity_line_pointers": [
+          28,
+          155,
+          159,
+          180,
+          185
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "nvidia-nemotron-open-model-license",
+          "license_link": ">-"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "minimax",
+      "apiModel": "minimax/minimax-m2.5",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Venice",
+        "tag": "venice",
+        "quantization": "unknown",
+        "context_length": 198000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000027",
+          "completion": "0.00000095",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.5/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.398357+00:00",
+      "raw_json_sha256": "2403659af56d3004747d812a91084824f0dbcba67f25d7d7651659bf17725625",
+      "raw_json_path": "raw/minimax-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/0",
+      "endpoint_rows_observed": 8,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Venice",
+        "tag": "venice",
+        "quantization": "unknown",
+        "context_length": 198000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000027",
+          "completion": "0.00000095",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5",
+        "raw_source_url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5/raw/main/README.md",
+        "raw_path": "raw/minimax-card.body",
+        "observed_utc": "2026-10-23T08:01:01.631648+00:00",
+        "sha256": "a661f661d669b03aee6ce087866307b7f66627ae31b4a0365115a2018bead5e2",
+        "identity_line_pointers": [
+          5,
+          59,
+          62,
+          68,
+          80
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "modified-mit",
+          "license_link": "https://github.com/MiniMax-AI/MiniMax-M2.5/blob/main/LICENSE"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "qwen80",
+      "apiModel": "qwen/qwen3-coder-next",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Parasail",
+        "tag": "parasail/bf16",
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000012",
+          "completion": "0.0000008",
+          "input_cache_read": "0.00000007"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-next/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.507871+00:00",
+      "raw_json_sha256": "747ab56c940e7060486fcff780b1ea207931ce19b1a13d0971b9ccd38a567bd6",
+      "raw_json_path": "raw/qwen80-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/0",
+      "endpoint_rows_observed": 1,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Parasail",
+        "tag": "parasail/bf16",
+        "quantization": "bf16",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000012",
+          "completion": "0.0000008",
+          "input_cache_read": "0.00000007"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+        "raw_source_url": "https://huggingface.co/Qwen/Qwen3-Coder-Next/raw/main/README.md",
+        "raw_path": "raw/qwen80-card.body",
+        "observed_utc": "2026-10-23T08:01:01.760146+00:00",
+        "sha256": "548db6d595e3bd88d7f6e7f4eae8e66ce8e6f980fd5ce52d7daf222e38559af6",
+        "identity_line_pointers": [
+          4,
+          8,
+          12,
+          18,
+          20
+        ],
+        "license_frontmatter_observed": {
+          "license": "apache-2.0",
+          "license_link": "https://huggingface.co/Qwen/Qwen3-Coder-Next/blob/main/LICENSE"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "kimi25",
+      "apiModel": "moonshotai/kimi-k2.5",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/int4",
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000015"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k2.5/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.694879+00:00",
+      "raw_json_sha256": "3f8bf0df3d75291cdebf1fc8af42e4b94cc6ec93526622ed41dc3a36b6db8f2a",
+      "raw_json_path": "raw/kimi25-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/1",
+      "endpoint_rows_observed": 5,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/int4",
+        "quantization": "int4",
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.0000005",
+          "completion": "0.0000025",
+          "input_cache_read": "0.00000015"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/moonshotai/Kimi-K2.5",
+        "raw_source_url": "https://huggingface.co/moonshotai/Kimi-K2.5/raw/main/README.md",
+        "raw_path": "raw/kimi25-card.body",
+        "observed_utc": "2026-10-23T08:01:01.886193+00:00",
+        "sha256": "1b04bed9c6c25894171c0ab5e0b4c4d57667698a654dbfd5a6c1649b922810a5",
+        "identity_line_pointers": [
+          18,
+          28,
+          536,
+          540,
+          541
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "modified-mit"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "nemotron-nano",
+      "apiModel": "nvidia/nemotron-3-nano-30b-a3b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Novita",
+        "tag": "novita/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000002"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.796833+00:00",
+      "raw_json_sha256": "75728c82f014901ead7a347e960785de463c91195b786eb20c9016073f1e971f",
+      "raw_json_path": "raw/nemotron-nano-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/0",
+      "endpoint_rows_observed": 2,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "Novita",
+        "tag": "novita/fp4",
+        "quantization": "fp4",
+        "context_length": 262144,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000005",
+          "completion": "0.0000002"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+        "raw_source_url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16/raw/main/README.md",
+        "raw_path": "raw/nemotron-nano-card.body",
+        "observed_utc": "2026-10-23T08:01:02.262451+00:00",
+        "sha256": "faec6eef185d9993d92a0f03c6ad872381bf252b21699bf5b3ecb52fdeac112b",
+        "identity_line_pointers": [
+          38,
+          109,
+          154,
+          158,
+          181
+        ],
+        "license_frontmatter_observed": {
+          "license": "other",
+          "license_name": "nvidia-nemotron-open-model-license",
+          "license_link": ">-"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "deepseek",
+      "apiModel": "deepseek/deepseek-v3.2",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "quantization": "fp4",
+        "context_length": 163840,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000026",
+          "completion": "0.00000038",
+          "input_cache_read": "0.00000013"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v3.2/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.876883+00:00",
+      "raw_json_sha256": "33468cd1188eab1d31f5d65cb4ab77903375ebd4e0ee4888dcd1edf7be087870",
+      "raw_json_path": "raw/deepseek-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/2",
+      "endpoint_rows_observed": 12,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/fp4",
+        "quantization": "fp4",
+        "context_length": 163840,
+        "max_completion_tokens": 16384,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000026",
+          "completion": "0.00000038",
+          "input_cache_read": "0.00000013"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+        "raw_source_url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2/raw/main/README.md",
+        "raw_path": "raw/deepseek-card.body",
+        "observed_utc": "2026-10-23T08:01:02.387057+00:00",
+        "sha256": "22b9f57e1ece2df27f9de0e71377e19481f7a6892eca8bc23e73fcdffe1d845c",
+        "identity_line_pointers": [
+          5,
+          8,
+          47,
+          52,
+          55
+        ],
+        "license_frontmatter_observed": {
+          "license": "mit"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "oss120",
+      "apiModel": "openai/gpt-oss-120b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "AkashML",
+        "tag": "akashml/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.000000187",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:59.962335+00:00",
+      "raw_json_sha256": "81a5bee7774928621546fd439035728f1db2faaf35dfb1bed268436dee683412",
+      "raw_json_path": "raw/oss120-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/4",
+      "endpoint_rows_observed": 24,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "AkashML",
+        "tag": "akashml/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000003",
+          "completion": "0.000000187",
+          "input_cache_read": "0.00000003"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/openai/gpt-oss-120b",
+        "raw_source_url": "https://huggingface.co/openai/gpt-oss-120b/raw/main/README.md",
+        "raw_path": "raw/oss120-card.body",
+        "observed_utc": "2026-10-23T08:01:02.542999+00:00",
+        "sha256": "92b0408cf5dce04e4c5e4e5f2be0361da710d3650baefd7d7519badd1c687919",
+        "identity_line_pointers": [
+          10,
+          25,
+          32,
+          41,
+          49
+        ],
+        "license_frontmatter_observed": {
+          "license": "apache-2.0"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "qwen30",
+      "apiModel": "qwen/qwen3-coder-30b-a3b-instruct",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "Novita",
+        "tag": "novita/fp8",
+        "quantization": "fp8",
+        "context_length": 160000,
+        "max_completion_tokens": 32768,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000007",
+          "completion": "0.00000027"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-30b-a3b-instruct/endpoints",
+      "source_observed_utc": "2026-10-23T08:00:44.710253+00:00",
+      "raw_json_sha256": "81b3bac22d1c147b7ee7e555c177a58d06ab830936d8d288baefe7150124ddf2",
+      "raw_json_path": "raw/qwen30-endpoints.body",
+      "raw_json_pointer": "/data/endpoints",
+      "endpoint_rows_observed": 2,
+      "selected_tuple_present": false,
+      "selected_observed_owned_fields": null,
+      "status": null,
+      "discount": null,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "retain historical tuple; selected provider/tag/precision absent",
+      "card": {
+        "canonical_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+        "raw_source_url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/raw/main/README.md",
+        "raw_path": "raw/qwen30-card.body",
+        "observed_utc": "2026-10-23T08:01:02.664666+00:00",
+        "sha256": "98e8f0e00f2d6c7f1743fc4ef2b6297dcc57bec73d71f36588aed984370ac3f3",
+        "identity_line_pointers": [
+          4,
+          8,
+          15,
+          25,
+          53
+        ],
+        "license_frontmatter_observed": {
+          "license": "apache-2.0",
+          "license_link": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct/blob/main/LICENSE"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [],
+          "result": "No maintained evaluation prose on this model. Identity/card source reviewed; no new architecture/license/benchmark claim."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      },
+      "alternatives_observed_not_selected": [
+        {
+          "raw_pointer": "/data/endpoints/0",
+          "provider_name": "SiliconFlow",
+          "tag": "siliconflow/fp8",
+          "quantization": "fp8",
+          "status": 0,
+          "reason_not_selected": "Different provider/tag; replacement outside this same-tuple audit. Unknown precision does not qualify as known precision."
+        },
+        {
+          "raw_pointer": "/data/endpoints/1",
+          "provider_name": "Amazon Bedrock",
+          "tag": "amazon-bedrock/us-west-2",
+          "quantization": "unknown",
+          "status": 0,
+          "reason_not_selected": "Different provider/tag; replacement outside this same-tuple audit. Unknown precision does not qualify as known precision."
+        }
+      ]
+    },
+    {
+      "id": "oss20",
+      "apiModel": "openai/gpt-oss-20b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "AkashML",
+        "tag": "akashml/fp4",
+        "quantization": "fp4",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000002",
+          "completion": "0.0000001"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/openai/gpt-oss-20b/endpoints",
+      "source_observed_utc": "2026-10-23T08:01:00.034681+00:00",
+      "raw_json_sha256": "8a561a111e853c0a4e3f9f947373adc97fad96d98a1610b403f74f13cc2bcf9e",
+      "raw_json_path": "raw/oss20-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/1",
+      "endpoint_rows_observed": 11,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "AkashML",
+        "tag": "akashml/fp4",
+        "quantization": "fp4",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000002",
+          "completion": "0.0000001"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/openai/gpt-oss-20b",
+        "raw_source_url": "https://huggingface.co/openai/gpt-oss-20b/raw/main/README.md",
+        "raw_path": "raw/oss20-card.body",
+        "observed_utc": "2026-10-23T08:01:02.788796+00:00",
+        "sha256": "03c2fcf292549176757b85c911e7dcf527aef3e4241d64b6caec94af3ecf3ac2",
+        "identity_line_pointers": [
+          10,
+          26,
+          32,
+          41,
+          49
+        ],
+        "license_frontmatter_observed": {
+          "license": "apache-2.0"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            22,
+            26,
+            32,
+            37,
+            40,
+            41
+          ],
+          "result": "README identifies smaller model and reasoning/tool-use capabilities. Quality remains user task validation; native weight quantization does not establish provider serving precision."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    },
+    {
+      "id": "granite42",
+      "apiModel": "ibm-granite/granite-4.2-8b",
+      "maintained_reviewed": "2026-09-27",
+      "maintained_endpoint": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000025",
+          "input_cache_read": "0.000000015"
+        }
+      },
+      "source_url": "https://openrouter.ai/api/v1/models/ibm-granite/granite-4.2-8b/endpoints",
+      "source_observed_utc": "2026-10-23T08:01:00.105366+00:00",
+      "raw_json_sha256": "d3e84ea23df0f181d7398c69184be507883fd1ef4a1b077de61d0f63d73ab57d",
+      "raw_json_path": "raw/granite42-endpoints.body",
+      "raw_json_pointer": "/data/endpoints/0",
+      "endpoint_rows_observed": 2,
+      "selected_tuple_present": true,
+      "selected_observed_owned_fields": {
+        "provider_name": "DeepInfra",
+        "tag": "deepinfra/bf16",
+        "quantization": "bf16",
+        "context_length": 131072,
+        "max_completion_tokens": 117964,
+        "max_prompt_tokens": null,
+        "pricing": {
+          "prompt": "0.00000006",
+          "completion": "0.00000025",
+          "input_cache_read": "0.000000015"
+        }
+      },
+      "status": 0,
+      "discount": 0,
+      "service_tier": null,
+      "drift": [],
+      "disposition": "no owned-field change",
+      "card": {
+        "canonical_url": "https://huggingface.co/ibm-granite/granite-4.2-8b",
+        "raw_source_url": "https://huggingface.co/ibm-granite/granite-4.2-8b/raw/main/README.md",
+        "raw_path": "raw/granite42-card.body",
+        "observed_utc": "2026-10-23T08:01:02.924090+00:00",
+        "sha256": "01396b1a8596586986fea22cfaa86d0255d19113d71fe09e0b69cc2bfa4307da",
+        "identity_line_pointers": [
+          10,
+          49,
+          62,
+          146,
+          152
+        ],
+        "license_frontmatter_observed": {
+          "license": "apache-2.0"
+        },
+        "license_qualification": "frontmatter observed only; linked legal terms not fetched or legally qualified",
+        "evaluation": {
+          "lines": [
+            24,
+            27,
+            32,
+            45,
+            49,
+            54,
+            175
+          ],
+          "result": "README supports8B dense identity and reasoning/code/tool use. No comparable measured frontier score or runtime performance inferred."
+        },
+        "scope_limit": "README observed; images, linked papers, LICENSE files, model config/revision commits and actual weights not retrieved; no inference performed"
+      }
+    }
+  ],
+  "coverage": "19 endpoint sources and19 actual README sources retrieved;18 selected tuples present/1 absent; README-related limits retained; not full-dataset freshness"
+}

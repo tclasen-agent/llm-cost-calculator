@@ -1,0 +1,23 @@
+{
+  "status": "frozen ALL STOP; claim released; root delivery pending",
+  "files": [
+    {
+      "path": "REVIEW-PROPOSAL.md",
+      "sha256": "4e4483f8ff16db17b4405c3321f87e6a74885f672f177908c9a986d79e45ee8d",
+      "bytes": 7121,
+      "mode": "0o644"
+    },
+    {
+      "path": "qualified-map.json",
+      "sha256": "f96ba667a15354a1ded2c81e7509258fdf074a0deb9275071c7d98356b868cca",
+      "bytes": 56380,
+      "mode": "0o644"
+    },
+    {
+      "path": "verify.py",
+      "sha256": "7258177eb939fa71fad72f2d7284e2d400b3834132a54f7f1ca2f243af3f1421",
+      "bytes": 8328,
+      "mode": "0o644"
+    }
+  ]
+}
