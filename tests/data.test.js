@@ -29,6 +29,26 @@ test('selected endpoint prices and limits derive from the same raw provider reco
   assert.equal(m.maxOutput,e.max_completion_tokens);assert.equal(m.planningMemoryGB,data.inferenceMemory[m.id]);
  }
 });
+test('reviewed GLM same-provider rates reach API costs without applying cache discounts',async()=>{
+ const endpoint=data.models.glm53.endpoint;
+ assert.deepEqual(endpoint,{
+  provider_name:'Inceptron',tag:'inceptron/fp4',quantization:'fp4',
+  context_length:1048576,max_completion_tokens:943718,max_prompt_tokens:null,
+  pricing:{prompt:'0.0000004',completion:'0.00000196',input_cache_read:'0.00000012'}
+ });
+ const model=models.find(m=>m.id==='glm53');
+ for(const [key,expected] of Object.entries({input:.4,output:1.96,cached:.12}))
+  assert.ok(Math.abs(model[key]-expected)<1e-12,`glm53.${key} USD/million conversion`);
+ const {estimateEconomics}=await import('../src/engine.js');
+ const result=estimateEconomics({model:'glm53',workload:'swe-factory',start:'2026-10',users:2,
+  calls:10,input:1250,output:250,concurrency:1,usageSource:'Synthetic rate conversion regression',
+  apiExtras:0,costSource:'Synthetic zero extras',apiDecline:0,rentalDecline:0,purchaseDiscount:0});
+ // 620 October requests each cost $0.0005 prompt + $0.00049 completion.
+ // Cache-read is provenance, so every prompt token uses the ordinary prompt rate.
+ assert.equal(result.rows[1].requests,620);
+ assert.ok(Math.abs(result.rows[1].apiUsage-.6138)<1e-12);
+ assert.ok(Math.abs(result.rows[1].apiMonthly-.6138)<1e-12);
+});
 test('training instances share canonical rental prices and resources',()=>{
  for(const [id,t] of Object.entries(data.trainingSystems))if(t.rentalId){
   const rental=rentals.find(r=>r.id===t.rentalId),training=trainingSystems.find(h=>h.id===id);

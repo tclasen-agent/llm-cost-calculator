@@ -1,0 +1,3280 @@
+{
+  "task": "TASK-000165",
+  "run": "RUN-000160",
+  "candidateSHA256": "a7d1fdb976351e4785298b693ea36179555c18eb7b771e103feb88831c19afd7",
+  "start": "2026-10-23T08:18:06.075Z",
+  "checks": [
+    "initial load shows three usable estimates and coherent uncached API arithmetic",
+    "valid saved measurement notes and unrelated overrides survive catalog load and reload",
+    "reset restores maintained defaults and saved reload stays usable",
+    "valid shared inputs survive reload",
+    "explicit saved September month and user inputs survive refresh and reload",
+    "explicit shared September month survives reload and reset returns October",
+    "old stable-ID large-model saved recovery retains exact original measurements",
+    "old stable-ID large-model shared recovery retains URL source inputs",
+    "unfit large model remains disabled with an explanation and current endpoint identity",
+    "all enabled select options from maintained defaults retain buy/rent/API results",
+    "enabled models for every enabled workload retain complete estimates",
+    "invalid edit retains the last complete result transactionally"
+  ],
+  "transitions": [
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 16.005
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 10.89
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 5.032500000000001
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 9.768
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.9899999999999999
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 18.975
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 3.3329999999999993
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 9.264750000000001
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 20.212500000000002
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 1.8150000000000002
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 6.7155
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 1.365375
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 2.49975
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.8085
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 2.21925
+    },
+    {
+      "name": "autoModel",
+      "value": "1",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "autoModel",
+      "value": "0",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "spark",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "strix-amd-128",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "strix-framework-128",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "strix-hp-128",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "m5-256",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "m5-512",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "puget-pro-6000-blackwell-ws",
+      "model": "qwen80",
+      "buy": 47.853938,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "supermicro-h100",
+      "model": "qwen80",
+      "buy": 484.2323,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "spark-x2",
+      "model": "qwen80",
+      "buy": 38.569292000000004,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "spark-x4",
+      "model": "qwen80",
+      "buy": 57.138584,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "m5-512-x2",
+      "model": "qwen80",
+      "buy": 38.569292000000004,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "m5-512-x4",
+      "model": "qwen80",
+      "buy": 57.138584,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "puget-pro-5000-blackwell-72",
+      "model": "qwen80",
+      "buy": 47.853938,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "hardware",
+      "value": "m5-max-128",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "h100-pcie",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 629.04,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "h100",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 805.04,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "gh200",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 453.04,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "a6000-x2",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "a6000-x4",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "h100-x2",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 1524.88,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "h100-x4",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 2929.3599999999997,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "h100-x8",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 5667.92,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "b200",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 1280.24,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "b200-x8",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 9469.52,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "b200-x2",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "b200-x4",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 4830.16,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "a100-x2",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 750.48,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "a100-x4",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 1450.96,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "a100-sxm-x8",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 2851.92,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "a100-80-x8",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 5.676
+    },
+    {
+      "name": "rental",
+      "value": "v100-x8",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 1162.3200000000002,
+      "api": 5.676
+    },
+    {
+      "name": "autoHardware",
+      "value": "1",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "autoHardware",
+      "value": "0",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "autoRental",
+      "value": "1",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "autoRental",
+      "value": "0",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "tariff",
+      "value": "bill",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "tariffConfirmed",
+      "value": "0",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "tariffConfirmed",
+      "value": "1",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "localTax",
+      "value": "1",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "localTax",
+      "value": "0",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.76065
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 0.2343
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.0428
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.05280000000000001
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.1419
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 0.693
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.06435
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 1.221
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 0.21614999999999995
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 0.5808
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 0.38280000000000003
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 1.32
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.1155
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 0.38280000000000003
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 0.09141
+    },
+    {
+      "name": "workload",
+      "value": "chat",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 0.3135
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.1584
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 8.536
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 2.684
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 5.2096
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 5.808
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.5279999999999999
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 10.12
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 1.7775999999999996
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 4.9412
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 3.0272
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 10.780000000000001
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.9680000000000001
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.5816
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 0.7282
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 1.3332000000000002
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.43119999999999997
+    },
+    {
+      "name": "workload",
+      "value": "research",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.8392
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 1.1836
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 4.1118
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.2705
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 0.9009
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 2.7027000000000005
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.2541
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 4.851
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 0.8547000000000001
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.34465
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 1.4784
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 5.1975
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.46199999999999997
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.6401
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 0.35458500000000004
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.63525
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.2079
+    },
+    {
+      "name": "workload",
+      "value": "bizdev",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.56595
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 16.005
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 10.89
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.676
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 5.032500000000001
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 9.768
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.9899999999999999
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 18.975
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 3.3329999999999993
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 9.264750000000001
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 20.212500000000002
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 1.8150000000000002
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 6.7155
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 1.365375
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 2.49975
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.8085
+    },
+    {
+      "name": "workload",
+      "value": "swe",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4484999999999997
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 2.21925
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 1557.0432
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 149.01774,
+      "rent": 3293.84,
+      "api": 1071.3600000000001
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 149.01774,
+      "rent": 10302.32,
+      "api": 499.968
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 149.01774,
+      "rent": 860.96,
+      "api": 860.6591999999999
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 149.01774,
+      "rent": 860.96,
+      "api": 96.4224
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 149.01774,
+      "rent": 16656.08,
+      "api": 1857.024
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 149.01774,
+      "rent": 3293.84,
+      "api": 324.97919999999993
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 149.01774,
+      "rent": 3293.84,
+      "api": 917.7983999999999
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 149.01774,
+      "rent": 1671.92,
+      "api": 542.8224
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 158.69031999999999,
+      "rent": 20257.04,
+      "api": 1964.1599999999999
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 149.01774,
+      "rent": 860.96,
+      "api": 178.56
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 692.8128
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 149.01774,
+      "rent": 3293.84,
+      "api": 131.06304
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 149.01774,
+      "rent": 860.96,
+      "api": 246.41279999999998
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 149.01774,
+      "rent": 563.36,
+      "api": 78.5664
+    },
+    {
+      "name": "workload",
+      "value": "swe-factory",
+      "model": "ds41",
+      "buy": 158.69031999999999,
+      "rent": 16656.08,
+      "api": 328.5504
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 149.01774,
+      "rent": 563.36,
+      "api": 217.8432
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 3.828
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 3.619
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 5.6584
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.286
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.781
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.232
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.3498
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 6.688000000000001
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 1.177
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 3.245
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 2.024
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 7.1499999999999995
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.638
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 2.3012
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 0.48598
+    },
+    {
+      "name": "workload",
+      "value": "support",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.76
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.8778
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 1.232
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 3.4958
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 0.9856
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 4.2504
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.26180000000000003
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 4.928
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 0.8777999999999998
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.2946
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 1.6016
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 5.39
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.46199999999999986
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 1.386
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 0.38038
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 0.6314
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.21559999999999999
+    },
+    {
+      "name": "workload",
+      "value": "writing",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 2.772
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.5698
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "ds41",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "glm53",
+      "model": "glm53",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 16.2096
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-ultra",
+      "model": "nemotron-ultra",
+      "buy": 29.284646000000002,
+      "rent": 3978.32,
+      "api": 19.272
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "glm53flash",
+      "model": "glm53flash",
+      "buy": 29.284646000000002,
+      "rent": 2475.2799999999997,
+      "api": 5.148
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "qwen38small",
+      "model": "qwen38small",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 9.4512
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "minimax27",
+      "model": "minimax27",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 11.088
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-lightning",
+      "model": "nemotron-lightning",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 1.0032
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-super",
+      "model": "nemotron-super",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 3.3792000000000004
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "minimax",
+      "model": "minimax",
+      "buy": 29.284646000000002,
+      "rent": 817.36,
+      "api": 9.4644
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "qwen80",
+      "model": "qwen80",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 5.7024
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "kimi25",
+      "model": "kimi25",
+      "buy": 38.569292000000004,
+      "rent": 4830.16,
+      "api": 20.46
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "nemotron-nano",
+      "model": "nemotron-nano",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 1.848
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "deepseek",
+      "model": "deepseek",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 6.996
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "oss120",
+      "model": "oss120",
+      "buy": 29.284646000000002,
+      "rent": 433.68,
+      "api": 1.37412
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "qwen30",
+      "model": "qwen30",
+      "buy": 29.284646000000002,
+      "rent": 241.84,
+      "api": 2.5476
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "oss20",
+      "model": "oss20",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 0.8184
+    },
+    {
+      "name": "workload",
+      "value": "security",
+      "model": "ds41",
+      "buy": 38.569292000000004,
+      "rent": 3978.32,
+      "api": 3.4583999999999997
+    },
+    {
+      "name": "model",
+      "value": "granite42",
+      "model": "granite42",
+      "buy": 29.284646000000002,
+      "rent": 171.44,
+      "api": 2.2572
+    }
+  ],
+  "pageErrors": [],
+  "externalBlocked": [],
+  "origin": "http://127.0.0.1:64058",
+  "browserPID": 35690,
+  "browserProcessStarted": "2026-10-23T08:18:08.010Z",
+  "largeModelDOM": {
+    "disabled": true,
+    "hasAttribute": true,
+    "html": "<option value=\"qwen38large\" disabled=\"\" title=\"No rental configuration fits these inputs with usable cost and performance assumptions. This change would invalidate the current rent comparison. Choose inputs covered by an available configuration. The previous calculation is unchanged.\">Qwen: Qwen3.8 2.4T A95B · unavailable for these inputs</option>"
+  },
+  "largeModelDisabledLabel": "Qwen: Qwen3.8 2.4T A95B · unavailable for these inputs",
+  "defaultSelectors": [
+    {
+      "name": "workload",
+      "options": [
+        {
+          "value": "chat",
+          "disabled": false,
+          "label": "Simple Chat"
+        },
+        {
+          "value": "research",
+          "disabled": false,
+          "label": "Research"
+        },
+        {
+          "value": "bizdev",
+          "disabled": false,
+          "label": "Business Development"
+        },
+        {
+          "value": "swe",
+          "disabled": false,
+          "label": "AI-assisted SWE"
+        },
+        {
+          "value": "swe-factory",
+          "disabled": false,
+          "label": "Full-auto software factory · 24/7"
+        },
+        {
+          "value": "support",
+          "disabled": false,
+          "label": "Customer Support"
+        },
+        {
+          "value": "writing",
+          "disabled": false,
+          "label": "Writing & Content"
+        },
+        {
+          "value": "security",
+          "disabled": false,
+          "label": "Security Analysis"
+        }
+      ]
+    },
+    {
+      "name": "model",
+      "options": [
+        {
+          "value": "ds41",
+          "disabled": false,
+          "label": "DeepSeek: DeepSeek V4.1 Flash"
+        },
+        {
+          "value": "glm53",
+          "disabled": false,
+          "label": "Z.ai: GLM 5.3"
+        },
+        {
+          "value": "minimax27",
+          "disabled": false,
+          "label": "MiniMax: MiniMax M2.7"
+        },
+        {
+          "value": "qwen38large",
+          "disabled": true,
+          "label": "Qwen: Qwen3.8 2.4T A95B · unavailable for these inputs"
+        },
+        {
+          "value": "qwen80",
+          "disabled": false,
+          "label": "Qwen: Qwen3 Coder Next"
+        },
+        {
+          "value": "glm53flash",
+          "disabled": false,
+          "label": "Z.ai: GLM 5.3 Flash"
+        },
+        {
+          "value": "qwen38small",
+          "disabled": false,
+          "label": "Qwen: Qwen3.8 27B"
+        },
+        {
+          "value": "nemotron-lightning",
+          "disabled": false,
+          "label": "NVIDIA: Nemotron 3.5 Lightning"
+        },
+        {
+          "value": "kimi3",
+          "disabled": true,
+          "label": "MoonshotAI: Kimi K3 · unavailable for these inputs"
+        },
+        {
+          "value": "nemotron-ultra",
+          "disabled": false,
+          "label": "NVIDIA: Nemotron 3 Ultra"
+        },
+        {
+          "value": "nemotron-super",
+          "disabled": false,
+          "label": "NVIDIA: Nemotron 3 Super"
+        },
+        {
+          "value": "minimax",
+          "disabled": false,
+          "label": "MiniMax: MiniMax M2.5"
+        },
+        {
+          "value": "kimi25",
+          "disabled": false,
+          "label": "MoonshotAI: Kimi K2.5"
+        },
+        {
+          "value": "nemotron-nano",
+          "disabled": false,
+          "label": "NVIDIA: Nemotron 3 Nano 30B A3B"
+        },
+        {
+          "value": "deepseek",
+          "disabled": false,
+          "label": "DeepSeek: DeepSeek V3.2"
+        },
+        {
+          "value": "oss120",
+          "disabled": false,
+          "label": "OpenAI: gpt-oss-120b"
+        },
+        {
+          "value": "qwen30",
+          "disabled": false,
+          "label": "Qwen: Qwen3 Coder 30B A3B Instruct"
+        },
+        {
+          "value": "oss20",
+          "disabled": false,
+          "label": "OpenAI: gpt-oss-20b"
+        },
+        {
+          "value": "granite42",
+          "disabled": false,
+          "label": "IBM: Granite 4.2 8B"
+        }
+      ]
+    },
+    {
+      "name": "autoModel",
+      "options": [
+        {
+          "value": "1",
+          "disabled": false,
+          "label": "Use task shortlist suggestion"
+        },
+        {
+          "value": "0",
+          "disabled": false,
+          "label": "Keep this model"
+        }
+      ]
+    },
+    {
+      "name": "hardware",
+      "options": [
+        {
+          "value": "spark",
+          "disabled": false,
+          "label": "NVIDIA DGX Spark"
+        },
+        {
+          "value": "strix-amd-128",
+          "disabled": false,
+          "label": "AMD Ryzen AI Halo · Strix Halo"
+        },
+        {
+          "value": "strix-framework-64",
+          "disabled": true,
+          "label": "Framework Desktop Max+ 395 · 64 GB · unavailable for these inputs"
+        },
+        {
+          "value": "strix-framework-128",
+          "disabled": false,
+          "label": "Framework Desktop Max+ 395 · 128 GB"
+        },
+        {
+          "value": "strix-hp-128",
+          "disabled": false,
+          "label": "HP Z2 Mini G1a · BN8E8UA"
+        },
+        {
+          "value": "m5-256",
+          "disabled": false,
+          "label": "Mac Studio M5 Ultra · 256 GB"
+        },
+        {
+          "value": "m5-512",
+          "disabled": false,
+          "label": "Mac Studio M5 Ultra · 512 GB"
+        },
+        {
+          "value": "hp-2000",
+          "disabled": true,
+          "label": "HP Z2 Mini G1i · RTX 2000 Ada · unavailable for these inputs"
+        },
+        {
+          "value": "hp-4000",
+          "disabled": true,
+          "label": "HP Z2 Mini G1i · RTX 4000 Ada · unavailable for these inputs"
+        },
+        {
+          "value": "puget-5080",
+          "disabled": true,
+          "label": "Puget workstation · RTX 5080 · unavailable for these inputs"
+        },
+        {
+          "value": "puget-5090",
+          "disabled": true,
+          "label": "Puget workstation · RTX 5090 · unavailable for these inputs"
+        },
+        {
+          "value": "puget-pro-4000-blackwell",
+          "disabled": true,
+          "label": "Puget workstation · RTX PRO 4000 Blackwell · unavailable for these inputs"
+        },
+        {
+          "value": "puget-pro-5000-blackwell",
+          "disabled": true,
+          "label": "Puget workstation · RTX PRO 5000 Blackwell · unavailable for these inputs"
+        },
+        {
+          "value": "puget-pro-6000-blackwell-ws",
+          "disabled": false,
+          "label": "Puget workstation · RTX PRO 6000 Blackwell WS"
+        },
+        {
+          "value": "supermicro-h100",
+          "disabled": false,
+          "label": "Supermicro 4U · 8× H100 HGX"
+        },
+        {
+          "value": "spark-x2",
+          "disabled": false,
+          "label": "2× DGX Spark cluster"
+        },
+        {
+          "value": "spark-x4",
+          "disabled": false,
+          "label": "4× DGX Spark cluster"
+        },
+        {
+          "value": "m5-512-x2",
+          "disabled": false,
+          "label": "2× Mac Studio 512 GB · EXO cluster"
+        },
+        {
+          "value": "m5-512-x4",
+          "disabled": false,
+          "label": "4× Mac Studio 512 GB · EXO cluster"
+        },
+        {
+          "value": "puget-pro-5000-blackwell-72",
+          "disabled": false,
+          "label": "Puget workstation · RTX PRO 5000 Blackwell · 72 GB"
+        },
+        {
+          "value": "m5-max-128",
+          "disabled": false,
+          "label": "Mac Studio M5 Max · 128 GB"
+        }
+      ]
+    },
+    {
+      "name": "rental",
+      "options": [
+        {
+          "value": "quadro",
+          "disabled": true,
+          "label": "Lambda 1× Quadro RTX 6000 · unavailable for these inputs"
+        },
+        {
+          "value": "a6000",
+          "disabled": true,
+          "label": "Lambda 1× A6000 · unavailable for these inputs"
+        },
+        {
+          "value": "a100",
+          "disabled": true,
+          "label": "Lambda 1× A100 PCIe · unavailable for these inputs"
+        },
+        {
+          "value": "h100-pcie",
+          "disabled": false,
+          "label": "Lambda 1× H100 PCIe"
+        },
+        {
+          "value": "h100",
+          "disabled": false,
+          "label": "Lambda 1× H100 SXM"
+        },
+        {
+          "value": "gh200",
+          "disabled": false,
+          "label": "Lambda 1× GH200"
+        },
+        {
+          "value": "a6000-x2",
+          "disabled": false,
+          "label": "Lambda 2× A6000"
+        },
+        {
+          "value": "a6000-x4",
+          "disabled": false,
+          "label": "Lambda 4× A6000"
+        },
+        {
+          "value": "h100-x2",
+          "disabled": false,
+          "label": "Lambda 2× H100 SXM"
+        },
+        {
+          "value": "h100-x4",
+          "disabled": false,
+          "label": "Lambda 4× H100 SXM"
+        },
+        {
+          "value": "h100-x8",
+          "disabled": false,
+          "label": "Lambda 8× H100 SXM"
+        },
+        {
+          "value": "b200",
+          "disabled": false,
+          "label": "Lambda 1× B200 SXM6"
+        },
+        {
+          "value": "b200-x8",
+          "disabled": false,
+          "label": "Lambda 8× B200 SXM6"
+        },
+        {
+          "value": "b200-x2",
+          "disabled": false,
+          "label": "Lambda 2× B200 SXM6"
+        },
+        {
+          "value": "b200-x4",
+          "disabled": false,
+          "label": "Lambda 4× B200 SXM6"
+        },
+        {
+          "value": "a100-x2",
+          "disabled": false,
+          "label": "Lambda 2× A100 PCIe"
+        },
+        {
+          "value": "a100-x4",
+          "disabled": false,
+          "label": "Lambda 4× A100 PCIe"
+        },
+        {
+          "value": "a100-sxm",
+          "disabled": true,
+          "label": "Lambda 1× A100 SXM · unavailable for these inputs"
+        },
+        {
+          "value": "a100-sxm-x8",
+          "disabled": false,
+          "label": "Lambda 8× A100 SXM"
+        },
+        {
+          "value": "a100-80-x8",
+          "disabled": false,
+          "label": "Lambda 8× A100 SXM"
+        },
+        {
+          "value": "v100-x8",
+          "disabled": false,
+          "label": "Lambda 8× Tesla V100"
+        },
+        {
+          "value": "a10",
+          "disabled": true,
+          "label": "Lambda 1× A10 · unavailable for these inputs"
+        }
+      ]
+    },
+    {
+      "name": "autoHardware",
+      "options": [
+        {
+          "value": "1",
+          "disabled": false,
+          "label": "Select a fitting system automatically"
+        },
+        {
+          "value": "0",
+          "disabled": false,
+          "label": "Keep selected purchase system"
+        }
+      ]
+    },
+    {
+      "name": "autoRental",
+      "options": [
+        {
+          "value": "1",
+          "disabled": false,
+          "label": "Select a fitting instance automatically"
+        },
+        {
+          "value": "0",
+          "disabled": false,
+          "label": "Keep selected rental"
+        }
+      ]
+    },
+    {
+      "name": "tariff",
+      "options": [
+        {
+          "value": "gs1",
+          "disabled": true,
+          "label": "Published GS-1 tariff + Loudoun tax · unavailable for these inputs"
+        },
+        {
+          "value": "bill",
+          "disabled": false,
+          "label": "Use estimated / bill-based all-in rate"
+        }
+      ]
+    },
+    {
+      "name": "tariffConfirmed",
+      "options": [
+        {
+          "value": "0",
+          "disabled": false,
+          "label": "Not yet verified"
+        },
+        {
+          "value": "1",
+          "disabled": false,
+          "label": "Yes — standard GS-1, no special minimum"
+        }
+      ]
+    },
+    {
+      "name": "localTax",
+      "options": [
+        {
+          "value": "1",
+          "disabled": false,
+          "label": "Loudoun County utility tax applies"
+        },
+        {
+          "value": "0",
+          "disabled": false,
+          "label": "Town or other jurisdiction — use bill rate"
+        }
+      ]
+    }
+  ],
+  "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n+ actual - expected\n\n+ 0.39999999999999997\n- 0.4\n\n    at file:///Users/Shared/llm-cost-calculator/artifacts/model-browser312/browser.mjs:34:216\n    at async check (file:///Users/Shared/llm-cost-calculator/artifacts/model-browser312/browser.mjs:8:31)\n    at async file:///Users/Shared/llm-cost-calculator/artifacts/model-browser312/browser.mjs:34:2",
+  "browserExit": {
+    "code": 0,
+    "signal": null,
+    "time": "2026-10-23T08:19:31.676Z"
+  },
+  "browserProcessAbsent": true,
+  "finished": "2026-10-23T08:19:31.719Z",
+  "portClosed": "ECONNREFUSED"
+}

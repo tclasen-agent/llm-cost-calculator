@@ -1,0 +1,18 @@
+{
+  "observation": "2026-10-23T08:21:16.829402+00:00",
+  "first_outcome": "new catalog float assertion used strict0.4 equality; actual0.39999999999999997 from unchanged multiplication, source strings correct",
+  "preserved": "all first script/results/video/trace retained; first12journeys/347selector transitions passed before failure",
+  "effects_reconciled": {
+    "browser_pid": 35690,
+    "browser_exit": {
+      "code": 0,
+      "signal": null,
+      "time": "2026-10-23T08:19:31.676Z"
+    },
+    "absent": true,
+    "port_closed": "ECONNREFUSED"
+  },
+  "correction": "only derived float assertions tolerance1e-12 plus exactcanonical rawprompt/completion/cache strings; source unchanged",
+  "retry_scope": "only3uncompletedjourneys GLM/inventory/factory+bothmodes; first12notrepeated",
+  "limits": "one prospectively authorized diagnosedretry180+15 underAPP312; priorconsumptionretained"
+}

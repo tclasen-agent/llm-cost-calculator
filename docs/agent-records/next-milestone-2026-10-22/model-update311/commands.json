@@ -1,0 +1,34 @@
+[
+  {
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit_code": 1,
+    "elapsed_seconds": 2.0713037499808706,
+    "finished_utc": "2026-10-23T08:14:26.652189+00:00",
+    "log": "test-initial-failure.log",
+    "diagnosis": "Strict equality on binary floating-point USD/million conversion; use1e-12 tolerance consistent with existing fractional-price tests. Exact raw price strings remain strict."
+  },
+  {
+    "command": [
+      "npm",
+      "test"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 2.121530791046098,
+    "finished_utc": "2026-10-23T08:14:51.415767+00:00",
+    "log": "test.log"
+  },
+  {
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.823856542003341,
+    "finished_utc": "2026-10-23T08:14:52.240036+00:00",
+    "log": "build.log"
+  }
+]

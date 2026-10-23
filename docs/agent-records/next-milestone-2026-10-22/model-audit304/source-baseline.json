@@ -1,0 +1,67 @@
+{
+  "Target System": "project",
+  "Change Classification": "project",
+  "Authorized Scope": "APP-000304 NEW model-audit304/** evidence/proposal only; source/application/userstate read-only",
+  "Affected Paths or Resources": "public primary-source unauthenticated metadata GET attempts and this audit prefix",
+  "Owning Role": "Researcher /root/calculator_audit304",
+  "Related Requirements": "REQ-000057; owning AGENTS requirements 1\u20139",
+  "Related Tasks": "TASK-000165 / RUN-000160 plan revision 7",
+  "Approval Requirements": "APP-000304; independent APP305 and separately admitted implementation/normal PR/main delivery remain pending",
+  "head": "7071c89bf1832b07b6066889c381ef7d10979d20",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "295d29e4310d32c14c2a63ebc02545476feb5f860b2e35242e3d6596ac1a9fb8",
+      "bytes": 3916,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/README.md",
+      "sha256": "5d01b31447b7c2814dfdc784f838261adfaf5879a79522d75ac64aa99ff66b93",
+      "bytes": 12769,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/models.js",
+      "sha256": "872d1fd82312e4a347ff69db3b704a79043d19423a8ef66831f87b356e1413e0",
+      "bytes": 12969,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/sources.js",
+      "sha256": "5f83fc6e14bcba0c82e7142bd2618ad6c2a36cd5268238df46928617dfafc5a9",
+      "bytes": 2767,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/registry.js",
+      "sha256": "936e96390303b4bea3db67c01eae55db9f8ea42bf1f512d7f35e98b4a51423b3",
+      "bytes": 1807,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/index.js",
+      "sha256": "ff5a6a189375c6ba8141db5216a3477af65b4494a6f6f468fc4aa8348a3a2a53",
+      "bytes": 4753,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/workloads.js",
+      "sha256": "356031e796d364aa4c55cf540c9a53d4742f720172077d881e297fe3adbaaf4e",
+      "bytes": 3957,
+      "mode": "0o644"
+    },
+    {
+      "path": "src/data/frontier.js",
+      "sha256": "9d0dea90de960ed65c23dcb60019ead609dd83bcfa4ae3743d9c561ab54185d9",
+      "bytes": 6445,
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/agent-records/next-milestone-2026-10-22/APP-000304.md",
+      "sha256": "d152e859efcca1bcb848a6ca9cecf2fe096de24d435aa06a35938c5da783485b",
+      "bytes": 4292,
+      "mode": "0o644"
+    }
+  ]
+}
