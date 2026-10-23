@@ -3,6 +3,7 @@
  * Source: Product planning policy; user evidence for overrides
  * Review frequency: Each planning cycle; start month each month.
  * Update: Update initial scenario only. Null fields are populated by planning. Saved overrides remain user-owned and must be reviewed when reopened.
+ * Partial refresh: October 2026 start month only; other values retain the September 27 review.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
@@ -28,7 +29,7 @@ export default {
     "rental": "a6000-x4",
     "autoRental": 1,
     "autoModel": 1,
-    "start": "2026-09",
+    "start": "2026-10",
     "calls": null,
     "input": null,
     "output": null,

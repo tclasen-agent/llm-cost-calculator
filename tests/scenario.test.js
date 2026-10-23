@@ -188,3 +188,27 @@ test('provider refresh preserves original large-model saved/shared measurements 
  const current=initialScenario().state,rejected=changeScenario(current,'model',raw.model);
  assert.equal(rejected.accepted,false);assert.equal(rejected.state,current);assert.ok(rejected.message);
 });
+
+
+test('past starting months and user measurements survive saved/shared recovery and invalid edits',async()=>{
+ const {encodeState,readState}=await import('../src/sharing.js');
+ const raw={...initialScenario().state,start:'2026-09',autoHardware:0,autoRental:0,
+  localDecode:42,rentalDecode:84,localEvidence:'Saved local pilot',rentalEvidence:'Saved rental pilot',
+  quote:12345,quoteSource:'Saved whole-system quote',
+  overrides:'start,localDecode,rentalDecode,localEvidence,rentalEvidence,quote,quoteSource'};
+ for(const candidate of [raw,readState(encodeState(raw))]){
+  const before=structuredClone(candidate),loaded=initialScenario(candidate);
+  assert.equal(loaded.recovered,false);assert.equal(loaded.result.ready,true);
+  assert.equal(loaded.state.start,'2026-09');
+  for(const key of ['localDecode','rentalDecode','localEvidence','rentalEvidence','quote','quoteSource'])assert.equal(loaded.state[key],raw[key]);
+  assert.deepEqual(candidate,before);
+  const rejected=changeScenario(loaded.state,'input',1e9);
+  assert.equal(rejected.accepted,false);assert.equal(rejected.state,loaded.state);
+  assert.equal(rejected.state.start,'2026-09');
+  const invalid={...candidate,input:1e9,overrides:candidate.overrides+',input'},recovered=initialScenario(invalid);
+  assert.equal(recovered.recovered,true);assert.equal(recovered.rejected,invalid);
+  assert.equal(recovered.rejected.start,'2026-09');assert.equal(recovered.rejected.localEvidence,raw.localEvidence);
+  assert.equal(recovered.result.ready,true);
+ }
+ const reset=initialScenario();assert.equal(reset.state.start,defaults.start);assert.equal(reset.result.ready,true);
+});

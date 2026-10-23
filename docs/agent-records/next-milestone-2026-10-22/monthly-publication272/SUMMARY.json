@@ -1,0 +1,31 @@
+{
+  "source_main": "e5155533014da7307fff2de96aafd88225b46699",
+  "developer_candidate_sha256": "128468517461892209bb35f25855cd914374da219f62854856896ad5422bf270",
+  "npm_tests": "259/259 PASS after preserved single combined diagnosed retry",
+  "build": "PASS; current dist/src bytes match",
+  "inventory": "22datasets/1155fieldpaths",
+  "browser_checks": [
+    "initial load shows three usable estimates and coherent uncached API arithmetic",
+    "valid saved measurement notes and unrelated overrides survive catalog load and reload",
+    "reset restores maintained defaults and saved reload stays usable",
+    "valid shared inputs survive reload",
+    "explicit saved September month and user inputs survive refresh and reload",
+    "explicit shared September month survives reload and reset returns October",
+    "old stable-ID large-model saved recovery retains exact original measurements",
+    "old stable-ID large-model shared recovery retains URL source inputs",
+    "unfit large model remains disabled with an explanation and current endpoint identity",
+    "all enabled select options from maintained defaults retain buy/rent/API results",
+    "enabled models for every enabled workload retain complete estimates",
+    "invalid edit retains the last complete result transactionally",
+    "inventory is served from this exact generated build",
+    "October factory uses31calendar days and fine-tuning mode remains usable"
+  ],
+  "selector_transitions": 348,
+  "browser_process_absent": true,
+  "port_closed": "ECONNREFUSED",
+  "resources": "two individually closed headless --disable-gpu browser runs; first6.408seconds, second84.948seconds measured script wall; cumulative91.356seconds. No continuously measured absolute240 root lease across intervening diagnosis; first-start to final-finish255.585seconds exceeds240 if interpreted as one absolute root clock. Do not claim that envelope passed. Both own180second watchdogs and actual closure evidence retained. No further local browser retry.",
+  "current_month": "2026-10",
+  "preserved_user_month": "2026-09",
+  "whole_dataset_review_date": "2026-09-27 unchanged",
+  "publication": "pending exact independent review/normal main/Pages live verification"
+}

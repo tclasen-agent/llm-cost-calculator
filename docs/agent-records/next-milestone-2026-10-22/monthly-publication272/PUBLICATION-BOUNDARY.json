@@ -1,0 +1,8 @@
+{
+  "reason": "publish exact source and lossless evidence archives; avoid raw log whitespace and node --test discovery in historical fixtures",
+  "local_exclude_before_sha256": "e16196a3cfde9385fb56e574a663d3dec46a3ee3e15835326c9e703d31edaf58",
+  "local_exclude_before_base64": "IyBnaXQgbHMtZmlsZXMgLS1vdGhlcnMgLS1leGNsdWRlLWZyb209LmdpdC9pbmZvL2V4Y2x1ZGUKIyBMaW5lcyB0aGF0IHN0YXJ0IHdpdGggJyMnIGFyZSBjb21tZW50cy4KIyBGb3IgYSBwcm9qZWN0IG1vc3RseSBpbiBDLCB0aGUgZm9sbG93aW5nIHdvdWxkIGJlIGEgZ29vZCBzZXQgb2YKIyBleGNsdWRlIHBhdHRlcm5zICh1bmNvbW1lbnQgdGhlbSBpZiB5b3Ugd2FudCB0byB1c2UgdGhlbSk6CiMgKi5bb2FdCiMgKn4KCiMgTG9jYWwgZ2VuZXJhdGVkIGRlbW8gbWVkaWE7IG5ldmVyIHN0YWdlL3VwbG9hZCB1bmRlciBwcm9qZWN0IHZlcmlmaWNhdGlvbiB0YXNrLgovYXJ0aWZhY3RzLwo=",
+  "appended_exact": "\n/docs/agent-records/next-milestone-2026-10-22/monthly-default270/\n",
+  "originals_unchanged": true,
+  "original_files": 22
+}
