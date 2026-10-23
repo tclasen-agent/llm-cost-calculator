@@ -895,7 +895,7 @@ Type: **scenario**. Recorded review: **2026-09-27**.
 | `rental` | "a6000-x4" |
 | `autoRental` | 1 |
 | `autoModel` | 1 |
-| `start` | "2026-09" |
+| `start` | "2026-10" |
 | `calls` | null |
 | `input` | null |
 | `output` | null |
