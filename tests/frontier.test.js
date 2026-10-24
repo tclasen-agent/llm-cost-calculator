@@ -41,3 +41,16 @@ test('the refreshed Granite benchmark is usable in both cost views',()=>{
  assert.ok(call.current.cost>0);
  assert.ok(!frontierHTML(r).includes('A comparable measured score and task cost have not been verified'));
 });
+
+
+test('current reference release and withdrawn task-cost evidence stay distinct',()=>{
+ const current=referenceModels.find(m=>m.id==='gpt-6.1-sol');
+ assert.equal(callCost(current,{input:1000,output:200}),.004);
+ assert.equal(current.score,52);assert.equal(current.taskCost,.72);
+ const result=calculate(planning({...defaults,model:'minimax27'}));
+ for(const basis of ['benchmark','call']){
+  const data=frontierData(result,basis);
+  assert.ok(!data.frontier.some(p=>p.selected));
+  assert.ok(!Number.isFinite(data.current.score));
+ }
+});

@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Monthly and for each purchase decision.",
     "source": "Editorial whole-system budgets checked against hardware source links; no verified complete-system quotes",
     "how": "Replace budget estimates with current complete-system allowances; published prices belong in hardware. Include host and cluster networking."
@@ -16,11 +16,9 @@ export default {
   "values": {
     "strix-framework-64": 2500,
     "strix-framework-128": 3500,
-    "strix-hp-128": 4500,
     "m5-256": 8000,
     "m5-512": 12000,
     "hp-2000": 3000,
-    "hp-4000": 4000,
     "puget-5080": 4500,
     "puget-5090": 10000,
     "puget-pro-4000-blackwell": 6000,

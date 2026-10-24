@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Monthly and before purchase; on product/configuration changes.",
     "source": "Each record source/priceSource",
     "how": "Verify complete system specifications, memory type/allocation, host, storage and networking. Use null for an unverified price; put estimates in purchaseAllowances."
@@ -56,9 +56,11 @@ export default {
       "name": "HP Z2 Mini G1a · BN8E8UA",
       "memory": 128,
       "kind": "unified",
-      "price": null,
-      "package": "Ryzen AI Max+ PRO 395, Radeon 8060S, {memory} GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter. Price not verified.",
-      "sourceRef": "hpZ2G1a"
+      "price": 4499,
+      "package": "Ryzen AI Max+ PRO 395, Radeon 8060S, {memory} GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter.",
+      "sourceRef": "hpZ2G1a",
+      "priceSourceRef": "hpZ2G1a",
+      "priceKind": "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra"
     },
     "m5-256": {
       "name": "Mac Studio M5 Ultra · {memory} GB",
@@ -89,10 +91,12 @@ export default {
       "name": "HP Z2 Mini G1i · RTX 4000 Ada",
       "memory": 20,
       "kind": "VRAM",
-      "price": null,
+      "price": 4639,
       "package": "BP6K7UA: Core Ultra 7 265, RTX 4000 Ada {memory} GB, 64 GB host RAM, 1 TB SSD, Windows 11 Pro, complete OEM workstation.",
       "sourceRef": "hpZ2G1i4000",
-      "gpus": 1
+      "priceSourceRef": "hpZ2G1i4000",
+      "gpus": 1,
+      "priceKind": "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra"
     },
     "puget-5080": {
       "name": "Puget workstation · RTX 5080",

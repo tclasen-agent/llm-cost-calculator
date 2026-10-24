@@ -1,0 +1,1489 @@
+{
+  "task": "TASK-000212",
+  "run": "RUN-000207",
+  "reviewer": "Developer /root/calculator_refresh",
+  "reviewedOn": "2026-10-24",
+  "baseline": "cef513dc15f335027c67a58ff952665e06feae40",
+  "scope": "All 22 maintained datasets and every leaf; source reviews do not establish quotes, availability, compatibility or pilots.",
+  "datasetReviews": {
+    "audit": {
+      "kind": "editorial",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 52,
+      "valuesSha256": "ac5b17aeb441de937457a4788aa302ca00dcb2fdc0f419664d76ab6e5b9fe501",
+      "sourceReceipts": [
+        "source-api",
+        "source-rental",
+        "source-rentalBilling",
+        "source-tariff",
+        "source-county",
+        "source-training",
+        "source-benchmark",
+        "source-methodology",
+        "source-nvidiaTrend",
+        "source-stanfordTrend",
+        "source-nvidiaSpark",
+        "source-nvidiaSparkPrice",
+        "source-amdHalo",
+        "source-amdHaloPrice",
+        "source-frameworkDesktop",
+        "source-hpZ2G1a",
+        "source-appleStudio",
+        "source-hpZ2G1i2000",
+        "source-hpZ2G1i4000",
+        "source-pugetWorkstation",
+        "source-supermicroHgx",
+        "source-exoRuntime",
+        "card-ds41",
+        "endpoint-ds41",
+        "card-glm53",
+        "endpoint-glm53",
+        "card-glm53flash",
+        "endpoint-glm53flash",
+        "card-qwen38large",
+        "endpoint-qwen38large",
+        "card-qwen38small",
+        "endpoint-qwen38small",
+        "card-minimax27",
+        "endpoint-minimax27",
+        "card-nemotron-lightning",
+        "endpoint-nemotron-lightning",
+        "card-kimi3",
+        "endpoint-kimi3",
+        "card-nemotron-ultra",
+        "endpoint-nemotron-ultra",
+        "card-nemotron-super",
+        "endpoint-nemotron-super",
+        "card-minimax",
+        "endpoint-minimax",
+        "card-qwen80",
+        "endpoint-qwen80",
+        "card-kimi25",
+        "endpoint-kimi25",
+        "card-nemotron-nano",
+        "endpoint-nemotron-nano",
+        "card-deepseek",
+        "endpoint-deepseek",
+        "card-oss120",
+        "endpoint-oss120",
+        "card-qwen30",
+        "endpoint-qwen30",
+        "card-oss20",
+        "endpoint-oss20",
+        "card-granite42",
+        "endpoint-granite42",
+        "benchmark-gpt-5.6-sol",
+        "price-gpt-5.6-sol",
+        "benchmark-gpt-5.6-terra",
+        "price-gpt-5.6-terra",
+        "benchmark-gpt-5.6-luna",
+        "price-gpt-5.6-luna",
+        "benchmark-gpt-6-astra",
+        "price-gpt-6-astra",
+        "benchmark-gpt-6-sol",
+        "price-gpt-6-sol",
+        "benchmark-gpt-6-luna",
+        "price-gpt-6-luna",
+        "method-0",
+        "method-1",
+        "method-2",
+        "method-3",
+        "method-4",
+        "frontier-methodology",
+        "bench-ds41",
+        "bench-glm53",
+        "bench-glm53flash",
+        "bench-qwen38large",
+        "bench-qwen38small",
+        "bench-kimi3",
+        "bench-nemotron-ultra",
+        "bench-nemotron-super",
+        "bench-nemotron-nano",
+        "bench-oss120",
+        "bench-nemotron-lightning",
+        "bench-minimax27",
+        "bench-qwen80",
+        "bench-oss20",
+        "bench-granite42",
+        "bench-kimi25",
+        "bench-minimax",
+        "bench-deepseek",
+        "bench-qwen30",
+        "benchmark-gpt-6.1-sol",
+        "price-gpt-6.1-sol",
+        "framework-specs-tab"
+      ],
+      "outcome": "Coverage and candidate dispositions reconciled with every dataset review.",
+      "limitations": null
+    },
+    "sources": {
+      "kind": "provenance",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 22,
+      "valuesSha256": "c490ff3815ec07d44124a6b4d14bee8005db5671f3b77ee8cb63426333e11ab3",
+      "sourceReceipts": [
+        "source-api",
+        "source-rental",
+        "source-rentalBilling",
+        "source-tariff",
+        "source-county",
+        "source-training",
+        "source-benchmark",
+        "source-methodology",
+        "source-nvidiaTrend",
+        "source-stanfordTrend",
+        "source-nvidiaSpark",
+        "source-nvidiaSparkPrice",
+        "source-amdHalo",
+        "source-amdHaloPrice",
+        "source-frameworkDesktop",
+        "source-hpZ2G1a",
+        "source-appleStudio",
+        "source-hpZ2G1i2000",
+        "source-hpZ2G1i4000",
+        "source-pugetWorkstation",
+        "source-supermicroHgx",
+        "source-exoRuntime"
+      ],
+      "outcome": "Reviewed every shared publisher link and all method links on October 24. Direct retrieval required web fallback for AMD, HP, Framework and NVIDIA investor pages. Framework now leads with PRO 495; the specs tab still includes the maintained 395 systems, so its source now links there. Source receipts retain URL, content hash or web retrieval reference, reviewed fields and limitations.",
+      "limitations": null
+    },
+    "models": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 232,
+      "valuesSha256": "7bdb3b1bb80b72554906248d4260feefd9bd67968b7e8027bb31bc9b1eda9e8f",
+      "sourceReceipts": [
+        "card-ds41",
+        "endpoint-ds41",
+        "card-glm53",
+        "endpoint-glm53",
+        "card-glm53flash",
+        "endpoint-glm53flash",
+        "card-qwen38large",
+        "endpoint-qwen38large",
+        "card-qwen38small",
+        "endpoint-qwen38small",
+        "card-minimax27",
+        "endpoint-minimax27",
+        "card-nemotron-lightning",
+        "endpoint-nemotron-lightning",
+        "card-kimi3",
+        "endpoint-kimi3",
+        "card-nemotron-ultra",
+        "endpoint-nemotron-ultra",
+        "card-nemotron-super",
+        "endpoint-nemotron-super",
+        "card-minimax",
+        "endpoint-minimax",
+        "card-qwen80",
+        "endpoint-qwen80",
+        "card-kimi25",
+        "endpoint-kimi25",
+        "card-nemotron-nano",
+        "endpoint-nemotron-nano",
+        "card-deepseek",
+        "endpoint-deepseek",
+        "card-oss120",
+        "endpoint-oss120",
+        "card-qwen30",
+        "endpoint-qwen30",
+        "card-oss20",
+        "endpoint-oss20",
+        "card-granite42",
+        "endpoint-granite42"
+      ],
+      "outcome": "Reviewed all 19 model cards and all selected endpoint tuples. Updated GLM-5.3 Inceptron and Kimi K3 Relace prices. Qwen Coder 30B Novita is absent; replaced its entire tuple with the current non-discounted SiliconFlow FP8 endpoint. Other selected endpoints still match. Vendor evaluation wording matches the original cards. Stable model IDs remain unchanged; API precision does not change the independent self-hosted recipe.",
+      "limitations": null
+    },
+    "hardware": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 158,
+      "valuesSha256": "b2f18d0b7af76fce776b0e3f02eed604d2feb2fa9631afdbc9a92260201983e5",
+      "sourceReceipts": [
+        "source-nvidiaSpark",
+        "source-nvidiaSparkPrice",
+        "source-amdHalo",
+        "source-amdHaloPrice",
+        "framework-specs-tab",
+        "source-hpZ2G1a",
+        "source-appleStudio",
+        "source-hpZ2G1i2000",
+        "source-hpZ2G1i4000",
+        "source-pugetWorkstation",
+        "source-supermicroHgx",
+        "source-exoRuntime"
+      ],
+      "outcome": "Reviewed every maintained system and derived cluster: installed memory, CPU/GPU, storage, OS, allocation limits, quoted scope and runtime source. HP now publishes complete-system G1a and RTX 4000 Ada sale prices; replaced their unknown prices and removed superseded allowances. RTX 2000 Ada still shows a placeholder zero, retained as unknown. Other published prices/specifications match. Framework and AMD now advertise PRO 495/192 GB; candidate disposition below no longer claims coming soon.",
+      "limitations": null
+    },
+    "rentals": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 154,
+      "valuesSha256": "b5408cf30943623a0a1d27ac42349f008e7efac904add99eb0421d5f7835e994",
+      "sourceReceipts": [
+        "source-rental"
+      ],
+      "outcome": "Compared all 22 Lambda instance records field by field with all four GPU-count tables: GPU, count, VRAM, CPU, RAM, storage and per-GPU hourly price. All match; taxes and stock remain separate.",
+      "limitations": null
+    },
+    "rentalTerms": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 1,
+      "valuesSha256": "61df66e53524350ea1f532959ae1ae391e9347130c793c7dec167a85804c10c7",
+      "sourceReceipts": [
+        "source-rental",
+        "source-rentalBilling"
+      ],
+      "outcome": "Reviewed Lambda billing and price-table footnotes. Clarified that one-minute billing starts after launch and passing health checks, ends on termination, includes idle time, and published rates exclude applicable taxes. Filesystem charges survive instance termination.",
+      "limitations": null
+    },
+    "purchaseAllowances": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 25,
+      "valuesSha256": "b5600bd2927fc4c5a09bcc6bbb4679e0efc89999018712db9857f42ad79e3018",
+      "sourceReceipts": [
+        "source-pugetWorkstation",
+        "source-hpZ2G1a",
+        "source-hpZ2G1i4000",
+        "source-appleStudio",
+        "source-nvidiaSparkPrice"
+      ],
+      "outcome": "Reviewed all complete-system and cluster budgets against maintained vendor configurations and current Puget component costs. Removed the two allowances superseded by published HP system prices. Remaining amounts are illustrative whole-system budgets, not current quotes; network extras remain explicit assumptions.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "inferenceMemory": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 19,
+      "valuesSha256": "5a83e267f00f2bb727e5e0a5cb1ae0e108e745a345c70aec7b843ffe6e617f39",
+      "sourceReceipts": [
+        "card-ds41",
+        "card-glm53",
+        "card-glm53flash",
+        "card-qwen38large",
+        "card-qwen38small",
+        "card-minimax27",
+        "card-nemotron-lightning",
+        "card-kimi3",
+        "card-nemotron-ultra",
+        "card-nemotron-super",
+        "card-minimax",
+        "card-qwen80",
+        "card-kimi25",
+        "card-nemotron-nano",
+        "card-deepseek",
+        "card-oss120",
+        "card-qwen30",
+        "card-oss20",
+        "card-granite42"
+      ],
+      "outcome": "Reviewed every four-bit aggregate memory budget against all 19 model-card checkpoint totals, retaining headroom above raw four-bit storage. Context/cache/batch/runtime overhead and fit remain assumptions rather than measured or certified compatibility.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "workloads": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 85,
+      "valuesSha256": "bfce437d3f1afe3f992e35c5b45f422ffe8b9c80656f3356f5640ecadcb9a34a",
+      "sourceReceipts": [
+        "card-ds41",
+        "card-glm53",
+        "card-glm53flash",
+        "card-qwen38large",
+        "card-qwen38small",
+        "card-minimax27",
+        "card-nemotron-lightning",
+        "card-kimi3",
+        "card-nemotron-ultra",
+        "card-nemotron-super",
+        "card-minimax",
+        "card-qwen80",
+        "card-kimi25",
+        "card-nemotron-nano",
+        "card-deepseek",
+        "card-oss120",
+        "card-qwen30",
+        "card-oss20",
+        "card-granite42"
+      ],
+      "outcome": "Reviewed every usage/template field, model shortlist and task rationale against all maintained model cards. Retained illustrative calls, token mix, concurrency and ordering; no usage pilot supports replacing them. New releases are candidate reviews below, not automatic rewrites of saved models.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "inferenceDefaults": {
+      "kind": "scenario",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 56,
+      "valuesSha256": "f864b028ca539b20f1b1e8430fc639919a4e57db8521ef7976e374c8ac5ff83d",
+      "sourceReceipts": [],
+      "outcome": "Reviewed every initial/reset field, selected ID, October planning month and empty user-evidence value. October remains the current month; no month/date bump was needed. Preserve current saved/shared overrides and all configuration-specific measurements on catalog refresh.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "inferencePolicy": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 32,
+      "valuesSha256": "f68ecb72f448f93760f02d8e73eea5b75a3f063ab44fe17be9fe247df170dc93",
+      "sourceReceipts": [
+        "source-nvidiaTrend",
+        "source-stanfordTrend"
+      ],
+      "outcome": "Reviewed each memory, concurrency, prefill/decode, power/idle/cooling, fee/setup, schedule, baseline/peak, price-decline, lifecycle and projection coefficient. Retained all as labeled planning assumptions. Historical Stanford cost trends and NVIDIA generation cadence do not establish scenario forecasts or measurements.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "tariff": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 36,
+      "valuesSha256": "ffbc1cab364894d6b6aa8f54f2f13667a9c72f48164d9556afcb125b2edebc8f",
+      "sourceReceipts": [
+        "source-tariff",
+        "source-county"
+      ],
+      "outcome": "Reviewed GS-1 applicability, both distribution blocks, seasonal generation blocks, transmission, all 17 riders including deferred fuel, surcharge, every consumption-tax threshold/rate and Loudoun fixed/rate/cap. All match the current filed tariff and county page. Conservative demand exclusion and special-contract/data-center exclusions remain.",
+      "limitations": null
+    },
+    "frontier": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 129,
+      "valuesSha256": "35a3bdea0e3037e3af02a4225ee4d795b5e45bb4a93432e9c912817e9f4a83a7",
+      "sourceReceipts": [
+        "source-methodology",
+        "benchmark-gpt-5.6-sol",
+        "price-gpt-5.6-sol",
+        "benchmark-gpt-5.6-terra",
+        "price-gpt-5.6-terra",
+        "benchmark-gpt-5.6-luna",
+        "price-gpt-5.6-luna",
+        "benchmark-gpt-6-astra",
+        "price-gpt-6-astra",
+        "benchmark-gpt-6-sol",
+        "price-gpt-6-sol",
+        "benchmark-gpt-6-luna",
+        "price-gpt-6-luna",
+        "bench-ds41",
+        "bench-glm53",
+        "bench-glm53flash",
+        "bench-qwen38large",
+        "bench-qwen38small",
+        "bench-kimi3",
+        "bench-nemotron-ultra",
+        "bench-nemotron-super",
+        "bench-nemotron-nano",
+        "bench-oss120",
+        "bench-nemotron-lightning",
+        "bench-minimax27",
+        "bench-qwen80",
+        "bench-oss20",
+        "bench-granite42",
+        "bench-kimi25",
+        "bench-minimax",
+        "bench-deepseek",
+        "bench-qwen30",
+        "benchmark-gpt-6.1-sol",
+        "price-gpt-6.1-sol"
+      ],
+      "outcome": "Reviewed every maintained benchmark score, cost and reasoning variant under Index v4.3.2, including historical pages. DeepSeek original V4.1 Flash measured task cost changed; MiniMax M2.7 now lacks measured task cost and is excluded. Added current GPT-6.1 Sol from the evaluator and official API documentation; rechecked all other reference prices, context/output limits, long-input policy and promotion. Every retained selected benchmark now links its exact variant page.",
+      "limitations": null
+    },
+    "trainingModels": {
+      "kind": "published",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 23,
+      "valuesSha256": "f4b76845b3b98bfe5f24baeb9dc7625520744de3073680581dd0223528b47ed5",
+      "sourceReceipts": [
+        "card-ds41",
+        "card-glm53",
+        "card-glm53flash",
+        "card-qwen38large",
+        "card-qwen38small",
+        "card-minimax27",
+        "card-nemotron-lightning",
+        "card-kimi3",
+        "card-nemotron-ultra",
+        "card-nemotron-super",
+        "card-minimax",
+        "card-qwen80",
+        "card-kimi25",
+        "card-nemotron-nano",
+        "card-deepseek",
+        "card-oss120",
+        "card-qwen30",
+        "card-oss20",
+        "card-granite42",
+        "source-training"
+      ],
+      "outcome": "Checked all 19 total checkpoint sizes against HF tensor summaries and all four Unsloth supervised adapter memory figures. All match. Recipes support only the documented supervised stack/objective; no arbitrary method or end-to-end compatibility is inferred.",
+      "limitations": null
+    },
+    "trainingEligibility": {
+      "kind": "editorial",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 1,
+      "valuesSha256": "2fdcc95640d36aafe6c553aa8064e63de04c7c07b41efc30014bf1f47a94b643",
+      "sourceReceipts": [
+        "card-ds41",
+        "card-glm53",
+        "card-glm53flash",
+        "card-qwen38large",
+        "card-qwen38small",
+        "card-minimax27",
+        "card-nemotron-lightning",
+        "card-kimi3",
+        "card-nemotron-ultra",
+        "card-nemotron-super",
+        "card-minimax",
+        "card-qwen80",
+        "card-kimi25",
+        "card-nemotron-nano",
+        "card-deepseek",
+        "card-oss120",
+        "card-qwen30",
+        "card-oss20",
+        "card-granite42"
+      ],
+      "outcome": "Reviewed license labels across all 19 model cards and stack instructions. Kept license/stack qualification: open weights do not establish license permission for every use or working adaptation.",
+      "limitations": null
+    },
+    "trainingSystems": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 35,
+      "valuesSha256": "af78f341aa72a18bc3f497028a8d5ffc5988fe2e85ce50dfd71ed3a81e058deb",
+      "sourceReceipts": [
+        "source-rental",
+        "source-pugetWorkstation",
+        "source-supermicroHgx"
+      ],
+      "outcome": "Reviewed every shared hardware/rental reference and custom-system field. Prices/resources still derive from canonical owners; custom GPU counts/VRAM, zero quote defaults and power remain explicit user-scenario assumptions. No pilot power evidence was supplied.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "trainingDefaults": {
+      "kind": "scenario",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 39,
+      "valuesSha256": "4b6de296fc5705111b91db88047476ac9712d8a68debb86c7811fef11735a053",
+      "sourceReceipts": [],
+      "outcome": "Reviewed every model/method/task/system selection, dataset/token/sequence/microbatch/cadence field, throughput range, quote/evidence flag, energy/cooling/support/setup/overhead/campaign default. Retained illustrative values and empty evidence; no user dataset, bill, complete quote or pilot justifies recalibration.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "methodDefaults": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 20,
+      "valuesSha256": "a52f90e49c53096929d845fd9d258b2948ed08513f306d61a19032c9cd90ac31",
+      "sourceReceipts": [
+        "method-0",
+        "method-1",
+        "method-2",
+        "method-3",
+        "method-4"
+      ],
+      "outcome": "Reviewed each update method, trainable fraction, corpus, reference/teacher mode, auxiliary model size/memory, generation length/count, policy update, forward/generation speed and reward/teacher cost/time default against current method descriptions. Retained assumptions without inventing experiment/invoice evidence.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "trainingPolicy": {
+      "kind": "assumption",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 8,
+      "valuesSha256": "415cb17ecec19a028e7598299762653536e37f9d6558c7bc28d462ebbdc3d0c5",
+      "sourceReceipts": [
+        "source-training",
+        "method-0"
+      ],
+      "outcome": "Rechecked weight/master-weight/gradient/Adam byte arithmetic against Transformers GPU-memory documentation and the quantized supervised recipes. Retained memory headroom, activation scaling/reference sequence and monthly capacity as planning assumptions.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    },
+    "trainingMethods": {
+      "kind": "editorial",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 36,
+      "valuesSha256": "114eb2673361571d4ff10a5cb308c794f8f732b4302be6216c2070dc49241681",
+      "sourceReceipts": [
+        "method-0",
+        "method-1",
+        "method-2",
+        "method-3",
+        "method-4"
+      ],
+      "outcome": "Reviewed all nine method IDs, labels, use cases and limitations against current training documentation. DPO reference work, experimental PPO critic/rollouts, GRPO optional reference/KL and offline sequence-distillation descriptions remain applicable. Pin stack versions for real runs.",
+      "limitations": null
+    },
+    "methodSources": {
+      "kind": "provenance",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 10,
+      "valuesSha256": "ee1751145029e96780d91a4aca4bd55072cbd007fbf8ab340fd7042dc133c949",
+      "sourceReceipts": [
+        "method-0",
+        "method-1",
+        "method-2",
+        "method-3",
+        "method-4"
+      ],
+      "outcome": "Reviewed all five method-document/paper URLs and their substantive content. Current Transformers memory anatomy, TRL DPO/experimental PPO/GRPO and the original sequence-distillation paper still support the explanations.",
+      "limitations": null
+    },
+    "reviewedConfigurations": {
+      "kind": "evidence",
+      "reviewedOn": "2026-10-24",
+      "everyLeafReviewed": true,
+      "leafCount": 1,
+      "valuesSha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "sourceReceipts": [],
+      "outcome": "Reviewed the empty registry and exact model/runtime/system/workload evidence requirements. No exact independently reviewed run was supplied or established. Keep the registry empty and preserve the distinction between labeled feasibility estimates and verified configurations.",
+      "limitations": "Review of declared assumptions/evidence coverage, not independent measurement or user-data verification."
+    }
+  },
+  "sources": [
+    {
+      "id": "source-api",
+      "url": "https://openrouter.ai/api/v1/models",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "511846fb093dd695c7f9117b9f3ae023ebd51a8e89190e26574447b08dd63454",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-rental",
+      "url": "https://lambda.ai/instances",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f994c31b5bee26badd444b9d113da6b93088e6a678b8bb4b31b6d5296cbf19d2",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-rentalBilling",
+      "url": "https://docs.lambda.ai/public-cloud/billing/",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f1f47978d646ee0f28997a7934da206db1835f936d63736676d8397d39a3171c",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-tariff",
+      "url": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/rates-and-tariffs/pdfs/virginia/shared/entire-filed-tariff.pdf",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "b6a2fa0612183c27d839df336a9d555085757f2bbb0d698a2f21c902af0098dd",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-county",
+      "url": "https://www.loudoun.gov/1570/Business-Tax-Rates",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "5e2fd14b71f0579280cf8d86771a24d200abd3d5538c7f6eb8605d6c59efae76",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-training",
+      "url": "https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "9703c46948e6d805dbeacbdde4e698a236101838cf83e85ab5c58133b3234db9",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-benchmark",
+      "url": "https://artificialanalysis.ai/leaderboards/models",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "191f4c92b7c287de657b187605d4447919df3716f7953d4fb815b921fb99252f",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-methodology",
+      "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "60c16c0d6e9c113bf98b591f319ca72fd130733e47d0f8717529697baf213460",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-nvidiaTrend",
+      "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Kicks-Off-the-Next-Generation-of-AI-With-Rubin--Six-New-Chips-One-Incredible-AI-Supercomputer/",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-stanfordTrend",
+      "url": "https://hai.stanford.edu/news/ai-index-2025-state-of-ai-in-10-charts",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "86ae063b41e65bfb80849103452f97497462566f2e5696936d1fdd29b92e77f3",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-nvidiaSpark",
+      "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "e2d99698a2eba35a86a640e88d56a1ecb563fd8ed10e6814dc09dbd3fecd081d",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-nvidiaSparkPrice",
+      "url": "https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "a1becccac2e72c5512909374c87aa6492b2dfdcdb77f85a2515672a81caf5e1e",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-amdHalo",
+      "url": "https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-amdHaloPrice",
+      "url": "https://www.amd.com/en/blogs/2026/amd-ryzen-ai-halo-is-designed-for-the-agentic-era.html",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-frameworkDesktop",
+      "url": "https://frame.work/desktop?tab=machine-learning",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-hpZ2G1a",
+      "url": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1a-workstation-desktop-pc-wolf-pro-security-edition-p-bn8e8ua-aba-1",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-appleStudio",
+      "url": "https://www.apple.com/mac-studio/specs/",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d8638860ed8cc917950fd2e845bc805c4a9d33bf38e496480c9e0aedbf2530b7",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-hpZ2G1i2000",
+      "url": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k5ua-aba-1",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-hpZ2G1i4000",
+      "url": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k7ua-aba-1",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-pugetWorkstation",
+      "url": "https://www.pugetsystems.com/products/workstations/configure/",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "597f03586c5e9747304aa2d68cd9060c605b04778df0054e0a9879b53a225a89",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-supermicroHgx",
+      "url": "https://www.supermicro.com/en/products/system/gpu/4u/sys-421ge-tnhr2-lcc",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "037d4aee9edb96baf007c55f2fecb268b5044835cf37f3bebb96079ed35ebbf2",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "source-exoRuntime",
+      "url": "https://github.com/exo-explore/exo",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "61153902acdcf05fc0aeba2837ec34f58b92fbe165d5bfa5c80653aefbbb3975",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "card-ds41",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ef4498c2e7775f3ee3f59cbcd6ed181464a88ed5d7035565520020a0072db388",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-ds41",
+      "url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v4.1-flash/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "6020c72d3760a7f2dfb2c84604d85f2b32ae3f0418ee16416b46dbc3f64752e3",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-glm53",
+      "url": "https://huggingface.co/zai-org/GLM-5.3",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "6e5f3bb5429146028c4bceb75ddb4da96ad6eb1d2f9d79578e3a8fbb6d7f1f2b",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-glm53",
+      "url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "fcfecbeaec28be174f8cee5bb0de0a245825ae93bbcffe4d9de4d4f94356e00b",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-glm53flash",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "604e1974ca12d5c5ad5014871e9231efa9d4e154490a20c9e1bb7d10208e8a46",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-glm53flash",
+      "url": "https://openrouter.ai/api/v1/models/z-ai/glm-5.3-flash/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "1ecbcd1e0fd3bb06166a5270952056ad4bd031772dac0a966b3b076b6ae5933d",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-qwen38large",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f70f7c22e1977d04f1cb535123a33a1227895448909e4fc9a2118be4715baa1e",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-qwen38large",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-2.4t-a95b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d8a889b987a14575428da8ee280c0abf666374377a277f5955c315343ae78126",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-qwen38small",
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "1ef23fae52038db1c98225681e6671ecaa55991a4fdb616f0dd8274ca758ed47",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-qwen38small",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3.8-27b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f6b82399b7159ce915c8690692d602a99f2320c75e3152ecb493b7d4e8ba15ab",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-minimax27",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.7",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "8710a14275aa95134891ca8a25b967666fb5d631b6083e148c7e8ebbba4957dd",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-minimax27",
+      "url": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.7/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "8c675efc3877099538579b4187215cc4ef6052c54bb02e37a6c04456517167b8",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-nemotron-lightning",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f4487ef0def9b370196449030ab8ec7f44bfd8572105c8c51322012e88ff98b1",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-nemotron-lightning",
+      "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3.5-lightning/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "3f9be48eeb3f6c49626d181a61285ac4816cb1ac2bd74216d8c75cb5ddcb43fa",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-kimi3",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "da807c01def7f48e589554a8265b006f45232353abd1f7700edc9c1ceaa74ecd",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-kimi3",
+      "url": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k3/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "6725e3211fae653ccb7b3792663e589248d9a1e4d7b10528413c3415817b0ab3",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-nemotron-ultra",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "6c8ed806b75a4979f3fff908579dd241218f058013290d4e5d796cd9ee9ab0ab",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-nemotron-ultra",
+      "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-ultra-550b-a55b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "eaa6c72538257013fe0d1429af3418788ad05e2f0e47257a6fb05ae40eeba8cc",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-nemotron-super",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-FP8",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "674ec9b7501fd02c4e5ca91243fbd8e479d8e611acfacf6768285127ddf7a3d1",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-nemotron-super",
+      "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-super-120b-a12b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "6c359f2e187598306aa0dc7a39a412685f3f3bfe3807c6ce6a21521b54cfb4fb",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-minimax",
+      "url": "https://huggingface.co/MiniMaxAI/MiniMax-M2.5",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f2a5afa83d01cbf4464a627db46634d2a3f37b16824118fa610eb7ef4d9535e3",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-minimax",
+      "url": "https://openrouter.ai/api/v1/models/minimax/minimax-m2.5/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "9964242d1e9cde8b229157c44dc794d7b3511c9ed2df6448b12924b13bd5f824",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-qwen80",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "3169c4acd678b7faf5017aeaadef23c527a6a8210a6bf53c253d49cf9a886368",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-qwen80",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-next/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "747ab56c940e7060486fcff780b1ea207931ce19b1a13d0971b9ccd38a567bd6",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-kimi25",
+      "url": "https://huggingface.co/moonshotai/Kimi-K2.5",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "16da0aed67881a50dde4d9f6e249abbd111380828ac4310235f69e00720f18a8",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-kimi25",
+      "url": "https://openrouter.ai/api/v1/models/moonshotai/kimi-k2.5/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "97dfb624e124071a43d1be5d09665767bba4b4c0109823ca2dcaa832f5fbb882",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-nemotron-nano",
+      "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "960ad3b022ec198157b3b3052262375c7b8b2c9038214f75c3dad1b9017f3ced",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-nemotron-nano",
+      "url": "https://openrouter.ai/api/v1/models/nvidia/nemotron-3-nano-30b-a3b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d7169613e668550cc71937b59667a1d21fb7410b689af0166b545452760348a2",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-deepseek",
+      "url": "https://huggingface.co/deepseek-ai/DeepSeek-V3.2",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "30ae0dc58dd0be628b2017f8b46bb658c98dbd0b5caec99ff2e14d3480951ae6",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-deepseek",
+      "url": "https://openrouter.ai/api/v1/models/deepseek/deepseek-v3.2/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "4c252f0c0b8708b1605480f282bea6edbf62a810f0cd38b32090c5dd3e8e9272",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-oss120",
+      "url": "https://huggingface.co/openai/gpt-oss-120b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "7ec60bc2d29b1110cf8a6ed73d807d080ec80be18df95def5c3375cdb91f1628",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-oss120",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-oss-120b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "77380cf973b15e589d615ab083a865fe1b8f7aca22f52ac922824094fc1cc2c4",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-qwen30",
+      "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ee301110d43786d6044c9b7bfb68494b16bf386340cd504b40f4db70fae74d93",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-qwen30",
+      "url": "https://openrouter.ai/api/v1/models/qwen/qwen3-coder-30b-a3b-instruct/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "f2f100515556a6f2f41ece815096ab40fd7e245070d1a02e3356d8af3e0c8977",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-oss20",
+      "url": "https://huggingface.co/openai/gpt-oss-20b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ce7ef4bdd1992c72df32e1f8c54f7a49c5eec3e4054b8ca574bd292d1d103ba1",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-oss20",
+      "url": "https://openrouter.ai/api/v1/models/openai/gpt-oss-20b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "69e1f12fe106474270f05aa3e1706c7d4bfa44c3fef7793092fc7c41cb903503",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "card-granite42",
+      "url": "https://huggingface.co/ibm-granite/granite-4.2-8b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "582ee00d7048d595af936dd8b3fa0024a56ea1365bcdfb20ad957e73c97bc42b",
+      "scope": "Identity, vendor evaluation text, checkpoint tensor total, license and deployment instructions"
+    },
+    {
+      "id": "endpoint-granite42",
+      "url": "https://openrouter.ai/api/v1/models/ibm-granite/granite-4.2-8b/endpoints",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d3e84ea23df0f181d7398c69184be507883fd1ef4a1b077de61d0f63d73ab57d",
+      "scope": "Full selected provider/tag, precision, prompt/completion/cache pair, context/prompt/completion limits; promotional/tiered exclusions"
+    },
+    {
+      "id": "benchmark-gpt-5.6-sol",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-sol",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d29e4186120c0cf191c59ebce7ed099acd914ef1ae2fe324fb80aad9d9addd10",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-5.6-sol",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-sol",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "036f51c6c6d5c50b789b0261b2127628017db50e1ed2084f4889a82aa7820ba0",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "benchmark-gpt-5.6-terra",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-terra",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "2e1228208a78919be3beea638d9d80111cd14a9b5065bebd02555b7b3f75be08",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-5.6-terra",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-terra",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "bcfc373aaa415d93ee27804838b950ce652a8c8bd8735960d90a1e4dfb0580ef",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "benchmark-gpt-5.6-luna",
+      "url": "https://artificialanalysis.ai/models/gpt-5-6-luna",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "df656d5e67cddeeafa56d80cbe45d44a0b79117606c6e5c011ad11aedc4aa196",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-5.6-luna",
+      "url": "https://developers.openai.com/api/docs/models/gpt-5.6-luna",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "e148f13b439a39b03b8e4a51298c277b7edb472cabbb4a52d487599cc5353610",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "benchmark-gpt-6-astra",
+      "url": "https://artificialanalysis.ai/models/gpt-6-astra",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "8fa97f62e9d541fd5cb1b9dbb3086662857e1f0791596e5a8d5e0c798661a9bc",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-6-astra",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-astra",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "b5566a25791f027cde00df07e5d4e48717f3f96cb5b4df72b5025555004a1d04",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "benchmark-gpt-6-sol",
+      "url": "https://artificialanalysis.ai/models/gpt-6-sol",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "641fe57d91a94d71c4d1a356d08e45f205f667054ffabdc73871709599323ce1",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-6-sol",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-sol",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "3b2a9b39d55347f59509aa5d0b14f911d4bb4b7aa3f86ccd5e421ec81cdfba0e",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "benchmark-gpt-6-luna",
+      "url": "https://artificialanalysis.ai/models/gpt-6-luna",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "acc51b4aaf843032e2072604daa7724f0bf335816a9ded992e7e664711b326a3",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-6-luna",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "20cdaaa7bc003e165969dc9fc132f06382388d4a4dae5df207a4b019989cd444",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "method-0",
+      "url": "https://huggingface.co/docs/transformers/model_memory_anatomy",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "205f0938a8d4aa3c9d7b2826563f7a59189d571c825bef5e2cdfb7f0384591e2",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "method-1",
+      "url": "https://huggingface.co/docs/trl/dpo_trainer",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "7c6e2fd4ff4b07fa2e4daff41d7d6a21682d151c1f35f3870c016dac88ba0594",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "method-2",
+      "url": "https://huggingface.co/docs/trl/main/ppo_trainer",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "830775ca642c99a23522b207ab4ca377a51f5408c6e490714136b8d295ff2197",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "method-3",
+      "url": "https://huggingface.co/docs/trl/grpo_trainer",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "26440b9fde553b627a77c14821558c1ceff5c08d0abe80ca67d732fc53c2e77f",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "method-4",
+      "url": "https://arxiv.org/abs/1606.07947",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "9aa2167c047020b1dd6658b65a73792bb581fe22d088577faf4c1e69021247d7",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "frontier-methodology",
+      "url": "https://artificialanalysis.ai/methodology/intelligence-benchmarking",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "60c16c0d6e9c113bf98b591f319ca72fd130733e47d0f8717529697baf213460",
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    },
+    {
+      "id": "bench-ds41",
+      "url": "https://artificialanalysis.ai/models/deepseek-v4-1-flash",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "2454b022fdfa61256c7318b94f53f726609ece5ad1009da061c6a2c1343b36c8",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-glm53",
+      "url": "https://artificialanalysis.ai/models/glm-5-3",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "a0c860a412ae1f86e80e9c4403b5506fc8e8bdb967d8cd95679d5d2d5a559e13",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-glm53flash",
+      "url": "https://artificialanalysis.ai/models/glm-5-3-flash",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "e57be1ed0b857f54fbe9c7a8e10f8e41c3d7db965a4e6799d007ab8cfbcacdb1",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-qwen38large",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d8c1ece89fa84a366dc0be25fbf8b3d5955be9e08f725e86a34be748f46478fa",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-qwen38small",
+      "url": "https://artificialanalysis.ai/models/qwen3-8-27b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "04d51b8701a20f862ee633c731bc7c9cc0bb15b1ae97688607840e5736e5ff76",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-kimi3",
+      "url": "https://artificialanalysis.ai/models/kimi-k3",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ed451649de3076abd4b839324e24a5664ed2255beaa763dfdeaeb5ba54f58dd4",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-nemotron-ultra",
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "0930f1cd9cb683e274fccc9caeb14d849220a7e00713e1babf2e8bffd745fcc7",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-nemotron-super",
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ac0790655f15d58c69a793922b903804b1526574742fe52b639a19498f97c62b",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-nemotron-nano",
+      "url": "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "398db60edcf02120d8952c55e4956fca5707f3a927c700c1b09a07b59ab1ad02",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-oss120",
+      "url": "https://artificialanalysis.ai/models/gpt-oss-120b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ec1d7ef28373d5118812fc81a61cf7cecfc5167df891a6e3a674c6f82aacce71",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-nemotron-lightning",
+      "url": "https://artificialanalysis.ai/models/nemotron-3-5-lightning",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "5baa6b9e6a91d4c34f89202e6e48801b743882793439cc5d2161db1377c5eeec",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-minimax27",
+      "url": "https://artificialanalysis.ai/models/minimax-m2-7",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "98686ef71f4f8e59ad11816978d398b29160e5f50ab5b184f5861db4d9952db8",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-qwen80",
+      "url": "https://artificialanalysis.ai/models/qwen3-coder-next",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "1e94bc1e5acd68001ee7d747f98f63012e6e6d4a2566dddb92955d64896de30c",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-oss20",
+      "url": "https://artificialanalysis.ai/models/gpt-oss-20b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d3ffc8c4212eb5148bf3f2815ef9957f70aca0bfc4dcf21c0fdb04fb838577c3",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-granite42",
+      "url": "https://artificialanalysis.ai/models/granite-4-2-8b",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "d2dc87b1437263edfaab7023841d0290f53800f296fe4a90d85edb303a292177",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-kimi25",
+      "url": "https://artificialanalysis.ai/models/kimi-k2-5",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "e99c0717be6c9469dbe18e91b680f078ac187a2efa67f080514e5a4dac1dd12f",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-minimax",
+      "url": "https://artificialanalysis.ai/models/minimax-m2-5",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "3bef9a1224de92324773df1b70e47d7104fdc8a38bdf8baa28c73cefe29d1fa0",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-deepseek",
+      "url": "https://artificialanalysis.ai/models/deepseek-v3-2",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "42324eeeb88e6c888a2d465f8d66e1ad8d11b826214b4af2ff40c966a5ee7de6",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "bench-qwen30",
+      "url": "https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "e7098422a2fd837ad0de4194e29aaa2eb52944d6fbcd7200361a4d1635f7b265",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "benchmark-gpt-6.1-sol",
+      "url": "https://artificialanalysis.ai/models/gpt-6-1-sol",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "ef2c9d2752bf5b6e2f6107054b57b10610c8ccf25504f1d343335792b2a0f31a",
+      "scope": "Index version, exact model/reasoning variant, score and measured task-cost presence"
+    },
+    {
+      "id": "price-gpt-6.1-sol",
+      "url": "https://developers.openai.com/api/docs/models/gpt-6.1-sol",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Direct public HTTPS retrieval",
+      "responseSha256": "6fd7494f924d9d9cb6999c86794d1d09f0f64ec36c4fc8770425919861bceb6d",
+      "scope": "Standard token prices, context/output limits, long-input multipliers and promotional terms"
+    },
+    {
+      "id": "framework-specs-tab",
+      "url": "https://frame.work/desktop?tab=specs",
+      "reviewedOn": "2026-10-24",
+      "retrieval": "Web primary-page retrieval; direct fetch blocked or incomplete",
+      "responseSha256": null,
+      "scope": "Every maintained field referencing this document; applicability and evidence limitations"
+    }
+  ],
+  "modelChecks": [
+    {
+      "model": "ds41",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "glm53",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "glm53flash",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "qwen38large",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "qwen38small",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "minimax27",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "nemotron-lightning",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "kimi3",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "nemotron-ultra",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "nemotron-super",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "minimax",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "qwen80",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "kimi25",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "nemotron-nano",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "deepseek",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "oss120",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "qwen30",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "oss20",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    },
+    {
+      "model": "granite42",
+      "selectedTupleMatchesSource": true,
+      "noDiscountOrTierOverrides": true,
+      "checkpointTotalMatchesCard": true
+    }
+  ],
+  "notes": [
+    "Source-response hashes identify reviewed public content, not a claim that a later dynamic response is byte-identical. Raw public responses are temporary and not published in this repository.",
+    "Primary vendor pages were read with web retrieval when direct requests failed. Null hashes are intentional; no digest or HTTP status is invented.",
+    "The tariff PDF was directly downloaded and extracted with pdftotext; every GS-1 energy/tax/rider field was compared. Existing incremental tier/season/cap hand-calculated tests remain applicable.",
+    "Benchmark score/task-cost pairs are evaluator results. Exact reasoning variant URLs are retained; missing task costs are excluded.",
+    "Planning/default/evidence datasets were reviewed field by field as declared assumptions; absent user pilot, quote, bill or invoice evidence remains absent."
+  ]
+}

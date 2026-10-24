@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "editorial",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Quarterly; on method implementation/documentation changes.",
     "source": "methodSources",
     "how": "Update use cases and limitations; keep stable method IDs and match supported arithmetic."

@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Each planning cycle; remeasure performance/energy on configuration changes.",
     "source": "Internal planning policy; workload pilot, utility bill and HVAC measurements",
     "how": "Review each coefficient independently. Speed/memory/power values are illustrative, lifecycle/declines are scenarios, not forecasts. Fractions use 0–1; declines use percent/year."

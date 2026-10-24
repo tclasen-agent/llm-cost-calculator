@@ -1,7 +1,7 @@
-import {planning} from './planning.js?v=30';
-import {calculate,normalize} from './engine.js?v=30';
-import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=30';
-import {taskModels} from './task-models.js?v=30';
+import {planning} from './planning.js?v=31';
+import {calculate,normalize} from './engine.js?v=31';
+import {defaults,models,hardware,rentals,workloads} from './catalog.js?v=31';
+import {taskModels} from './task-models.js?v=31';
 
 // Transactions keep the last usable calculation while the user edits its inputs.
 export function scenarioStatus(raw){

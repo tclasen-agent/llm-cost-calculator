@@ -8,7 +8,7 @@ See [README.md](README.md) for the mandatory update workflow, units, source-of-t
 
 ## [audit.js](audit.js)
 
-Type: **editorial**. Recorded review: **2026-09-27**.
+Type: **editorial**. Recorded review: **2026-10-24**.
 
 **Frequency:** With each full external-data audit; revisit deferred options on publication or availability changes.
 
@@ -18,35 +18,35 @@ Type: **editorial**. Recorded review: **2026-09-27**.
 
 | Field | Current value |
 |---|---|
-| `coverage.sources` | "Retrieved all shared source links. AMD, Framework, HP and NVIDIA investor pages required web retrieval after direct requests failed. The same source scopes remain available; no link replacements were needed." |
-| `coverage.models` | "Reviewed every model card and selected endpoint response. Refreshed changed prices. The previous DeepSeek Relace and GLM InferenceNet tags disappeared: DeepSeek now uses the current Relace tag with unknown precision; GLM uses the non-discounted Inceptron FP4 endpoint because InferenceNet now reports a temporary discount. Price pairs, precision and limits come from each selected record together." |
-| `coverage.hardware` | "Rechecked all vendor configurations, memory, host specifications, MSRP evidence and EXO documentation. Existing specifications and published prices match. HP listings do not establish a usable purchase price; configurable systems still require complete quotes. Coming-soon memory variants are not treated as orderable configurations." |
-| `coverage.rentals` | "Compared every maintained instance with the complete Lambda table, including per-GPU price and whole-instance CPU, RAM and storage. All stored values match. Stock and region availability still require a checkout check." |
-| `coverage.rentalTerms` | "Reviewed minute billing from launch and health checks through termination, including idle time, taxes and persistent filesystem billing. Existing terms remain applicable." |
-| `coverage.purchaseAllowances` | "Reviewed every whole-system budget and cluster networking allowance against the hardware sources, including current GPU add-on costs. Retained the illustrative budgets; component prices do not establish complete-system quotes." |
-| `coverage.inferenceMemory` | "Compared every planning budget with the model-card total checkpoint size at the assumed four-bit precision. Existing budgets remain above raw weight storage. Context, cache, batching and runtime overhead are still assumptions requiring a pilot." |
-| `coverage.workloads` | "Reviewed every task template, shortlist and rationale against current model-card capabilities. Kept usage assumptions and task ordering; published general benchmarks do not establish performance on the user’s workload." |
-| `coverage.inferenceDefaults` | "Reviewed all initial values, selected IDs, planning month and empty evidence fields. Kept the usable default and user-owned overrides. Initial/reset, saved/shared recovery and enabled selector transitions are regression checked." |
-| `coverage.inferencePolicy` | "Reviewed all memory, performance, power, fee, schedule, lifecycle and price-decline coefficients. Retained them as illustrative planning assumptions; vendor examples and historical cost trends do not provide a replacement measurement for these scenarios." |
-| `coverage.tariff` | "Rechecked the filed GS-1 distribution and seasonal generation blocks, transmission, every maintained rider, deferred fuel, sales/use surcharge, consumption-tax tiers and Loudoun commercial utility tax. All stored values match. The conservative demand gate and exclusion of data-center classifications and special minimum charges remain." |
-| `coverage.frontier` | "Rechecked the benchmark version, every maintained score/cost pair, missing-result pages and official reference-model prices, context/output limits, long-input policy and promotion. Updated Nemotron Ultra task cost and added the now-measured Granite result. Missing task costs remain excluded; deprecated benchmark pages are historical evaluations, not new runs." |
-| `coverage.trainingModels` | "Compared all total checkpoint sizes with model-card tensor summaries and both supervised adapter memory recipes with Unsloth. Existing values match. Recipe memory is not evidence of arbitrary training methods or exact end-to-end compatibility." |
-| `coverage.trainingEligibility` | "Reviewed model-card licenses and training documentation. Kept the requirement to qualify adaptation by the actual license and stack; open weights alone do not establish exact support." |
-| `coverage.trainingSystems` | "Reviewed every shared hardware/rental reference, custom scenario and power assumption. Prices and resources still derive from their canonical owners; no measured power evidence was supplied." |
-| `coverage.trainingDefaults` | "Reviewed every dataset, sequence, cadence, throughput, cost and energy default. Retained illustrative values and empty evidence fields because no user dataset, bill, quote or pilot was supplied." |
-| `coverage.methodDefaults` | "Reviewed auxiliary models, rollout counts, trainable fractions, forward/generation rates and teacher/reward cost assumptions against the method descriptions. No experiment or invoice evidence was supplied to recalibrate the examples." |
-| `coverage.trainingPolicy` | "Checked memory arithmetic against Transformers memory documentation and Unsloth recipes: base weights plus additional master weights, gradients and optimizer state remain consistent. Activation, headroom and monthly capacity are planning assumptions." |
-| `coverage.trainingMethods` | "Reviewed the memory, DPO, experimental PPO, GRPO and sequence-distillation documentation. Existing descriptions remain applicable, including recipe-dependent reference-policy memory and the need to pin implementation versions." |
-| `coverage.methodSources` | "Retrieved every method documentation link and the original distillation paper. Each still supports its maintained explanation." |
-| `coverage.reviewedConfigurations` | "Reviewed the empty evidence registry. No independently reviewed exact end-to-end run was established; kept it empty. Both calculator modes permit labeled estimates without implying certified compatibility." |
+| `coverage.sources` | "Reviewed every shared publisher link and all method links on October 24. Direct retrieval required web fallback for AMD, HP, Framework and NVIDIA investor pages. Framework now leads with PRO 495; the specs tab still includes the maintained 395 systems, so its source now links there. Source receipts retain URL, content hash or web retrieval reference, reviewed fields and limitations." |
+| `coverage.models` | "Reviewed all 19 model cards and all selected endpoint tuples. Updated GLM-5.3 Inceptron and Kimi K3 Relace prices. Qwen Coder 30B Novita is absent; replaced its entire tuple with the current non-discounted SiliconFlow FP8 endpoint. Other selected endpoints still match. Vendor evaluation wording matches the original cards. Stable model IDs remain unchanged; API precision does not change the independent self-hosted recipe." |
+| `coverage.hardware` | "Reviewed every maintained system and derived cluster: installed memory, CPU/GPU, storage, OS, allocation limits, quoted scope and runtime source. HP now publishes complete-system G1a and RTX 4000 Ada sale prices; replaced their unknown prices and removed superseded allowances. RTX 2000 Ada still shows a placeholder zero, retained as unknown. Other published prices/specifications match. Framework and AMD now advertise PRO 495/192 GB; candidate disposition below no longer claims coming soon." |
+| `coverage.rentals` | "Compared all 22 Lambda instance records field by field with all four GPU-count tables: GPU, count, VRAM, CPU, RAM, storage and per-GPU hourly price. All match; taxes and stock remain separate." |
+| `coverage.rentalTerms` | "Reviewed Lambda billing and price-table footnotes. Clarified that one-minute billing starts after launch and passing health checks, ends on termination, includes idle time, and published rates exclude applicable taxes. Filesystem charges survive instance termination." |
+| `coverage.purchaseAllowances` | "Reviewed all complete-system and cluster budgets against maintained vendor configurations and current Puget component costs. Removed the two allowances superseded by published HP system prices. Remaining amounts are illustrative whole-system budgets, not current quotes; network extras remain explicit assumptions." |
+| `coverage.inferenceMemory` | "Reviewed every four-bit aggregate memory budget against all 19 model-card checkpoint totals, retaining headroom above raw four-bit storage. Context/cache/batch/runtime overhead and fit remain assumptions rather than measured or certified compatibility." |
+| `coverage.workloads` | "Reviewed every usage/template field, model shortlist and task rationale against all maintained model cards. Retained illustrative calls, token mix, concurrency and ordering; no usage pilot supports replacing them. New releases are candidate reviews below, not automatic rewrites of saved models." |
+| `coverage.inferenceDefaults` | "Reviewed every initial/reset field, selected ID, October planning month and empty user-evidence value. October remains the current month; no month/date bump was needed. Preserve current saved/shared overrides and all configuration-specific measurements on catalog refresh." |
+| `coverage.inferencePolicy` | "Reviewed each memory, concurrency, prefill/decode, power/idle/cooling, fee/setup, schedule, baseline/peak, price-decline, lifecycle and projection coefficient. Retained all as labeled planning assumptions. Historical Stanford cost trends and NVIDIA generation cadence do not establish scenario forecasts or measurements." |
+| `coverage.tariff` | "Reviewed GS-1 applicability, both distribution blocks, seasonal generation blocks, transmission, all 17 riders including deferred fuel, surcharge, every consumption-tax threshold/rate and Loudoun fixed/rate/cap. All match the current filed tariff and county page. Conservative demand exclusion and special-contract/data-center exclusions remain." |
+| `coverage.frontier` | "Reviewed every maintained benchmark score, cost and reasoning variant under Index v4.3.2, including historical pages. DeepSeek original V4.1 Flash measured task cost changed; MiniMax M2.7 now lacks measured task cost and is excluded. Added current GPT-6.1 Sol from the evaluator and official API documentation; rechecked all other reference prices, context/output limits, long-input policy and promotion. Every retained selected benchmark now links its exact variant page." |
+| `coverage.trainingModels` | "Checked all 19 total checkpoint sizes against HF tensor summaries and all four Unsloth supervised adapter memory figures. All match. Recipes support only the documented supervised stack/objective; no arbitrary method or end-to-end compatibility is inferred." |
+| `coverage.trainingEligibility` | "Reviewed license labels across all 19 model cards and stack instructions. Kept license/stack qualification: open weights do not establish license permission for every use or working adaptation." |
+| `coverage.trainingSystems` | "Reviewed every shared hardware/rental reference and custom-system field. Prices/resources still derive from canonical owners; custom GPU counts/VRAM, zero quote defaults and power remain explicit user-scenario assumptions. No pilot power evidence was supplied." |
+| `coverage.trainingDefaults` | "Reviewed every model/method/task/system selection, dataset/token/sequence/microbatch/cadence field, throughput range, quote/evidence flag, energy/cooling/support/setup/overhead/campaign default. Retained illustrative values and empty evidence; no user dataset, bill, complete quote or pilot justifies recalibration." |
+| `coverage.methodDefaults` | "Reviewed each update method, trainable fraction, corpus, reference/teacher mode, auxiliary model size/memory, generation length/count, policy update, forward/generation speed and reward/teacher cost/time default against current method descriptions. Retained assumptions without inventing experiment/invoice evidence." |
+| `coverage.trainingPolicy` | "Rechecked weight/master-weight/gradient/Adam byte arithmetic against Transformers GPU-memory documentation and the quantized supervised recipes. Retained memory headroom, activation scaling/reference sequence and monthly capacity as planning assumptions." |
+| `coverage.trainingMethods` | "Reviewed all nine method IDs, labels, use cases and limitations against current training documentation. DPO reference work, experimental PPO critic/rollouts, GRPO optional reference/KL and offline sequence-distillation descriptions remain applicable. Pin stack versions for real runs." |
+| `coverage.methodSources` | "Reviewed all five method-document/paper URLs and their substantive content. Current Transformers memory anatomy, TRL DPO/experimental PPO/GRPO and the original sequence-distillation paper still support the explanations." |
+| `coverage.reviewedConfigurations` | "Reviewed the empty registry and exact model/runtime/system/workload evidence requirements. No exact independently reviewed run was supplied or established. Keep the registry empty and preserve the distinction between labeled feasibility estimates and verified configurations." |
 | `candidates.0.id` | "framework-next-memory" |
 | `candidates.0.sourceRef` | "frameworkDesktop" |
-| `candidates.0.status` | "deferred" |
-| `candidates.0.reason` | "Vendor advertises a higher-memory configuration as coming soon. Wait for an orderable complete-system configuration and verified allocation limits before catalog inclusion." |
+| `candidates.0.status` | "further-review" |
+| `candidates.0.reason` | "The vendor now publishes PRO 495 / 192 GB configurations. Retained 395 IDs keep their original specifications. A new catalog entry needs a complete configuration/price and runtime allocation review; published installed memory alone does not establish usable model memory." |
 | `candidates.1.id` | "new-open-weight-releases" |
 | `candidates.1.sourceRef` | "api" |
 | `candidates.1.status` | "further-review" |
-| `candidates.1.reason` | "The provider catalog also lists MiMo, Qwen Flash, Nex and task-specialist releases. Each needs checkpoint-size, runtime-memory and selected-endpoint review before becoming a usable buy/rent/API comparison." |
+| `candidates.1.reason` | "Current catalog includes DeepSeek V4.1 Flash 1017, MiniMax M3.1 Flash, Kimi K3.1 Pro and other newer releases. Keep distinct revisions separate from saved model IDs. Full checkpoint, selected-endpoint and deployment-memory review is required before adding a usable buy/rent/API comparison." |
 | `candidates.2.id` | "new-api-only-releases" |
 | `candidates.2.sourceRef` | "api" |
 | `candidates.2.status` | "deferred" |
@@ -67,13 +67,13 @@ Type: **editorial**. Recorded review: **2026-09-27**.
 | `candidates.5.reason` | "Published inference examples could support configuration-specific presets, but workload, precision, context and software versions must be modeled before replacing the generic throughput proxy." |
 | `candidates.6.id` | "amd-next-memory" |
 | `candidates.6.sourceRef` | "amdHalo" |
-| `candidates.6.status` | "deferred" |
-| `candidates.6.reason` | "The vendor labels its next processor and larger-memory Halo configuration as coming soon. Wait for orderable complete systems and allocation evidence." |
+| `candidates.6.status` | "further-review" |
+| `candidates.6.reason` | "The vendor now publishes PRO 495 / 192 GB configurations. Retained 395 IDs keep their original specifications. A new catalog entry needs a complete configuration/price and runtime allocation review; published installed memory alone does not establish usable model memory." |
 | `migration` | "Existing IDs and browser-storage/URL formats remain unchanged. No saved measurement is rewritten by this data refresh. Scenarios that no longer fit are preserved as rejected input by recovery and fall back to the usable default; explicit configuration changes continue to clear only scoped measurements and system quotes." |
 
 ## [sources.js](sources.js)
 
-Type: **provenance**. Recorded review: **2026-09-27**.
+Type: **provenance**. Recorded review: **2026-10-24**.
 
 **Frequency:** With each related data review; check links monthly.
 
@@ -97,7 +97,7 @@ Type: **provenance**. Recorded review: **2026-09-27**.
 | `nvidiaSparkPrice` | "https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713" |
 | `amdHalo` | "https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html" |
 | `amdHaloPrice` | "https://www.amd.com/en/blogs/2026/amd-ryzen-ai-halo-is-designed-for-the-agentic-era.html" |
-| `frameworkDesktop` | "https://frame.work/desktop?tab=machine-learning" |
+| `frameworkDesktop` | "https://frame.work/desktop?tab=specs" |
 | `hpZ2G1a` | "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1a-workstation-desktop-pc-wolf-pro-security-edition-p-bn8e8ua-aba-1" |
 | `appleStudio` | "https://www.apple.com/mac-studio/specs/" |
 | `hpZ2G1i2000` | "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k5ua-aba-1" |
@@ -108,7 +108,7 @@ Type: **provenance**. Recorded review: **2026-09-27**.
 
 ## [models.js](models.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** Weekly; immediately on endpoint, price or model changes.
 
@@ -141,8 +141,8 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `glm53.endpoint.context_length` | 1048576 |
 | `glm53.endpoint.max_completion_tokens` | 943718 |
 | `glm53.endpoint.max_prompt_tokens` | null |
-| `glm53.endpoint.pricing.prompt` | "0.0000004" |
-| `glm53.endpoint.pricing.completion` | "0.00000196" |
+| `glm53.endpoint.pricing.prompt` | "0.0000006" |
+| `glm53.endpoint.pricing.completion` | "0.00000322" |
 | `glm53.endpoint.pricing.input_cache_read` | "0.00000012" |
 | `glm53flash.name` | "Z.ai: GLM 5.3 Flash" |
 | `glm53flash.source` | "https://huggingface.co/zai-org/GLM-5.3-Flash" |
@@ -217,9 +217,9 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `kimi3.endpoint.context_length` | 1048576 |
 | `kimi3.endpoint.max_completion_tokens` | 943718 |
 | `kimi3.endpoint.max_prompt_tokens` | null |
-| `kimi3.endpoint.pricing.prompt` | "0.0000003" |
-| `kimi3.endpoint.pricing.completion` | "0.000012" |
-| `kimi3.endpoint.pricing.input_cache_read` | "0.00000025" |
+| `kimi3.endpoint.pricing.prompt` | "0.00000019" |
+| `kimi3.endpoint.pricing.completion` | "0.00000894" |
+| `kimi3.endpoint.pricing.input_cache_read` | "0.00000019" |
 | `nemotron-ultra.name` | "NVIDIA: Nemotron 3 Ultra" |
 | `nemotron-ultra.source` | "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16" |
 | `nemotron-ultra.apiModel` | "nvidia/nemotron-3-ultra-550b-a55b" |
@@ -317,14 +317,14 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `qwen30.name` | "Qwen: Qwen3 Coder 30B A3B Instruct" |
 | `qwen30.source` | "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct" |
 | `qwen30.apiModel` | "qwen/qwen3-coder-30b-a3b-instruct" |
-| `qwen30.endpoint.provider_name` | "Novita" |
-| `qwen30.endpoint.tag` | "novita/fp8" |
+| `qwen30.endpoint.provider_name` | "SiliconFlow" |
+| `qwen30.endpoint.tag` | "siliconflow/fp8" |
 | `qwen30.endpoint.quantization` | "fp8" |
-| `qwen30.endpoint.context_length` | 160000 |
-| `qwen30.endpoint.max_completion_tokens` | 32768 |
+| `qwen30.endpoint.context_length` | 262144 |
+| `qwen30.endpoint.max_completion_tokens` | 235929 |
 | `qwen30.endpoint.max_prompt_tokens` | null |
 | `qwen30.endpoint.pricing.prompt` | "0.00000007" |
-| `qwen30.endpoint.pricing.completion` | "0.00000027" |
+| `qwen30.endpoint.pricing.completion` | "0.00000028" |
 | `oss20.name` | "OpenAI: gpt-oss-20b" |
 | `oss20.source` | "https://huggingface.co/openai/gpt-oss-20b" |
 | `oss20.apiModel` | "openai/gpt-oss-20b" |
@@ -353,7 +353,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 
 ## [hardware.js](hardware.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** Monthly and before purchase; on product/configuration changes.
 
@@ -396,9 +396,11 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `strix-hp-128.name` | "HP Z2 Mini G1a · BN8E8UA" |
 | `strix-hp-128.memory` | 128 |
 | `strix-hp-128.kind` | "unified" |
-| `strix-hp-128.price` | null |
-| `strix-hp-128.package` | "Ryzen AI Max+ PRO 395, Radeon 8060S, {memory} GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter. Price not verified." |
+| `strix-hp-128.price` | 4499 |
+| `strix-hp-128.package` | "Ryzen AI Max+ PRO 395, Radeon 8060S, {memory} GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter." |
 | `strix-hp-128.sourceRef` | "hpZ2G1a" |
+| `strix-hp-128.priceSourceRef` | "hpZ2G1a" |
+| `strix-hp-128.priceKind` | "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra" |
 | `m5-256.name` | "Mac Studio M5 Ultra · {memory} GB" |
 | `m5-256.memory` | 256 |
 | `m5-256.kind` | "unified" |
@@ -421,10 +423,12 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `hp-4000.name` | "HP Z2 Mini G1i · RTX 4000 Ada" |
 | `hp-4000.memory` | 20 |
 | `hp-4000.kind` | "VRAM" |
-| `hp-4000.price` | null |
+| `hp-4000.price` | 4639 |
 | `hp-4000.package` | "BP6K7UA: Core Ultra 7 265, RTX 4000 Ada {memory} GB, 64 GB host RAM, 1 TB SSD, Windows 11 Pro, complete OEM workstation." |
 | `hp-4000.sourceRef` | "hpZ2G1i4000" |
+| `hp-4000.priceSourceRef` | "hpZ2G1i4000" |
 | `hp-4000.gpus` | 1 |
+| `hp-4000.priceKind` | "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra" |
 | `puget-5080.name` | "Puget workstation · RTX 5080" |
 | `puget-5080.memory` | 16 |
 | `puget-5080.kind` | "VRAM" |
@@ -520,7 +524,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 
 ## [rentals.js](rentals.js)
 
-Type: **published**. Recorded review: **2026-10-22**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** Weekly and before renting; on billing changes.
 
@@ -687,7 +691,7 @@ Type: **published**. Recorded review: **2026-10-22**.
 
 ## [rental-terms.js](rental-terms.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** With rental billing changes.
 
@@ -697,11 +701,11 @@ Type: **published**. Recorded review: **2026-09-27**.
 
 | Field | Current value |
 |---|---|
-| `(collection)` | "On-demand USD; tax extra. Billed in minute increments from launch/health checks until termination, including idle time. Region/stock not guaranteed. Persistent filesystems remain billable while they exist; confirm storage and other extras at checkout. Not a performance-equivalent substitute." |
+| `(collection)` | "On-demand USD; published rates exclude applicable sales tax/VAT/GST. Billed in one-minute increments after launch and passing health checks until termination, including idle time. Region/stock not guaranteed. Persistent filesystems remain billable while they exist; confirm storage and other extras at checkout. Not a performance-equivalent substitute." |
 
 ## [purchase-allowances.js](purchase-allowances.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** Monthly and for each purchase decision.
 
@@ -713,11 +717,9 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 |---|---|
 | `strix-framework-64` | 2500 |
 | `strix-framework-128` | 3500 |
-| `strix-hp-128` | 4500 |
 | `m5-256` | 8000 |
 | `m5-512` | 12000 |
 | `hp-2000` | 3000 |
-| `hp-4000` | 4000 |
 | `puget-5080` | 4500 |
 | `puget-5090` | 10000 |
 | `puget-pro-4000-blackwell` | 6000 |
@@ -741,7 +743,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [inference-memory.js](inference-memory.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** Every model/runtime/precision/context change.
 
@@ -773,7 +775,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [workloads.js](workloads.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** Monthly; after workload changes, model releases or evaluations.
 
@@ -871,7 +873,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [inference-defaults.js](inference-defaults.js)
 
-Type: **scenario**. Recorded review: **2026-09-27**.
+Type: **scenario**. Recorded review: **2026-10-24**.
 
 **Frequency:** Each planning cycle; start month each month.
 
@@ -940,7 +942,7 @@ Type: **scenario**. Recorded review: **2026-09-27**.
 
 ## [inference-policy.js](inference-policy.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** Each planning cycle; remeasure performance/energy on configuration changes.
 
@@ -985,7 +987,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [tariff.js](tariff.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** Check monthly; update on each tariff/tax effective date.
 
@@ -1034,7 +1036,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 
 ## [frontier.js](frontier.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** Weekly; on benchmark version, pricing or promotion changes.
 
@@ -1093,50 +1095,66 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `referenceModels.5.output` | 0.5 |
 | `referenceModels.5.source` | "https://artificialanalysis.ai/models/gpt-6-luna" |
 | `referenceModels.5.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6-luna" |
+| `referenceModels.6.id` | "gpt-6.1-sol" |
+| `referenceModels.6.name` | "GPT-6.1 Sol" |
+| `referenceModels.6.score` | 52 |
+| `referenceModels.6.taskCost` | 0.72 |
+| `referenceModels.6.input` | 2 |
+| `referenceModels.6.output` | 10 |
+| `referenceModels.6.source` | "https://artificialanalysis.ai/models/gpt-6-1-sol" |
+| `referenceModels.6.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6.1-sol" |
 | `selectedBenchmarks.ds41.score` | 39 |
-| `selectedBenchmarks.ds41.taskCost` | 0.4 |
+| `selectedBenchmarks.ds41.taskCost` | 0.48 |
 | `selectedBenchmarks.ds41.variant` | "max reasoning" |
+| `selectedBenchmarks.ds41.source` | "https://artificialanalysis.ai/models/deepseek-v4-1-flash" |
 | `selectedBenchmarks.glm53.score` | 45 |
 | `selectedBenchmarks.glm53.taskCost` | 2.01 |
 | `selectedBenchmarks.glm53.variant` | "max reasoning" |
+| `selectedBenchmarks.glm53.source` | "https://artificialanalysis.ai/models/glm-5-3" |
 | `selectedBenchmarks.glm53flash.score` | 42 |
 | `selectedBenchmarks.glm53flash.taskCost` | 0.28 |
 | `selectedBenchmarks.glm53flash.variant` | "AA evaluated configuration" |
+| `selectedBenchmarks.glm53flash.source` | "https://artificialanalysis.ai/models/glm-5-3-flash" |
 | `selectedBenchmarks.qwen38large.score` | 40 |
 | `selectedBenchmarks.qwen38large.taskCost` | 2.16 |
 | `selectedBenchmarks.qwen38large.variant` | "AA evaluated configuration" |
+| `selectedBenchmarks.qwen38large.source` | "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" |
 | `selectedBenchmarks.qwen38small.score` | 34 |
 | `selectedBenchmarks.qwen38small.taskCost` | 1.01 |
 | `selectedBenchmarks.qwen38small.variant` | "xhigh reasoning" |
+| `selectedBenchmarks.qwen38small.source` | "https://artificialanalysis.ai/models/qwen3-8-27b" |
 | `selectedBenchmarks.kimi3.score` | 44 |
 | `selectedBenchmarks.kimi3.taskCost` | 2 |
 | `selectedBenchmarks.kimi3.variant` | "max reasoning" |
+| `selectedBenchmarks.kimi3.source` | "https://artificialanalysis.ai/models/kimi-k3" |
 | `selectedBenchmarks.nemotron-ultra.score` | 23 |
 | `selectedBenchmarks.nemotron-ultra.taskCost` | 0.47 |
 | `selectedBenchmarks.nemotron-ultra.variant` | "reasoning" |
+| `selectedBenchmarks.nemotron-ultra.source` | "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b" |
 | `selectedBenchmarks.nemotron-super.score` | 13 |
 | `selectedBenchmarks.nemotron-super.taskCost` | 1.64 |
 | `selectedBenchmarks.nemotron-super.variant` | "reasoning" |
+| `selectedBenchmarks.nemotron-super.source` | "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b" |
 | `selectedBenchmarks.nemotron-nano.score` | 9 |
 | `selectedBenchmarks.nemotron-nano.taskCost` | 0.02 |
 | `selectedBenchmarks.nemotron-nano.variant` | "reasoning" |
+| `selectedBenchmarks.nemotron-nano.source` | "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning" |
 | `selectedBenchmarks.oss120.score` | 12 |
 | `selectedBenchmarks.oss120.taskCost` | 0.11 |
 | `selectedBenchmarks.oss120.variant` | "high reasoning" |
+| `selectedBenchmarks.oss120.source` | "https://artificialanalysis.ai/models/gpt-oss-120b" |
 | `selectedBenchmarks.nemotron-lightning.score` | 13 |
 | `selectedBenchmarks.nemotron-lightning.taskCost` | 0.08 |
 | `selectedBenchmarks.nemotron-lightning.variant` | "AA evaluated configuration" |
-| `selectedBenchmarks.minimax27.score` | 23 |
-| `selectedBenchmarks.minimax27.taskCost` | 0.1 |
-| `selectedBenchmarks.minimax27.variant` | "reasoning" |
-| `selectedBenchmarks.minimax27.source` | "https://artificialanalysis.ai/models/minimax-m2-7" |
+| `selectedBenchmarks.nemotron-lightning.source` | "https://artificialanalysis.ai/models/nemotron-3-5-lightning" |
 | `selectedBenchmarks.qwen80.score` | 9 |
 | `selectedBenchmarks.qwen80.taskCost` | 0.47 |
 | `selectedBenchmarks.qwen80.variant` | "non-reasoning" |
-| `selectedBenchmarks.qwen80.source` | "https://artificialanalysis.ai/models/qwen3-coder-next/" |
+| `selectedBenchmarks.qwen80.source` | "https://artificialanalysis.ai/models/qwen3-coder-next" |
 | `selectedBenchmarks.oss20.score` | 9 |
 | `selectedBenchmarks.oss20.taskCost` | 0.01 |
 | `selectedBenchmarks.oss20.variant` | "high reasoning" |
+| `selectedBenchmarks.oss20.source` | "https://artificialanalysis.ai/models/gpt-oss-20b" |
 | `selectedBenchmarks.granite42.score` | 11 |
 | `selectedBenchmarks.granite42.taskCost` | 0.02 |
 | `selectedBenchmarks.granite42.variant` | "reasoning" |
@@ -1145,6 +1163,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `missingBenchmarks.minimax` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
 | `missingBenchmarks.deepseek` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
 | `missingBenchmarks.qwen30` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
+| `missingBenchmarks.minimax27` | "The current model page no longer reports a measured cost per task for this benchmark version; excluded rather than retaining the previous cost." |
 | `longInputMultiplier` | 2 |
 | `longOutputMultiplier` | 1.5 |
 | `promotion.model` | "gpt-5.6-sol" |
@@ -1154,12 +1173,12 @@ Type: **published**. Recorded review: **2026-09-27**.
 | `referencePolicy.maxOutput` | 128000 |
 | `referencePolicy.longThreshold` | 272000 |
 | `referencePolicy.variant` | "max reasoning" |
-| `referenceLabel` | "GPT-5.6 and GPT-6" |
-| `referenceNaming` | "GPT-6 is the official API family name for the 6.0 comparison. GPT-5.6 Sol is the gpt-5.6 alias." |
+| `referenceLabel` | "GPT-5.6, GPT-6 and GPT-6.1" |
+| `referenceNaming` | "GPT-6.1 Sol is included alongside the published GPT-6 and GPT-5.6 comparison models. GPT-5.6 Sol is the gpt-5.6 alias." |
 
 ## [training-models.js](training-models.js)
 
-Type: **published**. Recorded review: **2026-09-27**.
+Type: **published**. Recorded review: **2026-10-24**.
 
 **Frequency:** Each model revision/addition or recipe/stack change.
 
@@ -1195,7 +1214,7 @@ Type: **published**. Recorded review: **2026-09-27**.
 
 ## [training-eligibility.js](training-eligibility.js)
 
-Type: **editorial**. Recorded review: **2026-09-27**.
+Type: **editorial**. Recorded review: **2026-10-24**.
 
 **Frequency:** On license or stack support changes.
 
@@ -1209,7 +1228,7 @@ Type: **editorial**. Recorded review: **2026-09-27**.
 
 ## [training-systems.js](training-systems.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** Monthly and before each campaign; custom quotes per run.
 
@@ -1257,7 +1276,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [training-defaults.js](training-defaults.js)
 
-Type: **scenario**. Recorded review: **2026-09-27**.
+Type: **scenario**. Recorded review: **2026-10-24**.
 
 **Frequency:** Each dataset version, experiment campaign or bill change.
 
@@ -1309,7 +1328,7 @@ Type: **scenario**. Recorded review: **2026-09-27**.
 
 ## [method-defaults.js](method-defaults.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** Every training recipe or experiment change.
 
@@ -1342,7 +1361,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [training-policy.js](training-policy.js)
 
-Type: **assumption**. Recorded review: **2026-09-27**.
+Type: **assumption**. Recorded review: **2026-10-24**.
 
 **Frequency:** On training stack, optimizer or memory-layout changes.
 
@@ -1363,7 +1382,7 @@ Type: **assumption**. Recorded review: **2026-09-27**.
 
 ## [training-methods.js](training-methods.js)
 
-Type: **editorial**. Recorded review: **2026-09-27**.
+Type: **editorial**. Recorded review: **2026-10-24**.
 
 **Frequency:** Quarterly; on method implementation/documentation changes.
 
@@ -1412,7 +1431,7 @@ Type: **editorial**. Recorded review: **2026-09-27**.
 
 ## [method-sources.js](method-sources.js)
 
-Type: **provenance**. Recorded review: **2026-09-27**.
+Type: **provenance**. Recorded review: **2026-10-24**.
 
 **Frequency:** Quarterly and on documentation moves.
 
@@ -1435,7 +1454,7 @@ Type: **provenance**. Recorded review: **2026-09-27**.
 
 ## [reviewed-configurations.js](reviewed-configurations.js)
 
-Type: **evidence**. Recorded review: **2026-09-27**.
+Type: **evidence**. Recorded review: **2026-10-24**.
 
 **Frequency:** Before expiry and after any model/runtime/hardware/workload change.
 

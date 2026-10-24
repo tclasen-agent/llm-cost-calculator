@@ -1,5 +1,5 @@
 // Shared projections only. Edit the adjacent dataset files, never copy their facts here.
-import {data,datasets} from './registry.js?v=30';
+import {data,datasets} from './registry.js?v=31';
 export {data,datasets};
 // A partial refresh must never advance the date for the entire catalog.
 export const oldestReviewDate=records=>Object.values(records).map(d=>d.maintenance.reviewed).sort().shift();

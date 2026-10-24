@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Monthly and before each campaign; custom quotes per run.",
     "source": "hardware and rentals canonical records; pilot power measurements",
     "how": "Use rentalId/hardwareId references, never duplicate their prices/resources. Purchase power is measured or explicitly assumed watts. Custom configurations require user evidence."
