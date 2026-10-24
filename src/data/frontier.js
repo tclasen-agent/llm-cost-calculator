@@ -3,7 +3,6 @@
  * Source: sources.benchmark, sources.methodology and record source/priceSource
  * Review frequency: Weekly; on benchmark version, pricing or promotion changes.
  * Update: Refresh comparable benchmark score, task cost and reasoning setting together. API prices USD/million tokens. Update all reference context limits and long-context multipliers; review promotion at its date. Never impute missing scores.
- * 2026-10-22 partial review: MiniMax M2.7 currently has no published task cost. Its historical score/cost pair and dataset review date are retained. Other comparable values were checked against v4.3.2.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
