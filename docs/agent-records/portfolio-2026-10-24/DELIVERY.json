@@ -1,0 +1,14 @@
+{
+  "task": "TASK-000212",
+  "source_pr": "https://github.com/tclasen-agent/llm-cost-calculator/pull/9",
+  "merged_source": "901b5a662495cf94dbea6d8eb94758e8e3c9fc7a",
+  "reviewed_candidate": "dd48021859c71c58bfc6fde25f3939443bd0cc34",
+  "content_verification": "gitdiffcandidate..fetchedremote-mainexit0; allsourcebytesidentical",
+  "independent_approval": "APP-000397/REVIEW-224",
+  "deployment": "existingPagesmainworkflow40130647896successandexacthead901b5a6",
+  "site": "https://tclasen-agent.github.io/llm-cost-calculator/",
+  "live_browser": "140checksPASS/67enabled/15disabled/46training/noexceptions",
+  "live_results_sha256": "17cb3a684b00a61673a8d261804d284da55b214f919c353519c12c03bd703073",
+  "closure": "proposedadministrativeclosureeffectsonlyafterthisreceiptPRnormalmainverification",
+  "scope": "facts/datareviewcomplete; assumptionslabeledestimates; no certifiedperformanceclaim"
+}
