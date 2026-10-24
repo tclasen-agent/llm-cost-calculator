@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Every model/runtime/precision/context change.",
     "source": "Editorial 4-bit planning budgets checked against total checkpoint parameters in trainingModels and model cards; no archived pilot measurements",
     "how": "Update aggregate memory GB for the assumed recipe. This never certifies hardware compatibility."

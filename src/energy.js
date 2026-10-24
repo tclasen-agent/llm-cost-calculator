@@ -1,4 +1,4 @@
-import {data} from './data/index.js?v=30';
+import {data} from './data/index.js?v=31';
 const tariff=data.tariff;
 export const tariffSource=data.sources.tariff,countySource=data.sources.county;
 export const ridersCents=tariff.ridersCents;

@@ -34,20 +34,20 @@ test('reviewed GLM same-provider rates reach API costs without applying cache di
  assert.deepEqual(endpoint,{
   provider_name:'Inceptron',tag:'inceptron/fp4',quantization:'fp4',
   context_length:1048576,max_completion_tokens:943718,max_prompt_tokens:null,
-  pricing:{prompt:'0.0000004',completion:'0.00000196',input_cache_read:'0.00000012'}
+  pricing:{prompt:'0.0000006',completion:'0.00000322',input_cache_read:'0.00000012'}
  });
  const model=models.find(m=>m.id==='glm53');
- for(const [key,expected] of Object.entries({input:.4,output:1.96,cached:.12}))
+ for(const [key,expected] of Object.entries({input:.6,output:3.22,cached:.12}))
   assert.ok(Math.abs(model[key]-expected)<1e-12,`glm53.${key} USD/million conversion`);
  const {estimateEconomics}=await import('../src/engine.js');
  const result=estimateEconomics({model:'glm53',workload:'swe-factory',start:'2026-10',users:2,
   calls:10,input:1250,output:250,concurrency:1,usageSource:'Synthetic rate conversion regression',
   apiExtras:0,costSource:'Synthetic zero extras',apiDecline:0,rentalDecline:0,purchaseDiscount:0});
- // 620 October requests each cost $0.0005 prompt + $0.00049 completion.
+ // 620 October requests each cost $0.00075 prompt + $0.000805 completion.
  // Cache-read is provenance, so every prompt token uses the ordinary prompt rate.
  assert.equal(result.rows[1].requests,620);
- assert.ok(Math.abs(result.rows[1].apiUsage-.6138)<1e-12);
- assert.ok(Math.abs(result.rows[1].apiMonthly-.6138)<1e-12);
+ assert.ok(Math.abs(result.rows[1].apiUsage-.9641)<1e-12);
+ assert.ok(Math.abs(result.rows[1].apiMonthly-.9641)<1e-12);
 });
 test('training instances share canonical rental prices and resources',()=>{
  for(const [id,t] of Object.entries(data.trainingSystems))if(t.rentalId){
@@ -98,11 +98,9 @@ test('small endpoint cache rates retain sub-cent precision in the shared view',(
   const model=models.find(m=>m.id===id);
   for(const [key,expected] of Object.entries({input,output,cached}))assert.ok(Math.abs(model[key]-expected)<1e-12,`${id}.${key}`);
  }
- // This partial source review cannot refresh a missing endpoint or the full audit.
- assert.equal(datasets.models.maintenance.reviewed,'2026-09-27');
- assert.equal(datasets.frontier.maintenance.reviewed,'2026-09-27');
- assert.equal(datasets.rentals.maintenance.reviewed,'2026-10-22');
- assert.equal(dataReviewed,'2026-09-27');
+ // The full audit includes published facts, assumptions and the evidence registry.
+ assert.ok(Object.values(datasets).every(d=>d.maintenance.reviewed===dataReviewed));
+ assert.equal(dataReviewed,'2026-10-24');
 });
 
 test('API endpoint precision does not redefine the independent self-hosted memory recipe',async()=>{
@@ -115,4 +113,33 @@ test('API endpoint precision does not redefine the independent self-hosted memor
  // The API tuple is not a measured local runtime or compatibility record.
  assert.match(scenario.localRuntime,/4.bit/i);
  assert.equal(data.reviewedConfigurations.length,0);
+});
+
+
+test('removed Qwen endpoint migrates atomically while old scenario IDs retain overrides',async()=>{
+ const {initialScenario}=await import('../src/scenario.js');
+ const {encodeState,decodeState}=await import('../src/sharing.js');
+ const saved={...data.inferenceDefaults,model:'qwen30',autoModel:0,autoHardware:0,autoRental:0,localEvidence:'Existing pilot',localRph:17,overrides:'localRph,localEvidence'};
+ const restored=initialScenario(decodeState(encodeState(saved)));
+ assert.equal(restored.recovered,false);
+ assert.equal(restored.state.model,'qwen30');
+ assert.equal(restored.state.localRph,17);
+ assert.equal(restored.state.localEvidence,'Existing pilot');
+ const model=models.find(m=>m.id==='qwen30');
+ assert.equal(model.providerTag,'siliconflow/fp8');
+ assert.equal(model.context,data.models.qwen30.endpoint.context_length);
+ assert.equal(model.maxOutput,data.models.qwen30.endpoint.max_completion_tokens);
+ assert.equal(model.input,.07);assert.equal(model.output,.28);
+ assert.ok(restored.result.buyReady&&restored.result.rentReady&&restored.result.apiReady);
+});
+test('new published system prices supersede allowances without replacing user quotes',async()=>{
+ const {planning}=await import('../src/planning.js');
+ for(const id of ['strix-hp-128','hp-4000']){
+  const h=hardware.find(h=>h.id===id);
+  assert.ok(h.price>0);assert.match(h.priceKind,/listed sale price/);
+  assert.equal(data.purchaseAllowances[id],undefined);
+  const state=planning({...data.inferenceDefaults,hardware:id,model:'oss20',autoHardware:0,quote:12345,quoteSource:'User quote',overrides:'quote,quoteSource'});
+  assert.equal(state.quote,12345);assert.equal(state.quoteSource,'User quote');
+ }
+ assert.equal(data.hardware['hp-2000'].price,null);
 });

@@ -1,0 +1,1054 @@
+{
+  "url": "http://127.0.0.1:4212/",
+  "checkedAt": "2026-10-24T20:21:43.803Z",
+  "enabledInferenceTransitions": 67,
+  "disabledExplained": 15,
+  "trainingTransitions": 46,
+  "results": [
+    {
+      "label": "full catalog review date",
+      "pass": true
+    },
+    {
+      "label": "initial calculator loads",
+      "pass": true
+    },
+    {
+      "label": "initial buy rent API usable",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:chat",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:research",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:bizdev",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:swe",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:swe-factory",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:support",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:writing",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference workload:security",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:ds41",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:glm53",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:minimax27",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled model:qwen38large explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference model:qwen80",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:glm53flash",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:qwen38small",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:nemotron-lightning",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled model:kimi3 explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference model:nemotron-ultra",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:nemotron-super",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:minimax",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:kimi25",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:nemotron-nano",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:deepseek",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:oss120",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:qwen30",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:oss20",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference model:granite42",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference autoModel:1",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference autoModel:0",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:spark",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:strix-amd-128",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled hardware:strix-framework-64 explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference hardware:strix-framework-128",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:strix-hp-128",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:m5-256",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:m5-512",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled hardware:hp-2000 explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled hardware:hp-4000 explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled hardware:puget-5080 explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled hardware:puget-5090 explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled hardware:puget-pro-4000-blackwell explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled hardware:puget-pro-5000-blackwell explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference hardware:puget-pro-6000-blackwell-ws",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:supermicro-h100",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:spark-x2",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:spark-x4",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:m5-512-x2",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:m5-512-x4",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:puget-pro-5000-blackwell-72",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference hardware:m5-max-128",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled rental:quadro explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled rental:a6000 explains reason",
+      "pass": true
+    },
+    {
+      "label": "disabled rental:a100 explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference rental:h100-pcie",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:h100",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:gh200",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:a6000-x2",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:a6000-x4",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:h100-x2",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:h100-x4",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:h100-x8",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:b200",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:b200-x8",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:b200-x2",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:b200-x4",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:a100-x2",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:a100-x4",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled rental:a100-sxm explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference rental:a100-sxm-x8",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:a100-80-x8",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference rental:v100-x8",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled rental:a10 explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference autoHardware:1",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference autoHardware:0",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference autoRental:1",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference autoRental:0",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "disabled tariff:gs1 explains reason",
+      "pass": true
+    },
+    {
+      "label": "enabled inference tariff:bill",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference tariffConfirmed:0",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference tariffConfirmed:1",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference localTax:1",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "enabled inference localTax:0",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "saved stable model ID survives refresh",
+      "pass": true
+    },
+    {
+      "label": "saved measured throughput survives refresh",
+      "pass": true
+    },
+    {
+      "label": "saved system quote survives refresh",
+      "pass": true
+    },
+    {
+      "label": "shared URL preserves measured throughput",
+      "pass": true
+    },
+    {
+      "label": "reset complete buy rent API",
+      "pass": true,
+      "details": {
+        "valid": true,
+        "buy": true,
+        "rent": true,
+        "api": true,
+        "recovered": false
+      }
+    },
+    {
+      "label": "invalid historical input recovery visible",
+      "pass": true
+    },
+    {
+      "label": "rejected user inputs preserved",
+      "pass": true
+    },
+    {
+      "label": "training model:ds41 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:glm53 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:glm53flash renders",
+      "pass": true
+    },
+    {
+      "label": "training model:qwen38large renders",
+      "pass": true
+    },
+    {
+      "label": "training model:qwen38small renders",
+      "pass": true
+    },
+    {
+      "label": "training model:minimax27 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:nemotron-lightning renders",
+      "pass": true
+    },
+    {
+      "label": "training model:kimi3 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:nemotron-ultra renders",
+      "pass": true
+    },
+    {
+      "label": "training model:nemotron-super renders",
+      "pass": true
+    },
+    {
+      "label": "training model:minimax renders",
+      "pass": true
+    },
+    {
+      "label": "training model:qwen80 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:kimi25 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:nemotron-nano renders",
+      "pass": true
+    },
+    {
+      "label": "training model:deepseek renders",
+      "pass": true
+    },
+    {
+      "label": "training model:oss120 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:qwen30 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:oss20 renders",
+      "pass": true
+    },
+    {
+      "label": "training model:granite42 renders",
+      "pass": true
+    },
+    {
+      "label": "training method:qlora renders",
+      "pass": true
+    },
+    {
+      "label": "training method:lora renders",
+      "pass": true
+    },
+    {
+      "label": "training method:full renders",
+      "pass": true
+    },
+    {
+      "label": "training method:partial renders",
+      "pass": true
+    },
+    {
+      "label": "training method:cpt renders",
+      "pass": true
+    },
+    {
+      "label": "training method:dpo renders",
+      "pass": true
+    },
+    {
+      "label": "training method:distill renders",
+      "pass": true
+    },
+    {
+      "label": "training method:ppo renders",
+      "pass": true
+    },
+    {
+      "label": "training method:grpo renders",
+      "pass": true
+    },
+    {
+      "label": "training task:security renders",
+      "pass": true
+    },
+    {
+      "label": "training task:custom renders",
+      "pass": true
+    },
+    {
+      "label": "training autoBuy:1 renders",
+      "pass": true
+    },
+    {
+      "label": "training autoBuy:0 renders",
+      "pass": true
+    },
+    {
+      "label": "training autoRent:1 renders",
+      "pass": true
+    },
+    {
+      "label": "training autoRent:0 renders",
+      "pass": true
+    },
+    {
+      "label": "training buy:workstation96 renders",
+      "pass": true
+    },
+    {
+      "label": "training buy:hgx640 renders",
+      "pass": true
+    },
+    {
+      "label": "training buy:customBuy renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:h100 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:b200 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:h100x4 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:customRent renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:h100x8 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:b200x2 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:b200x4 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:b200x8 renders",
+      "pass": true
+    },
+    {
+      "label": "training rent:a100x8 renders",
+      "pass": true
+    },
+    {
+      "label": "training reset has finite display",
+      "pass": true
+    },
+    {
+      "label": "no browser exceptions",
+      "pass": true,
+      "details": []
+    }
+  ],
+  "errors": []
+}

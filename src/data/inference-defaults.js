@@ -9,7 +9,7 @@
 export default {
   "maintenance": {
     "kind": "scenario",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Each planning cycle; start month each month.",
     "source": "Product planning policy; user evidence for overrides",
     "how": "Update initial scenario only. Null fields are populated by planning. Saved overrides remain user-owned and must be reviewed when reopened."

@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "provenance",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "With each related data review; check links monthly.",
     "source": "Publisher/provider documents",
     "how": "Replace moved URLs only after confirming the same document scope; retain historical evidence."
@@ -28,7 +28,7 @@ export default {
     "nvidiaSparkPrice": "https://forums.developer.nvidia.com/t/2-23-2026-price-change-announcement/361713",
     "amdHalo": "https://www.amd.com/en/products/processors/desktops/ryzen/ryzen-ai-halo.html",
     "amdHaloPrice": "https://www.amd.com/en/blogs/2026/amd-ryzen-ai-halo-is-designed-for-the-agentic-era.html",
-    "frameworkDesktop": "https://frame.work/desktop?tab=machine-learning",
+    "frameworkDesktop": "https://frame.work/desktop?tab=specs",
     "hpZ2G1a": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1a-workstation-desktop-pc-wolf-pro-security-edition-p-bn8e8ua-aba-1",
     "appleStudio": "https://www.apple.com/mac-studio/specs/",
     "hpZ2G1i2000": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k5ua-aba-1",

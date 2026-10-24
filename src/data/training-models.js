@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Each model revision/addition or recipe/stack change.",
     "source": "models.*.source; sources.training; training-only model source",
     "how": "Record total checkpoint parameters in billions, not active MoE counts. Confirm license/stack eligibility; recipe memory GB applies only to the documented supervised objective."

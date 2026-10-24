@@ -1,5 +1,5 @@
-import {defaults} from './catalog.js?v=30';
-import {normalize} from './engine.js?v=30';
+import {defaults} from './catalog.js?v=31';
+import {normalize} from './engine.js?v=31';
 export function encodeState(s){const p=new URLSearchParams({scenario:'2'});for(const k of Object.keys(defaults))p.set(k,s[k]===null?'':String(s[k]));return p.toString();}
 // Recovery needs the original field values before normalization repairs them.
 export function readState(query){const p=new URLSearchParams(query);if(p.get('scenario')!=='2')return null;const raw={};for(const k of Object.keys(defaults))if(p.has(k))raw[k]=p.get(k);return raw;}

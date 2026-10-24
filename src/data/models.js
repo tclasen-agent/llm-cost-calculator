@@ -3,13 +3,12 @@
  * Source: sources.api; each model source and its /endpoints API
  * Review frequency: Weekly; immediately on endpoint, price or model changes.
  * Update: Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card.
- * 2026-10-22 partial review: qwen38large now uses the current non-discounted SiliconFlow/fp8 tuple. qwen30 Novita/fp8 remains absent; its historical tuple and the dataset review date are retained.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-09-27",
+    "reviewed": "2026-10-24",
     "frequency": "Weekly; immediately on endpoint, price or model changes.",
     "source": "sources.api; each model source and its /endpoints API",
     "how": "Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card."
@@ -47,8 +46,8 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000004",
-          "completion": "0.00000196",
+          "prompt": "0.0000006",
+          "completion": "0.00000322",
           "input_cache_read": "0.00000012"
         }
       }
@@ -159,9 +158,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000003",
-          "completion": "0.000012",
-          "input_cache_read": "0.00000025"
+          "prompt": "0.00000019",
+          "completion": "0.00000894",
+          "input_cache_read": "0.00000019"
         }
       }
     },
@@ -312,15 +311,15 @@ export default {
       "source": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
       "apiModel": "qwen/qwen3-coder-30b-a3b-instruct",
       "endpoint": {
-        "provider_name": "Novita",
-        "tag": "novita/fp8",
+        "provider_name": "SiliconFlow",
+        "tag": "siliconflow/fp8",
         "quantization": "fp8",
-        "context_length": 160000,
-        "max_completion_tokens": 32768,
+        "context_length": 262144,
+        "max_completion_tokens": 235929,
         "max_prompt_tokens": null,
         "pricing": {
           "prompt": "0.00000007",
-          "completion": "0.00000027"
+          "completion": "0.00000028"
         }
       }
     },
