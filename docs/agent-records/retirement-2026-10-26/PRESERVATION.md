@@ -1,0 +1,12 @@
+# Remote preservation before local checkout removal
+
+Owner explicitly requested remote preservation and local checkout deletion on 26 October 2026. No product behavior change.
+
+- Existing origin: https://github.com/tclasen-agent/llm-cost-calculator.git
+- Source baseline and freshly observed remote main: `5df91ae23f90b76d7c47b155f135c01b8dfe9a25` (Git fetch/ls-remote and independent GitHub connector agree).
+- No tracked modifications or nonignored user files preceded retirement admission. One primary checkout; no linked worktrees or submodules.
+- Two previously local-only historical commits pushed to new remote archive refs, without rewriting any existing branch: `archive/retirement-20261026-glm-prepublication` at `6abe25859bec61f9e272c326d43ca3d3ae60f9fc`, and `archive/retirement-20261026-october-prepublication` at `5ce445ee38122fd167eb30b1f1c65cabb4e1189d`. Fresh ls-remote confirms both; local branch history minus all remote refs is empty.
+- Unique ignored artifacts/logs: 981 entries preserved in `/Users/Shared/retired-project-evidence/llm-cost-calculator-20261026/ignored-evidence.tar`, 1,476,894,720 bytes, SHA256 `d2c8d581445496d351ac5939ba30bede21e298bd25735ddff34ff022e1d4bf0b`. Adjacent `manifest.json` records individual names/size/hash. Every archive member was read back and verified against original bytes or symlink target. Archive is local recovery evidence, not uploaded to GitHub; no credentials or ignored evidence published. Reproducible `node_modules/`, `dist/` and `.DS_Store` are disposable exclusions.
+- Verification: npm test passes263/263; data inventory current22datasets/1174paths; npm run build passes. Sandbox preferences warnings occurred but commands exited0. No application or deployment configuration changed.
+- Deletion is conditional: independent review; retirement records on owning remote main through ordinary PR; organization routing retirement on its remote main; final tracked/untracked/ignored/ref/worktree/nested-repository/active-user recheck. Verify archive remains outside checkout and unchanged. Delete only exact `/Users/Shared/llm-cost-calculator` after these checks. Retain independent remote, all historical organization pointers and named ignored-evidence recovery archive.
+- Proposed completion is not effective until the above remote-main delivery and checkout absence are observed in session delivery receipts; this pre-deletion record does not assert those future effects occurred.
