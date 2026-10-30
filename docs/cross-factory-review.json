@@ -1,0 +1,18 @@
+{
+  "task": "CF-KNOWLEDGE-2026-10-30",
+  "stage": "independent exact-candidate review",
+  "reviewer": "/root/review_knowledge",
+  "verdict": "APPROVE",
+  "candidate": "ded39e7dae9baaeb5e6a7367bd683e939bc6846e",
+  "checks": [
+    "Reviewed exact three-path prose/record diff and config/finish-started scenarios.",
+    "All content from shared factory-contract heading through maintained data requirements remains byte-identical to baseb1a1b9db6e77d2fed959708127ac73ddfa5fab6b.",
+    "git diff --check and clean tracked tree at review observation PASS."
+  ],
+  "limits": [
+    "No application/data change; npm suites not rerun for this prose-only scope.",
+    "Integration must not trigger a price refresh, deployment or product backlog work."
+  ],
+  "integration_owner": "/root/integrate_knowledge",
+  "scope": "Bounded operating instructions and supporting custody controls only; no product/graph/runtime/deployment activation."
+}
