@@ -1,0 +1,17 @@
+{
+  "task": "CF-KNOWLEDGE-2026-10-30",
+  "project": "llm-cost-calculator",
+  "status": "PASS local checks; independent review/integration pending",
+  "preserved_baseline_files": 0,
+  "new_local_markdown_links_checked": 1,
+  "source_contract_preserved": true,
+  "commands": [],
+  "application_or_proof_replay": "NOT RUN; no application/data/bundle/proof change",
+  "observed_benefit": "UNMEASURED",
+  "mode_tabletop": {
+    "configure_request": "instruction/helper edits only; no product, graph, research or maintenance launched",
+    "finish_started": "freeze authorized inventory once; no new backlog; specific decision for new prerequisite",
+    "hypothesis_storage": "approval does not establish truth",
+    "custody_pass": "does not establish RDF semantics or graph acceptance"
+  }
+}

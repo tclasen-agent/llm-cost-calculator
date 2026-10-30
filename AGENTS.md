@@ -1,6 +1,6 @@
 # Repository operating instructions
 
-Operating-instruction version: RESET-001, revision 1.
+Operating-instruction version: CROSS-FACTORY-2026-10-30, revision 2.
 
 This file is the authoritative repository-owned agent entry point for this
 repository. It contains the adopted Autonomous Software Factory contract and the
@@ -28,6 +28,25 @@ to applicable platform instructions and explicit user directions.
 - Existing workers adopt this version at their next assignment boundary.
   Explicit current assignment constraints remain binding, including a required
   stop for independent review before commit or push.
+
+## Explicit execution mode and stopping boundary
+
+Each assignment records `inspect`, `configure`, `execute`, `finish-started`, or
+`idle`, its authority, scope/exclusions, owner, acceptance and stop condition in
+the existing brief or task record. Loading or changing these instructions does
+not activate product work, price refreshes, deployment or maintenance. An explicit
+request authorizes its clear bounded intent; do not repeat an already settled
+interview. For graceful completion, freeze the already-started list once, keep
+its live status in one authoritative record, preserve unrelated work, finish only
+those items and then idle. A new prerequisite needs a specific scope decision
+before dependent work; independent authorized items may continue. A completed
+worker or stale historical next step grants no new execution authority.
+
+The existing maintained-data registry and generated inventory remain canonical;
+this amendment changes no pricing, fact review date, product acceptance or
+release/deployment grant. Adoption is at the next affected action boundary.
+The [implementation record](docs/cross-factory-2026-10-30.md) records authority and
+evaluation; this bounded configuration change requires fresh independent review.
 
 ---
 
