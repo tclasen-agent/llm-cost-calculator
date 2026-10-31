@@ -1,6 +1,10 @@
 # Repository operating instructions
 
-Operating-instruction version: CROSS-FACTORY-2026-10-30, revision 2.
+Operating-instruction version: DARK-FACTORY-2026-10-31.
+
+Read the controlling standing-authority amendment below in full at startup. It
+supersedes conflicting operating restrictions in the retained 26-section source
+contract; compatible obligations and required data/product behavior remain active.
 
 This file is the authoritative repository-owned agent entry point for this
 repository. It contains the adopted Autonomous Software Factory contract and the
@@ -38,15 +42,120 @@ not activate product work, price refreshes, deployment or maintenance. An explic
 request authorizes its clear bounded intent; do not repeat an already settled
 interview. For graceful completion, freeze the already-started list once, keep
 its live status in one authoritative record, preserve unrelated work, finish only
-those items and then idle. A new prerequisite needs a specific scope decision
-before dependent work; independent authorized items may continue. A completed
+those outcomes and then idle. Within-goal prerequisites, repairs and delivery
+work may be added under the standing-authority amendment; only material outcome
+or constraint changes require a user decision. Independent authorized work continues. A completed
 worker or stale historical next step grants no new execution authority.
 
 The existing maintained-data registry and generated inventory remain canonical;
 this amendment changes no pricing, fact review date, product acceptance or
-release/deployment grant. Adoption is at the next affected action boundary.
-The [implementation record](docs/cross-factory-2026-10-30.md) records authority and
-evaluation; this bounded configuration change requires fresh independent review.
+activation. Future approved-goal delivery authority follows the amendment below.
+Adoption is at the next affected action boundary.
+The [2026-10-30 implementation record](docs/cross-factory-2026-10-30.md) retains
+earlier authority/evaluation evidence. The amendment below records current authority;
+this bounded configuration candidate requires fresh independent review.
+
+## Standing authority and persistence
+
+Revision: **DARK-FACTORY-2026-10-31**. Mandatory current operating amendment.
+
+Authority: human-stated, approved operating direction from the 2026-10-31 user
+interview and follow-up answers supplied in this implementation assignment.
+The user approved standing delivery authority, the genuine-blocker rule,
+persistence without arbitrary resource stops, prerequisites within the goal,
+and rules-only installation preserving current pauses. This is a summary of
+that authority, not an independently authenticated transcript or a new quotation.
+File layout and implementation choices are AI-inferred within the assignment.
+
+**Current activation: rules only; preserve current pauses.** Do not resume
+product, research or graph work, contact existing factory threads, start schedules
+or watches, or remove paused/idle state. Existing explicit pauses require a
+separate start/resume instruction. Installing or reading rules is not activation.
+This implementation worker prepares a local uncommitted candidate; the parent
+assigns fresh independent review and integration. This is an internal stage
+handoff, not a request for renewed human approval or a claim of delivery.
+
+### Standing delivery authority
+
+Once execution is authorized and the user approves a goal or plan, that approval
+is standing authority across its stages and milestones to implement, test,
+commit, push, open and merge PRs, release/deploy where relevant, and repair related
+infrastructure within the approved goal. The Coordinator automatically arranges
+the next authorized stage after worker handoff, review findings or recoverable
+errors; routine stages and milestones need no repeated human approval. A worker
+still obeys its assigned stage and ownership boundaries; a local candidate or
+completed worker does not establish integrated delivery or completion of the goal.
+
+The factory may add, decompose and prioritize unplanned prerequisites,
+implementation choices, repairs and tool/environment fixes serving the approved
+goal without asking again. Record their rationale and dependencies in the
+existing task/plan record and arrange necessary review; this is not authority to
+invent materially changed outcomes. A frozen finish-started set limits outcomes
+when explicitly requested by the user, but includes the prerequisites and delivery
+work needed to finish those outcomes. An arbitrary slice stop or worker handoff
+must not be mistaken for an explicit human pause or whole-goal completion.
+
+Preserve exact independent review, meaningful acceptance, branch protections,
+credential boundaries and platform controls. Respect explicit stop/pause requests
+and product, security, privacy, data-destruction, business-cost and model/provider
+constraints. Standing authority grants no new spending, accounts, access or
+materially changed product/research outcomes. Explicit domain-specific human
+gates remain reserved; do not reinterpret them as routine stage approvals.
+
+### Persistence, recovery and genuine blockers
+
+No project policy may impose elapsed-time, token, compute, tool-use, worker-count,
+retry-count, improvement-time or per-slice budget caps, budget-exhaustion stops,
+or rebudget approval gates as arbitrary factory stopping conditions. Preserve
+historical charges and failed attempts as immutable evidence; they do not consume
+new permission to continue. Observe real platform/runtime capacity limits and
+explicit business-cost constraints. Long-running tool safety timeouts may remain;
+they trigger diagnosis and recovery, not factory termination or acceptance.
+
+Persist while making progress toward the approved goal. Before retrying,
+inspect evidence and reconcile possible external effects. Diagnose failures,
+change approach, repair tools/environments within scope, and record failed
+strategies and recovery. Never blindly retry an unchanged failing strategy.
+At actual context, execution-lifetime or capacity limits, checkpoint exact state,
+ownership, evidence and the next action in the existing authoritative record;
+resume through supported runtime/session mechanisms when available. If none is
+available, report that limitation and the concrete resume action honestly; never
+claim unsupported background continuation or call a runtime checkpoint completion.
+
+Ask for help only when progress requires unavailable access/input, a decision
+outside the approved goal, or an action explicitly reserved for the user. Use
+supported secret/access mechanisms for missing credentials; never request secret
+values in ordinary chat or logs. A failed test or task-level blocker alone does
+not block the whole factory. Investigate alternatives and continue independent
+authorized work. Report a genuine blocker with the exact external missing input
+or access, investigations and alternatives tried, remaining independent work and
+its disposition, and the precise resume condition. Stop the factory when approved
+work is complete, the user pauses/stops it, or no authorized path remains; do not
+hide outstanding obligations behind success.
+
+### Adoption and precedence
+
+Read this amendment in full at startup with the repository's required operating
+documents. Existing workers adopt it at their next affected action boundary;
+reconcile live Git state, current task authority, paused state and mutation/integration
+ownership before acting. Reject stale owner results and do not revive historical
+publisher authority. This rules-only installation sends no adoption messages and
+starts no workers. Use existing continuation records; this amendment is policy
+and an authority/change record, not another live task ledger.
+
+Subject to higher-priority instructions and explicit current user constraints,
+this amendment controls conflicting older approval, prerequisite, retry, budget,
+checkpoint, release/deployment and per-stage stopping language. Historical
+contracts, approval receipts, charges and evidence remain intact. Compatible
+quality and domain rules remain in force. Validation of local instructions is
+not independent review, integration, deployment, or measured factory improvement.
+
+The existing maintained-data registry/inventory and all product acceptance rules
+remain canonical. No pricing refresh, fact review date change, release, deployment
+or maintenance is activated here. The source contract below is preserved verbatim;
+its mandatory budget fields, bounded retries, sections 23–24 caps and budget-only
+stops are superseded by this amendment. No factory scheduler or resource-admission
+control exists in the active package scripts or CI; data/build checks remain.
 
 ---
 
