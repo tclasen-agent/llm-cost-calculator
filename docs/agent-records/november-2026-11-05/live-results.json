@@ -1,0 +1,55 @@
+{
+  "checkedAt": "2026-11-05T23:35:37.102Z",
+  "source": "b680be4941df88caeaf618878e467bb006891671",
+  "url": "https://tclasen-agent.github.io/llm-cost-calculator/",
+  "checks": [
+    {
+      "label": "src/data/inference-defaults.js HTTP success",
+      "pass": true
+    },
+    {
+      "label": "src/data/inference-defaults.js deployed bytes match source",
+      "pass": true
+    },
+    {
+      "label": "src/data/INVENTORY.md HTTP success",
+      "pass": true
+    },
+    {
+      "label": "src/data/INVENTORY.md deployed bytes match source",
+      "pass": true
+    },
+    {
+      "label": "NOV-001 fresh November",
+      "pass": true
+    },
+    {
+      "label": "NOV-003 conservative overall accuracy",
+      "pass": true
+    },
+    {
+      "label": "NOV-002 complete buy rent API",
+      "pass": true
+    },
+    {
+      "label": "NOV-002 saved September preserved",
+      "pass": true
+    },
+    {
+      "label": "NOV-002 measurement preserved",
+      "pass": true
+    },
+    {
+      "label": "NOV-001 reset November",
+      "pass": true
+    },
+    {
+      "label": "training smoke finite",
+      "pass": true
+    },
+    {
+      "label": "NOV-003 live inventory accessible",
+      "pass": true
+    }
+  ]
+}
