@@ -873,7 +873,7 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 
 ## [inference-defaults.js](inference-defaults.js)
 
-Type: **scenario**. Recorded review: **2026-10-24**.
+Type: **scenario**. Recorded review: **2026-11-05**.
 
 **Frequency:** Each planning cycle; start month each month.
 
@@ -897,7 +897,7 @@ Type: **scenario**. Recorded review: **2026-10-24**.
 | `rental` | "a6000-x4" |
 | `autoRental` | 1 |
 | `autoModel` | 1 |
-| `start` | "2026-10" |
+| `start` | "2026-11" |
 | `calls` | null |
 | `input` | null |
 | `output` | null |

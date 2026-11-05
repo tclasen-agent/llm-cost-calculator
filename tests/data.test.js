@@ -98,8 +98,9 @@ test('small endpoint cache rates retain sub-cent precision in the shared view',(
   const model=models.find(m=>m.id===id);
   for(const [key,expected] of Object.entries({input,output,cached}))assert.ok(Math.abs(model[key]-expected)<1e-12,`${id}.${key}`);
  }
- // The full audit includes published facts, assumptions and the evidence registry.
- assert.ok(Object.values(datasets).every(d=>d.maintenance.reviewed===dataReviewed));
+ // A later partial scenario review must not imply a fresh complete audit.
+ assert.equal(dataReviewed,oldestReviewDate(datasets));
+ assert.ok(Object.values(datasets).every(d=>d.maintenance.reviewed>=dataReviewed));
  assert.equal(dataReviewed,'2026-10-24');
 });
 
