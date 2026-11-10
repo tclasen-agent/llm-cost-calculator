@@ -1,0 +1,188 @@
+{
+  "checkedAt": "2026-11-10T21:09:56.281Z",
+  "source": "cc2fe4f09ed6f71a47c45ca2d74beb8af5a63e8c",
+  "url": "https://tclasen-agent.github.io/llm-cost-calculator/",
+  "checks": [
+    {
+      "label": "src/app.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/comparison.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/INVENTORY.md deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/README.md deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/audit.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/frontier.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/hardware.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/index.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/inference-defaults.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/inference-memory.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/inference-policy.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/method-defaults.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/method-sources.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/models.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/purchase-allowances.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/rental-terms.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/rentals.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/reviewed-configurations.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/sources.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/tariff.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/training-defaults.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/training-eligibility.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/training-methods.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/training-models.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/training-policy.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/training-systems.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/workloads.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/planning.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/training-ui.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "HW-003 full registry review date",
+      "pass": true
+    },
+    {
+      "label": "HW-001/002 four new selections",
+      "pass": true
+    },
+    {
+      "label": "macbook-m5-pro-64 selector works",
+      "pass": true
+    },
+    {
+      "label": "macbook-m5-pro-64 retains buy/rent/API",
+      "pass": true
+    },
+    {
+      "label": "macbook-m4-max-128 selector works",
+      "pass": true
+    },
+    {
+      "label": "macbook-m4-max-128 retains buy/rent/API",
+      "pass": true
+    },
+    {
+      "label": "rtx-pro-6000-server-x4 selector works",
+      "pass": true
+    },
+    {
+      "label": "rtx-pro-6000-server-x4 retains buy/rent/API",
+      "pass": true
+    },
+    {
+      "label": "rtx-pro-6000-server-x8 selector works",
+      "pass": true
+    },
+    {
+      "label": "rtx-pro-6000-server-x8 retains buy/rent/API",
+      "pass": true
+    },
+    {
+      "label": "HW-004 saved start preserved",
+      "pass": true
+    },
+    {
+      "label": "HW-004 saved measurement preserved",
+      "pass": true
+    },
+    {
+      "label": "HW-004 saved quote preserved",
+      "pass": true
+    },
+    {
+      "label": "HW-004 reset current defaults",
+      "pass": true
+    },
+    {
+      "label": "training finite rendering",
+      "pass": true
+    },
+    {
+      "label": "no browser runtime errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}
