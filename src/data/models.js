@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Weekly; immediately on endpoint, price or model changes.",
     "source": "sources.api; each model source and its /endpoints API",
     "how": "Refresh the selected endpoint atomically (provider/tag, precision, price pair and limits). Prices are USD/token. Exclude promotional/tiered endpoints unless supported. Never substitute aggregate model prices. Preserve stable IDs. Refresh evaluation text from the model card."
@@ -21,15 +21,15 @@ export default {
       "evidence": "Vendor reports DeepSWE 1.1 74.2 and CyberGym 88.1 at maximum reasoning effort; agent harness and precision affect results.",
       "endpoint": {
         "provider_name": "Relace",
-        "tag": "relace",
-        "quantization": "unknown",
+        "tag": "relace/fp4",
+        "quantization": "fp4",
         "context_length": 1048576,
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000007",
+          "prompt": "0.000000006",
           "completion": "0.0000005",
-          "input_cache_read": "0.000000008"
+          "input_cache_read": "0.000000005"
         }
       }
     },
@@ -46,9 +46,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000006",
-          "completion": "0.00000322",
-          "input_cache_read": "0.00000012"
+          "prompt": "0.000001",
+          "completion": "0.0000049",
+          "input_cache_read": "0.00000014"
         }
       }
     },
@@ -100,11 +100,11 @@ export default {
         "tag": "darkbloom/fp4",
         "quantization": "fp4",
         "context_length": 262144,
-        "max_completion_tokens": 32768,
+        "max_completion_tokens": 65536,
         "max_prompt_tokens": null,
         "pricing": {
           "prompt": "0.000000035",
-          "completion": "0.0000022",
+          "completion": "0.0000015",
           "input_cache_read": "0.0000000175"
         }
       }
@@ -115,16 +115,15 @@ export default {
       "apiModel": "minimax/minimax-m2.7",
       "evidence": "Vendor reports SWE-Pro 56.22 and GDPval-AA Elo 1495; software engineering and office-work candidate.",
       "endpoint": {
-        "provider_name": "Minimax",
-        "tag": "minimax/fp8",
-        "quantization": "fp8",
-        "context_length": 204800,
+        "provider_name": "Groq",
+        "tag": "groq",
+        "quantization": "unknown",
+        "context_length": 196608,
         "max_completion_tokens": 131072,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.0000003",
-          "completion": "0.0000012",
-          "input_cache_read": "0.00000006"
+          "prompt": "0.0000006",
+          "completion": "0.0000018"
         }
       }
     },
@@ -158,9 +157,9 @@ export default {
         "max_completion_tokens": 943718,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000019",
-          "completion": "0.00000894",
-          "input_cache_read": "0.00000019"
+          "prompt": "0.0000001824",
+          "completion": "0.0000093388",
+          "input_cache_read": "0.00000018"
         }
       }
     },
@@ -194,7 +193,7 @@ export default {
         "max_completion_tokens": 16384,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.000000085",
+          "prompt": "0.000000075",
           "completion": "0.0000004"
         }
       }
@@ -258,15 +257,16 @@ export default {
       "source": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
       "apiModel": "nvidia/nemotron-3-nano-30b-a3b",
       "endpoint": {
-        "provider_name": "Novita",
-        "tag": "novita/fp4",
-        "quantization": "fp4",
+        "provider_name": "Nebius",
+        "tag": "nebius/fp8",
+        "quantization": "fp8",
         "context_length": 262144,
-        "max_completion_tokens": 32768,
+        "max_completion_tokens": 235929,
         "max_prompt_tokens": null,
         "pricing": {
-          "prompt": "0.00000005",
-          "completion": "0.0000002"
+          "prompt": "0.00000006",
+          "completion": "0.00000024",
+          "input_cache_read": "0.000000012"
         }
       }
     },
@@ -279,7 +279,7 @@ export default {
         "tag": "deepinfra/fp4",
         "quantization": "fp4",
         "context_length": 163840,
-        "max_completion_tokens": 16384,
+        "max_completion_tokens": 147456,
         "max_prompt_tokens": null,
         "pricing": {
           "prompt": "0.00000026",
@@ -294,8 +294,8 @@ export default {
       "apiModel": "openai/gpt-oss-120b",
       "endpoint": {
         "provider_name": "AkashML",
-        "tag": "akashml/bf16",
-        "quantization": "bf16",
+        "tag": "akashml/fp4",
+        "quantization": "fp4",
         "context_length": 131072,
         "max_completion_tokens": 117964,
         "max_prompt_tokens": null,
@@ -345,7 +345,7 @@ export default {
       "name": "IBM: Granite 4.2 8B",
       "source": "https://huggingface.co/ibm-granite/granite-4.2-8b",
       "apiModel": "ibm-granite/granite-4.2-8b",
-      "evidence": "IBM publishes reasoning, coding and tool-calling evaluations. Small dense model candidate; no comparable measured frontier score is assumed.",
+      "evidence": "IBM publishes reasoning, coding and tool-calling evaluations. Small dense model candidate; the independent general benchmark is maintained separately.",
       "endpoint": {
         "provider_name": "DeepInfra",
         "tag": "deepinfra/bf16",

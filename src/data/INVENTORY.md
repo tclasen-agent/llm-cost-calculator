@@ -8,7 +8,7 @@ See [README.md](README.md) for the mandatory update workflow, units, source-of-t
 
 ## [audit.js](audit.js)
 
-Type: **editorial**. Recorded review: **2026-10-24**.
+Type: **editorial**. Recorded review: **2026-11-10**.
 
 **Frequency:** With each full external-data audit; revisit deferred options on publication or availability changes.
 
@@ -18,27 +18,27 @@ Type: **editorial**. Recorded review: **2026-10-24**.
 
 | Field | Current value |
 |---|---|
-| `coverage.sources` | "Reviewed every shared publisher link and all method links on October 24. Direct retrieval required web fallback for AMD, HP, Framework and NVIDIA investor pages. Framework now leads with PRO 495; the specs tab still includes the maintained 395 systems, so its source now links there. Source receipts retain URL, content hash or web retrieval reference, reviewed fields and limitations." |
-| `coverage.models` | "Reviewed all 19 model cards and all selected endpoint tuples. Updated GLM-5.3 Inceptron and Kimi K3 Relace prices. Qwen Coder 30B Novita is absent; replaced its entire tuple with the current non-discounted SiliconFlow FP8 endpoint. Other selected endpoints still match. Vendor evaluation wording matches the original cards. Stable model IDs remain unchanged; API precision does not change the independent self-hosted recipe." |
-| `coverage.hardware` | "Reviewed every maintained system and derived cluster: installed memory, CPU/GPU, storage, OS, allocation limits, quoted scope and runtime source. HP now publishes complete-system G1a and RTX 4000 Ada sale prices; replaced their unknown prices and removed superseded allowances. RTX 2000 Ada still shows a placeholder zero, retained as unknown. Other published prices/specifications match. Framework and AMD now advertise PRO 495/192 GB; candidate disposition below no longer claims coming soon." |
-| `coverage.rentals` | "Compared all 22 Lambda instance records field by field with all four GPU-count tables: GPU, count, VRAM, CPU, RAM, storage and per-GPU hourly price. All match; taxes and stock remain separate." |
-| `coverage.rentalTerms` | "Reviewed Lambda billing and price-table footnotes. Clarified that one-minute billing starts after launch and passing health checks, ends on termination, includes idle time, and published rates exclude applicable taxes. Filesystem charges survive instance termination." |
-| `coverage.purchaseAllowances` | "Reviewed all complete-system and cluster budgets against maintained vendor configurations and current Puget component costs. Removed the two allowances superseded by published HP system prices. Remaining amounts are illustrative whole-system budgets, not current quotes; network extras remain explicit assumptions." |
-| `coverage.inferenceMemory` | "Reviewed every four-bit aggregate memory budget against all 19 model-card checkpoint totals, retaining headroom above raw four-bit storage. Context/cache/batch/runtime overhead and fit remain assumptions rather than measured or certified compatibility." |
-| `coverage.workloads` | "Reviewed every usage/template field, model shortlist and task rationale against all maintained model cards. Retained illustrative calls, token mix, concurrency and ordering; no usage pilot supports replacing them. New releases are candidate reviews below, not automatic rewrites of saved models." |
-| `coverage.inferenceDefaults` | "Reviewed every initial/reset field, selected ID, October planning month and empty user-evidence value. October remains the current month; no month/date bump was needed. Preserve current saved/shared overrides and all configuration-specific measurements on catalog refresh." |
-| `coverage.inferencePolicy` | "Reviewed each memory, concurrency, prefill/decode, power/idle/cooling, fee/setup, schedule, baseline/peak, price-decline, lifecycle and projection coefficient. Retained all as labeled planning assumptions. Historical Stanford cost trends and NVIDIA generation cadence do not establish scenario forecasts or measurements." |
-| `coverage.tariff` | "Reviewed GS-1 applicability, both distribution blocks, seasonal generation blocks, transmission, all 17 riders including deferred fuel, surcharge, every consumption-tax threshold/rate and Loudoun fixed/rate/cap. All match the current filed tariff and county page. Conservative demand exclusion and special-contract/data-center exclusions remain." |
-| `coverage.frontier` | "Reviewed every maintained benchmark score, cost and reasoning variant under Index v4.3.2, including historical pages. DeepSeek original V4.1 Flash measured task cost changed; MiniMax M2.7 now lacks measured task cost and is excluded. Added current GPT-6.1 Sol from the evaluator and official API documentation; rechecked all other reference prices, context/output limits, long-input policy and promotion. Every retained selected benchmark now links its exact variant page." |
-| `coverage.trainingModels` | "Checked all 19 total checkpoint sizes against HF tensor summaries and all four Unsloth supervised adapter memory figures. All match. Recipes support only the documented supervised stack/objective; no arbitrary method or end-to-end compatibility is inferred." |
-| `coverage.trainingEligibility` | "Reviewed license labels across all 19 model cards and stack instructions. Kept license/stack qualification: open weights do not establish license permission for every use or working adaptation." |
-| `coverage.trainingSystems` | "Reviewed every shared hardware/rental reference and custom-system field. Prices/resources still derive from canonical owners; custom GPU counts/VRAM, zero quote defaults and power remain explicit user-scenario assumptions. No pilot power evidence was supplied." |
-| `coverage.trainingDefaults` | "Reviewed every model/method/task/system selection, dataset/token/sequence/microbatch/cadence field, throughput range, quote/evidence flag, energy/cooling/support/setup/overhead/campaign default. Retained illustrative values and empty evidence; no user dataset, bill, complete quote or pilot justifies recalibration." |
-| `coverage.methodDefaults` | "Reviewed each update method, trainable fraction, corpus, reference/teacher mode, auxiliary model size/memory, generation length/count, policy update, forward/generation speed and reward/teacher cost/time default against current method descriptions. Retained assumptions without inventing experiment/invoice evidence." |
-| `coverage.trainingPolicy` | "Rechecked weight/master-weight/gradient/Adam byte arithmetic against Transformers GPU-memory documentation and the quantized supervised recipes. Retained memory headroom, activation scaling/reference sequence and monthly capacity as planning assumptions." |
-| `coverage.trainingMethods` | "Reviewed all nine method IDs, labels, use cases and limitations against current training documentation. DPO reference work, experimental PPO critic/rollouts, GRPO optional reference/KL and offline sequence-distillation descriptions remain applicable. Pin stack versions for real runs." |
-| `coverage.methodSources` | "Reviewed all five method-document/paper URLs and their substantive content. Current Transformers memory anatomy, TRL DPO/experimental PPO/GRPO and the original sequence-distillation paper still support the explanations." |
-| `coverage.reviewedConfigurations` | "Reviewed the empty registry and exact model/runtime/system/workload evidence requirements. No exact independently reviewed run was supplied or established. Keep the registry empty and preserve the distinction between labeled feasibility estimates and verified configurations." |
+| `coverage.sources` | "Checked every shared and model/method/evaluation/pricing link. Direct retrieval failures for Framework, HP, Puget, Supermicro and NVIDIA investor content were resolved through web retrieval of the same primary sources. Lambda instance/billing links now use the confirmed redirected domain. Source receipts below bind retrieved content or identify web fallback; a successful request alone is not proof of each fact." |
+| `coverage.models` | "Reviewed every maintained model card and selected endpoint tuple. Refreshed provider/tag, precision, coherent input/output/cache price pair and token limits together. Preserved selected tags when still valid; retired tags were replaced by non-discounted complete tuples from the same model endpoint API. No batch, time-of-day or discounted rates selected. Vendor evaluation numbers still appear in the original cards. Stable model IDs and self-hosted memory recipes remain separate from endpoint precision." |
+| `coverage.hardware` | "Reviewed all existing complete systems, installed memory, allocation ceilings, host/storage scope and clusters. Added the requested laptops using Apple primary specifications after the user clarified M4 Max, and the requested single-server configurations using Supermicro platform support and NVIDIA Server Edition specifications. HP G1a now exposes MSRP rather than the former sale price; RTX 4000 Ada sale unchanged; RTX 2000 Ada placeholder remains unknown. Configurable systems retain null prices; installed/aggregate memory does not certify compatibility." |
+| `coverage.rentals` | "Reviewed every GPU-count table, GPU identity, per-device memory, CPU, host RAM and storage. Public tables now announce future effective rates while directing users to account login for currently applicable rates. Preserved prior public per-GPU rates as explicitly historical planning inputs, retained newly announced rates separately, and did not apply them early. Current account rates remain unverified; this is not a current rental quote." |
+| `coverage.rentalTerms` | "Rechecked billing start/health checks, minute increments, termination and idle billing, taxes, availability and persistent filesystem charges. Added shared historical/current-rate limitations and the announced effective date. Both calculator modes disclose the unavailable current account quote beside rental estimates." |
+| `coverage.purchaseAllowances` | "Reviewed all whole-system and cluster budgets as assumptions against vendor configuration scope. New laptop and server budgets include a complete host; they are editable planning allowances, not sourced purchase quotes. Existing budgets remain illustrative; networking/installation extras still require a configured quote." |
+| `coverage.inferenceMemory` | "Reviewed every planning budget against the current total checkpoint tensor summaries. Budgets still exceed raw four-bit storage, including corrected rounded total sizes. Retained context/cache/batching/runtime headroom as assumptions without inventing measured memory or compatibility." |
+| `coverage.workloads` | "Reviewed every workload call/token/activity template, shortlist and rationale against current model-card evaluations. All usage and ranking choices remain editorial assumptions; no organization pilot was supplied. New model revisions are candidates, never silent replacements for saved IDs." |
+| `coverage.inferenceDefaults` | "Reviewed every initial/reset field and default selection against the current planning cycle. Retained the current month and all illustrative values/empty evidence. Catalog updates preserve saved inputs; explicit model/workload/system changes continue to clear scoped evidence through existing behavior." |
+| `coverage.inferencePolicy` | "Reviewed every memory, throughput, concurrency, prefill, power, idle/cooling, fee/setup, schedule, baseline, decline and lifecycle coefficient as an assumption. Added complete-system power policies for the requested laptops and servers; these are neither PSU ratings nor measurements. Server GPU counts do not manufacture measured scaling. Trend sources do not establish future prices." |
+| `coverage.tariff` | "Compared GS-1 applicability, seasonal/distribution/generation blocks, transmission, every rider, surcharge, all consumption-tax tiers and county fixed/rate/cap to the current filed tariff and county source. Updated the newly effective environmental and universal-service riders. Other maintained values remain supported. The snapshot is current; it does not reconstruct historical bills or establish an account classification." |
+| `coverage.frontier` | "Reviewed methodology and every retained reference/selected model evaluation page, including previously missing records. Rebuilt the entire comparison under the current Intelligence Index version; scores/task costs unavailable in that version are null and excluded in both plots rather than carried across versions. Token prices and limits were checked against each official API document; the published promotion end changed. Retained exact setting sources, with all reference settings using the shared reasoning policy." |
+| `coverage.trainingModels` | "Compared all total checkpoint sizes to current Hugging Face safetensors summaries, using rounded billions rather than active MoE counts or branded size labels. Corrected large checkpoint totals where those labels differed. All supervised adapter recipe memory figures still appear in Unsloth documentation; those figures do not certify arbitrary training objectives or stacks." |
+| `coverage.trainingEligibility` | "Rechecked license metadata and model cards for every model plus documented stack support. Retained the explicit qualification that open weights do not establish permission or working adaptation for every use. No verified run was introduced." |
+| `coverage.trainingSystems` | "Reviewed every canonical hardware/rental reference and custom scenario field. Added the requested single servers by hardware reference; per-device VRAM and purchase allowance derive from the canonical hardware owner, and power references the same planning policy as inference. Rental-rate limitations propagate to training. Apple laptops remain inference selections; no CUDA training-stack support was invented." |
+| `coverage.trainingDefaults` | "Reviewed every model/method/system, dataset/token/sequence/microbatch/cadence, throughput, quote/evidence, energy/cooling/support/setup/overhead and campaign default. Retained illustrative scenario values and empty user evidence; no pilot, invoice or dataset supports claiming recalibration." |
+| `coverage.methodDefaults` | "Reviewed all method flags, auxiliary parameter/memory sizes, trainable fractions, corpus, teacher/reference, rollout, update, forward/generation rates and reward/teacher costs/time against current method documentation. All retained values are assumptions without experiment or invoice evidence." |
+| `coverage.trainingPolicy` | "Rechecked frozen/quantized/trainable parameter byte assumptions against current Transformers memory anatomy and supervised quantized recipes. Memory headroom, activation scaling/reference sequence and capacity remain recipe assumptions; no arithmetic is labeled as a measured peak." |
+| `coverage.trainingMethods` | "Reviewed every method label/use/limitation against the current method sources. DPO reference work, experimental PPO critic/rollout support, GRPO optional reference/KL and offline sequence distillation remain applicable; real campaigns must pin their stack." |
+| `coverage.methodSources` | "Retrieved and reviewed all method documentation/paper links. Transformers training-memory anatomy, TRL DPO/experimental PPO/GRPO and the original sequence-distillation paper continue to support the maintained explanations." |
+| `coverage.reviewedConfigurations` | "Reviewed the empty registry and exact model/runtime/system/workload reproduction, independent-review and expiry requirements. No exact independently reviewed end-to-end run exists for the requested configurations. Registry remains empty; all new configurations are labeled estimates." |
 | `candidates.0.id` | "framework-next-memory" |
 | `candidates.0.sourceRef` | "frameworkDesktop" |
 | `candidates.0.status` | "further-review" |
@@ -69,11 +69,257 @@ Type: **editorial**. Recorded review: **2026-10-24**.
 | `candidates.6.sourceRef` | "amdHalo" |
 | `candidates.6.status` | "further-review" |
 | `candidates.6.reason` | "The vendor now publishes PRO 495 / 192 GB configurations. Retained 395 IDs keep their original specifications. A new catalog entry needs a complete configuration/price and runtime allocation review; published installed memory alone does not establish usable model memory." |
+| `candidates.7.id` | "current-lambda-account-prices" |
+| `candidates.7.sourceRef` | "rental" |
+| `candidates.7.status` | "unavailable" |
+| `candidates.7.reason` | "The public instance tables now publish future-effective rates. Current rates require account login; retained prior public rates are historical estimates with a visible disclosure. Replace them with an authorized account quote or a currently effective public table before relying on rental economics." |
 | `migration` | "Existing IDs and browser-storage/URL formats remain unchanged. No saved measurement is rewritten by this data refresh. Scenarios that no longer fit are preserved as rejected input by recovery and fall back to the usable default; explicit configuration changes continue to clear only scoped measurements and system quotes." |
+| `sourceReviews.datasets.sources.values.api.sha256` | "499aa40b84240e3b3483d7cfe6510c36588a36d06a5297a9f147934841b0366b" |
+| `sourceReviews.datasets.sources.values.api.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.rental.sha256` | "6e09e8b0fb8b0f61f69510aaf31aaf06881549b1e3ad74db18a46110a5d0e350" |
+| `sourceReviews.datasets.sources.values.rental.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.rentalBilling.sha256` | "d714f2bee5e8c1bbf02b79781ac1e89676a2cdd4a45669811c5103c740acfb22" |
+| `sourceReviews.datasets.sources.values.rentalBilling.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.tariff.sha256` | "c0d42303fafdadbe4f9879bff2ba45e8efaa7117897aff6520569cd349f84fa0" |
+| `sourceReviews.datasets.sources.values.tariff.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.county.sha256` | "5e2fd14b71f0579280cf8d86771a24d200abd3d5538c7f6eb8605d6c59efae76" |
+| `sourceReviews.datasets.sources.values.county.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.training.sha256` | "fb4b55d11d99af1f9eef52a417b880e01b0616172079784ae97cf6602e4e7c03" |
+| `sourceReviews.datasets.sources.values.training.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.benchmark.sha256` | "229b85e686d99fd890784ad19901f0287973aa682d3d00caa0f66acbfb7262be" |
+| `sourceReviews.datasets.sources.values.benchmark.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.methodology.sha256` | "deee99deac2e475fadbe9788933d15c94f8ad6f012ef8fd1ba0b21be545dcfa0" |
+| `sourceReviews.datasets.sources.values.methodology.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.nvidiaTrend.retrieval` | "web primary-source announcement review" |
+| `sourceReviews.datasets.sources.values.nvidiaTrend.directFailure` | "HTTP Error 403: Forbidden" |
+| `sourceReviews.datasets.sources.values.stanfordTrend.sha256` | "d01484ca17bfbda7787a97b01556e94868961b2280ce0729618cdb659fa9002c" |
+| `sourceReviews.datasets.sources.values.stanfordTrend.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.nvidiaSpark.sha256` | "90ced85b03ab3ea84b50f6cc74e7d123f174187cf7758681446488504d83f14a" |
+| `sourceReviews.datasets.sources.values.nvidiaSpark.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.nvidiaSparkPrice.sha256` | "f7331f471ca2c9cc5a1db59a945834f071c1382fd07bb4c236c70583bede2365" |
+| `sourceReviews.datasets.sources.values.nvidiaSparkPrice.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.amdHalo.sha256` | "bfbb8071899f66dbf70a9e8137bfdcf54612fc742e736b144af958bedd1e77b5" |
+| `sourceReviews.datasets.sources.values.amdHalo.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.amdHaloPrice.sha256` | "c58fe1e2d3ff34096d070938f17d912b3b056f05d39b7fecd0dc4c174f2d1fcb" |
+| `sourceReviews.datasets.sources.values.amdHaloPrice.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.frameworkDesktop.retrieval` | "web primary-source specs review" |
+| `sourceReviews.datasets.sources.values.frameworkDesktop.directFailure` | "HTTP Error 403: Forbidden" |
+| `sourceReviews.datasets.sources.values.hpZ2G1a.retrieval` | "web primary-source product/MSRP review" |
+| `sourceReviews.datasets.sources.values.hpZ2G1a.directFailure` | "The read operation timed out" |
+| `sourceReviews.datasets.sources.values.appleStudio.sha256` | "7344db9f8b4df8626d89a7a0be662460fb32195cbc761ec21ca7b8db46c42a57" |
+| `sourceReviews.datasets.sources.values.appleStudio.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.hpZ2G1i2000.retrieval` | "web primary-source product/placeholder review" |
+| `sourceReviews.datasets.sources.values.hpZ2G1i2000.directFailure` | "The read operation timed out" |
+| `sourceReviews.datasets.sources.values.hpZ2G1i4000.retrieval` | "web primary-source product/sale review" |
+| `sourceReviews.datasets.sources.values.hpZ2G1i4000.directFailure` | "The read operation timed out" |
+| `sourceReviews.datasets.sources.values.pugetWorkstation.retrieval` | "web primary-source configuration review" |
+| `sourceReviews.datasets.sources.values.pugetWorkstation.directFailure` | "HTTP Error 403: Forbidden" |
+| `sourceReviews.datasets.sources.values.supermicroHgx.retrieval` | "web primary-source product review" |
+| `sourceReviews.datasets.sources.values.supermicroHgx.directFailure` | "HTTP Error 403: Forbidden" |
+| `sourceReviews.datasets.sources.values.exoRuntime.sha256` | "de7ca843198b9495cecfd0972aba0360b90e12f7af8bf75ac0271e3b157abca0" |
+| `sourceReviews.datasets.sources.values.exoRuntime.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.ds41.source.sha256` | "2e1947eb318cc7a94acab6c22146c5a2f7c0a7ce5c922a4120bc7d23d29d51fc" |
+| `sourceReviews.datasets.models.values.ds41.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.glm53.source.sha256` | "13f68dafe0d006e0c57e5856f23f5cec867afbfbd3fd0669c3bd3ce6c2f65b71" |
+| `sourceReviews.datasets.models.values.glm53.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.glm53flash.source.sha256` | "3c47d4869919fe05f85f4a931b22683eda7750f9b893100ace1f61de07b88d2d" |
+| `sourceReviews.datasets.models.values.glm53flash.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.qwen38large.source.sha256` | "bc1a8a75b92a8586be16d8e2cc16edc246c238bd23ac77a89dd5e2f555d5ce5f" |
+| `sourceReviews.datasets.models.values.qwen38large.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.qwen38small.source.sha256` | "170c37e0a8c8aae312d9b9cae6c432faec6144ddfe36dbc4522c64bb31d4d9a0" |
+| `sourceReviews.datasets.models.values.qwen38small.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.minimax27.source.sha256` | "b77f9600fa7bdf9cd8688424bbb618cc0f6294b0494f78938c3c49bb4be051ac" |
+| `sourceReviews.datasets.models.values.minimax27.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.nemotron-lightning.source.sha256` | "1d726ae92208dc425176ce77bce91e6b8de62bedda150be0e99e56e90be32776" |
+| `sourceReviews.datasets.models.values.nemotron-lightning.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.kimi3.source.sha256` | "d0b734e313689d546f9987e9f0e3844773cf6b08cb18fdd1f1a133fb07ea585c" |
+| `sourceReviews.datasets.models.values.kimi3.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.nemotron-ultra.source.sha256` | "a01b1dfd397a68fefbf5fa17ecaef0d0df4d5ac9d32760f919d42ec1136e7a4d" |
+| `sourceReviews.datasets.models.values.nemotron-ultra.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.nemotron-super.source.sha256` | "5e96ed9fe70c6d397d40dcb5fbe1307748dd855d826f6cedb40d4eb3f1e8c20d" |
+| `sourceReviews.datasets.models.values.nemotron-super.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.minimax.source.sha256` | "f3900686be4bc2748571f494420d74b252acd7a83fae3f4af073c595783f55d7" |
+| `sourceReviews.datasets.models.values.minimax.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.qwen80.source.sha256` | "26a951841685a87ba0e0edb24cc8effe653a3b6d66e9288f045b061f77798132" |
+| `sourceReviews.datasets.models.values.qwen80.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.kimi25.source.sha256` | "28cb089d28c18ac8d329418762ef32c0a7c12e6cf574e6ad9e1dc347f02e2436" |
+| `sourceReviews.datasets.models.values.kimi25.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.nemotron-nano.source.sha256` | "f052e6f8e9b0d44dccb165b0773c4e44c5812ccd735397837ef7a94a85e377a1" |
+| `sourceReviews.datasets.models.values.nemotron-nano.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.deepseek.source.sha256` | "f8326f92115f01870241c30e49775a8ea42f66c78af230ccc9c103b31bdb6ab7" |
+| `sourceReviews.datasets.models.values.deepseek.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.oss120.source.sha256` | "f44f0c46e7f652a38d32d8e022e64f82e0cd3b9d15e2df0ac7d30eb1f26efee3" |
+| `sourceReviews.datasets.models.values.oss120.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.qwen30.source.sha256` | "92b82ad01979bf089e376050d78adb91ceb68777b314438d4eab8b1b65e59e2f" |
+| `sourceReviews.datasets.models.values.qwen30.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.oss20.source.sha256` | "41f53c32ca700a520db5c32d376b74198a1155cba61facd76edd6414e0e624ab" |
+| `sourceReviews.datasets.models.values.oss20.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.models.values.granite42.source.sha256` | "289dd7d251add66588a906809bf623e4b55af85f64b18b127b66e91f1c920228" |
+| `sourceReviews.datasets.models.values.granite42.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.0.source.sha256` | "3f588adfaa5dad8f0cb6a07348d7dd6608f6e3e90277a5ac84d9846b3bc11c11" |
+| `sourceReviews.datasets.frontier.values.referenceModels.0.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.0.priceSource.sha256` | "874a4ebd1f042cf7174a5c9e8457ccacdb365ef94a371ce76fc0130aadbcb030" |
+| `sourceReviews.datasets.frontier.values.referenceModels.0.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.1.source.sha256` | "d9220f7a1ab9351cebd5a2a77362f500dfdbb0f5f301d4df2e9143db6ccff01a" |
+| `sourceReviews.datasets.frontier.values.referenceModels.1.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.1.priceSource.sha256` | "1b2721a9062450510164a460fbf591dbc9978a0b238015144ea8dfd6b0cf3cbf" |
+| `sourceReviews.datasets.frontier.values.referenceModels.1.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.2.source.sha256` | "da464db07494529d21e323a09e6777ec19af2b3a594c82ed489403e70544aa08" |
+| `sourceReviews.datasets.frontier.values.referenceModels.2.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.2.priceSource.sha256` | "07a823da7df3d916b480dbc2aa91d8ba4237e3b41993569ad01974e318bfd0d1" |
+| `sourceReviews.datasets.frontier.values.referenceModels.2.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.3.source.sha256` | "8889cd2504cb169ef2f9cd82b801f07514add49db726cc88b09cc002132dfee3" |
+| `sourceReviews.datasets.frontier.values.referenceModels.3.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.3.priceSource.sha256` | "93d2686f0b1691585fadcb40852b4be5aefd20ef9193358eec1c3c105e73d76e" |
+| `sourceReviews.datasets.frontier.values.referenceModels.3.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.4.source.sha256` | "e0cbee200ff937b5b97103422de20dec478d67b086c72a6b58ad5edc9632d876" |
+| `sourceReviews.datasets.frontier.values.referenceModels.4.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.4.priceSource.sha256` | "11b1c57ae8e64433330ecec0a1803a2abb8144a4a487e1d442f63c452df9d3dc" |
+| `sourceReviews.datasets.frontier.values.referenceModels.4.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.5.source.sha256` | "4e59d7d5bf54e353b7b72c600209c373b93668b73f38f04fe58296d4980a3fe9" |
+| `sourceReviews.datasets.frontier.values.referenceModels.5.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.5.priceSource.sha256` | "1862da3b0b45e781f9673e6cfea412c0c05633f325bc818780c75aaa8a255214" |
+| `sourceReviews.datasets.frontier.values.referenceModels.5.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.6.source.sha256` | "4dcf4cb3e392913ee7fac1993aae590f50eb29f98eb652fb65a3e889a2860854" |
+| `sourceReviews.datasets.frontier.values.referenceModels.6.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.referenceModels.6.priceSource.sha256` | "1cdc993edc12f27f8e6231663a3ed9a9a4c95dd404d18a0866efd472db6bfdd0" |
+| `sourceReviews.datasets.frontier.values.referenceModels.6.priceSource.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.ds41.source.sha256` | "cba52781e8a7369ed292bffd83b319b8735166fe167dcd2e724b481f9aa3c18f" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.ds41.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.glm53.source.sha256` | "eb10f4ecc9eb4d5c48a2ff024a1ce2de011894ed5e970034f4ad62a64f0b3700" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.glm53.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.glm53flash.source.sha256` | "3b454728c6aabc23c5b22f5175bc8225c8584ca11ba3c12ac199d9b81046e613" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.glm53flash.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.qwen38large.source.sha256` | "59f85c8430d54eb2436ca46a53b2b95d5b06d33c47613448cea3ac0aceb8a365" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.qwen38large.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.qwen38small.source.sha256` | "1088fa5dd794377c39e4ff9e883e8826175d91e775f1535bb929d3bad21b0379" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.qwen38small.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.kimi3.source.sha256` | "8515643e3cc733b2ad3885ddef29217db185e0a21a38dadfd1147ca06d2db35e" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.kimi3.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-ultra.source.sha256` | "d0f8d43255139a3bad9d51f60bae22e72c94749c7121c25ae32a142bd611a69d" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-ultra.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-super.source.sha256` | "0bd9ad3cd657629c3c889ac91146f49921673d808bde8d935cc2ae4c2d418d39" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-super.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-nano.source.sha256` | "71ef7b33e99de30d4823a74440b7cff5a0a141851060fb5720729034fab34623" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-nano.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.oss120.source.sha256` | "8e7868533af430fc9d9bea094863c4ee0035232c75a646e6510fdda23d57f53e" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.oss120.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-lightning.source.sha256` | "1e2e0b7762e5ca498074176445243d34705a2b7cf570c70183c2e0e14f74037c" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.nemotron-lightning.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.qwen80.source.sha256` | "ad1df8274df34c10c6452ff3468c396bb2e550945f8676cf58b9bcecffa70801" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.qwen80.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.oss20.source.sha256` | "b32b3c915befe0e4f53b2335ead7ad90cdb081ed6c8b51a9fad8387ed47e7a06" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.oss20.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.granite42.source.sha256` | "c4a0580857b05ac38c2b7d9aec3d0ca8f2d44b87868f9a6b69b0550e39b6b819" |
+| `sourceReviews.datasets.frontier.values.selectedBenchmarks.granite42.source.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.methodSources.values.0.0.sha256` | "ae7a11c4d80af0a8740b02c2b02a87e3e65398df1971e9e4f707f629ba20777a" |
+| `sourceReviews.datasets.methodSources.values.0.0.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.methodSources.values.1.0.sha256` | "aa69a48169902ec10441696e49d92bb8e928b358241a0e6409e90b49d3eecff5" |
+| `sourceReviews.datasets.methodSources.values.1.0.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.methodSources.values.2.0.sha256` | "1e0b431614700ba4f266e7ff07bfd6998f2abd0b4efae9c1e26edfea4bafc7af" |
+| `sourceReviews.datasets.methodSources.values.2.0.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.methodSources.values.3.0.sha256` | "b1ed1ee1e080872d19c45a1fe5f4c20a71fe1925d70745f46be486137eba0764" |
+| `sourceReviews.datasets.methodSources.values.3.0.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.methodSources.values.4.0.sha256` | "f778a92942e47b6c4496a061a609ae0293c9a9aa012c20554407a033f5610644" |
+| `sourceReviews.datasets.methodSources.values.4.0.retrieval` | "direct primary source" |
+| `sourceReviews.models.ds41.endpoint.sha256` | "a5fdcfdc7e737d7b684c6b8a0756482baafd710199aa343cf77b7107ee3bb25e" |
+| `sourceReviews.models.ds41.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.ds41.parameters.sha256` | "10acbbfb9de3c834d9b0d4c26aeced5e32d950cdad2fbcfd9dd6a52872024064" |
+| `sourceReviews.trainingModels.ds41.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.glm53.endpoint.sha256` | "5b3a5b31a1135edd602a256ec0f4eb1b11990517cf924e0c0dafa30d562bc18a" |
+| `sourceReviews.models.glm53.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.glm53.parameters.sha256` | "01efb32a03ee04906ec77710c5634b02dae6226523610c4c6ae1f58098895d59" |
+| `sourceReviews.trainingModels.glm53.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.glm53flash.endpoint.sha256` | "ca44b8f50cd91997f5c0e62cea4bfee3f7702bceaa2e5a0ea09acadd3aa93be1" |
+| `sourceReviews.models.glm53flash.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.glm53flash.parameters.sha256` | "f1ad6a4c888768da7792f467c985dde9fd2fc0bb1c858a22ecd2f8f6078b6d8a" |
+| `sourceReviews.trainingModels.glm53flash.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.qwen38large.endpoint.sha256` | "5d683b3cc05b24351d25a0552e1dabec2eecd598832b724cebf384dc6fea31fc" |
+| `sourceReviews.models.qwen38large.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.qwen38large.parameters.sha256` | "d6604620f2feb25530e9cb3b10ac9b77fb0903bff4cacb5346645a0a6e16f9c5" |
+| `sourceReviews.trainingModels.qwen38large.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.qwen38small.endpoint.sha256` | "f2a92bd20737e4106fe4945f8b9aa63d0ab052453cb72705674696781dd0c95f" |
+| `sourceReviews.models.qwen38small.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.qwen38small.parameters.sha256` | "2ff02c031529ff53d5f19686a6d81f62c5c7f2d0be56ef61655066e175f7dec5" |
+| `sourceReviews.trainingModels.qwen38small.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.minimax27.endpoint.sha256` | "17ce6016a078d6494a6ebcf3927a07528575663741137fcd1bcc8907523c8ec7" |
+| `sourceReviews.models.minimax27.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.minimax27.parameters.sha256` | "d13b506a6eb9dae45b7eea98b24a11ca712579c61b14da14a709befc57fd2e66" |
+| `sourceReviews.trainingModels.minimax27.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.nemotron-lightning.endpoint.sha256` | "591dd4d8ce05da5ac795ac033a9c837eef35e9bd23f7942c1f03d4d079decfd6" |
+| `sourceReviews.models.nemotron-lightning.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.nemotron-lightning.parameters.sha256` | "85b5bc6435f68369aec0d963fcc70127b308bfa6f80e5a53c78aa9d8a59b418c" |
+| `sourceReviews.trainingModels.nemotron-lightning.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.kimi3.endpoint.sha256` | "e3934b40b444178cc5e2fbc1652307bbbe221a016a6177cb36c13d4b0a4a7e7d" |
+| `sourceReviews.models.kimi3.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.kimi3.parameters.sha256` | "afc986d8d32d9d62e9f3abffb997837f2f172ebd8704e8b319ded6e555f5dfea" |
+| `sourceReviews.trainingModels.kimi3.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.nemotron-ultra.endpoint.sha256` | "929af7c4358e226dd32fae2093099036d8f39a2a02faf405f0bd9e79325cbf68" |
+| `sourceReviews.models.nemotron-ultra.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.nemotron-ultra.parameters.sha256` | "e0146e2fad05d3a666369bf43a2cf61297f2c7866774585d40d52b12dd4ca2a6" |
+| `sourceReviews.trainingModels.nemotron-ultra.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.nemotron-super.endpoint.sha256` | "b4268064529f0afb4c19616d17c28d3796b4dc20fc71b3aea42aaca6d33a491d" |
+| `sourceReviews.models.nemotron-super.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.nemotron-super.parameters.sha256` | "c6dd7cd7ae6fec5020de1f90fac7bbe9295336c856d306a49dc7028e0d8bea99" |
+| `sourceReviews.trainingModels.nemotron-super.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.minimax.endpoint.sha256` | "16771b871d021673591abca3a58b40dec12687e34c491bb435d938155f4161c6" |
+| `sourceReviews.models.minimax.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.minimax.parameters.sha256` | "e2c0e2f9392260125d777584729ffab214f98aa7bc04aac43e7fb1c9a7f2e60a" |
+| `sourceReviews.trainingModels.minimax.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.qwen80.endpoint.sha256` | "60cc77a7aeae2d4efc49262833e91be69ba98794177938a3ccfec32ef8860a03" |
+| `sourceReviews.models.qwen80.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.qwen80.parameters.sha256` | "5173854276f861c0756a348c1122363461c9154dbc14c36315d8d39045564f71" |
+| `sourceReviews.trainingModels.qwen80.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.kimi25.endpoint.sha256` | "2b102b99a0194c6c841d577d193a71f0298b01c14f7df2be287adb0bcac4ad9e" |
+| `sourceReviews.models.kimi25.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.kimi25.parameters.sha256` | "b34b6c72dd220994116eea30bb2234b0f5bbab35eadb8becc2eb902c0de88fa6" |
+| `sourceReviews.trainingModels.kimi25.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.nemotron-nano.endpoint.sha256` | "9cb0501ff577730a5a375a32ed1cdc9bebfd0829eec4ecf3d5be05c3524d251a" |
+| `sourceReviews.models.nemotron-nano.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.nemotron-nano.parameters.sha256` | "5cd5fef071fba49346e6b43a85ec1dbbadca67ef973231415582c5634f070539" |
+| `sourceReviews.trainingModels.nemotron-nano.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.deepseek.endpoint.sha256` | "8739998048689981a5783f776da9cf9406e9644a2307a9b2611ec5d630a6bed7" |
+| `sourceReviews.models.deepseek.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.deepseek.parameters.sha256` | "a503744dd11d923f5a7369450f957a84e4c638476f11a7a93f2551e8f6260b47" |
+| `sourceReviews.trainingModels.deepseek.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.oss120.endpoint.sha256` | "bd6572e8ece601826fc7342ec83129187688eb239aac9afacfaf4b2e6dbe437b" |
+| `sourceReviews.models.oss120.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.oss120.parameters.sha256` | "46a5de8427cede54742fc9ca83beb6a7a6ad147e20dba27b0c7b3e69185880e2" |
+| `sourceReviews.trainingModels.oss120.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.qwen30.endpoint.sha256` | "066bdcb5ce3556200141c656b9cc7aa8d7c6a7a802e6246268226f5d8905195c" |
+| `sourceReviews.models.qwen30.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.qwen30.parameters.sha256` | "613517e1c7bd30a001a22c0f878af4dafd87292976774725aa33026089dd2f47" |
+| `sourceReviews.trainingModels.qwen30.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.oss20.endpoint.sha256` | "1ee6140649986c58bc3edcaf2efbeb0706ce15bb2b48eec2978b10d9bc229a52" |
+| `sourceReviews.models.oss20.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.oss20.parameters.sha256` | "2d3b8a722241418c54a93951a443406e9b792bd4f9db2b9a6627f74b8d3bbd3f" |
+| `sourceReviews.trainingModels.oss20.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.models.granite42.endpoint.sha256` | "ec0550979995914327044669b72377f60a2ba92517ce7f2ff7971916fb4ff5bd" |
+| `sourceReviews.models.granite42.endpoint.retrieval` | "direct primary source" |
+| `sourceReviews.trainingModels.granite42.parameters.sha256` | "134c063b782ad83bfd493fac66c3034ef1fbe9e4972e573c8ae01a42c1bb685d" |
+| `sourceReviews.trainingModels.granite42.parameters.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.appleMacBookM5Pro.sha256` | "8ee6488913b0b909db682123c02bfcd3c8b20ed7dcff74f3d490655bbf9c9d3a" |
+| `sourceReviews.datasets.sources.values.appleMacBookM5Pro.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.appleMacBookM4Max.sha256` | "910ca82a6b351e59ec33c835e4e3dfe0fbc8049e11b0048511cfb0b23c750571" |
+| `sourceReviews.datasets.sources.values.appleMacBookM4Max.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.supermicroRtxProServer.retrieval` | "web primary-source product and datasheet review" |
+| `sourceReviews.datasets.sources.values.supermicroRtxProServer.directFailure` | "<urlopen error [Errno 8] nodename nor servname provided, or not known>" |
+| `sourceReviews.datasets.sources.values.nvidiaRtxPro6000Server.sha256` | "39eed50b672163fe157776691b60030a89da29af46a7d925b9f616e846ee0d44" |
+| `sourceReviews.datasets.sources.values.nvidiaRtxPro6000Server.retrieval` | "direct primary source" |
+| `sourceReviews.missingBenchmark.kimi25.sha256` | "f648260fc453dcb246df92cb23f6b30853643f334ff16c70846bc63f5f026851" |
+| `sourceReviews.missingBenchmark.kimi25.retrieval` | "direct primary source" |
+| `sourceReviews.missingBenchmark.minimax.sha256` | "65d14fccccc0a1013bbc866a46e4b7c32d8af2a230cd60bf5cc1a769da2635a4" |
+| `sourceReviews.missingBenchmark.minimax.retrieval` | "direct primary source" |
+| `sourceReviews.missingBenchmark.deepseek.sha256` | "e11d61575bad70e9ebcfb2647ce1c4af98cb69341f39a3caaeb368db0c93b56d" |
+| `sourceReviews.missingBenchmark.deepseek.retrieval` | "direct primary source" |
+| `sourceReviews.missingBenchmark.qwen30.sha256` | "624f9c13ebce4a51e21ab9e8f3d1ededc8eadbabe79d6ac092e90b81cdcd4958" |
+| `sourceReviews.missingBenchmark.qwen30.retrieval` | "direct primary source" |
+| `sourceReviews.missingBenchmark.minimax27.sha256` | "dd435c1fbda0cbb55e8289d8e3b543e4497e5d2f03f3e8df9fa29aaa455f081d" |
+| `sourceReviews.missingBenchmark.minimax27.retrieval` | "direct primary source" |
 
 ## [sources.js](sources.js)
 
-Type: **provenance**. Recorded review: **2026-10-24**.
+Type: **provenance**. Recorded review: **2026-11-10**.
 
 **Frequency:** With each related data review; check links monthly.
 
@@ -84,8 +330,8 @@ Type: **provenance**. Recorded review: **2026-10-24**.
 | Field | Current value |
 |---|---|
 | `api` | "https://openrouter.ai/api/v1/models" |
-| `rental` | "https://lambda.ai/instances" |
-| `rentalBilling` | "https://docs.lambda.ai/public-cloud/billing/" |
+| `rental` | "https://lambda.com/instances" |
+| `rentalBilling` | "https://docs.lambda.com/public-cloud/billing/" |
 | `tariff` | "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/rates-and-tariffs/pdfs/virginia/shared/entire-filed-tariff.pdf" |
 | `county` | "https://www.loudoun.gov/1570/Business-Tax-Rates" |
 | `training` | "https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune" |
@@ -105,10 +351,14 @@ Type: **provenance**. Recorded review: **2026-10-24**.
 | `pugetWorkstation` | "https://www.pugetsystems.com/products/workstations/configure/" |
 | `supermicroHgx` | "https://www.supermicro.com/en/products/system/gpu/4u/sys-421ge-tnhr2-lcc" |
 | `exoRuntime` | "https://github.com/exo-explore/exo" |
+| `appleMacBookM5Pro` | "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/" |
+| `appleMacBookM4Max` | "https://support.apple.com/en-us/121554" |
+| `supermicroRtxProServer` | "https://www.supermicro.com/en/products/system/gpu/4u/sys-422ga-nrt" |
+| `nvidiaRtxPro6000Server` | "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/" |
 
 ## [models.js](models.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** Weekly; immediately on endpoint, price or model changes.
 
@@ -123,14 +373,14 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `ds41.apiModel` | "deepseek/deepseek-v4.1-flash" |
 | `ds41.evidence` | "Vendor reports DeepSWE 1.1 74.2 and CyberGym 88.1 at maximum reasoning effort; agent harness and precision affect results." |
 | `ds41.endpoint.provider_name` | "Relace" |
-| `ds41.endpoint.tag` | "relace" |
-| `ds41.endpoint.quantization` | "unknown" |
+| `ds41.endpoint.tag` | "relace/fp4" |
+| `ds41.endpoint.quantization` | "fp4" |
 | `ds41.endpoint.context_length` | 1048576 |
 | `ds41.endpoint.max_completion_tokens` | 943718 |
 | `ds41.endpoint.max_prompt_tokens` | null |
-| `ds41.endpoint.pricing.prompt` | "0.00000007" |
+| `ds41.endpoint.pricing.prompt` | "0.000000006" |
 | `ds41.endpoint.pricing.completion` | "0.0000005" |
-| `ds41.endpoint.pricing.input_cache_read` | "0.000000008" |
+| `ds41.endpoint.pricing.input_cache_read` | "0.000000005" |
 | `glm53.name` | "Z.ai: GLM 5.3" |
 | `glm53.source` | "https://huggingface.co/zai-org/GLM-5.3" |
 | `glm53.apiModel` | "z-ai/glm-5.3" |
@@ -141,9 +391,9 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `glm53.endpoint.context_length` | 1048576 |
 | `glm53.endpoint.max_completion_tokens` | 943718 |
 | `glm53.endpoint.max_prompt_tokens` | null |
-| `glm53.endpoint.pricing.prompt` | "0.0000006" |
-| `glm53.endpoint.pricing.completion` | "0.00000322" |
-| `glm53.endpoint.pricing.input_cache_read` | "0.00000012" |
+| `glm53.endpoint.pricing.prompt` | "0.000001" |
+| `glm53.endpoint.pricing.completion` | "0.0000049" |
+| `glm53.endpoint.pricing.input_cache_read` | "0.00000014" |
 | `glm53flash.name` | "Z.ai: GLM 5.3 Flash" |
 | `glm53flash.source` | "https://huggingface.co/zai-org/GLM-5.3-Flash" |
 | `glm53flash.apiModel` | "z-ai/glm-5.3-flash" |
@@ -178,24 +428,23 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `qwen38small.endpoint.tag` | "darkbloom/fp4" |
 | `qwen38small.endpoint.quantization` | "fp4" |
 | `qwen38small.endpoint.context_length` | 262144 |
-| `qwen38small.endpoint.max_completion_tokens` | 32768 |
+| `qwen38small.endpoint.max_completion_tokens` | 65536 |
 | `qwen38small.endpoint.max_prompt_tokens` | null |
 | `qwen38small.endpoint.pricing.prompt` | "0.000000035" |
-| `qwen38small.endpoint.pricing.completion` | "0.0000022" |
+| `qwen38small.endpoint.pricing.completion` | "0.0000015" |
 | `qwen38small.endpoint.pricing.input_cache_read` | "0.0000000175" |
 | `minimax27.name` | "MiniMax: MiniMax M2.7" |
 | `minimax27.source` | "https://huggingface.co/MiniMaxAI/MiniMax-M2.7" |
 | `minimax27.apiModel` | "minimax/minimax-m2.7" |
 | `minimax27.evidence` | "Vendor reports SWE-Pro 56.22 and GDPval-AA Elo 1495; software engineering and office-work candidate." |
-| `minimax27.endpoint.provider_name` | "Minimax" |
-| `minimax27.endpoint.tag` | "minimax/fp8" |
-| `minimax27.endpoint.quantization` | "fp8" |
-| `minimax27.endpoint.context_length` | 204800 |
+| `minimax27.endpoint.provider_name` | "Groq" |
+| `minimax27.endpoint.tag` | "groq" |
+| `minimax27.endpoint.quantization` | "unknown" |
+| `minimax27.endpoint.context_length` | 196608 |
 | `minimax27.endpoint.max_completion_tokens` | 131072 |
 | `minimax27.endpoint.max_prompt_tokens` | null |
-| `minimax27.endpoint.pricing.prompt` | "0.0000003" |
-| `minimax27.endpoint.pricing.completion` | "0.0000012" |
-| `minimax27.endpoint.pricing.input_cache_read` | "0.00000006" |
+| `minimax27.endpoint.pricing.prompt` | "0.0000006" |
+| `minimax27.endpoint.pricing.completion` | "0.0000018" |
 | `nemotron-lightning.name` | "NVIDIA: Nemotron 3.5 Lightning" |
 | `nemotron-lightning.source` | "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-BF16" |
 | `nemotron-lightning.apiModel` | "nvidia/nemotron-3.5-lightning" |
@@ -217,9 +466,9 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `kimi3.endpoint.context_length` | 1048576 |
 | `kimi3.endpoint.max_completion_tokens` | 943718 |
 | `kimi3.endpoint.max_prompt_tokens` | null |
-| `kimi3.endpoint.pricing.prompt` | "0.00000019" |
-| `kimi3.endpoint.pricing.completion` | "0.00000894" |
-| `kimi3.endpoint.pricing.input_cache_read` | "0.00000019" |
+| `kimi3.endpoint.pricing.prompt` | "0.0000001824" |
+| `kimi3.endpoint.pricing.completion` | "0.0000093388" |
+| `kimi3.endpoint.pricing.input_cache_read` | "0.00000018" |
 | `nemotron-ultra.name` | "NVIDIA: Nemotron 3 Ultra" |
 | `nemotron-ultra.source` | "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16" |
 | `nemotron-ultra.apiModel` | "nvidia/nemotron-3-ultra-550b-a55b" |
@@ -241,7 +490,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `nemotron-super.endpoint.context_length` | 262144 |
 | `nemotron-super.endpoint.max_completion_tokens` | 16384 |
 | `nemotron-super.endpoint.max_prompt_tokens` | null |
-| `nemotron-super.endpoint.pricing.prompt` | "0.000000085" |
+| `nemotron-super.endpoint.pricing.prompt` | "0.000000075" |
 | `nemotron-super.endpoint.pricing.completion` | "0.0000004" |
 | `minimax.name` | "MiniMax: MiniMax M2.5" |
 | `minimax.source` | "https://huggingface.co/MiniMaxAI/MiniMax-M2.5" |
@@ -282,14 +531,15 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `nemotron-nano.name` | "NVIDIA: Nemotron 3 Nano 30B A3B" |
 | `nemotron-nano.source` | "https://huggingface.co/nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16" |
 | `nemotron-nano.apiModel` | "nvidia/nemotron-3-nano-30b-a3b" |
-| `nemotron-nano.endpoint.provider_name` | "Novita" |
-| `nemotron-nano.endpoint.tag` | "novita/fp4" |
-| `nemotron-nano.endpoint.quantization` | "fp4" |
+| `nemotron-nano.endpoint.provider_name` | "Nebius" |
+| `nemotron-nano.endpoint.tag` | "nebius/fp8" |
+| `nemotron-nano.endpoint.quantization` | "fp8" |
 | `nemotron-nano.endpoint.context_length` | 262144 |
-| `nemotron-nano.endpoint.max_completion_tokens` | 32768 |
+| `nemotron-nano.endpoint.max_completion_tokens` | 235929 |
 | `nemotron-nano.endpoint.max_prompt_tokens` | null |
-| `nemotron-nano.endpoint.pricing.prompt` | "0.00000005" |
-| `nemotron-nano.endpoint.pricing.completion` | "0.0000002" |
+| `nemotron-nano.endpoint.pricing.prompt` | "0.00000006" |
+| `nemotron-nano.endpoint.pricing.completion` | "0.00000024" |
+| `nemotron-nano.endpoint.pricing.input_cache_read` | "0.000000012" |
 | `deepseek.name` | "DeepSeek: DeepSeek V3.2" |
 | `deepseek.source` | "https://huggingface.co/deepseek-ai/DeepSeek-V3.2" |
 | `deepseek.apiModel` | "deepseek/deepseek-v3.2" |
@@ -297,7 +547,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `deepseek.endpoint.tag` | "deepinfra/fp4" |
 | `deepseek.endpoint.quantization` | "fp4" |
 | `deepseek.endpoint.context_length` | 163840 |
-| `deepseek.endpoint.max_completion_tokens` | 16384 |
+| `deepseek.endpoint.max_completion_tokens` | 147456 |
 | `deepseek.endpoint.max_prompt_tokens` | null |
 | `deepseek.endpoint.pricing.prompt` | "0.00000026" |
 | `deepseek.endpoint.pricing.completion` | "0.00000038" |
@@ -306,8 +556,8 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `oss120.source` | "https://huggingface.co/openai/gpt-oss-120b" |
 | `oss120.apiModel` | "openai/gpt-oss-120b" |
 | `oss120.endpoint.provider_name` | "AkashML" |
-| `oss120.endpoint.tag` | "akashml/bf16" |
-| `oss120.endpoint.quantization` | "bf16" |
+| `oss120.endpoint.tag` | "akashml/fp4" |
+| `oss120.endpoint.quantization` | "fp4" |
 | `oss120.endpoint.context_length` | 131072 |
 | `oss120.endpoint.max_completion_tokens` | 117964 |
 | `oss120.endpoint.max_prompt_tokens` | null |
@@ -340,7 +590,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `granite42.name` | "IBM: Granite 4.2 8B" |
 | `granite42.source` | "https://huggingface.co/ibm-granite/granite-4.2-8b" |
 | `granite42.apiModel` | "ibm-granite/granite-4.2-8b" |
-| `granite42.evidence` | "IBM publishes reasoning, coding and tool-calling evaluations. Small dense model candidate; no comparable measured frontier score is assumed." |
+| `granite42.evidence` | "IBM publishes reasoning, coding and tool-calling evaluations. Small dense model candidate; the independent general benchmark is maintained separately." |
 | `granite42.endpoint.provider_name` | "DeepInfra" |
 | `granite42.endpoint.tag` | "deepinfra/bf16" |
 | `granite42.endpoint.quantization` | "bf16" |
@@ -353,7 +603,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 
 ## [hardware.js](hardware.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** Monthly and before purchase; on product/configuration changes.
 
@@ -396,11 +646,11 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `strix-hp-128.name` | "HP Z2 Mini G1a · BN8E8UA" |
 | `strix-hp-128.memory` | 128 |
 | `strix-hp-128.kind` | "unified" |
-| `strix-hp-128.price` | 4499 |
+| `strix-hp-128.price` | 9127 |
 | `strix-hp-128.package` | "Ryzen AI Max+ PRO 395, Radeon 8060S, {memory} GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter." |
 | `strix-hp-128.sourceRef` | "hpZ2G1a" |
 | `strix-hp-128.priceSourceRef` | "hpZ2G1a" |
-| `strix-hp-128.priceKind` | "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra" |
+| `strix-hp-128.priceKind` | "HP US listed MSRP reviewed November 10, 2026; tax and checkout availability extra" |
 | `m5-256.name` | "Mac Studio M5 Ultra · {memory} GB" |
 | `m5-256.memory` | 256 |
 | `m5-256.kind` | "unified" |
@@ -428,7 +678,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `hp-4000.sourceRef` | "hpZ2G1i4000" |
 | `hp-4000.priceSourceRef` | "hpZ2G1i4000" |
 | `hp-4000.gpus` | 1 |
-| `hp-4000.priceKind` | "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra" |
+| `hp-4000.priceKind` | "HP US listed sale price reviewed November 10, 2026; tax and checkout availability extra" |
 | `puget-5080.name` | "Puget workstation · RTX 5080" |
 | `puget-5080.memory` | 16 |
 | `puget-5080.kind` | "VRAM" |
@@ -521,16 +771,50 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `m5-max-128.price` | null |
 | `m5-max-128.package` | "18-core CPU / 40-core GPU, {memory} GB unified RAM, 1 TB SSD, macOS, complete Mac Studio. Exact configured price and inference performance require validation." |
 | `m5-max-128.sourceRef` | "appleStudio" |
+| `macbook-m5-pro-64.name` | "MacBook Pro M5 Pro · {memory} GB" |
+| `macbook-m5-pro-64.memory` | 64 |
+| `macbook-m5-pro-64.kind` | "unified" |
+| `macbook-m5-pro-64.price` | null |
+| `macbook-m5-pro-64.package` | "Complete MacBook Pro with M5 Pro 18-core CPU / 20-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Screen size and display finish must be specified in the quote. Exact inference performance requires validation." |
+| `macbook-m5-pro-64.sourceRef` | "appleMacBookM5Pro" |
+| `macbook-m5-pro-64.powerPolicyRef` | "macbookProWatts" |
+| `macbook-m4-max-128.name` | "MacBook Pro M4 Max · {memory} GB" |
+| `macbook-m4-max-128.memory` | 128 |
+| `macbook-m4-max-128.kind` | "unified" |
+| `macbook-m4-max-128.price` | null |
+| `macbook-m4-max-128.package` | "Complete MacBook Pro with M4 Max 16-core CPU / 40-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Screen size, condition and current stock must be confirmed; published historical specifications are not a current purchase quote." |
+| `macbook-m4-max-128.sourceRef` | "appleMacBookM4Max" |
+| `macbook-m4-max-128.powerPolicyRef` | "macbookMaxWatts" |
+| `rtx-pro-6000-server-x4.name` | "Single server · 4× RTX PRO 6000 Blackwell Server Edition" |
+| `rtx-pro-6000-server-x4.memory` | 384 |
+| `rtx-pro-6000-server-x4.kind` | "VRAM" |
+| `rtx-pro-6000-server-x4.gpus` | 4 |
+| `rtx-pro-6000-server-x4.price` | null |
+| `rtx-pro-6000-server-x4.package` | "One Supermicro SYS-422GA-NRT 4U PCIe server configured with 4 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs, {memory} GB aggregate VRAM and dual Xeon 6900-series host. CPU SKUs, host RAM, SSD, networking, OS, cooling and power installation require a complete-system quote. VRAM is distributed across GPUs; model sharding and performance require validation. This is not the Workstation Edition and does not assume NVLink pooling." |
+| `rtx-pro-6000-server-x4.sourceRef` | "supermicroRtxProServer" |
+| `rtx-pro-6000-server-x4.gpuSourceRef` | "nvidiaRtxPro6000Server" |
+| `rtx-pro-6000-server-x4.needsBuild` | true |
+| `rtx-pro-6000-server-x4.powerPolicyRef` | "rtxProServer4Watts" |
+| `rtx-pro-6000-server-x8.name` | "Single server · 8× RTX PRO 6000 Blackwell Server Edition" |
+| `rtx-pro-6000-server-x8.memory` | 768 |
+| `rtx-pro-6000-server-x8.kind` | "VRAM" |
+| `rtx-pro-6000-server-x8.gpus` | 8 |
+| `rtx-pro-6000-server-x8.price` | null |
+| `rtx-pro-6000-server-x8.package` | "One Supermicro SYS-422GA-NRT 4U PCIe server configured with 8 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs, {memory} GB aggregate VRAM and dual Xeon 6900-series host. CPU SKUs, host RAM, SSD, networking, OS, cooling and power installation require a complete-system quote. VRAM is distributed across GPUs; model sharding and performance require validation. This is not the Workstation Edition and does not assume NVLink pooling." |
+| `rtx-pro-6000-server-x8.sourceRef` | "supermicroRtxProServer" |
+| `rtx-pro-6000-server-x8.gpuSourceRef` | "nvidiaRtxPro6000Server" |
+| `rtx-pro-6000-server-x8.needsBuild` | true |
+| `rtx-pro-6000-server-x8.powerPolicyRef` | "rtxProServer8Watts" |
 
 ## [rentals.js](rentals.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** Weekly and before renting; on billing changes.
 
 **Source:** sources.rental and sources.rentalBilling
 
-**How to update each field:** Replace published per-GPU USD/hour and full-instance resources together. Total memory and hourly price are derived. Confirm stock/region separately.
+**How to update each field:** Review per-GPU USD/hour and full-instance resources together. Keep announcedPerGpu separate from the retained snapshot perGpu until its shared effective date; disclose unavailable current account rates in rentalTerms. Total memory and hourly prices are derived. Confirm stock/region separately.
 
 | Field | Current value |
 |---|---|
@@ -541,6 +825,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `quadro.ram` | 46 |
 | `quadro.storage` | "512 GiB" |
 | `quadro.perGpu` | 0.69 |
+| `quadro.announcedPerGpu` | 0.69 |
 | `a6000.gpu` | "A6000" |
 | `a6000.gpus` | 1 |
 | `a6000.vram` | 48 |
@@ -548,6 +833,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a6000.ram` | 100 |
 | `a6000.storage` | "512 GiB" |
 | `a6000.perGpu` | 1.09 |
+| `a6000.announcedPerGpu` | 1.09 |
 | `a100.gpu` | "A100 PCIe" |
 | `a100.gpus` | 1 |
 | `a100.vram` | 40 |
@@ -555,6 +841,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a100.ram` | 225 |
 | `a100.storage` | "512 GiB" |
 | `a100.perGpu` | 1.99 |
+| `a100.announcedPerGpu` | 1.99 |
 | `h100-pcie.gpu` | "H100 PCIe" |
 | `h100-pcie.gpus` | 1 |
 | `h100-pcie.vram` | 80 |
@@ -562,6 +849,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `h100-pcie.ram` | 225 |
 | `h100-pcie.storage` | "1 TiB" |
 | `h100-pcie.perGpu` | 3.29 |
+| `h100-pcie.announcedPerGpu` | 3.79 |
 | `h100.gpu` | "H100 SXM" |
 | `h100.gpus` | 1 |
 | `h100.vram` | 80 |
@@ -569,6 +857,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `h100.ram` | 225 |
 | `h100.storage` | "2.75 TiB" |
 | `h100.perGpu` | 4.29 |
+| `h100.announcedPerGpu` | 4.89 |
 | `gh200.gpu` | "GH200" |
 | `gh200.gpus` | 1 |
 | `gh200.vram` | 96 |
@@ -576,6 +865,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `gh200.ram` | 432 |
 | `gh200.storage` | "4 TiB" |
 | `gh200.perGpu` | 2.29 |
+| `gh200.announcedPerGpu` | 2.59 |
 | `a6000-x2.gpu` | "A6000" |
 | `a6000-x2.gpus` | 2 |
 | `a6000-x2.vram` | 48 |
@@ -583,6 +873,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a6000-x2.ram` | 200 |
 | `a6000-x2.storage` | "1 TiB" |
 | `a6000-x2.perGpu` | 1.09 |
+| `a6000-x2.announcedPerGpu` | 1.09 |
 | `a6000-x4.gpu` | "A6000" |
 | `a6000-x4.gpus` | 4 |
 | `a6000-x4.vram` | 48 |
@@ -590,6 +881,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a6000-x4.ram` | 400 |
 | `a6000-x4.storage` | "1 TiB" |
 | `a6000-x4.perGpu` | 1.09 |
+| `a6000-x4.announcedPerGpu` | 1.09 |
 | `h100-x2.gpu` | "H100 SXM" |
 | `h100-x2.gpus` | 2 |
 | `h100-x2.vram` | 80 |
@@ -597,6 +889,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `h100-x2.ram` | 450 |
 | `h100-x2.storage` | "5.5 TiB" |
 | `h100-x2.perGpu` | 4.19 |
+| `h100-x2.announcedPerGpu` | 4.79 |
 | `h100-x4.gpu` | "H100 SXM" |
 | `h100-x4.gpus` | 4 |
 | `h100-x4.vram` | 80 |
@@ -604,6 +897,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `h100-x4.ram` | 900 |
 | `h100-x4.storage` | "11 TiB" |
 | `h100-x4.perGpu` | 4.09 |
+| `h100-x4.announcedPerGpu` | 4.69 |
 | `h100-x8.gpu` | "H100 SXM" |
 | `h100-x8.gpus` | 8 |
 | `h100-x8.vram` | 80 |
@@ -611,6 +905,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `h100-x8.ram` | 1800 |
 | `h100-x8.storage` | "22 TiB" |
 | `h100-x8.perGpu` | 3.99 |
+| `h100-x8.announcedPerGpu` | 4.59 |
 | `b200.gpu` | "B200 SXM6" |
 | `b200.gpus` | 1 |
 | `b200.vram` | 180 |
@@ -618,6 +913,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `b200.ram` | 360 |
 | `b200.storage` | "2.75 TiB" |
 | `b200.perGpu` | 6.99 |
+| `b200.announcedPerGpu` | 7.99 |
 | `b200-x8.gpu` | "B200 SXM6" |
 | `b200-x8.gpus` | 8 |
 | `b200-x8.vram` | 180 |
@@ -625,6 +921,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `b200-x8.ram` | 2900 |
 | `b200-x8.storage` | "22 TiB" |
 | `b200-x8.perGpu` | 6.69 |
+| `b200-x8.announcedPerGpu` | 7.69 |
 | `b200-x2.gpu` | "B200 SXM6" |
 | `b200-x2.gpus` | 2 |
 | `b200-x2.vram` | 180 |
@@ -632,6 +929,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `b200-x2.ram` | 720 |
 | `b200-x2.storage` | "5.5 TiB" |
 | `b200-x2.perGpu` | 6.89 |
+| `b200-x2.announcedPerGpu` | 7.89 |
 | `b200-x4.gpu` | "B200 SXM6" |
 | `b200-x4.gpus` | 4 |
 | `b200-x4.vram` | 180 |
@@ -639,6 +937,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `b200-x4.ram` | 1440 |
 | `b200-x4.storage` | "11 TiB" |
 | `b200-x4.perGpu` | 6.79 |
+| `b200-x4.announcedPerGpu` | 7.79 |
 | `a100-x2.gpu` | "A100 PCIe" |
 | `a100-x2.gpus` | 2 |
 | `a100-x2.vram` | 40 |
@@ -646,6 +945,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a100-x2.ram` | 450 |
 | `a100-x2.storage` | "1 TiB" |
 | `a100-x2.perGpu` | 1.99 |
+| `a100-x2.announcedPerGpu` | 1.99 |
 | `a100-x4.gpu` | "A100 PCIe" |
 | `a100-x4.gpus` | 4 |
 | `a100-x4.vram` | 40 |
@@ -653,6 +953,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a100-x4.ram` | 900 |
 | `a100-x4.storage` | "1 TiB" |
 | `a100-x4.perGpu` | 1.99 |
+| `a100-x4.announcedPerGpu` | 1.99 |
 | `a100-sxm.gpu` | "A100 SXM" |
 | `a100-sxm.gpus` | 1 |
 | `a100-sxm.vram` | 40 |
@@ -660,6 +961,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a100-sxm.ram` | 220 |
 | `a100-sxm.storage` | "512 GiB" |
 | `a100-sxm.perGpu` | 1.99 |
+| `a100-sxm.announcedPerGpu` | 1.99 |
 | `a100-sxm-x8.gpu` | "A100 SXM" |
 | `a100-sxm-x8.gpus` | 8 |
 | `a100-sxm-x8.vram` | 40 |
@@ -667,6 +969,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a100-sxm-x8.ram` | 1800 |
 | `a100-sxm-x8.storage` | "5.8 TiB" |
 | `a100-sxm-x8.perGpu` | 1.99 |
+| `a100-sxm-x8.announcedPerGpu` | 1.99 |
 | `a100-80-x8.gpu` | "A100 SXM" |
 | `a100-80-x8.gpus` | 8 |
 | `a100-80-x8.vram` | 80 |
@@ -674,6 +977,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a100-80-x8.ram` | 1800 |
 | `a100-80-x8.storage` | "19.5 TiB" |
 | `a100-80-x8.perGpu` | 2.79 |
+| `a100-80-x8.announcedPerGpu` | 3.19 |
 | `v100-x8.gpu` | "Tesla V100" |
 | `v100-x8.gpus` | 8 |
 | `v100-x8.vram` | 16 |
@@ -681,6 +985,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `v100-x8.ram` | 448 |
 | `v100-x8.storage` | "5.8 TiB" |
 | `v100-x8.perGpu` | 0.79 |
+| `v100-x8.announcedPerGpu` | 0.79 |
 | `a10.gpu` | "A10" |
 | `a10.gpus` | 1 |
 | `a10.vram` | 24 |
@@ -688,24 +993,28 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `a10.ram` | 226 |
 | `a10.storage` | "1.3 TiB" |
 | `a10.perGpu` | 1.29 |
+| `a10.announcedPerGpu` | 1.29 |
 
 ## [rental-terms.js](rental-terms.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** With rental billing changes.
 
 **Source:** sources.rentalBilling
 
-**How to update each field:** Review taxes, storage and reservation/availability limitations.
+**How to update each field:** Review taxes, storage, reservation/availability and current-rate access limitations. Record the last public rate snapshot and announced effective date without treating future rates as current quotes.
 
 | Field | Current value |
 |---|---|
-| `(collection)` | "On-demand USD; published rates exclude applicable sales tax/VAT/GST. Billed in one-minute increments after launch and passing health checks until termination, including idle time. Region/stock not guaranteed. Persistent filesystems remain billable while they exist; confirm storage and other extras at checkout. Not a performance-equivalent substitute." |
+| `billing` | "On-demand USD; published rates exclude applicable sales tax/VAT/GST. Billed in one-minute increments after launch and passing health checks until termination, including idle time. Region/stock not guaranteed. Persistent filesystems remain billable while they exist; confirm storage and other extras at checkout. Not a performance-equivalent substitute." |
+| `lastPublicSnapshot` | "2026-10-24" |
+| `announcedEffectiveOn` | "2026-11-16" |
+| `rateNotice` | "Rental estimates retain the last public rate snapshot; current rates require account login and are unverified. Announced future rates are listed separately in the inventory and are not applied early. Confirm your account quote before renting." |
 
 ## [purchase-allowances.js](purchase-allowances.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** Monthly and for each purchase decision.
 
@@ -740,10 +1049,14 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 | `m5-512-x4.extras` | 1500 |
 | `puget-pro-5000-blackwell-72` | 14000 |
 | `m5-max-128` | 6000 |
+| `macbook-m5-pro-64` | 4000 |
+| `macbook-m4-max-128` | 6500 |
+| `rtx-pro-6000-server-x4` | 85000 |
+| `rtx-pro-6000-server-x8` | 150000 |
 
 ## [inference-memory.js](inference-memory.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** Every model/runtime/precision/context change.
 
@@ -775,7 +1088,7 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 
 ## [workloads.js](workloads.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** Monthly; after workload changes, model releases or evaluations.
 
@@ -873,7 +1186,7 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 
 ## [inference-defaults.js](inference-defaults.js)
 
-Type: **scenario**. Recorded review: **2026-11-05**.
+Type: **scenario**. Recorded review: **2026-11-10**.
 
 **Frequency:** Each planning cycle; start month each month.
 
@@ -942,7 +1255,7 @@ Type: **scenario**. Recorded review: **2026-11-05**.
 
 ## [inference-policy.js](inference-policy.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** Each planning cycle; remeasure performance/energy on configuration changes.
 
@@ -984,10 +1297,14 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 | `displayMaxMonths` | 24 |
 | `displayWindowMultiplier` | 2 |
 | `runtimeDescription` | "Planning assumption: 4-bit runtime; validate quality and deployment support" |
+| `macbookProWatts` | 100 |
+| `macbookMaxWatts` | 140 |
+| `rtxProServer4Watts` | 3500 |
+| `rtxProServer8Watts` | 6500 |
 
 ## [tariff.js](tariff.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** Check monthly; update on each tariff/tax effective date.
 
@@ -1004,10 +1321,10 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `ridersCents.CE` | 0.4673 |
 | `ridersCents.CERC` | 0.0541 |
 | `ridersCents.DIST` | 0.578 |
-| `ridersCents.E` | 0.0456 |
+| `ridersCents.E` | 0.059 |
 | `ridersCents.GEN` | 0.41 |
 | `ridersCents.OSW` | 0.9229 |
-| `ridersCents.PIPP` | 0 |
+| `ridersCents.PIPP` | 0.0158 |
 | `ridersCents.RGGI` | 0 |
 | `ridersCents.RPS` | 0.552 |
 | `ridersCents.SMR` | 0.0124 |
@@ -1036,7 +1353,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 
 ## [frontier.js](frontier.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** Weekly; on benchmark version, pricing or promotion changes.
 
@@ -1046,129 +1363,157 @@ Type: **published**. Recorded review: **2026-10-24**.
 
 | Field | Current value |
 |---|---|
-| `benchmarkVersion` | "Artificial Analysis Intelligence Index v4.3.2" |
+| `benchmarkVersion` | "Artificial Analysis Intelligence Index v5.0.1" |
 | `referenceModels.0.id` | "gpt-5.6-sol" |
 | `referenceModels.0.name` | "GPT-5.6 Sol" |
-| `referenceModels.0.score` | 47 |
-| `referenceModels.0.taskCost` | 1.99 |
+| `referenceModels.0.score` | null |
+| `referenceModels.0.taskCost` | null |
 | `referenceModels.0.input` | 4 |
 | `referenceModels.0.output` | 20 |
 | `referenceModels.0.source` | "https://artificialanalysis.ai/models/gpt-5-6-sol" |
 | `referenceModels.0.priceSource` | "https://developers.openai.com/api/docs/models/gpt-5.6-sol" |
 | `referenceModels.1.id` | "gpt-5.6-terra" |
 | `referenceModels.1.name` | "GPT-5.6 Terra" |
-| `referenceModels.1.score` | 42 |
-| `referenceModels.1.taskCost` | 1.4 |
+| `referenceModels.1.score` | 32 |
+| `referenceModels.1.taskCost` | 3.73 |
 | `referenceModels.1.input` | 2 |
 | `referenceModels.1.output` | 12 |
 | `referenceModels.1.source` | "https://artificialanalysis.ai/models/gpt-5-6-terra" |
 | `referenceModels.1.priceSource` | "https://developers.openai.com/api/docs/models/gpt-5.6-terra" |
 | `referenceModels.2.id` | "gpt-5.6-luna" |
 | `referenceModels.2.name` | "GPT-5.6 Luna" |
-| `referenceModels.2.score` | 37 |
-| `referenceModels.2.taskCost` | 0.18 |
+| `referenceModels.2.score` | 24 |
+| `referenceModels.2.taskCost` | 0.33 |
 | `referenceModels.2.input` | 0.2 |
 | `referenceModels.2.output` | 1.2 |
 | `referenceModels.2.source` | "https://artificialanalysis.ai/models/gpt-5-6-luna" |
 | `referenceModels.2.priceSource` | "https://developers.openai.com/api/docs/models/gpt-5.6-luna" |
 | `referenceModels.3.id` | "gpt-6-astra" |
 | `referenceModels.3.name` | "GPT-6 Astra" |
-| `referenceModels.3.score` | 53 |
-| `referenceModels.3.taskCost` | 3.26 |
+| `referenceModels.3.score` | 57 |
+| `referenceModels.3.taskCost` | 6.24 |
 | `referenceModels.3.input` | 10 |
 | `referenceModels.3.output` | 50 |
 | `referenceModels.3.source` | "https://artificialanalysis.ai/models/gpt-6-astra" |
 | `referenceModels.3.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6-astra" |
 | `referenceModels.4.id` | "gpt-6-sol" |
 | `referenceModels.4.name` | "GPT-6 Sol" |
-| `referenceModels.4.score` | 48 |
-| `referenceModels.4.taskCost` | 1.04 |
+| `referenceModels.4.score` | 44 |
+| `referenceModels.4.taskCost` | 2.47 |
 | `referenceModels.4.input` | 2 |
 | `referenceModels.4.output` | 10 |
 | `referenceModels.4.source` | "https://artificialanalysis.ai/models/gpt-6-sol" |
 | `referenceModels.4.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6-sol" |
 | `referenceModels.5.id` | "gpt-6-luna" |
 | `referenceModels.5.name` | "GPT-6 Luna" |
-| `referenceModels.5.score` | 38 |
-| `referenceModels.5.taskCost` | 0.07 |
+| `referenceModels.5.score` | 28 |
+| `referenceModels.5.taskCost` | 0.15 |
 | `referenceModels.5.input` | 0.1 |
 | `referenceModels.5.output` | 0.5 |
 | `referenceModels.5.source` | "https://artificialanalysis.ai/models/gpt-6-luna" |
 | `referenceModels.5.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6-luna" |
 | `referenceModels.6.id` | "gpt-6.1-sol" |
 | `referenceModels.6.name` | "GPT-6.1 Sol" |
-| `referenceModels.6.score` | 52 |
-| `referenceModels.6.taskCost` | 0.72 |
+| `referenceModels.6.score` | 55 |
+| `referenceModels.6.taskCost` | 1.27 |
 | `referenceModels.6.input` | 2 |
 | `referenceModels.6.output` | 10 |
 | `referenceModels.6.source` | "https://artificialanalysis.ai/models/gpt-6-1-sol" |
 | `referenceModels.6.priceSource` | "https://developers.openai.com/api/docs/models/gpt-6.1-sol" |
-| `selectedBenchmarks.ds41.score` | 39 |
-| `selectedBenchmarks.ds41.taskCost` | 0.48 |
+| `selectedBenchmarks.ds41.score` | null |
+| `selectedBenchmarks.ds41.taskCost` | null |
 | `selectedBenchmarks.ds41.variant` | "max reasoning" |
 | `selectedBenchmarks.ds41.source` | "https://artificialanalysis.ai/models/deepseek-v4-1-flash" |
-| `selectedBenchmarks.glm53.score` | 45 |
-| `selectedBenchmarks.glm53.taskCost` | 2.01 |
+| `selectedBenchmarks.glm53.score` | 32 |
+| `selectedBenchmarks.glm53.taskCost` | 5.01 |
 | `selectedBenchmarks.glm53.variant` | "max reasoning" |
 | `selectedBenchmarks.glm53.source` | "https://artificialanalysis.ai/models/glm-5-3" |
-| `selectedBenchmarks.glm53flash.score` | 42 |
-| `selectedBenchmarks.glm53flash.taskCost` | 0.28 |
+| `selectedBenchmarks.glm53flash.score` | 28 |
+| `selectedBenchmarks.glm53flash.taskCost` | 0.58 |
 | `selectedBenchmarks.glm53flash.variant` | "AA evaluated configuration" |
 | `selectedBenchmarks.glm53flash.source` | "https://artificialanalysis.ai/models/glm-5-3-flash" |
-| `selectedBenchmarks.qwen38large.score` | 40 |
-| `selectedBenchmarks.qwen38large.taskCost` | 2.16 |
+| `selectedBenchmarks.qwen38large.score` | null |
+| `selectedBenchmarks.qwen38large.taskCost` | null |
 | `selectedBenchmarks.qwen38large.variant` | "AA evaluated configuration" |
 | `selectedBenchmarks.qwen38large.source` | "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b" |
-| `selectedBenchmarks.qwen38small.score` | 34 |
-| `selectedBenchmarks.qwen38small.taskCost` | 1.01 |
+| `selectedBenchmarks.qwen38small.score` | 20 |
+| `selectedBenchmarks.qwen38small.taskCost` | 3.53 |
 | `selectedBenchmarks.qwen38small.variant` | "xhigh reasoning" |
 | `selectedBenchmarks.qwen38small.source` | "https://artificialanalysis.ai/models/qwen3-8-27b" |
-| `selectedBenchmarks.kimi3.score` | 44 |
-| `selectedBenchmarks.kimi3.taskCost` | 2 |
+| `selectedBenchmarks.kimi3.score` | null |
+| `selectedBenchmarks.kimi3.taskCost` | null |
 | `selectedBenchmarks.kimi3.variant` | "max reasoning" |
 | `selectedBenchmarks.kimi3.source` | "https://artificialanalysis.ai/models/kimi-k3" |
-| `selectedBenchmarks.nemotron-ultra.score` | 23 |
-| `selectedBenchmarks.nemotron-ultra.taskCost` | 0.47 |
+| `selectedBenchmarks.nemotron-ultra.score` | 12 |
+| `selectedBenchmarks.nemotron-ultra.taskCost` | 2.23 |
 | `selectedBenchmarks.nemotron-ultra.variant` | "reasoning" |
 | `selectedBenchmarks.nemotron-ultra.source` | "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b" |
-| `selectedBenchmarks.nemotron-super.score` | 13 |
-| `selectedBenchmarks.nemotron-super.taskCost` | 1.64 |
+| `selectedBenchmarks.nemotron-super.score` | null |
+| `selectedBenchmarks.nemotron-super.taskCost` | null |
 | `selectedBenchmarks.nemotron-super.variant` | "reasoning" |
 | `selectedBenchmarks.nemotron-super.source` | "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b" |
-| `selectedBenchmarks.nemotron-nano.score` | 9 |
-| `selectedBenchmarks.nemotron-nano.taskCost` | 0.02 |
+| `selectedBenchmarks.nemotron-nano.score` | null |
+| `selectedBenchmarks.nemotron-nano.taskCost` | null |
 | `selectedBenchmarks.nemotron-nano.variant` | "reasoning" |
 | `selectedBenchmarks.nemotron-nano.source` | "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning" |
-| `selectedBenchmarks.oss120.score` | 12 |
-| `selectedBenchmarks.oss120.taskCost` | 0.11 |
+| `selectedBenchmarks.oss120.score` | 4 |
+| `selectedBenchmarks.oss120.taskCost` | 0.35 |
 | `selectedBenchmarks.oss120.variant` | "high reasoning" |
 | `selectedBenchmarks.oss120.source` | "https://artificialanalysis.ai/models/gpt-oss-120b" |
-| `selectedBenchmarks.nemotron-lightning.score` | 13 |
-| `selectedBenchmarks.nemotron-lightning.taskCost` | 0.08 |
+| `selectedBenchmarks.nemotron-lightning.score` | 6 |
+| `selectedBenchmarks.nemotron-lightning.taskCost` | 0.31 |
 | `selectedBenchmarks.nemotron-lightning.variant` | "AA evaluated configuration" |
 | `selectedBenchmarks.nemotron-lightning.source` | "https://artificialanalysis.ai/models/nemotron-3-5-lightning" |
-| `selectedBenchmarks.qwen80.score` | 9 |
-| `selectedBenchmarks.qwen80.taskCost` | 0.47 |
+| `selectedBenchmarks.qwen80.score` | null |
+| `selectedBenchmarks.qwen80.taskCost` | null |
 | `selectedBenchmarks.qwen80.variant` | "non-reasoning" |
 | `selectedBenchmarks.qwen80.source` | "https://artificialanalysis.ai/models/qwen3-coder-next" |
-| `selectedBenchmarks.oss20.score` | 9 |
-| `selectedBenchmarks.oss20.taskCost` | 0.01 |
+| `selectedBenchmarks.oss20.score` | null |
+| `selectedBenchmarks.oss20.taskCost` | null |
 | `selectedBenchmarks.oss20.variant` | "high reasoning" |
 | `selectedBenchmarks.oss20.source` | "https://artificialanalysis.ai/models/gpt-oss-20b" |
-| `selectedBenchmarks.granite42.score` | 11 |
-| `selectedBenchmarks.granite42.taskCost` | 0.02 |
+| `selectedBenchmarks.granite42.score` | 5 |
+| `selectedBenchmarks.granite42.taskCost` | 0.04 |
 | `selectedBenchmarks.granite42.variant` | "reasoning" |
 | `selectedBenchmarks.granite42.source` | "https://artificialanalysis.ai/models/granite-4-2-8b" |
-| `missingBenchmarks.kimi25` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
-| `missingBenchmarks.minimax` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
-| `missingBenchmarks.deepseek` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
-| `missingBenchmarks.qwen30` | "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison." |
-| `missingBenchmarks.minimax27` | "The current model page no longer reports a measured cost per task for this benchmark version; excluded rather than retaining the previous cost." |
+| `selectedBenchmarks.kimi25.score` | null |
+| `selectedBenchmarks.kimi25.taskCost` | null |
+| `selectedBenchmarks.kimi25.variant` | "Comparable current setting unavailable" |
+| `selectedBenchmarks.kimi25.source` | "https://artificialanalysis.ai/models/kimi-k2-5" |
+| `selectedBenchmarks.minimax.score` | null |
+| `selectedBenchmarks.minimax.taskCost` | null |
+| `selectedBenchmarks.minimax.variant` | "Comparable current setting unavailable" |
+| `selectedBenchmarks.minimax.source` | "https://artificialanalysis.ai/models/minimax-m2-5" |
+| `selectedBenchmarks.deepseek.score` | null |
+| `selectedBenchmarks.deepseek.taskCost` | null |
+| `selectedBenchmarks.deepseek.variant` | "Comparable current setting unavailable" |
+| `selectedBenchmarks.deepseek.source` | "https://artificialanalysis.ai/models/deepseek-v3-2" |
+| `selectedBenchmarks.qwen30.score` | null |
+| `selectedBenchmarks.qwen30.taskCost` | null |
+| `selectedBenchmarks.qwen30.variant` | "Comparable current setting unavailable" |
+| `selectedBenchmarks.qwen30.source` | "https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct" |
+| `selectedBenchmarks.minimax27.score` | null |
+| `selectedBenchmarks.minimax27.taskCost` | null |
+| `selectedBenchmarks.minimax27.variant` | "Comparable current setting unavailable" |
+| `selectedBenchmarks.minimax27.source` | "https://artificialanalysis.ai/models/minimax-m2-7" |
+| `missingBenchmarks.kimi25` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.minimax` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.deepseek` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.qwen30` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.minimax27` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.gpt-5.6-sol` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.ds41` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.qwen38large` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.kimi3` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.nemotron-super` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.nemotron-nano` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.qwen80` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
+| `missingBenchmarks.oss20` | "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded." |
 | `longInputMultiplier` | 2 |
 | `longOutputMultiplier` | 1.5 |
 | `promotion.model` | "gpt-5.6-sol" |
-| `promotion.through` | "2026-11-21" |
-| `promotion.qualification` | "at least" |
+| `promotion.through` | "2026-11-30" |
+| `promotion.qualification` | "" |
 | `referencePolicy.context` | 1050000 |
 | `referencePolicy.maxOutput` | 128000 |
 | `referencePolicy.longThreshold` | 272000 |
@@ -1178,7 +1523,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 
 ## [training-models.js](training-models.js)
 
-Type: **published**. Recorded review: **2026-10-24**.
+Type: **published**. Recorded review: **2026-11-10**.
 
 **Frequency:** Each model revision/addition or recipe/stack change.
 
@@ -1191,16 +1536,16 @@ Type: **published**. Recorded review: **2026-10-24**.
 | `ds41.parameters` | 763 |
 | `glm53.parameters` | 753 |
 | `glm53flash.parameters` | 321 |
-| `qwen38large.parameters` | 2400 |
+| `qwen38large.parameters` | 2446 |
 | `qwen38small.parameters` | 28 |
 | `minimax27.parameters` | 229 |
 | `nemotron-lightning.parameters` | 32 |
-| `kimi3.parameters` | 2800 |
+| `kimi3.parameters` | 2780 |
 | `nemotron-ultra.parameters` | 561 |
 | `nemotron-super.parameters` | 124 |
 | `minimax.parameters` | 229 |
 | `qwen80.parameters` | 80 |
-| `kimi25.parameters` | 1000 |
+| `kimi25.parameters` | 1027 |
 | `nemotron-nano.parameters` | 32 |
 | `deepseek.parameters` | 685 |
 | `oss120.parameters` | 117 |
@@ -1214,7 +1559,7 @@ Type: **published**. Recorded review: **2026-10-24**.
 
 ## [training-eligibility.js](training-eligibility.js)
 
-Type: **editorial**. Recorded review: **2026-10-24**.
+Type: **editorial**. Recorded review: **2026-11-10**.
 
 **Frequency:** On license or stack support changes.
 
@@ -1228,7 +1573,7 @@ Type: **editorial**. Recorded review: **2026-10-24**.
 
 ## [training-systems.js](training-systems.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** Monthly and before each campaign; custom quotes per run.
 
@@ -1273,10 +1618,18 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 | `b200x8.kind` | "rent" |
 | `a100x8.rentalId` | "a100-80-x8" |
 | `a100x8.kind` | "rent" |
+| `rtxpro6000x4.hardwareId` | "rtx-pro-6000-server-x4" |
+| `rtxpro6000x4.name` | "{gpus} × RTX PRO 6000 Blackwell Server Edition · {vram} GB/GPU" |
+| `rtxpro6000x4.kind` | "buy" |
+| `rtxpro6000x4.powerPolicyRef` | "rtxProServer4Watts" |
+| `rtxpro6000x8.hardwareId` | "rtx-pro-6000-server-x8" |
+| `rtxpro6000x8.name` | "{gpus} × RTX PRO 6000 Blackwell Server Edition · {vram} GB/GPU" |
+| `rtxpro6000x8.kind` | "buy" |
+| `rtxpro6000x8.powerPolicyRef` | "rtxProServer8Watts" |
 
 ## [training-defaults.js](training-defaults.js)
 
-Type: **scenario**. Recorded review: **2026-10-24**.
+Type: **scenario**. Recorded review: **2026-11-10**.
 
 **Frequency:** Each dataset version, experiment campaign or bill change.
 
@@ -1328,7 +1681,7 @@ Type: **scenario**. Recorded review: **2026-10-24**.
 
 ## [method-defaults.js](method-defaults.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** Every training recipe or experiment change.
 
@@ -1361,7 +1714,7 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 
 ## [training-policy.js](training-policy.js)
 
-Type: **assumption**. Recorded review: **2026-10-24**.
+Type: **assumption**. Recorded review: **2026-11-10**.
 
 **Frequency:** On training stack, optimizer or memory-layout changes.
 
@@ -1382,7 +1735,7 @@ Type: **assumption**. Recorded review: **2026-10-24**.
 
 ## [training-methods.js](training-methods.js)
 
-Type: **editorial**. Recorded review: **2026-10-24**.
+Type: **editorial**. Recorded review: **2026-11-10**.
 
 **Frequency:** Quarterly; on method implementation/documentation changes.
 
@@ -1431,7 +1784,7 @@ Type: **editorial**. Recorded review: **2026-10-24**.
 
 ## [method-sources.js](method-sources.js)
 
-Type: **provenance**. Recorded review: **2026-10-24**.
+Type: **provenance**. Recorded review: **2026-11-10**.
 
 **Frequency:** Quarterly and on documentation moves.
 
@@ -1454,7 +1807,7 @@ Type: **provenance**. Recorded review: **2026-10-24**.
 
 ## [reviewed-configurations.js](reviewed-configurations.js)
 
-Type: **evidence**. Recorded review: **2026-10-24**.
+Type: **evidence**. Recorded review: **2026-11-10**.
 
 **Frequency:** Before expiry and after any model/runtime/hardware/workload change.
 

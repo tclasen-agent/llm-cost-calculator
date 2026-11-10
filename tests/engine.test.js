@@ -24,7 +24,7 @@ test('fees missing cannot be treated as zero',()=>{const r=calculate({...measure
 test('power measurement is not inferred from PSU rating',()=>{assert.equal(calculate({...measured,itKwh:null}).power,null);assert.equal(calculate({...measured,coolingKwh:null}).power,null);});
 test('county tax is capped per account, not per added device',()=>{assert.equal(countyTax(20000),72);assert.equal(countyTax(20000)-countyTax(15000),0);});
 test('consumption tax follows its own 2500 and 50000 kWh blocks',()=>{assert.equal(consumptionTax(2500),2500*.001565);assert.ok(Math.abs(consumptionTax(3000)-(2500*.001565+500*.001055))<1e-10);});
-test('GS1 variable tariff hand calculation includes all 17 riders and taxes',()=>{const cents=[3.7648,.0384,.1116,.1765,.4673,.0541,.578,.0456,.410,.9229,0,0,.552,.0124,.3429,1.1929,.2901];const rate=cents.reduce((a,b)=>a+b,0)/100;assert.equal(ridersRate,rate);const expected=1000*(.025525+.030788+.00582+rate+.000847+.001565)+.92+1000*.005393;assert.ok(Math.abs(gs1Variable(1000,9)-expected)<1e-8);});
+test('GS1 variable tariff hand calculation includes all 17 riders and taxes',()=>{const cents=[3.7648,.0384,.1116,.1765,.4673,.0541,.578,.0590,.410,.9229,.0158,0,.552,.0124,.3429,1.1929,.2901];const rate=cents.reduce((a,b)=>a+b,0)/100;assert.equal(ridersRate,rate);const expected=1000*(.025525+.030788+.00582+rate+.000847+.001565)+.92+1000*.005393;assert.ok(Math.abs(gs1Variable(1000,9)-expected)<1e-8);});
 test('seasonal generation tier only changes usage above 1400',()=>{assert.equal(gs1Variable(1000,9),gs1Variable(1000,10));assert.ok(Math.abs(gs1Variable(2000,9)-gs1Variable(2000,10)-600*(.04135-.019886))<1e-8);});
 test('incremental cooling follows IT and does not double count fixed tax',()=>{const e=energyCost(measured,9);assert.ok(Math.abs(e.total-(gs1Variable(1120,9)-gs1Variable(1000,9)))<1e-8);assert.ok(Math.abs(e.total-e.it-e.cooling)<1e-8);});
 test('unconfirmed or ineligible GS1 demands block power costs',()=>{assert.equal(energyCost({...measured,tariffConfirmed:0},9),null);assert.equal(energyCost({...measured,peakKw:30},9),null);assert.equal(energyCost({...measured,localTax:0},9),null);});
@@ -46,11 +46,11 @@ test('unsourced future rates cannot produce a total projection',()=>{const r=cal
 
 test('refreshed selected-provider price pair bills uncached input and output together',()=>{
  const r=calculate({...measured,model:'ds41'});
- assert.equal(r.m.providerTag,'relace');
+ assert.equal(r.m.providerTag,'relace/fp4');
  assert.equal(r.first.requests,2200);
- // 2.2M input tokens at $0.07/M plus 1.1M output tokens at $0.50/M.
- assert.ok(Math.abs(r.first.apiUsage-.704)<1e-12);
- assert.notEqual(r.first.apiUsage,2200*(1000*.008+500*.5)/1e6);
+ // 2.2M input tokens at $0.006/M plus 1.1M output tokens at $0.50/M.
+ assert.ok(Math.abs(r.first.apiUsage-.5632)<1e-12);
+ assert.notEqual(r.first.apiUsage,2200*(1000*.005+500*.5)/1e6);
 });
 
 test('large-model provider context and output boundaries fail without discarding other path estimates',()=>{
@@ -79,4 +79,10 @@ test('large-model uncached API cost uses both coherent provider rates despite ca
   assert.ok(Math.abs(result.first.apiUsage-inputOnly-outputOnly)<1e-12);
   if(input>0)assert.notEqual(result.first.apiUsage,result.first.requests*(input*model.cached+output*model.output)/1e6);
  }
+});
+
+test('current tariff independently bills distribution and tax boundaries with November riders',()=>{
+ // Sum of the 17 reviewed riders: 8.9887 cents/kWh. County tax caps after this range.
+ const expected=(kwh,summer)=>Math.min(kwh,1400)*(.025525+.030788)+Math.max(0,kwh-1400)*(.018928+(summer?.04135:.019886))+kwh*(.00582+.089887+.000847)+Math.min(kwh,2500)*.001565+Math.max(0,Math.min(kwh,50000)-2500)*.001055+Math.max(0,kwh-50000)*.000845+Math.min(72,.92+kwh*.005393);
+ for(const kwh of [1399,1400,1401,2499,2500,2501,49999,50000,50001])for(const [month,summer] of [[6,true],[10,false]])assert.ok(Math.abs(gs1Variable(kwh,month)-expected(kwh,summer))<1e-8,`${kwh}/${month}`);
 });

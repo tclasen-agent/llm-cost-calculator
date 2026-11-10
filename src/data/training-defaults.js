@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "scenario",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Each dataset version, experiment campaign or bill change.",
     "source": "Dataset statistics, pilot throughput, utility bills, complete-system quotes",
     "how": "Review dataset counts/tokens, epochs, sequence, microbatch, cadence, speed ranges, costs and evidence. Cost/power/rate initial values derive from selected systems. User overrides are not certification."

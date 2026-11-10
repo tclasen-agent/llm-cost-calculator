@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Monthly and for each purchase decision.",
     "source": "Editorial whole-system budgets checked against hardware source links; no verified complete-system quotes",
     "how": "Replace budget estimates with current complete-system allowances; published prices belong in hardware. Include host and cluster networking."
@@ -46,6 +46,10 @@ export default {
       "extras": 1500
     },
     "puget-pro-5000-blackwell-72": 14000,
-    "m5-max-128": 6000
+    "m5-max-128": 6000,
+    "macbook-m5-pro-64": 4000,
+    "macbook-m4-max-128": 6500,
+    "rtx-pro-6000-server-x4": 85000,
+    "rtx-pro-6000-server-x8": 150000
   }
 };

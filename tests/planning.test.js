@@ -30,3 +30,16 @@ test('shared configurations preserve automatic settings and overrides',()=>{
 test('empty and zero people input always restores a usable simple scale',()=>{
  for(const users of [null,'',0,-1,NaN]){const s=planning({...defaults,users});assert.ok(s.users>=1);assert.ok(calculate(s).ready);}
 });
+
+test('requested laptops and single servers use complete-system power and usable memory assumptions',()=>{
+ for(const [id,memory,watts] of [['macbook-m5-pro-64',64,100],['macbook-m4-max-128',128,140],['rtx-pro-6000-server-x4',384,3500],['rtx-pro-6000-server-x8',768,6500]]){
+  const s=planning({...defaults,hardware:id,model:'oss20',autoHardware:0,workload:'swe-factory',concurrency:1,overrides:'concurrency'}),r=calculate(s);
+  assert.equal(s.localAvailable,memory*.85);assert.equal(s.itKwh,watts/1000*720);
+  assert.match(s.energySource,new RegExp(`${watts} W for the selected complete system`));
+  assert.ok(r.buyReady&&r.rentReady&&r.apiReady,id);
+  assert.match(s.quoteSource,/Planning allowance/);assert.ok(s.quote>0);
+ }
+ const a=planning({...defaults,hardware:'rtx-pro-6000-server-x4',model:'oss20',autoHardware:0});
+ const b=planning({...defaults,hardware:'rtx-pro-6000-server-x8',model:'oss20',autoHardware:0});
+ assert.equal(a.localDecode,b.localDecode,'extra GPUs do not fabricate benchmark scaling');
+});

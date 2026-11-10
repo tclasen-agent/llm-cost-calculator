@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "evidence",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Before expiry and after any model/runtime/hardware/workload change.",
     "source": "Reproducible end-to-end run logs",
     "how": "Add only independently reviewed successful exact configurations with mode, kind, hardwareId, scope, evidenceURL, modelRevision, runtimeVersions, completeSystem, reproduction, result, status, reviewedOn and expiresOn. Add positive and out-of-scope tests. Empty leaves independently verified status unavailable; both modes permit labeled estimates without these records."

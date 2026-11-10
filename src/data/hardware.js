@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Monthly and before purchase; on product/configuration changes.",
     "source": "Each record source/priceSource",
     "how": "Verify complete system specifications, memory type/allocation, host, storage and networking. Use null for an unverified price; put estimates in purchaseAllowances."
@@ -56,11 +56,11 @@ export default {
       "name": "HP Z2 Mini G1a · BN8E8UA",
       "memory": 128,
       "kind": "unified",
-      "price": 4499,
+      "price": 9127,
       "package": "Ryzen AI Max+ PRO 395, Radeon 8060S, {memory} GB RAM, 1 TB NVMe, Windows 11 Pro, OEM mini chassis and 300 W power adapter.",
       "sourceRef": "hpZ2G1a",
       "priceSourceRef": "hpZ2G1a",
-      "priceKind": "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra"
+      "priceKind": "HP US listed MSRP reviewed November 10, 2026; tax and checkout availability extra"
     },
     "m5-256": {
       "name": "Mac Studio M5 Ultra · {memory} GB",
@@ -96,7 +96,7 @@ export default {
       "sourceRef": "hpZ2G1i4000",
       "priceSourceRef": "hpZ2G1i4000",
       "gpus": 1,
-      "priceKind": "HP US listed sale price reviewed October 24, 2026; tax and checkout availability extra"
+      "priceKind": "HP US listed sale price reviewed November 10, 2026; tax and checkout availability extra"
     },
     "puget-5080": {
       "name": "Puget workstation · RTX 5080",
@@ -213,6 +213,48 @@ export default {
       "price": null,
       "package": "18-core CPU / 40-core GPU, {memory} GB unified RAM, 1 TB SSD, macOS, complete Mac Studio. Exact configured price and inference performance require validation.",
       "sourceRef": "appleStudio"
+    },
+    "macbook-m5-pro-64": {
+      "name": "MacBook Pro M5 Pro · {memory} GB",
+      "memory": 64,
+      "kind": "unified",
+      "price": null,
+      "package": "Complete MacBook Pro with M5 Pro 18-core CPU / 20-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Screen size and display finish must be specified in the quote. Exact inference performance requires validation.",
+      "sourceRef": "appleMacBookM5Pro",
+      "powerPolicyRef": "macbookProWatts"
+    },
+    "macbook-m4-max-128": {
+      "name": "MacBook Pro M4 Max · {memory} GB",
+      "memory": 128,
+      "kind": "unified",
+      "price": null,
+      "package": "Complete MacBook Pro with M4 Max 16-core CPU / 40-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Screen size, condition and current stock must be confirmed; published historical specifications are not a current purchase quote.",
+      "sourceRef": "appleMacBookM4Max",
+      "powerPolicyRef": "macbookMaxWatts"
+    },
+    "rtx-pro-6000-server-x4": {
+      "name": "Single server · 4× RTX PRO 6000 Blackwell Server Edition",
+      "memory": 384,
+      "kind": "VRAM",
+      "gpus": 4,
+      "price": null,
+      "package": "One Supermicro SYS-422GA-NRT 4U PCIe server configured with 4 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs, {memory} GB aggregate VRAM and dual Xeon 6900-series host. CPU SKUs, host RAM, SSD, networking, OS, cooling and power installation require a complete-system quote. VRAM is distributed across GPUs; model sharding and performance require validation. This is not the Workstation Edition and does not assume NVLink pooling.",
+      "sourceRef": "supermicroRtxProServer",
+      "gpuSourceRef": "nvidiaRtxPro6000Server",
+      "needsBuild": true,
+      "powerPolicyRef": "rtxProServer4Watts"
+    },
+    "rtx-pro-6000-server-x8": {
+      "name": "Single server · 8× RTX PRO 6000 Blackwell Server Edition",
+      "memory": 768,
+      "kind": "VRAM",
+      "gpus": 8,
+      "price": null,
+      "package": "One Supermicro SYS-422GA-NRT 4U PCIe server configured with 8 NVIDIA RTX PRO 6000 Blackwell Server Edition GPUs, {memory} GB aggregate VRAM and dual Xeon 6900-series host. CPU SKUs, host RAM, SSD, networking, OS, cooling and power installation require a complete-system quote. VRAM is distributed across GPUs; model sharding and performance require validation. This is not the Workstation Edition and does not assume NVLink pooling.",
+      "sourceRef": "supermicroRtxProServer",
+      "gpuSourceRef": "nvidiaRtxPro6000Server",
+      "needsBuild": true,
+      "powerPolicyRef": "rtxProServer8Watts"
     }
   }
 };

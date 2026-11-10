@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Monthly and before each campaign; custom quotes per run.",
     "source": "hardware and rentals canonical records; pilot power measurements",
     "how": "Use rentalId/hardwareId references, never duplicate their prices/resources. Purchase power is measured or explicitly assumed watts. Custom configurations require user evidence."
@@ -72,6 +72,18 @@ export default {
     "a100x8": {
       "rentalId": "a100-80-x8",
       "kind": "rent"
+    },
+    "rtxpro6000x4": {
+      "hardwareId": "rtx-pro-6000-server-x4",
+      "name": "{gpus} × RTX PRO 6000 Blackwell Server Edition · {vram} GB/GPU",
+      "kind": "buy",
+      "powerPolicyRef": "rtxProServer4Watts"
+    },
+    "rtxpro6000x8": {
+      "hardwareId": "rtx-pro-6000-server-x8",
+      "name": "{gpus} × RTX PRO 6000 Blackwell Server Edition · {vram} GB/GPU",
+      "kind": "buy",
+      "powerPolicyRef": "rtxProServer8Watts"
     }
   }
 };

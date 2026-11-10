@@ -52,9 +52,10 @@ export async function validate(){
  }
  for(const [id,w] of Object.entries(data.workloads))for(const model of w.models)if(!data.models[model])errors.push(`${id}: unknown shortlist model ${model}`);
  for(const [id,h] of Object.entries(data.hardware)){
-  for(const key of ['sourceRef','priceSourceRef','runtimeSourceRef'])if(h[key]&&!data.sources[h[key]])errors.push(`${id}: invalid ${key}`);
+  for(const key of ['sourceRef','priceSourceRef','runtimeSourceRef','gpuSourceRef'])if(h[key]&&!data.sources[h[key]])errors.push(`${id}: invalid ${key}`);
   if(h.baseHardwareId&&(!data.hardware[h.baseHardwareId]||data.hardware[h.baseHardwareId].baseHardwareId||h.memory!=null||!(h.nodes>0)))errors.push(`${id}: invalid or duplicated cluster memory`);
   for(const text of [h.name,h.package])for(const match of text.matchAll(/\{(\w+)\}/g))if(![...Object.keys(h),'baseMemory'].includes(match[1]))errors.push(`${id}: unknown text template ${match[1]}`);
+  if(h.powerPolicyRef&&!(data.inferencePolicy[h.powerPolicyRef]>0))errors.push(`${id}: invalid powerPolicyRef`);
   if(h.price!=null&&!h.priceSourceRef)errors.push(`${id}: published price requires provenance`);
  }
  for(const [id,a] of Object.entries(data.purchaseAllowances))if(typeof a==='object'&&(!data.hardware[a.baseHardwareId]||!(a.nodes>0)||!(a.extras>=0)))errors.push(`${id}: invalid cluster allowance`);

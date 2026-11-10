@@ -3,13 +3,12 @@
  * Source: Product planning policy; user evidence for overrides
  * Review frequency: Each planning cycle; start month each month.
  * Update: Update initial scenario only. Null fields are populated by planning. Saved overrides remain user-owned and must be reviewed when reopened.
- * Partial refresh: November 2026 start month only; other values retain the October 24 review.
  * Values and maintenance metadata below are authoritative; regenerate INVENTORY.md after edits.
  */
 export default {
   "maintenance": {
     "kind": "scenario",
-    "reviewed": "2026-11-05",
+    "reviewed": "2026-11-10",
     "frequency": "Each planning cycle; start month each month.",
     "source": "Product planning policy; user evidence for overrides",
     "how": "Update initial scenario only. Null fields are populated by planning. Saved overrides remain user-owned and must be reviewed when reopened."

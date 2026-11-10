@@ -8,15 +8,15 @@
 export default {
   "maintenance": {
     "kind": "provenance",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "With each related data review; check links monthly.",
     "source": "Publisher/provider documents",
     "how": "Replace moved URLs only after confirming the same document scope; retain historical evidence."
   },
   "values": {
     "api": "https://openrouter.ai/api/v1/models",
-    "rental": "https://lambda.ai/instances",
-    "rentalBilling": "https://docs.lambda.ai/public-cloud/billing/",
+    "rental": "https://lambda.com/instances",
+    "rentalBilling": "https://docs.lambda.com/public-cloud/billing/",
     "tariff": "https://cdn-dominionenergy-prd-001.azureedge.net/-/media/content/rates-and-tariffs/pdfs/virginia/shared/entire-filed-tariff.pdf",
     "county": "https://www.loudoun.gov/1570/Business-Tax-Rates",
     "training": "https://unsloth.ai/docs/models/gpt-oss-how-to-run-and-fine-tune",
@@ -35,6 +35,10 @@ export default {
     "hpZ2G1i4000": "https://www.hp.com/us-en/shop/pdp/hp-z2-mini-g1i-workstation-desktop-pc-wolf-pro-security-edition-p-bp6k7ua-aba-1",
     "pugetWorkstation": "https://www.pugetsystems.com/products/workstations/configure/",
     "supermicroHgx": "https://www.supermicro.com/en/products/system/gpu/4u/sys-421ge-tnhr2-lcc",
-    "exoRuntime": "https://github.com/exo-explore/exo"
+    "exoRuntime": "https://github.com/exo-explore/exo",
+    "appleMacBookM5Pro": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/",
+    "appleMacBookM4Max": "https://support.apple.com/en-us/121554",
+    "supermicroRtxProServer": "https://www.supermicro.com/en/products/system/gpu/4u/sys-422ga-nrt",
+    "nvidiaRtxPro6000Server": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/"
   }
 };

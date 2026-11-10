@@ -8,19 +8,19 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Weekly; on benchmark version, pricing or promotion changes.",
     "source": "sources.benchmark, sources.methodology and record source/priceSource",
     "how": "Refresh comparable benchmark score, task cost and reasoning setting together. API prices USD/million tokens. Update all reference context limits and long-context multipliers; review promotion at its date. Never impute missing scores."
   },
   "values": {
-    "benchmarkVersion": "Artificial Analysis Intelligence Index v4.3.2",
+    "benchmarkVersion": "Artificial Analysis Intelligence Index v5.0.1",
     "referenceModels": [
       {
         "id": "gpt-5.6-sol",
         "name": "GPT-5.6 Sol",
-        "score": 47,
-        "taskCost": 1.99,
+        "score": null,
+        "taskCost": null,
         "input": 4,
         "output": 20,
         "source": "https://artificialanalysis.ai/models/gpt-5-6-sol",
@@ -29,8 +29,8 @@ export default {
       {
         "id": "gpt-5.6-terra",
         "name": "GPT-5.6 Terra",
-        "score": 42,
-        "taskCost": 1.4,
+        "score": 32.0,
+        "taskCost": 3.73,
         "input": 2,
         "output": 12,
         "source": "https://artificialanalysis.ai/models/gpt-5-6-terra",
@@ -39,8 +39,8 @@ export default {
       {
         "id": "gpt-5.6-luna",
         "name": "GPT-5.6 Luna",
-        "score": 37,
-        "taskCost": 0.18,
+        "score": 24.0,
+        "taskCost": 0.33,
         "input": 0.2,
         "output": 1.2,
         "source": "https://artificialanalysis.ai/models/gpt-5-6-luna",
@@ -49,8 +49,8 @@ export default {
       {
         "id": "gpt-6-astra",
         "name": "GPT-6 Astra",
-        "score": 53,
-        "taskCost": 3.26,
+        "score": 57.0,
+        "taskCost": 6.24,
         "input": 10,
         "output": 50,
         "source": "https://artificialanalysis.ai/models/gpt-6-astra",
@@ -59,8 +59,8 @@ export default {
       {
         "id": "gpt-6-sol",
         "name": "GPT-6 Sol",
-        "score": 48,
-        "taskCost": 1.04,
+        "score": 44.0,
+        "taskCost": 2.47,
         "input": 2,
         "output": 10,
         "source": "https://artificialanalysis.ai/models/gpt-6-sol",
@@ -69,8 +69,8 @@ export default {
       {
         "id": "gpt-6-luna",
         "name": "GPT-6 Luna",
-        "score": 38,
-        "taskCost": 0.07,
+        "score": 28.0,
+        "taskCost": 0.15,
         "input": 0.1,
         "output": 0.5,
         "source": "https://artificialanalysis.ai/models/gpt-6-luna",
@@ -79,8 +79,8 @@ export default {
       {
         "id": "gpt-6.1-sol",
         "name": "GPT-6.1 Sol",
-        "score": 52,
-        "taskCost": 0.72,
+        "score": 55.0,
+        "taskCost": 1.27,
         "input": 2,
         "output": 10,
         "source": "https://artificialanalysis.ai/models/gpt-6-1-sol",
@@ -89,103 +89,141 @@ export default {
     ],
     "selectedBenchmarks": {
       "ds41": {
-        "score": 39,
-        "taskCost": 0.48,
+        "score": null,
+        "taskCost": null,
         "variant": "max reasoning",
         "source": "https://artificialanalysis.ai/models/deepseek-v4-1-flash"
       },
       "glm53": {
-        "score": 45,
-        "taskCost": 2.01,
+        "score": 32.0,
+        "taskCost": 5.01,
         "variant": "max reasoning",
         "source": "https://artificialanalysis.ai/models/glm-5-3"
       },
       "glm53flash": {
-        "score": 42,
-        "taskCost": 0.28,
+        "score": 28.0,
+        "taskCost": 0.58,
         "variant": "AA evaluated configuration",
         "source": "https://artificialanalysis.ai/models/glm-5-3-flash"
       },
       "qwen38large": {
-        "score": 40,
-        "taskCost": 2.16,
+        "score": null,
+        "taskCost": null,
         "variant": "AA evaluated configuration",
         "source": "https://artificialanalysis.ai/models/qwen3-8-2-4t-a95b"
       },
       "qwen38small": {
-        "score": 34,
-        "taskCost": 1.01,
+        "score": 20.0,
+        "taskCost": 3.53,
         "variant": "xhigh reasoning",
         "source": "https://artificialanalysis.ai/models/qwen3-8-27b"
       },
       "kimi3": {
-        "score": 44,
-        "taskCost": 2,
+        "score": null,
+        "taskCost": null,
         "variant": "max reasoning",
         "source": "https://artificialanalysis.ai/models/kimi-k3"
       },
       "nemotron-ultra": {
-        "score": 23,
-        "taskCost": 0.47,
+        "score": 12.0,
+        "taskCost": 2.23,
         "variant": "reasoning",
         "source": "https://artificialanalysis.ai/models/nvidia-nemotron-3-ultra-550b-a55b"
       },
       "nemotron-super": {
-        "score": 13,
-        "taskCost": 1.64,
+        "score": null,
+        "taskCost": null,
         "variant": "reasoning",
         "source": "https://artificialanalysis.ai/models/nvidia-nemotron-3-super-120b-a12b"
       },
       "nemotron-nano": {
-        "score": 9,
-        "taskCost": 0.02,
+        "score": null,
+        "taskCost": null,
         "variant": "reasoning",
         "source": "https://artificialanalysis.ai/models/nvidia-nemotron-3-nano-30b-a3b-reasoning"
       },
       "oss120": {
-        "score": 12,
-        "taskCost": 0.11,
+        "score": 4.0,
+        "taskCost": 0.35,
         "variant": "high reasoning",
         "source": "https://artificialanalysis.ai/models/gpt-oss-120b"
       },
       "nemotron-lightning": {
-        "score": 13,
-        "taskCost": 0.08,
+        "score": 6.0,
+        "taskCost": 0.31,
         "variant": "AA evaluated configuration",
         "source": "https://artificialanalysis.ai/models/nemotron-3-5-lightning"
       },
       "qwen80": {
-        "score": 9,
-        "taskCost": 0.47,
+        "score": null,
+        "taskCost": null,
         "variant": "non-reasoning",
         "source": "https://artificialanalysis.ai/models/qwen3-coder-next"
       },
       "oss20": {
-        "score": 9,
-        "taskCost": 0.01,
+        "score": null,
+        "taskCost": null,
         "variant": "high reasoning",
         "source": "https://artificialanalysis.ai/models/gpt-oss-20b"
       },
       "granite42": {
-        "score": 11,
-        "taskCost": 0.02,
+        "score": 5.0,
+        "taskCost": 0.04,
         "variant": "reasoning",
         "source": "https://artificialanalysis.ai/models/granite-4-2-8b"
+      },
+      "kimi25": {
+        "score": null,
+        "taskCost": null,
+        "variant": "Comparable current setting unavailable",
+        "source": "https://artificialanalysis.ai/models/kimi-k2-5"
+      },
+      "minimax": {
+        "score": null,
+        "taskCost": null,
+        "variant": "Comparable current setting unavailable",
+        "source": "https://artificialanalysis.ai/models/minimax-m2-5"
+      },
+      "deepseek": {
+        "score": null,
+        "taskCost": null,
+        "variant": "Comparable current setting unavailable",
+        "source": "https://artificialanalysis.ai/models/deepseek-v3-2"
+      },
+      "qwen30": {
+        "score": null,
+        "taskCost": null,
+        "variant": "Comparable current setting unavailable",
+        "source": "https://artificialanalysis.ai/models/qwen3-coder-30b-a3b-instruct"
+      },
+      "minimax27": {
+        "score": null,
+        "taskCost": null,
+        "variant": "Comparable current setting unavailable",
+        "source": "https://artificialanalysis.ai/models/minimax-m2-7"
       }
     },
     "missingBenchmarks": {
-      "kimi25": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
-      "minimax": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
-      "deepseek": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
-      "qwen30": "The model page reports an intelligence score but no measured cost per task for this benchmark version; excluded from the cost-per-task comparison.",
-      "minimax27": "The current model page no longer reports a measured cost per task for this benchmark version; excluded rather than retaining the previous cost."
+      "kimi25": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "minimax": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "deepseek": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "qwen30": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "minimax27": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "gpt-5.6-sol": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "ds41": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "qwen38large": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "kimi3": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "nemotron-super": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "nemotron-nano": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "qwen80": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded.",
+      "oss20": "No comparable Intelligence Index score and measured task cost are published for this exact model/setting under the current benchmark version; historical values are excluded."
     },
     "longInputMultiplier": 2,
     "longOutputMultiplier": 1.5,
     "promotion": {
       "model": "gpt-5.6-sol",
-      "through": "2026-11-21",
-      "qualification": "at least"
+      "through": "2026-11-30",
+      "qualification": ""
     },
     "referencePolicy": {
       "context": 1050000,

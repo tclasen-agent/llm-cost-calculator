@@ -34,20 +34,20 @@ test('reviewed GLM same-provider rates reach API costs without applying cache di
  assert.deepEqual(endpoint,{
   provider_name:'Inceptron',tag:'inceptron/fp4',quantization:'fp4',
   context_length:1048576,max_completion_tokens:943718,max_prompt_tokens:null,
-  pricing:{prompt:'0.0000006',completion:'0.00000322',input_cache_read:'0.00000012'}
+  pricing:{prompt:'0.000001',completion:'0.0000049',input_cache_read:'0.00000014'}
  });
  const model=models.find(m=>m.id==='glm53');
- for(const [key,expected] of Object.entries({input:.6,output:3.22,cached:.12}))
+ for(const [key,expected] of Object.entries({input:1,output:4.9,cached:.14}))
   assert.ok(Math.abs(model[key]-expected)<1e-12,`glm53.${key} USD/million conversion`);
  const {estimateEconomics}=await import('../src/engine.js');
  const result=estimateEconomics({model:'glm53',workload:'swe-factory',start:'2026-10',users:2,
   calls:10,input:1250,output:250,concurrency:1,usageSource:'Synthetic rate conversion regression',
   apiExtras:0,costSource:'Synthetic zero extras',apiDecline:0,rentalDecline:0,purchaseDiscount:0});
- // 620 October requests each cost $0.00075 prompt + $0.000805 completion.
+ // 620 October requests each cost $0.00125 prompt + $0.001225 completion.
  // Cache-read is provenance, so every prompt token uses the ordinary prompt rate.
  assert.equal(result.rows[1].requests,620);
- assert.ok(Math.abs(result.rows[1].apiUsage-.9641)<1e-12);
- assert.ok(Math.abs(result.rows[1].apiMonthly-.9641)<1e-12);
+ assert.ok(Math.abs(result.rows[1].apiUsage-1.5345)<1e-12);
+ assert.ok(Math.abs(result.rows[1].apiMonthly-1.5345)<1e-12);
 });
 test('training instances share canonical rental prices and resources',()=>{
  for(const [id,t] of Object.entries(data.trainingSystems))if(t.rentalId){
@@ -94,14 +94,14 @@ test('new multi-GPU rentals convert per-GPU charges and memory to whole-instance
 });
 
 test('small endpoint cache rates retain sub-cent precision in the shared view',()=>{
- for(const [id,input,output,cached] of [['qwen38small',.035,2.2,.0175],['nemotron-lightning',.025,.12,.0125],['oss120',.03,.187,.03]]){
+ for(const [id,input,output,cached] of [['qwen38small',.035,1.5,.0175],['nemotron-lightning',.025,.12,.0125],['oss120',.03,.187,.03]]){
   const model=models.find(m=>m.id===id);
   for(const [key,expected] of Object.entries({input,output,cached}))assert.ok(Math.abs(model[key]-expected)<1e-12,`${id}.${key}`);
  }
- // A later partial scenario review must not imply a fresh complete audit.
+ // The complete source review includes explicit stale-rate and assumption disclosures.
  assert.equal(dataReviewed,oldestReviewDate(datasets));
  assert.ok(Object.values(datasets).every(d=>d.maintenance.reviewed>=dataReviewed));
- assert.equal(dataReviewed,'2026-10-24');
+ assert.equal(dataReviewed,'2026-11-10');
 });
 
 test('API endpoint precision does not redefine the independent self-hosted memory recipe',async()=>{
@@ -137,10 +137,29 @@ test('new published system prices supersede allowances without replacing user qu
  const {planning}=await import('../src/planning.js');
  for(const id of ['strix-hp-128','hp-4000']){
   const h=hardware.find(h=>h.id===id);
-  assert.ok(h.price>0);assert.match(h.priceKind,/listed sale price/);
+  assert.ok(h.price>0);assert.match(h.priceKind,id==='strix-hp-128'?/listed MSRP/:/listed sale price/);
   assert.equal(data.purchaseAllowances[id],undefined);
   const state=planning({...data.inferenceDefaults,hardware:id,model:'oss20',autoHardware:0,quote:12345,quoteSource:'User quote',overrides:'quote,quoteSource'});
   assert.equal(state.quote,12345);assert.equal(state.quoteSource,'User quote');
  }
  assert.equal(data.hardware['hp-2000'].price,null);
+});
+
+test('single RTX PRO servers share aggregate resources and power with training without copying prices',()=>{
+ for(const count of [4,8]){
+  const h=hardware.find(h=>h.id===`rtx-pro-6000-server-x${count}`),t=trainingSystems.find(h=>h.id===`rtxpro6000x${count}`);
+  assert.equal(h.gpus,count);assert.equal(h.memory,count*96);assert.equal(h.baseHardwareId,undefined);
+  assert.equal(t.gpus,count);assert.equal(t.vram,96);assert.equal(t.price,purchaseAllowances[h.id]);
+  assert.equal(t.watts,data.inferencePolicy[h.powerPolicyRef]);
+  assert.equal(h.price,null);assert.ok(h.gpuSource.includes('blackwell-server-edition'));
+  assert.match(h.package,/one|One/);assert.match(h.package,/sharding/);
+ }
+});
+test('announced future rental prices are distinct from historical planning inputs',()=>{
+ const h=rentals.find(r=>r.id==='h100-x8'),b=rentals.find(r=>r.id==='b200');
+ assert.equal(h.hourly,31.92);assert.equal(h.announcedHourly,36.72);
+ assert.equal(b.hourly,6.99);assert.equal(b.announcedHourly,7.99);
+ assert.equal(data.rentalTerms.lastPublicSnapshot,'2026-10-24');assert.equal(data.rentalTerms.announcedEffectiveOn,'2026-11-16');
+ assert.match(h.rateNotice,/current rates require account login/);
+ assert.equal(trainingSystems.find(h=>h.id==='h100x8').rateNotice,h.rateNotice);
 });

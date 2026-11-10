@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "assumption",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Each planning cycle; remeasure performance/energy on configuration changes.",
     "source": "Internal planning policy; workload pilot, utility bill and HVAC measurements",
     "how": "Review each coefficient independently. Speed/memory/power values are illustrative, lifecycle/declines are scenarios, not forecasts. Fractions use 0–1; declines use percent/year."
@@ -45,6 +45,10 @@ export default {
     "displayMinMonths": 12,
     "displayMaxMonths": 24,
     "displayWindowMultiplier": 2,
-    "runtimeDescription": "Planning assumption: 4-bit runtime; validate quality and deployment support"
+    "runtimeDescription": "Planning assumption: 4-bit runtime; validate quality and deployment support",
+    "macbookProWatts": 100,
+    "macbookMaxWatts": 140,
+    "rtxProServer4Watts": 3500,
+    "rtxProServer8Watts": 6500
   }
 };

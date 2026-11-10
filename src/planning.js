@@ -37,9 +37,9 @@ export function planning(raw={}){
  set('quote',h.price??prices[h.id]);set('quoteSource',h.price?`Published catalog price: ${h.priceSource}`:'Planning allowance for the whole system; replace with a vendor quote.');set('buildDetails',h.package+' Planning allowance includes a complete host and cluster networking; obtain an exact configuration.');
  set('localSetup',Math.round(s.quote*policy.setupFraction));set('localExtras',policy.localExtras);set('rentalSetup',policy.rentalSetup);set('rentalExtras',policy.rentalExtras);set('apiExtras',policy.apiExtras);
  set('costSource',`Planning allowances: ${policy.setupFraction*100}% purchase extras, $${policy.localExtras}/month local support, $${policy.rentalExtras}/month rental extras, $${policy.apiExtras} API extras. Not quotes.`);
- const watts=h.id==='supermicro-h100'?policy.hgxWatts:h.kind==='VRAM'?policy.workstationWatts:policy.unifiedWatts*nodes;
+ const watts=h.powerPolicyRef?policy[h.powerPolicyRef]:h.id==='supermicro-h100'?policy.hgxWatts:h.kind==='VRAM'?policy.workstationWatts:policy.unifiedWatts*nodes;
  set('itKwh',watts/1000*cal.hours+watts*policy.idleFraction/1000*(cal.calendarDays*24-cal.hours));set('coolingKwh',s.itKwh*policy.coolingFraction);
- set('energySource',`Planning assumption: ${policy.unifiedWatts} W per unified-memory node, ${policy.workstationWatts} W workstation or ${policy.hgxWatts/1000} kW HGX; ${policy.idleFraction*100}% idle power; cooling adds ${policy.coolingFraction*100}%. Replace with measurements.`);
+ set('energySource',`Planning assumption: ${watts} W for the selected complete system; ${policy.idleFraction*100}% idle power; cooling adds ${policy.coolingFraction*100}%. Replace with measurements.`);
  set('tariff','bill');set('baselineKwh',policy.baselineKwh);set('peakKw',policy.peakKw);set('tariffConfirmed',0);set('localTax',1);
  // Published GS-1 marginal charges at a representative baseline; eligibility remains an assumption.
  set('billRate',Number(((gs1Variable(policy.baselineKwh+policy.marginalSampleKwh,cal.month)-gs1Variable(policy.baselineKwh,cal.month))/policy.marginalSampleKwh).toFixed(5)));set('billSource',`Planning assumption: published Dominion GS-1 marginal rate at ${policy.baselineKwh.toLocaleString('en-US')} kWh baseline in Loudoun; account eligibility assumed. Select verified GS-1 in advanced settings or replace with your bill.`);
@@ -50,7 +50,7 @@ export function planning(raw={}){
 export function assumptionNotes(s){return [
  'Task activity, token counts and concurrency are editable planning templates, not measured usage.',
  'Memory fit and processing speeds are rough planning proxies. Validate runtime support, quality and performance before purchase.',
- 'Unknown equipment prices use whole-system budget allowances. Published catalog prices and actual rental/API rates retain their source links.',
+ 'Unknown equipment prices use whole-system budget allowances. Published catalog prices and API rates retain their source links; rental snapshot limitations are shown with the rental estimate.',
  'Power, cooling, fees and review intervals are planning assumptions. Advanced fields let your team replace them.',
  ...(s.localRph===0?['This purchase configuration is estimated not to fit the model; choose compatible hardware to enable the purchase path.']:[]),
  ...(s.rentalRph===0?['This rental configuration is estimated not to fit the model; choose a compatible instance to enable the rental path.']:[])

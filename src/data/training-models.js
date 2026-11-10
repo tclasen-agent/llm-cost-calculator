@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "published",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Each model revision/addition or recipe/stack change.",
     "source": "models.*.source; sources.training; training-only model source",
     "how": "Record total checkpoint parameters in billions, not active MoE counts. Confirm license/stack eligibility; recipe memory GB applies only to the documented supervised objective."
@@ -24,7 +24,7 @@ export default {
       "parameters": 321
     },
     "qwen38large": {
-      "parameters": 2400
+      "parameters": 2446
     },
     "qwen38small": {
       "parameters": 28
@@ -36,7 +36,7 @@ export default {
       "parameters": 32
     },
     "kimi3": {
-      "parameters": 2800
+      "parameters": 2780
     },
     "nemotron-ultra": {
       "parameters": 561
@@ -51,7 +51,7 @@ export default {
       "parameters": 80
     },
     "kimi25": {
-      "parameters": 1000
+      "parameters": 1027
     },
     "nemotron-nano": {
       "parameters": 32

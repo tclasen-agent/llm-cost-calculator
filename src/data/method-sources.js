@@ -8,7 +8,7 @@
 export default {
   "maintenance": {
     "kind": "provenance",
-    "reviewed": "2026-10-24",
+    "reviewed": "2026-11-10",
     "frequency": "Quarterly and on documentation moves.",
     "source": "Hugging Face Transformers/TRL; original distillation paper",
     "how": "Check that linked documentation still supports the recipe explanation."
