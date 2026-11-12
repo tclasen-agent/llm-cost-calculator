@@ -215,12 +215,15 @@ export default {
       "sourceRef": "appleStudio"
     },
     "macbook-m5-pro-64": {
-      "name": "MacBook Pro M5 Pro · {memory} GB",
+      "name": "16-inch MacBook Pro M5 Pro · {memory} GB",
       "memory": 64,
       "kind": "unified",
-      "price": null,
-      "package": "Complete MacBook Pro with M5 Pro 18-core CPU / 20-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Screen size and display finish must be specified in the quote. Exact inference performance requires validation.",
+      "price": 3999,
+      "priceKind": "Apple US configured new-retail price, reviewed November 12, 2026; before tax, optional AppleCare and accessories",
+      "priceReviewed": "2026-11-12",
+      "package": "Complete 16-inch MacBook Pro, Space Black, standard display, M5 Pro 18-core CPU / 20-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Exact inference performance requires validation.",
       "sourceRef": "appleMacBookM5Pro",
+      "priceSourceRef": "appleMacBookM5Pro16Price",
       "powerPolicyRef": "macbookProWatts"
     },
     "macbook-m4-max-128": {

@@ -18,6 +18,10 @@ Type: **editorial**. Recorded review: **2026-11-10**.
 
 | Field | Current value |
 |---|---|
+| `partialReviews.0.reviewedOn` | "2026-11-12" |
+| `partialReviews.0.hardwareId` | "macbook-m5-pro-64" |
+| `partialReviews.0.sourceRef` | "appleMacBookM5Pro16Price" |
+| `partialReviews.0.scope` | "User selected the 16-inch laptop. Replaced the unquoted allowance with the exact Apple US configured new-retail offer from Product JSON-LD; standard display and storage are specified in hardware. Tax and optional coverage/accessories are excluded. Raw HTML contains an exact Product name, URL and USD Offer; generic starting-price cards were not used. No performance or compatibility certification. Other full-audit coverage and dataset review dates remain unchanged." |
 | `coverage.sources` | "Checked every shared and model/method/evaluation/pricing link. Direct retrieval failures for Framework, HP, Puget, Supermicro and NVIDIA investor content were resolved through web retrieval of the same primary sources. Lambda instance/billing links now use the confirmed redirected domain. Source receipts below bind retrieved content or identify web fallback; a successful request alone is not proof of each fact." |
 | `coverage.models` | "Reviewed every maintained model card and selected endpoint tuple. Refreshed provider/tag, precision, coherent input/output/cache price pair and token limits together. Preserved selected tags when still valid; retired tags were replaced by non-discounted complete tuples from the same model endpoint API. No batch, time-of-day or discounted rates selected. Vendor evaluation numbers still appear in the original cards. Stable model IDs and self-hosted memory recipes remain separate from endpoint precision." |
 | `coverage.hardware` | "Reviewed all existing complete systems, installed memory, allocation ceilings, host/storage scope and clusters. Added the requested laptops using Apple primary specifications after the user clarified M4 Max, and the requested single-server configurations using Supermicro platform support and NVIDIA Server Edition specifications. HP G1a now exposes MSRP rather than the former sale price; RTX 4000 Ada sale unchanged; RTX 2000 Ada placeholder remains unknown. Configurable systems retain null prices; installed/aggregate memory does not certify compatibility." |
@@ -300,6 +304,10 @@ Type: **editorial**. Recorded review: **2026-11-10**.
 | `sourceReviews.trainingModels.granite42.parameters.retrieval` | "direct primary source" |
 | `sourceReviews.datasets.sources.values.appleMacBookM5Pro.sha256` | "8ee6488913b0b909db682123c02bfcd3c8b20ed7dcff74f3d490655bbf9c9d3a" |
 | `sourceReviews.datasets.sources.values.appleMacBookM5Pro.retrieval` | "direct primary source" |
+| `sourceReviews.datasets.sources.values.appleMacBookM5Pro16Price.reviewedOn` | "2026-11-12" |
+| `sourceReviews.datasets.sources.values.appleMacBookM5Pro16Price.sha256` | "851105e3785ea8c2f474c03ce472db561567155b5ecb6a0a7806af3f6ad876ff" |
+| `sourceReviews.datasets.sources.values.appleMacBookM5Pro16Price.retrieval` | "direct Apple US configured-product HTML; Product JSON-LD Offer matches the exact full configuration name and URL" |
+| `sourceReviews.datasets.sources.values.appleMacBookM5Pro16Price.sku` | "Z1MZ+CL4J+CL4Y+CL52+CL68+CL6D+CL6G+CL6P+CL7C+CL7D" |
 | `sourceReviews.datasets.sources.values.appleMacBookM4Max.sha256` | "910ca82a6b351e59ec33c835e4e3dfe0fbc8049e11b0048511cfb0b23c750571" |
 | `sourceReviews.datasets.sources.values.appleMacBookM4Max.retrieval` | "direct primary source" |
 | `sourceReviews.datasets.sources.values.supermicroRtxProServer.retrieval` | "web primary-source product and datasheet review" |
@@ -352,6 +360,7 @@ Type: **provenance**. Recorded review: **2026-11-10**.
 | `supermicroHgx` | "https://www.supermicro.com/en/products/system/gpu/4u/sys-421ge-tnhr2-lcc" |
 | `exoRuntime` | "https://github.com/exo-explore/exo" |
 | `appleMacBookM5Pro` | "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/" |
+| `appleMacBookM5Pro16Price` | "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-pro-chip-18-core-cpu-20-core-gpu-64gb-memory-1tb-storage" |
 | `appleMacBookM4Max` | "https://support.apple.com/en-us/121554" |
 | `supermicroRtxProServer` | "https://www.supermicro.com/en/products/system/gpu/4u/sys-422ga-nrt" |
 | `nvidiaRtxPro6000Server` | "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/" |
@@ -771,12 +780,15 @@ Type: **published**. Recorded review: **2026-11-10**.
 | `m5-max-128.price` | null |
 | `m5-max-128.package` | "18-core CPU / 40-core GPU, {memory} GB unified RAM, 1 TB SSD, macOS, complete Mac Studio. Exact configured price and inference performance require validation." |
 | `m5-max-128.sourceRef` | "appleStudio" |
-| `macbook-m5-pro-64.name` | "MacBook Pro M5 Pro · {memory} GB" |
+| `macbook-m5-pro-64.name` | "16-inch MacBook Pro M5 Pro · {memory} GB" |
 | `macbook-m5-pro-64.memory` | 64 |
 | `macbook-m5-pro-64.kind` | "unified" |
-| `macbook-m5-pro-64.price` | null |
-| `macbook-m5-pro-64.package` | "Complete MacBook Pro with M5 Pro 18-core CPU / 20-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Screen size and display finish must be specified in the quote. Exact inference performance requires validation." |
+| `macbook-m5-pro-64.price` | 3999 |
+| `macbook-m5-pro-64.priceKind` | "Apple US configured new-retail price, reviewed November 12, 2026; before tax, optional AppleCare and accessories" |
+| `macbook-m5-pro-64.priceReviewed` | "2026-11-12" |
+| `macbook-m5-pro-64.package` | "Complete 16-inch MacBook Pro, Space Black, standard display, M5 Pro 18-core CPU / 20-core GPU, {memory} GB unified memory, 1 TB SSD and macOS. Exact inference performance requires validation." |
 | `macbook-m5-pro-64.sourceRef` | "appleMacBookM5Pro" |
+| `macbook-m5-pro-64.priceSourceRef` | "appleMacBookM5Pro16Price" |
 | `macbook-m5-pro-64.powerPolicyRef` | "macbookProWatts" |
 | `macbook-m4-max-128.name` | "MacBook Pro M4 Max · {memory} GB" |
 | `macbook-m4-max-128.memory` | 128 |
@@ -1049,7 +1061,6 @@ Type: **assumption**. Recorded review: **2026-11-10**.
 | `m5-512-x4.extras` | 1500 |
 | `puget-pro-5000-blackwell-72` | 14000 |
 | `m5-max-128` | 6000 |
-| `macbook-m5-pro-64` | 4000 |
 | `macbook-m4-max-128` | 6500 |
 | `rtx-pro-6000-server-x4` | 85000 |
 | `rtx-pro-6000-server-x8` | 150000 |

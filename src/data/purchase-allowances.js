@@ -47,7 +47,6 @@ export default {
     },
     "puget-pro-5000-blackwell-72": 14000,
     "m5-max-128": 6000,
-    "macbook-m5-pro-64": 4000,
     "macbook-m4-max-128": 6500,
     "rtx-pro-6000-server-x4": 85000,
     "rtx-pro-6000-server-x8": 150000

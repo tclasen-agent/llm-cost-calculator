@@ -37,7 +37,7 @@ test('requested laptops and single servers use complete-system power and usable 
   assert.equal(s.localAvailable,memory*.85);assert.equal(s.itKwh,watts/1000*720);
   assert.match(s.energySource,new RegExp(`${watts} W for the selected complete system`));
   assert.ok(r.buyReady&&r.rentReady&&r.apiReady,id);
-  assert.match(s.quoteSource,/Planning allowance/);assert.ok(s.quote>0);
+  assert.match(s.quoteSource,id==='macbook-m5-pro-64'?/Published catalog price/:/Planning allowance/);assert.ok(s.quote>0);
  }
  const a=planning({...defaults,hardware:'rtx-pro-6000-server-x4',model:'oss20',autoHardware:0});
  const b=planning({...defaults,hardware:'rtx-pro-6000-server-x8',model:'oss20',autoHardware:0});

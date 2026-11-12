@@ -34,7 +34,7 @@ export function planning(raw={}){
  set('localRph',s.localMemory<=s.localAvailable?rate(s.localPrefill,s.localDecode):0);
  set('rentalRph',s.rentalMemory<=s.rentalAvailable?rate(s.rentalPrefill,s.rentalDecode):0);
  for(const prefix of ['local','rental']){set(prefix+'Runtime',policy.runtimeDescription);set(prefix+'Evidence','Planning proxy, not a benchmark. A non-fitting model makes that hardware path unavailable; no API fallback.');}
- set('quote',h.price??prices[h.id]);set('quoteSource',h.price?`Published catalog price: ${h.priceSource}`:'Planning allowance for the whole system; replace with a vendor quote.');set('buildDetails',h.package+' Planning allowance includes a complete host and cluster networking; obtain an exact configuration.');
+ set('quote',h.price??prices[h.id]);set('quoteSource',h.price?`Published catalog price: ${h.priceSource}`:'Planning allowance for the whole system; replace with a vendor quote.');set('buildDetails',h.package+(h.price?'':' Planning allowance includes a complete host and cluster networking; obtain an exact configuration.'));
  set('localSetup',Math.round(s.quote*policy.setupFraction));set('localExtras',policy.localExtras);set('rentalSetup',policy.rentalSetup);set('rentalExtras',policy.rentalExtras);set('apiExtras',policy.apiExtras);
  set('costSource',`Planning allowances: ${policy.setupFraction*100}% purchase extras, $${policy.localExtras}/month local support, $${policy.rentalExtras}/month rental extras, $${policy.apiExtras} API extras. Not quotes.`);
  const watts=h.powerPolicyRef?policy[h.powerPolicyRef]:h.id==='supermicro-h100'?policy.hgxWatts:h.kind==='VRAM'?policy.workstationWatts:policy.unifiedWatts*nodes;

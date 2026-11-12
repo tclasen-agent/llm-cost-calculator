@@ -145,6 +145,29 @@ test('new published system prices supersede allowances without replacing user qu
  assert.equal(data.hardware['hp-2000'].price,null);
 });
 
+test('the exact 16-inch MacBook retail offer supersedes its allowance while saved evidence survives',async()=>{
+ const {planning}=await import('../src/planning.js');
+ const {initialScenario}=await import('../src/scenario.js');
+ const {encodeState,decodeState}=await import('../src/sharing.js');
+ const id='macbook-m5-pro-64',h=hardware.find(h=>h.id===id);
+ assert.match(h.name,/16-inch/);assert.match(h.package,/Space Black, standard display/);
+ assert.equal(h.price,3999);assert.equal(h.priceReviewed,'2026-11-12');
+ assert.match(h.priceKind,/configured new-retail/);
+ assert.match(h.priceSource,/16-inch-space-black-standard-display.*64gb-memory-1tb-storage$/);
+ assert.equal(data.purchaseAllowances[id],undefined);
+ const base={...data.inferenceDefaults,hardware:id,model:'oss20',autoHardware:0,autoModel:0,autoRental:0};
+ const fresh=planning(base);
+ assert.equal(fresh.quote,h.price);assert.equal(fresh.quoteSource,`Published catalog price: ${h.priceSource}`);
+ assert.doesNotMatch(fresh.buildDetails,/Planning allowance/);
+ assert.equal(dataReviewed,'2026-11-10','partial source review cannot advance whole-catalog freshness');
+ const saved={...base,quote:3210,quoteSource:'Existing user quote',localRph:17,localEvidence:'Existing pilot',overrides:'quote,quoteSource,localRph,localEvidence'};
+ const restored=initialScenario(decodeState(encodeState(saved)));
+ assert.equal(restored.recovered,false);assert.equal(restored.state.hardware,id);
+ assert.equal(restored.state.quote,saved.quote);assert.equal(restored.state.quoteSource,saved.quoteSource);
+ assert.equal(restored.state.localRph,saved.localRph);assert.equal(restored.state.localEvidence,saved.localEvidence);
+ assert.ok(restored.result.buyReady&&restored.result.rentReady&&restored.result.apiReady);
+});
+
 test('single RTX PRO servers share aggregate resources and power with training without copying prices',()=>{
  for(const count of [4,8]){
   const h=hardware.find(h=>h.id===`rtx-pro-6000-server-x${count}`),t=trainingSystems.find(h=>h.id===`rtxpro6000x${count}`);

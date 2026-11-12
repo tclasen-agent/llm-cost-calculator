@@ -37,6 +37,7 @@ export default {
     "supermicroHgx": "https://www.supermicro.com/en/products/system/gpu/4u/sys-421ge-tnhr2-lcc",
     "exoRuntime": "https://github.com/exo-explore/exo",
     "appleMacBookM5Pro": "https://www.apple.com/macbook-pro/liquid-retina-xdr-display/specs/",
+    "appleMacBookM5Pro16Price": "https://www.apple.com/shop/buy-mac/macbook-pro/16-inch-space-black-standard-display-apple-m5-pro-chip-18-core-cpu-20-core-gpu-64gb-memory-1tb-storage",
     "appleMacBookM4Max": "https://support.apple.com/en-us/121554",
     "supermicroRtxProServer": "https://www.supermicro.com/en/products/system/gpu/4u/sys-422ga-nrt",
     "nvidiaRtxPro6000Server": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/"

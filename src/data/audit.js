@@ -14,6 +14,14 @@ export default {
     "how": "Review every registered dataset. Record scope, unresolved evidence and candidate disposition without copying canonical prices or specifications. A source check is not a pilot, quote or compatibility certification."
   },
   "values": {
+    "partialReviews": [
+      {
+        "reviewedOn": "2026-11-12",
+        "hardwareId": "macbook-m5-pro-64",
+        "sourceRef": "appleMacBookM5Pro16Price",
+        "scope": "User selected the 16-inch laptop. Replaced the unquoted allowance with the exact Apple US configured new-retail offer from Product JSON-LD; standard display and storage are specified in hardware. Tax and optional coverage/accessories are excluded. Raw HTML contains an exact Product name, URL and USD Offer; generic starting-price cards were not used. No performance or compatibility certification. Other full-audit coverage and dataset review dates remain unchanged."
+      }
+    ],
     "coverage": {
       "sources": "Checked every shared and model/method/evaluation/pricing link. Direct retrieval failures for Framework, HP, Puget, Supermicro and NVIDIA investor content were resolved through web retrieval of the same primary sources. Lambda instance/billing links now use the confirmed redirected domain. Source receipts below bind retrieved content or identify web fallback; a successful request alone is not proof of each fact.",
       "models": "Reviewed every maintained model card and selected endpoint tuple. Refreshed provider/tag, precision, coherent input/output/cache price pair and token limits together. Preserved selected tags when still valid; retired tags were replaced by non-discounted complete tuples from the same model endpoint API. No batch, time-of-day or discounted rates selected. Vendor evaluation numbers still appear in the original cards. Stable model IDs and self-hosted memory recipes remain separate from endpoint precision.",
@@ -544,6 +552,12 @@ export default {
       "datasets.sources.values.appleMacBookM5Pro": {
         "sha256": "8ee6488913b0b909db682123c02bfcd3c8b20ed7dcff74f3d490655bbf9c9d3a",
         "retrieval": "direct primary source"
+      },
+      "datasets.sources.values.appleMacBookM5Pro16Price": {
+        "reviewedOn": "2026-11-12",
+        "sha256": "851105e3785ea8c2f474c03ce472db561567155b5ecb6a0a7806af3f6ad876ff",
+        "retrieval": "direct Apple US configured-product HTML; Product JSON-LD Offer matches the exact full configuration name and URL",
+        "sku": "Z1MZ+CL4J+CL4Y+CL52+CL68+CL6D+CL6G+CL6P+CL7C+CL7D"
       },
       "datasets.sources.values.appleMacBookM4Max": {
         "sha256": "910ca82a6b351e59ec33c835e4e3dfe0fbc8049e11b0048511cfb0b23c750571",
