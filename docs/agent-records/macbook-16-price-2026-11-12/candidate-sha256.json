@@ -1,0 +1,13 @@
+{
+  "docs/agent-records/macbook-16-price-2026-11-12/apple-config.html.gz": "f7d15fd6b3475b4aee709f96d0d74d167adc80c9c8eaf09f68cfc9c20050a86e",
+  "docs/agent-records/macbook-16-price-2026-11-12/check-source.mjs": "70abc7aaed2b9b7fecd850f66cbdc1542d1b8b8a30b6a3c67993ad133cee1c6a",
+  "docs/macbook-16-price-2026-11-12.md": "1822f186e66c22c2c6907a142cf8e204ec21da9dc74874fa60de1392f90244f7",
+  "src/data/INVENTORY.md": "5e5597a7102503215553e155d415d0557952cd967fa6ea7079a2a33d224f22cd",
+  "src/data/audit.js": "28d7f3235dad15aaed5815a02c7e6384f42a9ff2d5acd085c517b697dde16e38",
+  "src/data/hardware.js": "1272e504bca4921268409ed33e14bb5e7b4d9fd32a24272b46d03828a1f2edb4",
+  "src/data/purchase-allowances.js": "450e686203990c21de73fa8abd0766c3c65f8a4e18570a928756e173a5f7fc91",
+  "src/data/sources.js": "3b0c30ad76e10445bd1693bb7764b72f6fbead4a26e7ff9544d44c04b91d59af",
+  "src/planning.js": "0093d1f79366b2d82eb58315219be7bd97f3d760c37a5261b232633ce416a91a",
+  "tests/data.test.js": "453a04cb3fc5679403f74e6cfaf60e6acb43f1bc109a4da99c4de7d40225ede3",
+  "tests/planning.test.js": "b740643ee60c4f1e9f6b435f9a3d292b8418a5da2aed772f4265a36794d14cbb"
+}

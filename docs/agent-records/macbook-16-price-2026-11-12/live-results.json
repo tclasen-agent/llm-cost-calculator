@@ -1,0 +1,76 @@
+{
+  "checkedAt": "2026-11-12T18:00:56.061Z",
+  "source": "d1cd25879182215ed63e8815eacb2e1b9eaba0f5",
+  "url": "https://tclasen-agent.github.io/llm-cost-calculator/",
+  "checks": [
+    {
+      "label": "src/data/hardware.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/purchase-allowances.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/sources.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/audit.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/data/INVENTORY.md deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "src/planning.js deployed bytes match reviewed source",
+      "pass": true
+    },
+    {
+      "label": "exact 16-inch selection displayed",
+      "pass": true
+    },
+    {
+      "label": "published equipment price fills quote",
+      "pass": true
+    },
+    {
+      "label": "automatic quote references exact configured source",
+      "pass": true
+    },
+    {
+      "label": "published build not described as allowance",
+      "pass": true
+    },
+    {
+      "label": "selected configuration keeps buy/rent/API usable",
+      "pass": true
+    },
+    {
+      "label": "saved user quote retained",
+      "pass": true
+    },
+    {
+      "label": "saved measurement retained",
+      "pass": true
+    },
+    {
+      "label": "reset clears synthetic quote",
+      "pass": true
+    },
+    {
+      "label": "training mode renders finite results",
+      "pass": true
+    },
+    {
+      "label": "inventory link available",
+      "pass": true
+    },
+    {
+      "label": "no browser runtime errors",
+      "pass": true
+    }
+  ],
+  "errors": []
+}
